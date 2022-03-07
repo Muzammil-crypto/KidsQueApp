@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sign_in_interface/Login1.dart';
 import 'package:sign_in_interface/Signup.dart';
+import 'package:sign_in_interface/ZoomDrawer.dart';
+import 'package:sign_in_interface/topics.dart';
 
 void main() => runApp(MyApp());
 
@@ -53,7 +56,7 @@ class LandingPage extends StatelessWidget {
                   child: RaisedButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => SignUp()));
+                          MaterialPageRoute(builder: (context) => Login()));
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0)),

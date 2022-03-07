@@ -1,29 +1,29 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'Login1.dart';
 
 class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height / 10,
+      width: MediaQuery.of(context).size.width,
       child: Stack(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(top: 25.0, left: 15),
-            child: Icon(
-              (Icons.arrow_back_ios),
-              size: 20,
-            ),
-          ),
           Positioned(
             top: 5,
             left: 40.0,
             right: 20.0,
             child: AppBar(
               backgroundColor: Color.fromARGB(115, 22, 78, 180),
-              leading: Icon(
-                Icons.menu,
-                color: Colors.white,
+              leading: IconButton(
+                icon: Icon(
+                  Icons.menu,
+                  color: Colors.white,
+                ),
+                onPressed: () => {},
               ),
               primary: false,
               title: TextField(

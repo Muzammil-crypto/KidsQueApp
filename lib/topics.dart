@@ -1,14 +1,23 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sign_in_interface/Login1.dart';
+import 'package:sign_in_interface/main.dart';
 import 'package:sign_in_interface/topicPage.dart';
 
+import 'ZoomDrawer.dart';
 import 'customAppBar.dart';
 
-class Topics extends StatelessWidget {
+class Topics extends StatefulWidget {
   @override
-  var arr = ['he'];
+  State<Topics> createState() => _TopicsState();
+}
 
+class _TopicsState extends State<Topics> {
+  double value = 0;
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -81,6 +90,8 @@ class Topics extends StatelessWidget {
                 "Sports",
                 "Sport in Pakistan is a significant part of Pakistani culture. Cricket is the most popular sport in Pakistan.",
                 Color.fromARGB(172, 197, 10, 10)),
+
+            //! Gesture For Slide
           ],
         ),
       ),

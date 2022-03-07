@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sign_in_interface/ZoomDrawer.dart';
 import 'package:sign_in_interface/topics.dart';
 
 import 'customAppBar.dart';
@@ -95,8 +96,10 @@ class Login extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: RaisedButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Topics()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DrawerAnimated()));
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0)),

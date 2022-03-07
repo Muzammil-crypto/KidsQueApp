@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
 class topicDetails {
-  final String image, topic, heading, subHeading, history, span;
+  final String image, topic, heading, subHeading, history, heading2, span;
   final int id;
   final Color color;
 
@@ -10,6 +10,7 @@ class topicDetails {
     this.image,
     this.topic,
     this.heading,
+    this.heading2,
     this.subHeading,
     this.history,
     this.span,
@@ -21,12 +22,15 @@ class topicDetails {
 List<topicDetails> topicDetail = [
   topicDetails(
       id: 0,
-      color: Color.fromARGB(172, 5, 8, 190),
+      color: Color.fromARGB(174, 255, 64, 128),
       image: "ccc.png",
       topic: "Culture",
-      heading: "bbb",
+      heading: "History",
       subHeading:
           "Culture can be defined as all the ways of life including arts, beliefs and institutions of a population that are passed down from generation to generation. Culture has been called the way of life for an entire society. As such, it includes codes of manners, dress, language, religion, rituals, art.",
-      history: "1947 to 2022",
-      span: "jjjjjj")
+      history:
+          "Culture can be defined as all the ways of life including arts, beliefs and institutions of a population that are passed down from generation to generation. Culture has been called the way of life for an entire society. As such, it includes codes of manners, dress, language, religion, rituals, art.",
+      heading2: "Span",
+      span:
+          "Culture can be defined as all the ways of life including arts, beliefs and institutions of a population that are passed down from generation to generation. Culture has been called the way of life for an entire society. As such, it includes codes of manners, dress, language, religion, rituals, art.")
 ];

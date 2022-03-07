@@ -1,11 +1,19 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sign_in_interface/Login1.dart';
+
+import 'ZoomDrawer.dart';
 
 class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: DrawerAnimated(),
+      ),
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Container(
           height: MediaQuery.of(context).size.height,

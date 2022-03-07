@@ -20,6 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^2.3.1
+  flutter_zoom_drawer: ^2.3.1
 
 
 
@@ -62,6 +63,7 @@ flutter:
     - sss.png
     - hhh.png
     - ccc.png
+    - pic.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
