@@ -23,13 +23,19 @@ class Login extends StatelessWidget {
                 child: Container(
                   child: Column(
                     children: <Widget>[
-                      Positioned(
-                          child: Container(
-                        height: 200,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('Login.png'))),
-                      )),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 70.0, bottom: 80),
+                        child: Container(
+                          height: 80,
+                          child: Center(
+                            child: Text("Login",
+                                style: TextStyle(
+                                    fontFamily: "BubblegumSans",
+                                    fontSize: 60,
+                                    color: Color.fromARGB(255, 224, 67, 120))),
+                          ),
+                        ),
+                      ),
                       Padding(
                         padding:
                             EdgeInsets.symmetric(vertical: 10, horizontal: 30),
@@ -51,7 +57,9 @@ class Login extends StatelessWidget {
                               ),
                               hintText: 'Enter Your Email here',
                               hintStyle: TextStyle(
-                                  fontSize: 14.0, color: Colors.black)),
+                                  fontFamily: "BubblegumSans",
+                                  fontSize: 14.0,
+                                  color: Colors.yellow.shade900)),
                         ),
                       ),
                       Padding(
@@ -75,7 +83,9 @@ class Login extends StatelessWidget {
                               ),
                               hintText: 'Enter Your Password',
                               hintStyle: TextStyle(
-                                  fontSize: 14.0, color: Colors.black)),
+                                  fontFamily: "BubblegumSans",
+                                  fontSize: 14.0,
+                                  color: Colors.yellow.shade900)),
                         ),
                       ),
                     ],
@@ -118,6 +128,7 @@ class Login extends StatelessWidget {
                           'Login',
                           textAlign: TextAlign.center,
                           style: TextStyle(
+                              fontFamily: "BubblegumSans",
                               color: Colors.white,
                               fontWeight: FontWeight.w400,
                               fontSize: 22),
@@ -129,17 +140,19 @@ class Login extends StatelessWidget {
               ),
               Positioned(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 400.0),
+                  padding: const EdgeInsets.only(top: 330.0),
                   child: Column(
                     children: [
                       SizedBox(
                         height: 10,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 200.0),
+                      Container(
+                        margin: EdgeInsets.only(top: 45, left: 210),
                         child: Text(
                           'Forgot password?',
                           style: TextStyle(
+                            fontFamily: "BubblegumSans",
+                            fontStyle: FontStyle.italic,
                             color: Colors.black,
                           ),
                         ),

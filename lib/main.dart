@@ -56,7 +56,7 @@ class LandingPage extends StatelessWidget {
                   child: RaisedButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Login()));
+                          MaterialPageRoute(builder: (context) => SignUp()));
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0)),
@@ -75,9 +75,10 @@ class LandingPage extends StatelessWidget {
                           'Start Learning',
                           textAlign: TextAlign.center,
                           style: TextStyle(
+                              fontFamily: "BubblegumSans",
                               color: Colors.white,
                               fontWeight: FontWeight.w400,
-                              fontSize: 20),
+                              fontSize: 30),
                         ),
                       ),
                     ),
