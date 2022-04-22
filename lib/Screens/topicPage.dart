@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sign_in_interface/Login1.dart';
-import 'package:sign_in_interface/ZoomDrawer.dart';
-import 'package:sign_in_interface/topicDetails.dart';
-import 'topicDetails.dart';
+import 'package:sign_in_interface/Screens/Login1.dart';
+import 'package:sign_in_interface/Screens/chooice_screen.dart';
+import 'package:sign_in_interface/Widgets/topicDetails.dart';
+import '../Widgets/topicDetails.dart';
 
 class topicPage extends StatelessWidget {
   int topicId;

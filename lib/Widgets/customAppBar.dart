@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import 'Login1.dart';
+import '../Screens/Login1.dart';
 
 class CustomAppBar extends StatelessWidget {
   @override

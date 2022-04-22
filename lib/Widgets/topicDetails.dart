@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// ignore: camel_case_types
 class topicDetails {
   final String image, topic, heading, subHeading, history, heading2, span;
   final int id;
