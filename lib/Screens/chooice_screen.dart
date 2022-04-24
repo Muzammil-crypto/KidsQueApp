@@ -1,6 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:sign_in_interface/Screens/About_us.dart';
+import 'package:sign_in_interface/Screens/Profile.dart';
+import 'package:sign_in_interface/Screens/content.dart';
 import 'package:sign_in_interface/Screens/topics.dart';
 
 class DrawerAnimated extends StatefulWidget {
@@ -35,61 +38,120 @@ class _DrawerAnimatedState extends State<DrawerAnimated> {
             child: Column(
               children: [
                 DrawerHeader(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      CircleAvatar(
-                        radius: 45,
-                        child: Image(image: AssetImage("pic.png")),
+                  child: InkWell(
+                    child: Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          CircleAvatar(
+                            radius: 45,
+                            child: Image(
+                              image: AssetImage("pic.png"),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: Text(
+                              "Muzammil Rafiq",
+                              style: TextStyle(
+                                  fontFamily: "BubblegumSans",
+                                  fontSize: 18,
+                                  color: Colors.white),
+                            ),
+                          ),
+                        ],
                       ),
-                      Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Text(
-                          "Muzammil",
-                          style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                    onTap: () => {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProfileScreen())),
+                    },
+                  ),
+                ),
+                InkWell(
+                  child: Container(
+                    child: const ListTile(
+                      title: Text(
+                        "Home",
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
+                          fontFamily: "BubblegumSans",
                         ),
                       ),
-                    ],
+                      leading: Icon(
+                        Icons.home,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
+                  onTap: () => {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Topics())),
+                  },
                 ),
-                const ListTile(
-                  title: Text(
-                    "Home",
-                    style: TextStyle(fontSize: 15, color: Colors.white),
+                InkWell(
+                  child: Container(
+                    child: const ListTile(
+                      title: Text(
+                        "Settings",
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
+                          fontFamily: "BubblegumSans",
+                        ),
+                      ),
+                      leading: Icon(
+                        Icons.settings,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
-                  leading: Icon(
-                    Icons.home,
-                    color: Colors.white,
-                  ),
+                  onTap: () => {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Topics())),
+                  },
                 ),
-                const ListTile(
-                  title: Text(
-                    "Settings",
-                    style: TextStyle(fontSize: 15, color: Colors.white),
+                InkWell(
+                  child: Container(
+                    child: const ListTile(
+                      title: Text(
+                        "About",
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
+                          fontFamily: "BubblegumSans",
+                        ),
+                      ),
+                      leading: Icon(
+                        Icons.help,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
-                  leading: Icon(
-                    Icons.settings,
-                    color: Colors.white,
-                  ),
+                  onTap: () => {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => AboutUs())),
+                  },
                 ),
-                const ListTile(
-                  title: Text(
-                    "About",
-                    style: TextStyle(fontSize: 15, color: Colors.white),
-                  ),
-                  leading: Icon(
-                    Icons.help,
-                    color: Colors.white,
-                  ),
-                ),
-                const ListTile(
-                  title: Text(
-                    "Exit",
-                    style: TextStyle(fontSize: 15, color: Colors.white),
-                  ),
-                  leading: Icon(
-                    Icons.exit_to_app,
-                    color: Colors.white,
+                InkWell(
+                  child: Container(
+                    child: const ListTile(
+                      title: Text(
+                        "Exit",
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
+                          fontFamily: "BubblegumSans",
+                        ),
+                      ),
+                      leading: Icon(
+                        Icons.exit_to_app,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
               ],

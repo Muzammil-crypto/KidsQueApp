@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sign_in_interface/Widgets/youtube_player_screen.dart';
 
 import '../Widgets/Clipper.dart';
 
@@ -59,7 +60,7 @@ class ContentScreen extends StatelessWidget {
                                       "The mosque was commissioned by the chief physician to the Mughal Court, Hakeem Ilam-ud-din Ansari, who was widely known as Wazir KhanThe mosque was commissioned by the chief physician to the Mughal Court, Hakeem Ilam-ud-din Ansari, who was widely known as Wazir Khan, The mosque was commissioned by the chief physician to the Mughal Court, Hakeem Ilam-ud-din Ansari, who was widely known as Wazir KhanThe mosque was commissioned by the chief physician to the Mughal Court, Hakeem Ilam-ud-din Ansari, who was widely known as Wazir Khan",
                                       style: TextStyle(
                                           fontFamily: "BubblegumSans",
-                                          fontSize: 25,
+                                          fontSize: 24,
                                           color: Colors.white),
                                     ),
                                   ],
@@ -74,21 +75,19 @@ class ContentScreen extends StatelessWidget {
                                     BorderRadius.all(Radius.circular(20))),
                           ),
                         ),
-                        Positioned(
-                          child: Column(
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(top: 25),
-                                child: Text(
-                                  "Related Video",
-                                  style: TextStyle(
-                                      fontFamily: "BubblegumSans",
-                                      fontSize: 45,
-                                      color: Colors.white),
-                                ),
+                        Column(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(top: 25),
+                              child: Text(
+                                "Related Video",
+                                style: TextStyle(
+                                    fontFamily: "Flavors",
+                                    fontSize: 40,
+                                    color: Colors.white),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -98,16 +97,125 @@ class ContentScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         Container(
-                          height: 200,
-                          width: MediaQuery.of(context).size.width / 1.2,
+                          height: MediaQuery.of(context).size.height / 3.4,
+                          width: MediaQuery.of(context).size.width / 1.1,
                           decoration: BoxDecoration(
-                              color: Colors.black,
+                              color: Colors.white,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20))),
-                        )
+                          child: Container(
+                            margin: EdgeInsets.all(10),
+                            child: YoutubeScreen(
+                              title: "Video",
+                              url: "https://youtu.be/qcGTPMj63Aw",
+                            ),
+                          ),
+                        ),
                       ],
                     ),
-                  )
+                  ),
+                  Positioned(
+                      top: MediaQuery.of(context).size.height / 0.72,
+                      child: Container(
+                          child: Text(
+                        "Related Places",
+                        style: TextStyle(
+                            fontFamily: "Flavors",
+                            fontSize: 40,
+                            color: Colors.white),
+                      ))),
+                  Positioned(
+                    top: MediaQuery.of(context).size.height / 0.67,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        left: 20.0,
+                      ),
+                      child: SizedBox(
+                        height: 120,
+                        width: MediaQuery.of(context).size.width,
+                        child: ListView(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.only(right: 5),
+                              height: 120,
+                              width: 120.0,
+                              child: CircleAvatar(
+                                  backgroundImage: NetworkImage(
+                                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHBVFSOJ6Ll438ccvbWTFPFBkDeITdUfoPOA&usqp=CAU")),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(right: 5),
+                              height: 120,
+                              width: 120.0,
+                              child: CircleAvatar(
+                                  backgroundImage: NetworkImage(
+                                      "https://www.explorerpakistan.com/wp-content/uploads/2019/09/1-lahore-fort-800x445.jpg")),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(right: 5),
+                              height: 120,
+                              width: 120.0,
+                              child: CircleAvatar(
+                                  backgroundImage: NetworkImage(
+                                      "https://www.croozi.com/upload/loc1024/AllamaIqbalTomb2072016.jpg")),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(right: 5),
+                              height: 120,
+                              width: 120.0,
+                              child: CircleAvatar(
+                                  backgroundImage: NetworkImage(
+                                      "https://pbs.twimg.com/media/DN0CNlDWkAIbhBf.jpg")),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(right: 5),
+                              height: 120,
+                              width: 120.0,
+                              child: CircleAvatar(
+                                  backgroundImage: NetworkImage(
+                                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHBVFSOJ6Ll438ccvbWTFPFBkDeITdUfoPOA&usqp=CAU")),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: MediaQuery.of(context).size.height / 10,
+                    child: SingleChildScrollView(
+                      child: RaisedButton(
+                        onPressed: () {},
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(80.0)),
+                        padding: const EdgeInsets.all(0.0),
+                        child: Ink(
+                          decoration: const BoxDecoration(
+                            color: Color(0xFFF57F17),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(80.0)),
+                          ),
+                          child: Container(
+                            constraints: const BoxConstraints(
+                                minWidth: 320.0,
+                                minHeight:
+                                    40.0), // min sizes for Material buttons
+                            alignment: Alignment.center,
+                            child: const Text(
+                              'Visit the Place',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontFamily: "BubblegumSans",
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 25),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

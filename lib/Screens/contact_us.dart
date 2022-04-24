@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sign_in_interface/Widgets/Clipper.dart';
 
-import '../Widgets/Clipper.dart';
-import 'Signup.dart';
-
-class SplashScreen extends StatelessWidget {
+class ContactUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,37 +19,7 @@ class SplashScreen extends StatelessWidget {
               alignment: Alignment.center,
               children: <Widget>[
                 Positioned(
-                    child: Padding(
-                  padding: const EdgeInsets.only(bottom: 0, right: 120),
-                  child: Container(
-                    height: MediaQuery.of(context).size.height / 2.2,
-                    width: MediaQuery.of(context).size.width,
-                    child: Column(children: [
-                      Container(
-                        child: Text(
-                          "PakQue",
-                          style: TextStyle(
-                              fontFamily: "Flavors",
-                              fontSize: 50,
-                              color: Colors.white),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(
-                            left: MediaQuery.of(context).size.width / 3.5),
-                        child: Text(
-                          "Kid",
-                          style: TextStyle(
-                              fontFamily: "BubblegumSans",
-                              fontSize: 70,
-                              color: Color.fromARGB(255, 255, 86, 142)),
-                        ),
-                      )
-                    ]),
-                  ),
-                )),
-                Positioned(
-                    top: MediaQuery.of(context).size.height / 2.5,
+                    top: MediaQuery.of(context).size.height / 7,
                     child: Padding(
                       padding: const EdgeInsets.only(top: 15.0),
                       child: Container(
@@ -63,13 +31,42 @@ class SplashScreen extends StatelessWidget {
                       ),
                     )),
                 Positioned(
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 15),
+                    child: Container(
+                      margin: EdgeInsets.all(10),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            Text(
+                              "Contact Us",
+                              style: TextStyle(
+                                  fontFamily: "BubblegumSans",
+                                  fontSize: 50,
+                                  color: Colors.white),
+                            ),
+                            Text(
+                              "The mosque was commissioned by the chief physician to the Mughal Court, Hakeem Ilam-ud-din Ansari, who was widely known as Wazir KhanThe mosque was commissioned by the chief physician to the Mughal Court, Hakeem Ilam-ud-din Ansari, who was widely known as Wazir Khan, The mosque was commissioned by the chief physician to the Mughal Court, Hakeem Ilam-ud-din Ansari, who was widely known as Wazir KhanThe mosque was commissioned by the chief physician to the Mughal Court, Hakeem Ilam-ud-din Ansari, who was widely known as Wazir Khan",
+                              style: TextStyle(
+                                  fontFamily: "BubblegumSans",
+                                  fontSize: 24,
+                                  color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    height: MediaQuery.of(context).size.height / 1.5,
+                    width: MediaQuery.of(context).size.width / 1.2,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(171, 255, 142, 142),
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                  ),
+                ),
+                Positioned(
                   bottom: 50,
                   child: SingleChildScrollView(
                     child: RaisedButton(
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => SignUp()));
-                      },
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(80.0)),
                       padding: const EdgeInsets.all(0.0),
@@ -85,7 +82,7 @@ class SplashScreen extends StatelessWidget {
                                   50.0), // min sizes for Material buttons
                           alignment: Alignment.center,
                           child: const Text(
-                            'Start Learning',
+                            'Contact Us',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontFamily: "BubblegumSans",

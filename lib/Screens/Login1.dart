@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sign_in_interface/Screens/Signup.dart';
 import 'package:sign_in_interface/Screens/chooice_screen.dart';
 import 'package:sign_in_interface/Screens/topics.dart';
 
@@ -19,10 +20,27 @@ class Login extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('bg1.jpg'), fit: BoxFit.fill)),
+                    image: AssetImage('bgb.png'), fit: BoxFit.fill)),
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
+                Positioned(
+                    top: 60,
+                    left: 20,
+                    child: Container(
+                      height: MediaQuery.of(context).size.height / 10,
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.arrow_back_ios,
+                          size: 20,
+                          color: Colors.black,
+                        ),
+                        onPressed: () => {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => SignUp()))
+                        },
+                      ),
+                    )),
                 Positioned(
                   child: Container(
                     margin: EdgeInsets.only(
@@ -36,10 +54,10 @@ class Login extends StatelessWidget {
                               child: Center(
                                 child: Text("Login",
                                     style: TextStyle(
-                                        fontFamily: "BubblegumSans",
+                                        fontFamily: "Flavors",
                                         fontSize: 60,
                                         color:
-                                            Color.fromARGB(255, 224, 67, 120))),
+                                            Color.fromARGB(255, 255, 88, 143))),
                               )),
                         ),
                         Padding(
@@ -65,7 +83,7 @@ class Login extends StatelessWidget {
                                 hintStyle: TextStyle(
                                     fontFamily: "BubblegumSans",
                                     fontSize: 14.0,
-                                    color: Colors.yellow.shade900)),
+                                    color: Colors.black)),
                           ),
                         ),
                         Padding(
@@ -91,7 +109,7 @@ class Login extends StatelessWidget {
                                 hintStyle: TextStyle(
                                     fontFamily: "BubblegumSans",
                                     fontSize: 14.0,
-                                    color: Colors.yellow.shade900)),
+                                    color: Colors.black)),
                           ),
                         ),
                       ],
@@ -99,16 +117,16 @@ class Login extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: MediaQuery.of(context).size.height / 1.7,
+                  top: MediaQuery.of(context).size.height / 2,
                   child: Container(
-                    height: 400,
+                    height: MediaQuery.of(context).size.height / 2.2,
                     width: 400,
                     decoration: BoxDecoration(
                         image: DecorationImage(image: AssetImage('svg.png'))),
                   ),
                 ),
                 Positioned(
-                  bottom: MediaQuery.of(context).size.height / 3.2,
+                  bottom: MediaQuery.of(context).size.height / 4,
                   child: SingleChildScrollView(
                     child: RaisedButton(
                       onPressed: () {
@@ -155,7 +173,7 @@ class Login extends StatelessWidget {
                         ),
                         Container(
                           margin: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height / 5.5,
+                              top: MediaQuery.of(context).size.height / 4.2,
                               left: 210),
                           child: Text(
                             'Forgot password?',

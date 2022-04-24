@@ -19,7 +19,7 @@ class SignUp extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('bg1.jpg'), fit: BoxFit.cover)),
+                    image: AssetImage('bgb.png'), fit: BoxFit.cover)),
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
@@ -40,8 +40,7 @@ class SignUp extends StatelessWidget {
                                   style: TextStyle(
                                       fontFamily: "BubblegumSans",
                                       fontSize: 60,
-                                      color:
-                                          Color.fromARGB(255, 255, 109, 24))),
+                                      color: Color.fromARGB(255, 255, 88, 88))),
                             ),
                           ),
                         ),
@@ -68,7 +67,7 @@ class SignUp extends StatelessWidget {
                                 hintStyle: TextStyle(
                                     fontFamily: "BubblegumSans",
                                     fontSize: 14.0,
-                                    color: Colors.yellow.shade900)),
+                                    color: Colors.black)),
                           ),
                         ),
                         Padding(
@@ -94,7 +93,7 @@ class SignUp extends StatelessWidget {
                                 hintStyle: TextStyle(
                                     fontFamily: "BubblegumSans",
                                     fontSize: 14.0,
-                                    color: Colors.yellow.shade900)),
+                                    color: Colors.black)),
                           ),
                         ),
                         Padding(
@@ -120,7 +119,7 @@ class SignUp extends StatelessWidget {
                                 hintStyle: TextStyle(
                                     fontFamily: "BubblegumSans",
                                     fontSize: 14.0,
-                                    color: Colors.yellow.shade900)),
+                                    color: Colors.black)),
                           ),
                         ),
                         Padding(
@@ -146,7 +145,7 @@ class SignUp extends StatelessWidget {
                                 hintStyle: TextStyle(
                                     fontFamily: "BubblegumSans",
                                     fontSize: 14.0,
-                                    color: Colors.yellow.shade900)),
+                                    color: Colors.black)),
                           ),
                         ),
                       ],
