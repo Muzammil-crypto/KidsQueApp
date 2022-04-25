@@ -20,7 +20,7 @@ class DetailsHeroScreen extends StatelessWidget {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height / 1.8,
-                  child: Image.asset("majj.png"),
+                  child: Image.asset("assets/majj.png"),
                 ),
                 Column(children: [
                   Container(

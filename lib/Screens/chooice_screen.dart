@@ -7,7 +7,7 @@ import 'package:sign_in_interface/Screens/content.dart';
 import 'package:sign_in_interface/Screens/topics.dart';
 
 class DrawerAnimated extends StatefulWidget {
-  const DrawerAnimated({Key key}) : super(key: key);
+  const DrawerAnimated({Key? key}) : super(key: key);
 
   @override
   _DrawerAnimatedState createState() => _DrawerAnimatedState();
@@ -44,9 +44,9 @@ class _DrawerAnimatedState extends State<DrawerAnimated> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
                           CircleAvatar(
-                            radius: 45,
+                            radius: 40,
                             child: Image(
-                              image: AssetImage("pic.png"),
+                              image: AssetImage("assets/pic.png"),
                             ),
                           ),
                           Padding(
@@ -110,8 +110,10 @@ class _DrawerAnimatedState extends State<DrawerAnimated> {
                     ),
                   ),
                   onTap: () => {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Topics())),
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProfileScreen())),
                   },
                 ),
                 InkWell(

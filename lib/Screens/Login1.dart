@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sign_in_interface/Screens/Signup.dart';
 import 'package:sign_in_interface/Screens/chooice_screen.dart';
 import 'package:sign_in_interface/Screens/topics.dart';
@@ -20,7 +19,7 @@ class Login extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('bgb.png'), fit: BoxFit.fill)),
+                    image: AssetImage('assets/bgb.png'), fit: BoxFit.fill)),
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
@@ -122,7 +121,8 @@ class Login extends StatelessWidget {
                     height: MediaQuery.of(context).size.height / 2.2,
                     width: 400,
                     decoration: BoxDecoration(
-                        image: DecorationImage(image: AssetImage('svg.png'))),
+                        image: DecorationImage(
+                            image: AssetImage('assets/svg.png'))),
                   ),
                 ),
                 Positioned(

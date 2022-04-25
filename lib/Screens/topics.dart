@@ -1,26 +1,20 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:timeline_list/timeline.dart';
+
 import 'package:sign_in_interface/Screens/Login1.dart';
 import 'package:sign_in_interface/Screens/content.dart';
 import 'package:sign_in_interface/Screens/hero_screen.dart';
 import 'package:sign_in_interface/Screens/timeline_screen.dart';
 import 'package:sign_in_interface/main.dart';
-import 'package:timeline_list/timeline.dart';
 
 import '../Widgets/Clipper.dart';
-import 'chooice_screen.dart';
 import '../Widgets/customAppBar.dart';
+import 'chooice_screen.dart';
 
 class Topics extends StatefulWidget {
   @override
-  final String ImageUrl;
-  final String title;
-  final String description;
-
-  const Topics({Key key, this.ImageUrl, this.title, this.description});
-
   State<Topics> createState() => _TopicsState();
 }
 
@@ -31,7 +25,7 @@ class _TopicsState extends State<Topics> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.yellow.shade900,
-      extendBodyBehindAppBar: false,
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         automaticallyImplyLeading: true,
         elevation: 0.0,
@@ -48,12 +42,12 @@ class _TopicsState extends State<Topics> {
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('bgb.png'), fit: BoxFit.cover),
+                image: AssetImage('assets/bgb.png'), fit: BoxFit.cover),
           ),
           child: ListView(
             children: [
               Container(
-                margin: EdgeInsets.only(right: 350, top: 10),
+                margin: EdgeInsets.only(left: 350, top: 10),
                 child: IconButton(
                   icon: Icon(Icons.arrow_back),
                   onPressed: () => {
@@ -64,32 +58,30 @@ class _TopicsState extends State<Topics> {
               ),
               Container(
                 margin: EdgeInsets.only(
-                  left: 30,
-                  right: 30,
+                  left: 10,
+                  right: 10,
                 ),
-                child: Center(
-                  child: Text(
-                    "Learn About Pakistan",
-                    style: TextStyle(
-                        fontFamily: "BubblegumSans",
-                        fontSize: 40.0,
-                        color: Color.fromARGB(255, 255, 75, 135),
-                        fontWeight: FontWeight.bold,
-                        fontStyle: FontStyle.italic),
-                  ),
+                child: Text(
+                  "All About Pakistan",
+                  style: TextStyle(
+                      fontFamily: "BubblegumSans",
+                      fontSize: 35.0,
+                      color: Color.fromARGB(255, 255, 75, 135),
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic),
                 ),
-                height: MediaQuery.of(context).size.height / 9,
+                height: MediaQuery.of(context).size.height / 8,
                 width: MediaQuery.of(context).size.width,
               ),
-              getContainer("Provinces.png", "Explore\n Provinces",
+              getContainer("assets/Provinces.png", "Explore\n Provinces",
                   Color.fromARGB(190, 255, 152, 18), ContentScreen()),
-              getContainer("Cities.png", "Explore\n Cities",
+              getContainer("assets/Cities.png", "Explore\n Cities",
                   Color.fromARGB(200, 255, 99, 151), ContentScreen()),
-              getContainer("majj.png", "Explore\n Heroes",
+              getContainer("assets/majj.png", "Explore\n Heroes",
                   Color.fromARGB(175, 0, 110, 124), HeroesScreen(2)),
-              getContainer("Cities.png", "Explore\n History",
+              getContainer("assets/Cities.png", "Explore\n History",
                   Color.fromARGB(220, 25, 109, 0), TimelineWidget()),
-              getContainer("River.png", "Explore\n Rivers",
+              getContainer("assets/River.png", "Explore\n Rivers",
                   Color.fromARGB(120, 212, 0, 0), ContentScreen()),
             ],
           ),
@@ -100,9 +92,9 @@ class _TopicsState extends State<Topics> {
 }
 
 class getContainer extends StatelessWidget {
-  String imgName;
-  String heading;
-  Color color;
+  late String imgName;
+  late String heading;
+  late Color color;
   final Widget pageToShow;
 
   getContainer(String imgName, String heading, Color color, this.pageToShow) {

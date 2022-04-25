@@ -16,7 +16,7 @@ class SplashScreen extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('bgb.png'), fit: BoxFit.cover)),
+                    image: AssetImage('assets/bgb.png'), fit: BoxFit.cover)),
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
@@ -58,8 +58,8 @@ class SplashScreen extends StatelessWidget {
                         height: MediaQuery.of(context).size.height / 2.4,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
-                            image:
-                                DecorationImage(image: AssetImage('svg.png'))),
+                            image: DecorationImage(
+                                image: AssetImage('assets/svg.png'))),
                       ),
                     )),
                 Positioned(

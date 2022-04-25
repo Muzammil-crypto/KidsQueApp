@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sign_in_interface/Screens/content.dart';
+import 'package:sign_in_interface/Screens/topics.dart';
 import 'package:sign_in_interface/Widgets/Clipper.dart';
 import 'package:timeline_list/timeline.dart';
 import 'package:timeline_list/timeline_model.dart';
@@ -27,7 +29,14 @@ class TimelineWidget extends StatelessWidget {
                           children: [
                             Container(
                               child: IconButton(
-                                  onPressed: () => {},
+                                  onPressed: () => {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: ((context) => Topics()),
+                                          ),
+                                        )
+                                      },
                                   icon: Icon(
                                     Icons.arrow_back_ios,
                                     size: 20,
@@ -63,486 +72,83 @@ class TimelineWidget extends StatelessWidget {
                         width: MediaQuery.of(context).size.width,
                         child: Timeline(
                           children: <TimelineModel>[
+//********************************************************************************************************************** */
                             TimelineModel(
-                              Container(
-                                margin: EdgeInsets.all(10),
-                                height:
-                                    MediaQuery.of(context).size.height / 4.8,
-                                width: MediaQuery.of(context).size.width / 2,
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 5,
-                                      blurRadius: 7,
-                                      offset: Offset(
-                                          0, 3), // changes position of shadow
-                                    ),
-                                  ],
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Center(
-                                    child: Column(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        // color: Colors.green,
-                                      ),
-                                      margin: EdgeInsets.all(10),
-                                      height:
-                                          MediaQuery.of(context).size.height /
-                                              11,
-                                      width: 100,
-                                      child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt3dABDzZ3cyuuz-pl-GmGJWebKbcx3rqw6Q&usqp=CAU"),
-                                        radius: 10,
-                                      ),
-                                    ),
-                                    Text(
-                                      "1947-2012",
-                                      style: TextStyle(
-                                          fontSize: 10, fontFamily: "Flavors"),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.all(10),
-                                      child: Text(
-                                        "Dr. Allama Muhammad Iqbal",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: "BubblegumSans"),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    )
-                                  ],
-                                )),
-                              ),
+                              getTimeline(
+                                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt3dABDzZ3cyuuz-pl-GmGJWebKbcx3rqw6Q&usqp=CAU",
+                                  "Allama Muhammad Iqbal",
+                                  "1970-1975",
+                                  ContentScreen()),
                               icon: Icon(Icons.history_edu_outlined),
-                              iconBackground: Colors.cyan,
+                              iconBackground: Colors.pink,
                               position: TimelineItemPosition.right,
                             ),
                             TimelineModel(
-                              Container(
-                                margin: EdgeInsets.all(10),
-                                height:
-                                    MediaQuery.of(context).size.height / 4.8,
-                                width: MediaQuery.of(context).size.width / 2,
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 5,
-                                      blurRadius: 7,
-                                      offset: Offset(0, 3),
-                                    ),
-                                  ],
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Center(
-                                    child: Column(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        // color: Colors.green,
-                                      ),
-                                      margin: EdgeInsets.all(10),
-                                      height:
-                                          MediaQuery.of(context).size.height /
-                                              11,
-                                      width: 100,
-                                      child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7a6Nw3m_M9kZSRxSKrMQXHCotvnnFilAr9w&usqp=CAU"),
-                                        radius: 10,
-                                      ),
-                                    ),
-                                    Text(
-                                      "1947-2012",
-                                      style: TextStyle(
-                                          fontSize: 10, fontFamily: "Flavors"),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.all(10),
-                                      // height: MediaQuery.of(context).size.height / 11,
-                                      child: Text(
-                                        "General. Pervaiz Musharraf",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: "BubblegumSans"),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    )
-                                  ],
-                                )),
-                              ),
-                              icon: Icon(Icons.generating_tokens_outlined),
-                              iconBackground: Colors.green,
+                              getTimeline(
+                                  "https://c8.alamy.com/comp/A7KR0G/pakistan-general-mohammed-zia-ul-haq-president-zia-A7KR0G.jpg",
+                                  "General Zia-ul-haq",
+                                  "1970-1975",
+                                  ContentScreen()),
+                              icon: Icon(Icons.history_edu_outlined),
+                              iconBackground: Colors.pink,
                               position: TimelineItemPosition.left,
                             ),
                             TimelineModel(
-                              Container(
-                                margin: EdgeInsets.all(10),
-                                height:
-                                    MediaQuery.of(context).size.height / 4.8,
-                                width: MediaQuery.of(context).size.width / 2,
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 5,
-                                      blurRadius: 7,
-                                      offset: Offset(
-                                          0, 3), // changes position of shadow
-                                    ),
-                                  ],
-                                  borderRadius: BorderRadius.circular(20),
-                                  // color: Colors.black12,
-                                ),
-                                child: Center(
-                                    child: Column(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        // color: Colors.green,
-                                      ),
-                                      margin: EdgeInsets.all(10),
-                                      height:
-                                          MediaQuery.of(context).size.height /
-                                              11,
-                                      width: 100,
-                                      child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://ournationalheroes.com/wp-content/uploads/2021/04/Untitled-1-1.png"),
-                                        radius: 10,
-                                      ),
-                                    ),
-                                    Text(
-                                      "1947-2012",
-                                      style: TextStyle(
-                                          fontSize: 10, fontFamily: "Flavors"),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.all(10),
-                                      // height: MediaQuery.of(context).size.height / 11,
-                                      child: Text(
-                                        "Quid e Azam Muhammad Ali Jinnah",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: "BubblegumSans"),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    )
-                                  ],
-                                )),
-                              ),
+                              getTimeline(
+                                  "https://images.thequint.com/thequint%2F2019-10%2F29103f21-e4bc-44df-af1d-c690630b56c5%2FHero_Image__12_.jpg?rect=0%2C0%2C2000%2C1125",
+                                  "Liaqat Ali Khan",
+                                  "1970-1975",
+                                  ContentScreen()),
                               icon: Icon(Icons.history_edu_outlined),
-                              iconBackground: Colors.red,
+                              iconBackground: Colors.pink,
                               position: TimelineItemPosition.right,
                             ),
                             TimelineModel(
-                              Container(
-                                margin: EdgeInsets.all(10),
-                                height:
-                                    MediaQuery.of(context).size.height / 4.8,
-                                width: MediaQuery.of(context).size.width / 2,
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 5,
-                                      blurRadius: 7,
-                                      offset: Offset(
-                                          0, 3), // changes position of shadow
-                                    ),
-                                  ],
-                                  borderRadius: BorderRadius.circular(20),
-                                  // color: Colors.black12,
-                                ),
-                                child: Center(
-                                    child: Column(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        // color: Colors.green,
-                                      ),
-                                      margin: EdgeInsets.all(10),
-                                      height:
-                                          MediaQuery.of(context).size.height /
-                                              11,
-                                      width: 100,
-                                      child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://images.thequint.com/thequint%2F2019-10%2F29103f21-e4bc-44df-af1d-c690630b56c5%2FHero_Image__12_.jpg?rect=0%2C0%2C2000%2C1125"),
-                                        radius: 10,
-                                      ),
-                                    ),
-                                    Text(
-                                      "1947-2012",
-                                      style: TextStyle(
-                                          fontSize: 10, fontFamily: "Flavors"),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.all(10),
-                                      // height: MediaQuery.of(context).size.height / 11,
-                                      child: Text(
-                                        "Liaqat Ali Khan",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: "BubblegumSans"),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    )
-                                  ],
-                                )),
-                              ),
+                              getTimeline(
+                                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7a6Nw3m_M9kZSRxSKrMQXHCotvnnFilAr9w&usqp=CAU",
+                                  "General Pervaiz Musharraf",
+                                  "1970-1975",
+                                  ContentScreen()),
                               icon: Icon(Icons.history_edu_outlined),
-                              iconBackground: Colors.brown,
+                              iconBackground: Colors.pink,
                               position: TimelineItemPosition.left,
                             ),
                             TimelineModel(
-                              Container(
-                                margin: EdgeInsets.all(10),
-                                height:
-                                    MediaQuery.of(context).size.height / 4.8,
-                                width: MediaQuery.of(context).size.width / 2,
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 5,
-                                      blurRadius: 7,
-                                      offset: Offset(
-                                          0, 3), // changes position of shadow
-                                    ),
-                                  ],
-                                  borderRadius: BorderRadius.circular(20),
-                                  // color: Colors.black12,
-                                ),
-                                child: Center(
-                                    child: Column(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        // color: Colors.green,
-                                      ),
-                                      margin: EdgeInsets.all(10),
-                                      height:
-                                          MediaQuery.of(context).size.height /
-                                              11,
-                                      width: 100,
-                                      child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://images.thequint.com/thequint%2F2019-10%2F29103f21-e4bc-44df-af1d-c690630b56c5%2FHero_Image__12_.jpg?rect=0%2C0%2C2000%2C1125"),
-                                        radius: 10,
-                                      ),
-                                    ),
-                                    Text(
-                                      "1947-2012",
-                                      style: TextStyle(
-                                          fontSize: 10, fontFamily: "Flavors"),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.all(10),
-                                      // height: MediaQuery.of(context).size.height / 11,
-                                      child: Text(
-                                        "Liaqat Ali Khan",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: "BubblegumSans"),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    )
-                                  ],
-                                )),
-                              ),
+                              getTimeline(
+                                  "https://ournationalheroes.com/wp-content/uploads/2021/04/Untitled-1-1.png",
+                                  "Quid e Azam Muhammad Ali Jinnah",
+                                  "1970-1975",
+                                  ContentScreen()),
                               icon: Icon(Icons.history_edu_outlined),
-                              iconBackground: Colors.orange,
+                              iconBackground: Colors.pink,
                               position: TimelineItemPosition.right,
                             ),
                             TimelineModel(
-                              Container(
-                                margin: EdgeInsets.all(10),
-                                height:
-                                    MediaQuery.of(context).size.height / 4.8,
-                                width: MediaQuery.of(context).size.width / 2,
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 5,
-                                      blurRadius: 7,
-                                      offset: Offset(
-                                          0, 3), // changes position of shadow
-                                    ),
-                                  ],
-                                  borderRadius: BorderRadius.circular(20),
-                                  // color: Colors.black12,
-                                ),
-                                child: Center(
-                                    child: Column(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        // color: Colors.green,
-                                      ),
-                                      margin: EdgeInsets.all(10),
-                                      height:
-                                          MediaQuery.of(context).size.height /
-                                              11,
-                                      width: 100,
-                                      child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://images.thequint.com/thequint%2F2019-10%2F29103f21-e4bc-44df-af1d-c690630b56c5%2FHero_Image__12_.jpg?rect=0%2C0%2C2000%2C1125"),
-                                        radius: 10,
-                                      ),
-                                    ),
-                                    Text(
-                                      "1947-2012",
-                                      style: TextStyle(
-                                          fontSize: 10, fontFamily: "Flavors"),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.all(10),
-                                      // height: MediaQuery.of(context).size.height / 11,
-                                      child: Text(
-                                        "Liaqat Ali Khan",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: "BubblegumSans"),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    )
-                                  ],
-                                )),
-                              ),
+                              getTimeline(
+                                  "https://www.seekpng.com/png/detail/127-1270162_benazir-bhutto-png-images-benazir-bhutto.png",
+                                  "Benazir Bhutto",
+                                  "1970-1975",
+                                  ContentScreen()),
                               icon: Icon(Icons.history_edu_outlined),
-                              iconBackground: Colors.blueAccent,
+                              iconBackground: Colors.pink,
                               position: TimelineItemPosition.left,
                             ),
                             TimelineModel(
-                              Container(
-                                margin: EdgeInsets.all(10),
-                                height:
-                                    MediaQuery.of(context).size.height / 4.8,
-                                width: MediaQuery.of(context).size.width / 2,
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 5,
-                                      blurRadius: 7,
-                                      offset: Offset(
-                                          0, 3), // changes position of shadow
-                                    ),
-                                  ],
-                                  borderRadius: BorderRadius.circular(20),
-                                  // color: Colors.black12,
-                                ),
-                                child: Center(
-                                    child: Column(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        // color: Colors.green,
-                                      ),
-                                      margin: EdgeInsets.all(10),
-                                      height:
-                                          MediaQuery.of(context).size.height /
-                                              11,
-                                      width: 100,
-                                      child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://images.thequint.com/thequint%2F2019-10%2F29103f21-e4bc-44df-af1d-c690630b56c5%2FHero_Image__12_.jpg?rect=0%2C0%2C2000%2C1125"),
-                                        radius: 10,
-                                      ),
-                                    ),
-                                    Text(
-                                      "1947-2012",
-                                      style: TextStyle(
-                                          fontSize: 10, fontFamily: "Flavors"),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.all(10),
-                                      // height: MediaQuery.of(context).size.height / 11,
-                                      child: Text(
-                                        "Liaqat Ali Khan",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: "BubblegumSans"),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    )
-                                  ],
-                                )),
-                              ),
+                              getTimeline(
+                                  "https://img.etimg.com/thumb/width-1200,height-900,imgsize-77615,resizemode-1,msid-44856323/news/international/world-news/pakistan-government-wants-peace-within-and-outside-borders-nawaz-sharif.jpg",
+                                  "Mian Muhammad Nawaz Shareef",
+                                  "1970-1975",
+                                  ContentScreen()),
                               icon: Icon(Icons.history_edu_outlined),
-                              iconBackground: Colors.blueGrey,
+                              iconBackground: Colors.pink,
                               position: TimelineItemPosition.right,
                             ),
                             TimelineModel(
-                              Container(
-                                margin: EdgeInsets.all(10),
-                                height:
-                                    MediaQuery.of(context).size.height / 4.8,
-                                width: MediaQuery.of(context).size.width / 2,
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 5,
-                                      blurRadius: 7,
-                                      offset: Offset(
-                                          0, 3), // changes position of shadow
-                                    ),
-                                  ],
-                                  borderRadius: BorderRadius.circular(20),
-                                  // color: Colors.black12,
-                                ),
-                                child: Center(
-                                    child: Column(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        // color: Colors.green,
-                                      ),
-                                      margin: EdgeInsets.all(10),
-                                      height:
-                                          MediaQuery.of(context).size.height /
-                                              11,
-                                      width: 100,
-                                      child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://images.thequint.com/thequint%2F2019-10%2F29103f21-e4bc-44df-af1d-c690630b56c5%2FHero_Image__12_.jpg?rect=0%2C0%2C2000%2C1125"),
-                                        radius: 10,
-                                      ),
-                                    ),
-                                    Text(
-                                      "1947-2012",
-                                      style: TextStyle(
-                                          fontSize: 10, fontFamily: "Flavors"),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.all(10),
-                                      // height: MediaQuery.of(context).size.height / 11,
-                                      child: Text(
-                                        "Liaqat Ali Khan",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: "BubblegumSans"),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    )
-                                  ],
-                                )),
-                              ),
+                              getTimeline(
+                                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHQRVOoU49C_KypojIvmthXuO3EZ_e0fkcAOzScmWbGDk_SXpt4EgSHql7l4IBjvLlm7s&usqp=CAU",
+                                  "Imran Khan",
+                                  "1970-1975",
+                                  ContentScreen()),
                               icon: Icon(Icons.history_edu_outlined),
                               iconBackground: Colors.pink,
                               position: TimelineItemPosition.left,
@@ -559,6 +165,80 @@ class TimelineWidget extends StatelessWidget {
                 ],
               ),
             ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class getTimeline extends StatelessWidget {
+  late String imgName;
+  late String heading;
+  late String date;
+  final Widget pageToShow;
+  getTimeline(String imgName, String heading, String date, this.pageToShow) {
+    this.imgName = imgName;
+    this.heading = heading;
+    this.date = date;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: GestureDetector(
+        onTap: () => {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => pageToShow)),
+        },
+        child: Container(
+          child: Container(
+            margin: EdgeInsets.all(10),
+            height: MediaQuery.of(context).size.height / 4.8,
+            width: MediaQuery.of(context).size.width / 2,
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+              ],
+              borderRadius: BorderRadius.circular(20),
+              // color: Colors.black12,
+            ),
+            child: Center(
+                child: Column(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    // color: Colors.green,
+                  ),
+                  margin: EdgeInsets.all(10),
+                  height: MediaQuery.of(context).size.height / 11,
+                  width: 100,
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(imgName),
+                    radius: 10,
+                  ),
+                ),
+                Text(
+                  date,
+                  style: TextStyle(fontSize: 10, fontFamily: "Flavors"),
+                ),
+                Container(
+                  margin: EdgeInsets.all(10),
+                  // height: MediaQuery.of(context).size.height / 11,
+                  child: Text(
+                    heading,
+                    style: TextStyle(fontSize: 12, fontFamily: "BubblegumSans"),
+                    textAlign: TextAlign.center,
+                  ),
+                )
+              ],
+            )),
           ),
         ),
       ),

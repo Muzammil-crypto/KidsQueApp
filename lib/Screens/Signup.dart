@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sign_in_interface/Screens/Login1.dart';
 
 import '../Widgets/Clipper.dart';
@@ -19,7 +18,7 @@ class SignUp extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('bgb.png'), fit: BoxFit.cover)),
+                    image: AssetImage('assets/bgb.png'), fit: BoxFit.cover)),
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
@@ -158,7 +157,8 @@ class SignUp extends StatelessWidget {
                     height: 360,
                     width: 400,
                     decoration: BoxDecoration(
-                        image: DecorationImage(image: AssetImage('svg.png'))),
+                        image: DecorationImage(
+                            image: AssetImage('assets/svg.png'))),
                   ),
                 ),
                 Positioned(
@@ -217,74 +217,6 @@ class SignUp extends StatelessWidget {
                               fontSize: 20),
                         ),
                       ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  bottom: MediaQuery.of(context).size.height / 12,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 0.0),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.blue,
-                                ),
-                                child: Center(
-                                  child: FaIcon(
-                                    FontAwesomeIcons.facebook,
-                                    size: 25,
-                                    color: Colors.white70,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.blue,
-                                ),
-                                child: Center(
-                                  child: FaIcon(
-                                    FontAwesomeIcons.twitter,
-                                    size: 25,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.white,
-                                ),
-                                child: Center(
-                                  child: FaIcon(
-                                    FontAwesomeIcons.instagram,
-                                    size: 25,
-                                    color: Colors.red,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
                     ),
                   ),
                 ),

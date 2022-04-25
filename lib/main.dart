@@ -1,6 +1,9 @@
-import 'dart:developer';
+// import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:sign_in_interface/Quiz/lib/common/route_generator.dart';
+import 'package:sign_in_interface/Quiz/lib/screens/quiz_splash_screen.dart';
+import 'package:sign_in_interface/Quiz/lib/stores/quiz_store.dart';
 import 'package:sign_in_interface/Screens/About_us.dart';
 import 'package:sign_in_interface/Screens/Login1.dart';
 import 'package:sign_in_interface/Screens/Map.dart';
@@ -21,14 +24,19 @@ import 'Screens/Signup.dart';
 import 'Screens/hero_screen.dart';
 import 'Widgets/Clipper.dart';
 
-void main() => runApp(MyApp());
+void main() async{WidgetsFlutterBinding.ensureInitialized();
+await QuizStore.initPrefs();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AboutUs(),
+      initialRoute: "/",
+      onGenerateRoute: RouteGenerator.generateRoute,
+      home: QuizSplashScreen(),
     );
   }
 }

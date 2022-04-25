@@ -11,8 +11,8 @@ class PerformanceScreen extends StatefulWidget {
 }
 
 class _PerformanceScreenState extends State<PerformanceScreen> {
-  List<KidData> _chartData;
-  TooltipBehavior _tooltipBehavior;
+  late List<KidData> _chartData;
+  late TooltipBehavior _tooltipBehavior;
 
   @override
   void initState() {
@@ -33,7 +33,7 @@ class _PerformanceScreenState extends State<PerformanceScreen> {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('bgb.png'), fit: BoxFit.cover)),
+                    image: AssetImage('assets/bgb.png'), fit: BoxFit.cover)),
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[

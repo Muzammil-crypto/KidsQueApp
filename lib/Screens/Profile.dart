@@ -16,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('bgb.png'), fit: BoxFit.fill)),
+                    image: AssetImage('assets/bgb.png'), fit: BoxFit.fill)),
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
@@ -49,7 +49,7 @@ class ProfileScreen extends StatelessWidget {
                               left: MediaQuery.of(context).size.width / 2.5),
                           height: MediaQuery.of(context).size.height / 5.5,
                           width: MediaQuery.of(context).size.width / 3,
-                          child: Image(image: AssetImage("svg.png")),
+                          child: Image(image: AssetImage("assets/svg.png")),
                         ),
                         Center(
                           child: Container(
@@ -57,7 +57,7 @@ class ProfileScreen extends StatelessWidget {
                             width: MediaQuery.of(context).size.width / 2.5,
                             child: CircleAvatar(
                               radius: 30.0,
-                              backgroundImage: AssetImage("pic.png"),
+                              backgroundImage: AssetImage("assets/pic.png"),
                               backgroundColor: Colors.transparent,
                             ),
                           ),

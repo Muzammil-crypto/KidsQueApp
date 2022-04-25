@@ -11,9 +11,9 @@ class LocationService {
     print("response: ${response.body}");
 
     var json = convert.jsonDecode(response.body);
-    // var placeId = json["candidates"][0]["place_id"] as String;
-    // print(placeId);
-    // return placeId;
+    var placeId = json["candidates"][0]["place_id"] as String;
+    print(placeId);
+    return placeId;
   }
   // Future<Map<String, dynamic>> getPlace(String input) async {}
 }

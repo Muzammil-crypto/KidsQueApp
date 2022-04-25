@@ -16,7 +16,7 @@ class Loading_Screen extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('bgb.png'), fit: BoxFit.fill)),
+                    image: AssetImage('assets/bgb.png'), fit: BoxFit.fill)),
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
@@ -49,7 +49,7 @@ class Loading_Screen extends StatelessWidget {
                           ),
                           height: 400,
                           width: 400,
-                          child: Image(image: AssetImage("balloon.png")),
+                          child: Image(image: AssetImage("assets/balloon.png")),
                         ),
                       ],
                     ),

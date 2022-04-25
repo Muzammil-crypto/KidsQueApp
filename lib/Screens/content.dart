@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sign_in_interface/Quiz/lib/screens/home_screen.dart';
 import 'package:sign_in_interface/Widgets/youtube_player_screen.dart';
 
 import '../Widgets/Clipper.dart';
@@ -186,7 +187,12 @@ class ContentScreen extends StatelessWidget {
                     bottom: MediaQuery.of(context).size.height / 10,
                     child: SingleChildScrollView(
                       child: RaisedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen()));
+                        },
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(80.0)),
                         padding: const EdgeInsets.all(0.0),

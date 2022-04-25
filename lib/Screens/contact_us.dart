@@ -14,7 +14,7 @@ class ContactUs extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('bgb.png'), fit: BoxFit.cover)),
+                    image: AssetImage('assets/bgb.png'), fit: BoxFit.cover)),
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
@@ -26,8 +26,8 @@ class ContactUs extends StatelessWidget {
                         height: MediaQuery.of(context).size.height / 2.4,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
-                            image:
-                                DecorationImage(image: AssetImage('svg.png'))),
+                            image: DecorationImage(
+                                image: AssetImage('assets/svg.png'))),
                       ),
                     )),
                 Positioned(
@@ -70,6 +70,7 @@ class ContactUs extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(80.0)),
                       padding: const EdgeInsets.all(0.0),
+                      onPressed: () {},
                       child: Ink(
                         decoration: const BoxDecoration(
                           color: Color(0xFFF57F17),

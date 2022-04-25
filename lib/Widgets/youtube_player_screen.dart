@@ -3,19 +3,20 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class YoutubeScreen extends StatefulWidget {
   final String title;
-  final url;
+  final String url;
   @override
-  YoutubeScreen({this.title, this.url});
+  YoutubeScreen({required this.title, required this.url});
 
   State<YoutubeScreen> createState() => _YoutubeScreenState();
 }
 
 class _YoutubeScreenState extends State<YoutubeScreen> {
-  YoutubePlayerController _controller;
+  late YoutubePlayerController _controller;
 
   void runYoutubePlayer() {
+    var id = YoutubePlayer.convertUrlToId(widget.url);
     _controller = YoutubePlayerController(
-        initialVideoId: YoutubePlayer.convertUrlToId(widget.url),
+        initialVideoId: id!,
         flags: YoutubePlayerFlags(
           enableCaption: false,
           isLive: false,

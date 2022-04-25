@@ -4,7 +4,7 @@ import 'package:sign_in_interface/Widgets/Clipper3.dart';
 
 class HeroCard extends StatelessWidget {
   const HeroCard({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -48,7 +48,7 @@ class HeroCard extends StatelessWidget {
               left: MediaQuery.of(context).size.width / 20),
           height: MediaQuery.of(context).size.height / 3,
           child: Image.asset(
-            "majj.png",
+            "assets/majj.png",
           ),
         ),
         Positioned(
