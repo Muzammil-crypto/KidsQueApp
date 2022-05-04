@@ -24,8 +24,9 @@ import 'Screens/Signup.dart';
 import 'Screens/hero_screen.dart';
 import 'Widgets/Clipper.dart';
 
-void main() async{WidgetsFlutterBinding.ensureInitialized();
-await QuizStore.initPrefs();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await QuizStore.initPrefs();
   runApp(MyApp());
 }
 
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
       onGenerateRoute: RouteGenerator.generateRoute,
-      home: QuizSplashScreen(),
+      home: SplashScreen(),
     );
   }
 }

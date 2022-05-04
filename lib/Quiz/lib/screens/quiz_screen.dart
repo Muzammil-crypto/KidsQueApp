@@ -93,8 +93,13 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
       alignment: Alignment.center,
       child: Text(
         quiz.title,
-        style: Theme.of(context).textTheme.headline3,
+        style: TextStyle(
+          color: Colors.pink,
+          fontSize: 45,
+          fontFamily: "BubblegumSans",
+        ),
       ),
+      margin: EdgeInsets.only(bottom: 20),
     );
   }
 
@@ -106,7 +111,11 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
       decoration: ThemeHelper.roundBoxDeco(),
       child: Text(
         question?.text ?? "",
-        style: Theme.of(context).textTheme.headline5,
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 30,
+          fontFamily: "BubblegumSans",
+        ),
       ),
     );
   }
@@ -114,7 +123,10 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
   Widget questionOptions() {
     return Container(
       alignment: Alignment.center,
-      decoration: ThemeHelper.roundBoxDeco(),
+      decoration: BoxDecoration(
+        color: Color.fromARGB(200, 104, 58, 183),
+        borderRadius: BorderRadius.circular(18),
+      ),
       child: Column(
         children: List<Option>.from(question?.options ?? []).map((e) {
           int optionIndex = question!.options.indexOf(e);
@@ -183,7 +195,7 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
           },
           child: Text(
             "Cancel",
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 20, fontFamily: "BubblegumSans"),
           ),
           width: 130,
           height: 50,
@@ -194,7 +206,8 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
           },
           child: Text(
             "Next",
-            style: TextStyle(color: Colors.white, fontSize: 20),
+            style: TextStyle(
+                color: Colors.white, fontSize: 20, fontFamily: "BubblegumSans"),
           ),
           isActive: true,
           width: 130,

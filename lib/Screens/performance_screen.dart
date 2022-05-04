@@ -42,7 +42,15 @@ class _PerformanceScreenState extends State<PerformanceScreen> {
                     child: ClipPath(
                       clipper: BackgroundClipper_2(),
                       child: Container(
-                        color: Colors.yellow.shade900,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [
+                                Color.fromARGB(255, 255, 193, 59),
+                                Colors.red
+                              ],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter),
+                        ),
                         height: MediaQuery.of(context).size.height / 2.5,
                         width: MediaQuery.of(context).size.width,
                         child: SfCircularChart(

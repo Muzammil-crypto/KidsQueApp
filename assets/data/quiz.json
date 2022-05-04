@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Science Quiz 01",
+    "title": "Culture Quiz",
     "description": "This is a science quiz description. This is multiline text",
     "shuffleQuestions": true,
     "imagePath": "",

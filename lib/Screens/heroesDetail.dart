@@ -2,16 +2,35 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
 class DetailsHeroScreen extends StatelessWidget {
+  late String tag;
+  late String imgName;
+  late String heading;
+  late Color color1;
+  late Color color2;
+  late String description;
+  DetailsHeroScreen(
+    String imgName,
+    String heading,
+    Color color1,
+    Color color2,
+    this.description,
+    this.tag,
+  ) {
+    this.imgName = imgName;
+    this.heading = heading;
+    this.color1 = color1;
+    this.color2 = color2;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Hero(
-          tag: 'background',
+          tag: tag,
           child: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                  colors: [Colors.orange, Colors.deepOrangeAccent],
+                  colors: [color1, color2],
                   begin: Alignment.bottomLeft,
                   end: Alignment.topRight),
             ),
@@ -20,7 +39,7 @@ class DetailsHeroScreen extends StatelessWidget {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height / 1.8,
-                  child: Image.asset("assets/majj.png"),
+                  child: Image.asset(imgName),
                 ),
                 Column(children: [
                   Container(
@@ -31,14 +50,14 @@ class DetailsHeroScreen extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Major Aziz Bhatii (Shaheed)",
+                                heading,
                                 style: TextStyle(
                                     fontFamily: "BubblegumSans",
                                     fontSize: 25,
                                     color: Colors.white),
                               ),
                               Text(
-                                "Major Raja Aziz Bhatti (Urdu: راجہ عزیز بھٹی  b. 6 August 1928– 12 September 1965),[2] born as Aziz Ahmad: 177 [3] but usually known as Raja Aziz Bhatti, was a military officer in the Pakistan Army who was cited with the Nishan-e-Haider (Eng. Lit.: Emblem of Lion) for his actions of valor during the Battle of Burki in second war with India in 1965.",
+                                description,
                                 style: TextStyle(
                                     fontFamily: "BubblegumSans",
                                     fontSize: 16,

@@ -1,9 +1,11 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:sign_in_interface/Quiz/lib/screens/quiz_splash_screen.dart';
 import 'package:sign_in_interface/Screens/About_us.dart';
 import 'package:sign_in_interface/Screens/Profile.dart';
 import 'package:sign_in_interface/Screens/content.dart';
+import 'package:sign_in_interface/Screens/splash_screen.dart';
 import 'package:sign_in_interface/Screens/topics.dart';
 
 class DrawerAnimated extends StatefulWidget {
@@ -23,10 +25,11 @@ class _DrawerAnimatedState extends State<DrawerAnimated> {
           // ! Here Color Of Page Drawer !
           Container(
             decoration: const BoxDecoration(
-                gradient: LinearGradient(colors: [
-              Color.fromARGB(255, 7, 18, 119),
-              Colors.deepPurpleAccent
-            ], begin: Alignment.bottomCenter, end: Alignment.topCenter)),
+              gradient: LinearGradient(
+                  colors: [Colors.blue, Colors.deepOrangeAccent],
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter),
+            ),
           ),
 
           // ! simple navigation menu !
@@ -136,6 +139,30 @@ class _DrawerAnimatedState extends State<DrawerAnimated> {
                   onTap: () => {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => AboutUs())),
+                  },
+                ),
+                InkWell(
+                  child: Container(
+                    child: const ListTile(
+                      title: Text(
+                        "Quiz",
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
+                          fontFamily: "BubblegumSans",
+                        ),
+                      ),
+                      leading: Icon(
+                        Icons.quiz_sharp,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  onTap: () => {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => QuizSplashScreen())),
                   },
                 ),
                 InkWell(

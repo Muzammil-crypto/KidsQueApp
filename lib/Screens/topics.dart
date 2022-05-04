@@ -47,9 +47,14 @@ class _TopicsState extends State<Topics> {
           child: ListView(
             children: [
               Container(
-                margin: EdgeInsets.only(left: 350, top: 10),
+                margin: EdgeInsets.only(
+                    right: MediaQuery.of(context).size.width / 1.22, top: 20),
                 child: IconButton(
-                  icon: Icon(Icons.arrow_back),
+                  icon: Icon(
+                    Icons.arrow_back_ios_new_outlined,
+                    color: Colors.white,
+                    size: 20,
+                  ),
                   onPressed: () => {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Login())),
@@ -58,8 +63,8 @@ class _TopicsState extends State<Topics> {
               ),
               Container(
                 margin: EdgeInsets.only(
-                  left: 10,
-                  right: 10,
+                  left: MediaQuery.of(context).size.width / 12,
+                  right: MediaQuery.of(context).size.width / 12,
                 ),
                 child: Text(
                   "All About Pakistan",

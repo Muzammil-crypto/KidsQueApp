@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/home_screen.dart';
+import 'package:sign_in_interface/Quiz/lib/screens/quiz_splash_screen.dart';
+import 'package:sign_in_interface/Screens/splash_screen.dart';
 import 'package:sign_in_interface/Widgets/youtube_player_screen.dart';
 
 import '../Widgets/Clipper.dart';
@@ -191,7 +193,7 @@ class ContentScreen extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HomeScreen()));
+                                  builder: (context) => QuizSplashScreen()));
                         },
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(80.0)),

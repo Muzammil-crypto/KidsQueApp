@@ -80,6 +80,9 @@ flutter:
     - family: Flavors
       fonts:
         - asset: fonts/Flavors-Regular.ttf
+    - family: Langar-Regular
+      fonts:
+        - asset: fonts/Langar-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

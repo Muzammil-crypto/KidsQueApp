@@ -28,7 +28,8 @@ class QuestionOption extends StatelessWidget {
                   width: 40,
                   height: 40,
                   decoration: BoxDecoration(
-                      border: Border.all(color: Colors.deepPurple, width: 4),
+                      border:
+                          Border.all(color: Colors.deepPurpleAccent, width: 4),
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       color: isSelected
                           ? Theme.of(context).primaryColor
@@ -39,9 +40,8 @@ class QuestionOption extends StatelessWidget {
                   child: Text(
                     optionText,
                     style: TextStyle(
-                        color: isSelected
-                            ? Colors.white
-                            : Theme.of(context).primaryColor,
+                        color: isSelected ? Colors.white : Colors.black,
+                        fontFamily: "BubblegumSans",
                         fontSize: 30),
                   ),
                 ),
@@ -56,9 +56,9 @@ class QuestionOption extends StatelessWidget {
               child: Text(
                 text,
                 style: TextStyle(
-                  fontSize: 25,
-                  color: Theme.of(context).primaryColor,
-                ),
+                    fontSize: 25,
+                    color: Colors.white,
+                    fontFamily: "BubblegumSans"),
                 textAlign: TextAlign.left,
               ),
             ),

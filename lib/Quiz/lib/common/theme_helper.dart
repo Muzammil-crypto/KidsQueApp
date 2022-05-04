@@ -7,24 +7,24 @@ class ThemeHelper {
 
   static ThemeData getThemeData() {
     return ThemeData(
-      fontFamily: 'Baloo',
+      fontFamily: 'Langar-Regular',
       primarySwatch: Colors.deepPurple,
       colorScheme: ColorScheme.light(
           primary: Color.fromARGB(255, 150, 125, 194), secondary: Colors.teal),
       textTheme: TextTheme(
           headline3: TextStyle(
             color: accentColor,
-            fontFamily: 'Baloo',
+            fontFamily: 'Langar-Regular',
           ),
           headline4: TextStyle(
             color: accentColor,
-            fontFamily: 'Baloo',
+            fontFamily: 'Langar-Regular',
           )),
     );
   }
 
   static BoxDecoration fullScreenBgBoxDecoration(
-      {String backgroundAssetImage = "assets/images/Common.bg.png"}) {
+      {String backgroundAssetImage = "assets/bgb.png"}) {
     return BoxDecoration(
       image: DecorationImage(
           image: AssetImage(backgroundAssetImage), fit: BoxFit.cover),
@@ -33,7 +33,7 @@ class ThemeHelper {
 
   static roundBoxDeco({Color color = Colors.white, double radius = 15}) {
     return BoxDecoration(
-        color: Colors.white,
+        color: Color.fromARGB(200, 104, 58, 183),
         borderRadius: BorderRadius.all(Radius.circular(radius)));
   }
 }
