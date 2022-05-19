@@ -47,13 +47,13 @@ class Login extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         Padding(
-                          padding: const EdgeInsets.only(top: 40.0, bottom: 0),
+                          padding: const EdgeInsets.only(top: 65.0, bottom: 0),
                           child: Container(
                               height: MediaQuery.of(context).size.height / 5,
                               child: Center(
                                 child: Text("Login",
                                     style: TextStyle(
-                                        fontFamily: "Flavors",
+                                        fontFamily: "ShinyBalloonDemo",
                                         fontSize: 60,
                                         color: Colors.white)),
                               )),
@@ -125,7 +125,27 @@ class Login extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: MediaQuery.of(context).size.height / 3,
+                  right: 30,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 220),
+                    child: TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                        primary: Color.fromARGB(255, 255, 255, 255),
+                      ),
+                      child: Text(
+                        'Forgot Password?',
+                        style: TextStyle(
+                            fontSize: 12,
+                            decoration: TextDecoration.underline,
+                            fontStyle: FontStyle.italic,
+                            fontFamily: "BubblegumSans"),
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  bottom: MediaQuery.of(context).size.height / 3.5,
                   child: SingleChildScrollView(
                     child: RaisedButton(
                       onPressed: () {
@@ -159,41 +179,6 @@ class Login extends StatelessWidget {
                           ),
                         ),
                       ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 330.0),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 10,
-                        ),
-                        InkWell(
-                          child: Container(
-                            height: 18,
-                            margin: EdgeInsets.only(
-                                top: MediaQuery.of(context).size.height / 6.2,
-                                left: 190),
-                            child: Text(
-                              'Forgot password?',
-                              style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                fontFamily: "BubblegumSans",
-                                fontStyle: FontStyle.italic,
-                                color: Color.fromARGB(255, 8, 19, 177),
-                              ),
-                            ),
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => DrawerAnimated()));
-                          },
-                        ),
-                      ],
                     ),
                   ),
                 ),

@@ -21,34 +21,49 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.yellow.shade900,
-      body: SingleChildScrollView(
-        child: ClipPath(
-          clipper: BackgroundClipper(),
+      body: ClipPath(
+        clipper: BackgroundClipper(),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(30),
           child: Container(
+            margin: EdgeInsets.only(top: 5, bottom: 3),
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/sp12.jpeg'), fit: BoxFit.cover)),
+              image: DecorationImage(
+                  colorFilter: new ColorFilter.mode(
+                      Color.fromARGB(172, 24, 18, 18).withOpacity(0.5),
+                      BlendMode.softLight),
+                  image: AssetImage(
+                    'assets/sp16.jpeg',
+                  ),
+                  fit: BoxFit.fill),
+            ),
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
-                // Positioned(
-                //   child: Container(
-                //     margin: EdgeInsets.only(
-                //       bottom: MediaQuery.of(context).size.height / 2,
-                //       left: MediaQuery.of(context).size.width / 3,
-                //     ),
-                //     height: 250,
-                //     width: 250,
-                //     child: Image(image: AssetImage("assets/balloon.png")),
-                //   ),
-                // ),
                 Positioned(
-                    top: 160,
+                  child: Container(
+                    margin: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).size.height / 4,
+                      right: MediaQuery.of(context).size.width / 3,
+                    ),
+                    height: 120,
+                    width: 120,
+                    child: Image(
+                      image: AssetImage("assets/balloon.png"),
+                    ),
+                  ),
+                ),
+                Positioned(
+                    top: 90,
                     child: Padding(
-                      padding: const EdgeInsets.only(bottom: 0, right: 120),
+                      padding: const EdgeInsets.only(
+                        right: 60,
+                        bottom: 0,
+                      ),
                       child: Container(
+                        margin: EdgeInsets.only(top: 10),
                         height: MediaQuery.of(context).size.height / 1.5,
                         width: MediaQuery.of(context).size.width,
                         child: Column(children: [
@@ -56,40 +71,41 @@ class _SplashScreenState extends State<SplashScreen> {
                             child: Text(
                               "PakQue",
                               style: TextStyle(
-                                  fontFamily: "Flavors",
-                                  fontSize: 60,
-                                  color: Colors.lightBlue,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 2),
+                                  fontFamily: "ShinyBalloonDemo",
+                                  fontSize: 50,
+                                  color: Colors.green,
+                                  //  fontWeight: FontWeight.bold,
+                                  letterSpacing: 0),
                             ),
                           ),
                           Container(
-                            height: 200,
+                            height: 100,
                             width: MediaQuery.of(context).size.width,
                             margin: EdgeInsets.only(
-                                left: MediaQuery.of(context).size.width / 2.2),
+                                // bottom: 100,
+                                left: MediaQuery.of(context).size.width / 1.8),
                             child: Text("Kid",
                                 style: TextStyle(
-                                  fontFamily: "BubblegumSans",
+                                  fontFamily: "ShinyBalloonDemo",
                                   fontSize: 60,
-                                  color: Colors.white,
+                                  color: Colors.green,
                                 )),
                           )
                         ]),
                       ),
                     )),
-                // Positioned(
-                //     top: MediaQuery.of(context).size.height / 2.5,
-                //     child: Padding(
-                //       padding: const EdgeInsets.only(top: 15.0),
-                //       child: Container(
-                //         height: MediaQuery.of(context).size.height / 2.8,
-                //         width: MediaQuery.of(context).size.width,
-                //         decoration: BoxDecoration(
-                //             image: DecorationImage(
-                //                 image: AssetImage('assets/svg.png'))),
-                //       ),
-                //     )),
+                Positioned(
+                    top: MediaQuery.of(context).size.height / 1.8,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 20.0),
+                      child: Container(
+                        height: MediaQuery.of(context).size.height / 3.5,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage('assets/svg.png'))),
+                      ),
+                    )),
                 Positioned(
                   bottom: 50,
                   child: SingleChildScrollView(

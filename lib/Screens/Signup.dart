@@ -32,12 +32,12 @@ class SignUp extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 0.0),
                           child: Container(
                             margin: EdgeInsets.only(
-                                left: 20, right: 20, top: 10, bottom: 10),
+                                left: 20, right: 20, top: 20, bottom: 10),
                             height: MediaQuery.of(context).size.height / 4,
                             child: Center(
                               child: Text("Register",
                                   style: TextStyle(
-                                      fontFamily: "Flavors",
+                                      fontFamily: "ShinyBalloonDemo",
                                       fontSize: 60,
                                       color: Colors.white)),
                             ),

@@ -78,8 +78,8 @@ class _TopicsState extends State<Topics> {
                       child: Text(
                         "All About Pakistan",
                         style: TextStyle(
-                          fontFamily: "BubblegumSans",
-                          fontSize: 42.0,
+                          fontFamily: "ShinyBalloonDemo",
+                          fontSize: 30.0,
                           // letterSpacing: 1.5,
                           color: Colors.white,
                           // fontWeight: FontWeight.bold,

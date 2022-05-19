@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/home_screen.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/quiz_splash_screen.dart';
+import 'package:sign_in_interface/Screens/slider.dart';
 import 'package:sign_in_interface/Screens/splash_screen.dart';
 import 'package:sign_in_interface/Widgets/youtube_player_screen.dart';
 
@@ -10,6 +11,16 @@ class ContentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        toolbarHeight: 30,
+        leading: Icon(
+          Icons.arrow_back_ios,
+          color: Colors.white,
+          size: 20,
+        ),
+        automaticallyImplyLeading: true,
+      ),
       backgroundColor: Colors.yellow.shade900,
       body: ClipPath(
         clipper: BackgroundClipper(),
@@ -26,17 +37,18 @@ class ContentScreen extends StatelessWidget {
                     bottom: MediaQuery.of(context).size.height / 0.662,
                     child: Center(
                       child: Container(
+                        child: SliderBanner(),
                         height: MediaQuery.of(context).size.height / 2,
                         width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: NetworkImage(
-                                    "https://media.istockphoto.com/photos/lahore-fort-shahi-fort-lahore-picture-id833093782?b=1&k=20&m=833093782&s=170667a&w=0&h=UuqEfc9B22K0Z8XN3fNRVliGPa9k4Fowm8Ensq_5CjA=")),
-                            color: Colors.white,
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(40),
-                                bottomRight: Radius.circular(40))),
+                        // decoration: BoxDecoration(
+                        //     image: DecorationImage(
+                        //         fit: BoxFit.fill,
+                        //         image: NetworkImage(
+                        //             "https://media.istockphoto.com/photos/lahore-fort-shahi-fort-lahore-picture-id833093782?b=1&k=20&m=833093782&s=170667a&w=0&h=UuqEfc9B22K0Z8XN3fNRVliGPa9k4Fowm8Ensq_5CjA=")),
+                        //     color: Colors.white,
+                        //     borderRadius: BorderRadius.only(
+                        //         bottomLeft: Radius.circular(40),
+                        //         bottomRight: Radius.circular(40))),
                       ),
                     ),
                   ),
@@ -55,7 +67,7 @@ class ContentScreen extends StatelessWidget {
                                     Text(
                                       "Lahore Fort",
                                       style: TextStyle(
-                                          fontFamily: "BubblegumSans",
+                                          fontFamily: "ShinyBalloonDemo",
                                           fontSize: 45,
                                           color: Colors.white),
                                     ),
@@ -71,7 +83,7 @@ class ContentScreen extends StatelessWidget {
                               ),
                             ),
                             height: MediaQuery.of(context).size.height / 2.2,
-                            width: MediaQuery.of(context).size.width / 1.2,
+                            width: MediaQuery.of(context).size.width / 1.15,
                             decoration: BoxDecoration(
                                 color: Color.fromARGB(212, 255, 142, 142),
                                 borderRadius:
@@ -85,7 +97,7 @@ class ContentScreen extends StatelessWidget {
                               child: Text(
                                 "Related Video",
                                 style: TextStyle(
-                                    fontFamily: "Flavors",
+                                    fontFamily: "ShinyBalloonDemo",
                                     fontSize: 40,
                                     color: Colors.white),
                               ),
@@ -123,7 +135,7 @@ class ContentScreen extends StatelessWidget {
                           child: Text(
                         "Related Places",
                         style: TextStyle(
-                            fontFamily: "Flavors",
+                            fontFamily: "ShinyBalloonDemo",
                             fontSize: 40,
                             color: Colors.white),
                       ))),

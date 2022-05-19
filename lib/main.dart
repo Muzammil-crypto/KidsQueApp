@@ -14,6 +14,7 @@ import 'package:sign_in_interface/Screens/contact_us.dart';
 import 'package:sign_in_interface/Screens/content.dart';
 import 'package:sign_in_interface/Screens/loading_screen.dart';
 import 'package:sign_in_interface/Screens/performance_screen.dart';
+import 'package:sign_in_interface/Screens/slider.dart';
 import 'package:sign_in_interface/Screens/splash_screen.dart';
 import 'package:sign_in_interface/Screens/timeline_screen.dart';
 import 'package:sign_in_interface/Screens/topics.dart';
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
       onGenerateRoute: RouteGenerator.generateRoute,
-      home: SplashScreen(),
+      //home: SplashScreen(),
+      home: ContentScreen(),
     );
   }
 }

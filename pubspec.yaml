@@ -30,6 +30,7 @@ dependencies:
   youtube_player_flutter: ^8.0.0
   timeline_list: ^0.0.6
   animated_background: ^2.0.0
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:
@@ -83,6 +84,23 @@ flutter:
     - family: Langar-Regular
       fonts:
         - asset: fonts/Langar-Regular.ttf
+    - family: ShinyBalloonDemo
+      fonts:
+        - asset: fonts/ShinyBalloonDemo.ttf
+    - family: CoolComicsForPersonal
+      fonts:
+        - asset: fonts/CoolComicsForPersonal.ttf
+    - family: Journey
+      fonts:
+        - asset: fonts/Journey.ttf
+    - family: NiceChalkDemo
+      fonts:
+        - asset: fonts/NiceChalkDemo.otf
+    - family: Langar-Regular
+      fonts:
+        - asset: fonts/Langar-Regular.ttf
+        
+
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
