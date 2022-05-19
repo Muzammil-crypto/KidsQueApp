@@ -5,6 +5,7 @@ import 'package:sign_in_interface/Quiz/lib/common/theme_helper.dart';
 import 'package:sign_in_interface/Quiz/lib/models/category.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/quiz_category_details.dart';
 import 'package:sign_in_interface/Quiz/lib/stores/quiz_store.dart';
+import 'package:sign_in_interface/Screens/performance_screen.dart';
 
 class QuizCategoryScreen extends StatefulWidget {
   static const routeName = '/quizCategory';
@@ -57,15 +58,41 @@ class _QuizCategoryScreenState extends State<QuizCategoryScreen> {
           GestureDetector(
             child: Image(
               image: AssetImage("assets/icons/back.png"),
-              width: 40,
+              width: 20,
             ),
             onTap: () {
               Navigator.pop(context);
             },
           ),
-          Text(
-            "Quiz Categories",
-            style: Theme.of(context).textTheme.headline4,
+          // Container(
+          //   margin: EdgeInsets.only(left: 30),
+          //   child: Text(
+          //     "Quiz Categories",
+          //     style: Theme.of(context).textTheme.headline4,
+          //   ),
+          // ),
+          Container(
+            margin: EdgeInsets.only(
+              left: MediaQuery.of(context).size.width / 13,
+              right: MediaQuery.of(context).size.width / 12,
+            ),
+            decoration: BoxDecoration(
+                // color: Colors.yellow.shade900,
+                borderRadius: BorderRadius.circular(20)),
+            child: Center(
+              child: Text(
+                "Quiz Categories",
+                style: TextStyle(
+                    fontFamily: "Flavors",
+                    fontSize: 35.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 2,
+                    fontStyle: FontStyle.italic),
+              ),
+            ),
+            height: MediaQuery.of(context).size.height / 8,
+            width: MediaQuery.of(context).size.width / 1.4,
           ),
         ],
       ),
@@ -94,7 +121,8 @@ class _QuizCategoryScreenState extends State<QuizCategoryScreen> {
 
   Widget categoryListViewItem(Category category) {
     return Container(
-      width: 160,
+      height: MediaQuery.of(context).size.height / 2.4,
+      width: MediaQuery.of(context).size.width / 1.19,
       alignment: Alignment.center,
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -104,11 +132,38 @@ class _QuizCategoryScreenState extends State<QuizCategoryScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image(
-            image: AssetImage(category.imagePath),
-            width: 130,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: Image(
+              image: AssetImage(category.imagePath),
+              fit: BoxFit.fill,
+              color: Color.fromARGB(3, 82, 82, 82).withOpacity(1.0),
+              colorBlendMode: BlendMode.softLight,
+              width: MediaQuery.of(context).size.width / 1.19,
+              height: MediaQuery.of(context).size.height / 3,
+            ),
           ),
-          Text(category.name),
+          SizedBox(
+            height: 5,
+          ),
+          Container(
+            height: 25,
+            // child: Text(
+            //   category.name,
+            //   style: TextStyle(fontSize: 20),
+
+            child: Text(
+              category.name,
+              style: TextStyle(
+                fontFamily: "BubblegumSans",
+                fontSize: 20.0,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                //letterSpacing: 2,
+              ),
+            ),
+          ),
+          //),
         ],
       ),
     );

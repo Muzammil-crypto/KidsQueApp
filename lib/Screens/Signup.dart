@@ -37,9 +37,9 @@ class SignUp extends StatelessWidget {
                             child: Center(
                               child: Text("Register",
                                   style: TextStyle(
-                                      fontFamily: "BubblegumSans",
+                                      fontFamily: "Flavors",
                                       fontSize: 60,
-                                      color: Color.fromARGB(255, 255, 88, 88))),
+                                      color: Colors.white)),
                             ),
                           ),
                         ),
@@ -152,7 +152,7 @@ class SignUp extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: MediaQuery.of(context).size.height / 1.9,
+                  top: MediaQuery.of(context).size.height / 1.6,
                   child: Container(
                     height: 360,
                     width: 400,
@@ -162,7 +162,7 @@ class SignUp extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: MediaQuery.of(context).size.height / 4.7,
+                  bottom: MediaQuery.of(context).size.height / 3.7,
                   child: SingleChildScrollView(
                     child: RaisedButton(
                       onPressed: () {
@@ -192,29 +192,6 @@ class SignUp extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontSize: 22),
                           ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  bottom: MediaQuery.of(context).size.height / 6.4,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(199, 255, 119, 0),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                    ),
-                    child: Container(
-                      width: 200,
-                      child: Center(
-                        child: Text(
-                          '< Or Connect with >',
-                          style: TextStyle(
-                              fontFamily: "BubblegumSans",
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontStyle: FontStyle.italic,
-                              fontSize: 20),
                         ),
                       ),
                     ),

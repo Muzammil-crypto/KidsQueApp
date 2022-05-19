@@ -45,7 +45,7 @@ class _PerformanceScreenState extends State<PerformanceScreen> {
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                               colors: [
-                                Color.fromARGB(255, 255, 193, 59),
+                                Color.fromARGB(255, 185, 131, 15),
                                 Colors.red
                               ],
                               begin: Alignment.bottomCenter,

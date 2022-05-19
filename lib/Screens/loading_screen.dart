@@ -107,7 +107,7 @@ class Loading_Screen extends StatelessWidget {
                                   40.0), // min sizes for Material buttons
                           alignment: Alignment.center,
                           child: const Text(
-                            'Proceed to the Quiz',
+                            'Proceeding to the Quiz',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontFamily: "BubblegumSans",

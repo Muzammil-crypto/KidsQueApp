@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:sign_in_interface/Screens/performance_screen.dart';
+import 'package:sign_in_interface/Widgets/Clipper3.dart';
 import 'package:timeline_list/timeline.dart';
 
 import 'package:sign_in_interface/Screens/Login1.dart';
@@ -20,6 +22,7 @@ class Topics extends StatefulWidget {
 
 class _TopicsState extends State<Topics> {
   double value = 0;
+  Color color1 = Color.fromARGB(103, 87, 97, 0);
 
   @override
   Widget build(BuildContext context) {
@@ -46,48 +49,81 @@ class _TopicsState extends State<Topics> {
           ),
           child: ListView(
             children: [
-              Container(
-                margin: EdgeInsets.only(
-                    right: MediaQuery.of(context).size.width / 1.22, top: 20),
-                child: IconButton(
-                  icon: Icon(
-                    Icons.arrow_back_ios_new_outlined,
-                    color: Colors.white,
-                    size: 20,
+              Row(
+                children: [
+                  SizedBox(
+                    height: 100,
                   ),
-                  onPressed: () => {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Login())),
-                  },
-                ),
+                  Container(
+                    margin: EdgeInsets.only(
+                        // right: MediaQuery.of(context).size.width / 1.22,
+                        ),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.arrow_back_ios_new_outlined,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                      onPressed: () => {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Login())),
+                      },
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        // color: Colors.yellow.shade900,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Center(
+                      child: Text(
+                        "All About Pakistan",
+                        style: TextStyle(
+                          fontFamily: "BubblegumSans",
+                          fontSize: 42.0,
+                          // letterSpacing: 1.5,
+                          color: Colors.white,
+                          // fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    // height: MediaQuery.of(context).size.height ,
+                    //  width: MediaQuery.of(context).size.width ,
+                  ),
+                ],
               ),
-              Container(
-                margin: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width / 12,
-                  right: MediaQuery.of(context).size.width / 12,
-                ),
-                child: Text(
-                  "All About Pakistan",
-                  style: TextStyle(
-                      fontFamily: "BubblegumSans",
-                      fontSize: 35.0,
-                      color: Color.fromARGB(255, 255, 75, 135),
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic),
-                ),
-                height: MediaQuery.of(context).size.height / 8,
-                width: MediaQuery.of(context).size.width,
-              ),
-              getContainer("assets/Provinces.png", "Explore\n Provinces",
-                  Color.fromARGB(190, 255, 152, 18), ContentScreen()),
-              getContainer("assets/Cities.png", "Explore\n Cities",
-                  Color.fromARGB(200, 255, 99, 151), ContentScreen()),
-              getContainer("assets/majj.png", "Explore\n Heroes",
-                  Color.fromARGB(175, 0, 110, 124), HeroesScreen(2)),
-              getContainer("assets/Cities.png", "Explore\n History",
-                  Color.fromARGB(220, 25, 109, 0), TimelineWidget()),
-              getContainer("assets/River.png", "Explore\n Rivers",
-                  Color.fromARGB(120, 212, 0, 0), ContentScreen()),
+              getContainer(
+                  "assets/cull.png",
+                  "Explore\n Provinces",
+                  Color.fromARGB(255, 216, 56, 163),
+                  Color.fromARGB(255, 138, 55, 163),
+                  ContentScreen()),
+              getContainer(
+                  "assets/citti.png",
+                  "Explore\n Cities",
+                  Color.fromARGB(255, 79, 100, 218),
+                  Color.fromARGB(202, 13, 50, 51),
+                  ContentScreen()),
+              getContainer(
+                  "assets/majj.png",
+                  "Explore\n Heroes",
+                  Color.fromARGB(255, 167, 5, 5),
+                  Colors.deepOrangeAccent,
+                  HeroesScreen(2)),
+              getContainer("assets/mpp.png", "Explore\n History", Colors.purple,
+                  Colors.deepPurpleAccent, TimelineWidget()),
+              getContainer("assets/River.png", "Explore\n Rivers", Colors.green,
+                  Colors.teal, ContentScreen()),
+
+              // getContainer("assets/cull.png", "Explore\n Provinces",
+              //     Color.fromARGB(221, 90, 3, 64), ContentScreen()),
+              // getContainer("assets/citti.png", "Explore\n Cities",
+              //     Color.fromARGB(255, 75, 2, 2), ContentScreen()),
+              // getContainer("assets/majj.png", "Explore\n Heroes",
+              //     Color.fromARGB(255, 1, 86, 97), HeroesScreen(2)),
+              // getContainer("assets/mpp.png", "Explore\n History",
+              //     Color.fromARGB(255, 57, 0, 97), TimelineWidget()),
+              // getContainer("assets/River.png", "Explore\n Rivers",
+              //     Color.fromARGB(255, 155, 76, 2), ContentScreen()),
             ],
           ),
         ),
@@ -99,13 +135,17 @@ class _TopicsState extends State<Topics> {
 class getContainer extends StatelessWidget {
   late String imgName;
   late String heading;
-  late Color color;
+  late Color color1;
+  late Color color2;
+
   final Widget pageToShow;
 
-  getContainer(String imgName, String heading, Color color, this.pageToShow) {
+  getContainer(String imgName, String heading, Color color1, Color color2,
+      this.pageToShow) {
     this.imgName = imgName;
     this.heading = heading;
-    this.color = color;
+    this.color1 = color1;
+    this.color2 = color2;
   }
 
   @override
@@ -122,25 +162,30 @@ class getContainer extends StatelessWidget {
             children: [
               Container(
                 margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height / 50,
+                    top: MediaQuery.of(context).size.height / 40,
                     left: 30,
                     right: 30,
                     bottom: 5),
                 height: MediaQuery.of(context).size.height / 4.5,
                 width: MediaQuery.of(context).size.width / 1.3,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(25)),
-                    color: color),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  gradient: LinearGradient(colors: [color1, color2]),
+                ),
                 child: Stack(
                   children: [
                     Positioned(
-                      left: MediaQuery.of(context).size.height / 5,
+                      top: 15,
+                      left: MediaQuery.of(context).size.height / 6.2,
                       child: Padding(
-                        padding: const EdgeInsets.only(right: 20),
+                        padding: const EdgeInsets.only(right: 0),
                         child: Container(
+                          height: 160,
+                          width: 150,
                           child: Image(
                             image: AssetImage(imgName),
-                            height: MediaQuery.of(context).size.height / 4.5,
+                            height: MediaQuery.of(context).size.height / 5,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
@@ -151,14 +196,15 @@ class getContainer extends StatelessWidget {
                           Row(
                             children: [
                               Container(
-                                margin: EdgeInsets.only(left: 50, top: 40),
+                                margin: EdgeInsets.only(left: 25, top: 40),
                                 child: Text(
                                   this.heading,
                                   style: TextStyle(
                                       fontFamily: "BubblegumSans",
                                       color: Colors.white,
-                                      fontSize: 35,
-                                      fontWeight: FontWeight.bold),
+                                      fontSize: 30,
+                                      fontStyle: FontStyle.italic,
+                                      fontWeight: FontWeight.normal),
                                 ),
                               ),
                             ],

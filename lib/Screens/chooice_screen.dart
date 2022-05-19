@@ -26,7 +26,7 @@ class _DrawerAnimatedState extends State<DrawerAnimated> {
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                  colors: [Colors.blue, Colors.deepOrangeAccent],
+                  colors: [Colors.blue, Colors.green],
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter),
             ),

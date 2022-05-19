@@ -60,17 +60,37 @@ class _QuizCategoryDetailsScreenState extends State<QuizCategoryDetailsScreen> {
       child: Row(
         children: [
           GestureDetector(
-            child: Image(
-              image: AssetImage("assets/icons/back.png"),
-              width: 40,
-            ),
+            child: Icon(Icons.arrow_back_ios),
             onTap: () {
               Navigator.pop(context);
             },
           ),
-          Text(
-            "${category.name} Quiz",
-            style: Theme.of(context).textTheme.headline4,
+          // Text(
+          //   "${category.name} Quiz",
+          //   style: TextStyle(),
+          // ),
+          Container(
+            margin: EdgeInsets.only(
+              left: MediaQuery.of(context).size.width / 13,
+              right: MediaQuery.of(context).size.width / 12,
+            ),
+            decoration: BoxDecoration(
+                // color: Colors.yellow.shade900,
+                borderRadius: BorderRadius.circular(20)),
+            child: Center(
+              child: Text(
+                "${category.name} Quiz",
+                style: TextStyle(
+                    fontFamily: "Flavors",
+                    fontSize: 35.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 4,
+                    fontStyle: FontStyle.italic),
+              ),
+            ),
+            height: MediaQuery.of(context).size.height / 8,
+            width: MediaQuery.of(context).size.width / 1.4,
           ),
         ],
       ),
@@ -106,7 +126,7 @@ class _QuizCategoryDetailsScreenState extends State<QuizCategoryDetailsScreen> {
             )),
         child: Text(
           "${quiz.questions.length} Questions",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontFamily: "Flavors"),
         ),
       ),
     );
@@ -128,11 +148,14 @@ class _QuizCategoryDetailsScreenState extends State<QuizCategoryDetailsScreen> {
                   margin: EdgeInsets.only(right: 10),
                   decoration: ThemeHelper.roundBoxDeco(
                       color: Color(0xffE1E9F6), radius: 10),
-                  child: Image(
-                    image: AssetImage(quiz.imagePath.isEmpty == true
-                        ? category.imagePath
-                        : quiz.imagePath),
-                    width: 130,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15),
+                    child: Image(
+                      image: AssetImage(quiz.imagePath.isEmpty == true
+                          ? category.imagePath
+                          : quiz.imagePath),
+                      width: 130,
+                    ),
                   ),
                 ),
                 Expanded(
@@ -142,9 +165,18 @@ class _QuizCategoryDetailsScreenState extends State<QuizCategoryDetailsScreen> {
                       children: [
                         Text(
                           quiz.title,
-                          style: TextStyle(fontSize: 22),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 22,
+                              fontFamily: "BubblegumSans"),
                         ),
-                        Text(quiz.description),
+                        Text(
+                          quiz.description,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontFamily: "BubblegumSans"),
+                        ),
                       ]),
                 ),
               ],

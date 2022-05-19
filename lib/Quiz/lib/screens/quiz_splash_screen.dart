@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/home_screen.dart';
+import 'package:sign_in_interface/Quiz/lib/widgets/disco_button.dart';
 import 'package:sign_in_interface/Screens/content.dart';
 import 'package:sign_in_interface/Widgets/Clipper.dart';
 
@@ -14,7 +15,7 @@ class QuizSplashScreen extends StatefulWidget {
 class _QuizSplashScreenState extends State<QuizSplashScreen> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(Duration(seconds: 3), () {
       Navigator.of(context)
           .pushReplacement(MaterialPageRoute(builder: (ctx) => HomeScreen()));
     });
@@ -41,11 +42,14 @@ class _QuizSplashScreenState extends State<QuizSplashScreen> {
                     child: Container(
                   margin: EdgeInsets.only(
                       bottom: MediaQuery.of(context).size.height * 0.8,
-                      left: MediaQuery.of(context).size.width / 18),
+                      left: MediaQuery.of(context).size.width / 20),
                   child: Row(
                     children: [
                       IconButton(
-                        icon: Icon(Icons.arrow_back),
+                        icon: Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                        ),
                         onPressed: () => {
                           Navigator.push(
                               context,
@@ -100,43 +104,57 @@ class _QuizSplashScreenState extends State<QuizSplashScreen> {
                       )
                     ])),
                 Positioned(
-                  bottom: MediaQuery.of(context).size.height / 4.7,
-                  child: SingleChildScrollView(
-                    child: RaisedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomeScreen()));
-                      },
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0)),
-                      padding: const EdgeInsets.all(0.0),
-                      child: Ink(
-                        decoration: const BoxDecoration(
-                          color: Color(0xFFF57F17),
-                          borderRadius: BorderRadius.all(Radius.circular(80.0)),
-                        ),
-                        child: Container(
-                          constraints: const BoxConstraints(
-                              minWidth: 300.0,
-                              minHeight:
-                                  40.0), // min sizes for Material buttons
-                          alignment: Alignment.center,
-                          child: const Text(
-                            'Proceed to the Quiz',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: "BubblegumSans",
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 22),
-                          ),
-                        ),
-                      ),
+                  bottom: MediaQuery.of(context).size.height / 7,
+                  child: DiscoButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Proceeding ",
+                      style: TextStyle(
+                          fontSize: 35,
+                          color: Colors.white,
+                          fontFamily: "BubblegumSans"),
                     ),
+                    isActive: true,
                   ),
                 ),
+                // Positioned(
+                //   bottom: MediaQuery.of(context).size.height / 4.7,
+                //   child: SingleChildScrollView(
+                //     child: RaisedButton(
+                //       onPressed: () {
+                //         // Navigator.push(
+                //         //     context,
+                //         //     MaterialPageRoute(
+                //         //         builder: (context) => HomeScreen()));
+                //       },
+                //       shape: RoundedRectangleBorder(
+                //           borderRadius: BorderRadius.circular(80.0)),
+                //       padding: const EdgeInsets.all(0.0),
+                //       child: Ink(
+                //         decoration: const BoxDecoration(
+                //           color: Color(0xFFF57F17),
+                //           borderRadius: BorderRadius.all(Radius.circular(80.0)),
+                //         ),
+                //         child: Container(
+                //           constraints: const BoxConstraints(
+                //               minWidth: 300.0,
+                //               minHeight:
+                //                   40.0), // min sizes for Material buttons
+                //           alignment: Alignment.center,
+                //           child: const Text(
+                //             'Proceeding to the Quiz',
+                //             textAlign: TextAlign.center,
+                //             style: TextStyle(
+                //                 fontFamily: "BubblegumSans",
+                //                 color: Colors.white,
+                //                 fontWeight: FontWeight.w400,
+                //                 fontSize: 22),
+                //           ),
+                //         ),
+                //       ),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),

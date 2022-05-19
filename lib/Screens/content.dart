@@ -162,7 +162,7 @@ class ContentScreen extends StatelessWidget {
                               width: 120.0,
                               child: CircleAvatar(
                                   backgroundImage: NetworkImage(
-                                      "https://www.croozi.com/upload/loc1024/AllamaIqbalTomb2072016.jpg")),
+                                      "https://media.istockphoto.com/photos/wazir-khan-mosque-lahore-pakistan-picture-id1130761760?k=20&m=1130761760&s=612x612&w=0&h=OPX8vVKJnwaAASLUO23nVm0ysAp8k5mugGfbu0XuJyg=")),
                             ),
                             Container(
                               margin: EdgeInsets.only(right: 5),
