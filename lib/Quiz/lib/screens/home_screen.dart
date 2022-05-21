@@ -96,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: [Colors.blue, Colors.yellow.shade900],
+              colors: [Colors.cyan, Colors.green],
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter),
         ),
@@ -284,7 +284,7 @@ class _HomeScreenState extends State<HomeScreen> {
           width: 50,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(200),
-            color: Colors.black,
+            color: Colors.orange.shade900,
           ),
           child: Padding(
             padding: const EdgeInsets.all(1.50),

@@ -8,9 +8,9 @@ class ThemeHelper {
   static ThemeData getThemeData() {
     return ThemeData(
       fontFamily: 'Langar-Regular',
-      primarySwatch: Colors.deepPurple,
+      //primarySwatch: Colors.deepPurple,
       colorScheme: ColorScheme.light(
-          primary: Color.fromARGB(255, 150, 125, 194), secondary: Colors.teal),
+          primary: Color.fromARGB(255, 255, 255, 255), secondary: Colors.teal),
       textTheme: TextTheme(
           headline3: TextStyle(
             color: accentColor,
@@ -33,7 +33,7 @@ class ThemeHelper {
 
   static roundBoxDeco({Color color = Colors.white, double radius = 15}) {
     return BoxDecoration(
-        color: Color.fromARGB(200, 104, 58, 183),
+        color: Color.fromARGB(255, 255, 255, 255),
         borderRadius: BorderRadius.all(Radius.circular(radius)));
   }
 }

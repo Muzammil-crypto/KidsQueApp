@@ -197,6 +197,36 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                 ),
+                Positioned(
+                  //right: 30,
+                  bottom: 150,
+                  //   child: Padding(
+                  // padding: const EdgeInsets.only(top: 250),
+                  child: InkWell(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(158, 255, 255, 255),
+                          borderRadius: BorderRadius.circular(12)),
+                      height: 50,
+                      child: TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          primary: Color.fromARGB(255, 255, 255, 255),
+                        ),
+                        child: Text(
+                          'Already Have an account? Sign In',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              decoration: TextDecoration.underline,
+                              fontStyle: FontStyle.italic,
+                              fontFamily: "BubblegumSans"),
+                        ),
+                      ),
+                    ),
+                    onTap: () => {},
+                  ),
+                ),
               ],
             ),
           ),

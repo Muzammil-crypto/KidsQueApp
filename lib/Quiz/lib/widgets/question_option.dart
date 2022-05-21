@@ -29,7 +29,7 @@ class QuestionOption extends StatelessWidget {
                   height: 40,
                   decoration: BoxDecoration(
                       border:
-                          Border.all(color: Colors.deepPurpleAccent, width: 4),
+                          Border.all(color: Colors.orange.shade900, width: 4),
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       color: isSelected
                           ? Theme.of(context).primaryColor
@@ -57,7 +57,7 @@ class QuestionOption extends StatelessWidget {
                 text,
                 style: TextStyle(
                     fontSize: 25,
-                    color: Colors.white,
+                    color: Colors.black,
                     fontFamily: "BubblegumSans"),
                 textAlign: TextAlign.left,
               ),

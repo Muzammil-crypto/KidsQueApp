@@ -24,7 +24,7 @@ class Login extends StatelessWidget {
               alignment: Alignment.center,
               children: <Widget>[
                 Positioned(
-                    top: 60,
+                    top: 40,
                     left: 20,
                     child: Container(
                       height: MediaQuery.of(context).size.height / 10,
@@ -135,6 +135,26 @@ class Login extends StatelessWidget {
                       ),
                       child: Text(
                         'Forgot Password?',
+                        style: TextStyle(
+                            fontSize: 12,
+                            decoration: TextDecoration.underline,
+                            fontStyle: FontStyle.italic,
+                            fontFamily: "BubblegumSans"),
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: 30,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 220),
+                    child: TextButton(
+                      onPressed: () => {},
+                      style: TextButton.styleFrom(
+                        primary: Color.fromARGB(255, 255, 255, 255),
+                      ),
+                      child: Text(
+                        'New User? Signup Here',
                         style: TextStyle(
                             fontSize: 12,
                             decoration: TextDecoration.underline,

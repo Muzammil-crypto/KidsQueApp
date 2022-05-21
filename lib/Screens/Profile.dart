@@ -70,7 +70,7 @@ class ProfileScreen extends StatelessWidget {
                               child: Text(
                                 "Muzammil",
                                 style: TextStyle(
-                                  color: Colors.yellow.shade900,
+                                  color: Colors.black,
                                   fontSize: 20,
                                   fontFamily: "BubblegumSans",
                                 ),
@@ -117,7 +117,7 @@ class ProfileScreen extends StatelessWidget {
                                     hintStyle: TextStyle(
                                         fontFamily: "BubblegumSans",
                                         fontSize: 14.0,
-                                        color: Colors.yellow.shade900)),
+                                        color: Colors.black)),
                               ),
                             ),
                             Padding(
@@ -144,7 +144,7 @@ class ProfileScreen extends StatelessWidget {
                                     hintStyle: TextStyle(
                                         fontFamily: "BubblegumSans",
                                         fontSize: 14.0,
-                                        color: Colors.yellow.shade900)),
+                                        color: Colors.black)),
                               ),
                             ),
                             Padding(
@@ -173,7 +173,7 @@ class ProfileScreen extends StatelessWidget {
                                     hintStyle: TextStyle(
                                         fontFamily: "BubblegumSans",
                                         fontSize: 14.0,
-                                        color: Colors.yellow.shade900)),
+                                        color: Colors.black)),
                               ),
                             ),
                           ]),

@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:sign_in_interface/Screens/hero_categories.dart';
 import 'package:sign_in_interface/Screens/performance_screen.dart';
 import 'package:sign_in_interface/Widgets/Clipper3.dart';
 import 'package:timeline_list/timeline.dart';
@@ -108,7 +109,7 @@ class _TopicsState extends State<Topics> {
                   "Explore\n Heroes",
                   Color.fromARGB(255, 167, 5, 5),
                   Colors.deepOrangeAccent,
-                  HeroesScreen(2)),
+                  HeroCategory()),
               getContainer("assets/mpp.png", "Explore\n History", Colors.purple,
                   Colors.deepPurpleAccent, TimelineWidget()),
               getContainer("assets/River.png", "Explore\n Rivers", Colors.green,
@@ -166,7 +167,7 @@ class getContainer extends StatelessWidget {
                     left: 30,
                     right: 30,
                     bottom: 5),
-                height: MediaQuery.of(context).size.height / 4.5,
+                height: MediaQuery.of(context).size.height / 3.8,
                 width: MediaQuery.of(context).size.width / 1.3,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -180,7 +181,7 @@ class getContainer extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(right: 0),
                         child: Container(
-                          height: 160,
+                          height: 150,
                           width: 150,
                           child: Image(
                             image: AssetImage(imgName),
@@ -209,6 +210,46 @@ class getContainer extends StatelessWidget {
                               ),
                             ],
                           ),
+                          Container(
+                            margin: EdgeInsets.only(top: 50),
+                            height: 40,
+                            width: MediaQuery.of(context).size.width / 1.35,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              //  color: Colors.white,
+                            ),
+                            child: Row(
+                              children: [
+                                Container(
+                                  height: 30,
+                                  width: 80,
+                                  margin: EdgeInsets.only(left: 20),
+                                  child: Center(
+                                    child: Text(
+                                      "View Chapter",
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.black,
+                                          fontFamily: "BubblegumSans"),
+                                    ),
+                                  ),
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(8)),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(left: 105),
+                                  child: IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.menu_book_sharp,
+                                        color: Colors.white,
+                                        size: 30,
+                                      )),
+                                )
+                              ],
+                            ),
+                          )
                         ],
                       ),
                     )

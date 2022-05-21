@@ -94,9 +94,9 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
       child: Text(
         quiz.title,
         style: TextStyle(
-          color: Colors.pink,
+          color: Colors.white,
           fontSize: 45,
-          fontFamily: "BubblegumSans",
+          fontFamily: "NiceChalkDemo",
         ),
       ),
       margin: EdgeInsets.only(bottom: 20),
@@ -112,9 +112,9 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
       child: Text(
         question?.text ?? "",
         style: TextStyle(
-          color: Colors.white,
+          color: Colors.black,
           fontSize: 30,
-          fontFamily: "BubblegumSans",
+          fontFamily: "Langar-Regular",
         ),
       ),
     );
@@ -124,7 +124,7 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
     return Container(
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: Color.fromARGB(200, 104, 58, 183),
+        color: Color.fromARGB(255, 255, 255, 255),
         borderRadius: BorderRadius.circular(18),
       ),
       child: Column(

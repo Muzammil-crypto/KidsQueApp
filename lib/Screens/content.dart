@@ -3,6 +3,7 @@ import 'package:sign_in_interface/Quiz/lib/screens/home_screen.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/quiz_splash_screen.dart';
 import 'package:sign_in_interface/Screens/slider.dart';
 import 'package:sign_in_interface/Screens/splash_screen.dart';
+import 'package:sign_in_interface/Screens/topics.dart';
 import 'package:sign_in_interface/Widgets/youtube_player_screen.dart';
 
 import '../Widgets/Clipper.dart';
@@ -14,10 +15,16 @@ class ContentScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         toolbarHeight: 30,
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: Colors.white,
-          size: 20,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
+            size: 20,
+          ),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Topics()));
+          },
         ),
         automaticallyImplyLeading: true,
       ),
@@ -82,7 +89,7 @@ class ContentScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            height: MediaQuery.of(context).size.height / 2.2,
+                            height: MediaQuery.of(context).size.height / 2.1,
                             width: MediaQuery.of(context).size.width / 1.15,
                             decoration: BoxDecoration(
                                 color: Color.fromARGB(212, 255, 142, 142),
