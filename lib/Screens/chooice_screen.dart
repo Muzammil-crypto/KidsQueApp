@@ -8,6 +8,8 @@ import 'package:sign_in_interface/Screens/content.dart';
 import 'package:sign_in_interface/Screens/splash_screen.dart';
 import 'package:sign_in_interface/Screens/topics.dart';
 
+import 'Login1.dart';
+
 class DrawerAnimated extends StatefulWidget {
   const DrawerAnimated({Key? key}) : super(key: key);
 
@@ -169,7 +171,7 @@ class _DrawerAnimatedState extends State<DrawerAnimated> {
                   child: Container(
                     child: const ListTile(
                       title: Text(
-                        "Exit",
+                        "Logout",
                         style: TextStyle(
                           fontSize: 15,
                           color: Colors.white,
@@ -182,6 +184,12 @@ class _DrawerAnimatedState extends State<DrawerAnimated> {
                       ),
                     ),
                   ),
+                  onTap: () => {
+                  Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                  (route) => false),
+                  },
                 ),
               ],
             ),

@@ -10,7 +10,8 @@ class ThemeHelper {
       fontFamily: 'Langar-Regular',
       //primarySwatch: Colors.deepPurple,
       colorScheme: ColorScheme.light(
-          primary: Color.fromARGB(255, 255, 255, 255), secondary: Colors.teal),
+          primary: Color.fromARGB(255, 255, 255, 255),
+          secondary: Colors.transparent),
       textTheme: TextTheme(
           headline3: TextStyle(
             color: accentColor,

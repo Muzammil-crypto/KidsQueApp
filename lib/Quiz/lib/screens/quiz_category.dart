@@ -33,7 +33,6 @@ class _QuizCategoryScreenState extends State<QuizCategoryScreen> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          padding: EdgeInsets.only(left: 10, right: 10),
           alignment: Alignment.center,
           decoration: ThemeHelper.fullScreenBgBoxDecoration(),
           child: Column(
@@ -51,14 +50,24 @@ class _QuizCategoryScreenState extends State<QuizCategoryScreen> {
 
   Widget screenHeader() {
     return Container(
-      margin: EdgeInsets.only(top: 10, bottom: 10),
-      alignment: Alignment.centerLeft,
+      decoration: BoxDecoration(
+          // color: Color.fromARGB(144, 115, 204, 255),
+          borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(15),
+              bottomRight: Radius.circular(15))),
+      width: MediaQuery.of(context).size.width,
+      margin: EdgeInsets.only(bottom: 25),
+      //margin: EdgeInsets.only(left: 10, top: 10, bottom: 10),
+      //alignment: Alignment.centerLeft,
       child: Row(
         children: [
           GestureDetector(
-            child: Image(
-              image: AssetImage("assets/icons/back.png"),
-              width: 20,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 15.0),
+              child: Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+              ),
             ),
             onTap: () {
               Navigator.pop(context);
@@ -73,26 +82,31 @@ class _QuizCategoryScreenState extends State<QuizCategoryScreen> {
           // ),
           Container(
             margin: EdgeInsets.only(
-              left: MediaQuery.of(context).size.width / 13,
+              top: 10,
+              // left: MediaQuery.of(context).size.width / 13,
               right: MediaQuery.of(context).size.width / 12,
             ),
             decoration: BoxDecoration(
+
                 // color: Colors.yellow.shade900,
                 borderRadius: BorderRadius.circular(20)),
             child: Center(
-              child: Text(
-                "Quiz Categories",
-                style: TextStyle(
-                    fontFamily: "Flavors",
-                    fontSize: 35.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 2,
-                    fontStyle: FontStyle.italic),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 8.0, left: 40),
+                child: Text(
+                  "Categories",
+                  style: TextStyle(
+                      fontFamily: "ShinyBalloonDemo",
+                      fontSize: 32.0,
+                      color: Colors.white,
+                      // fontWeight: FontWeight.bold,
+                      letterSpacing: 2,
+                      fontStyle: FontStyle.italic),
+                ),
               ),
             ),
-            height: MediaQuery.of(context).size.height / 8,
-            width: MediaQuery.of(context).size.width / 1.4,
+            height: MediaQuery.of(context).size.height / 10,
+            // width: MediaQuery.of(context).size.width / 1.4,
           ),
         ],
       ),
@@ -107,7 +121,10 @@ class _QuizCategoryScreenState extends State<QuizCategoryScreen> {
         direction: Axis.horizontal,
         children: categoryList
             .map((x) => GestureDetector(
-                  child: categoryListViewItem(x),
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 15.0),
+                    child: categoryListViewItem(x),
+                  ),
                   onTap: () {
                     Navigator.of(context).pushNamed(
                         QuizCategoryDetailsScreen.routeName,
@@ -163,7 +180,6 @@ class _QuizCategoryScreenState extends State<QuizCategoryScreen> {
               ),
             ),
           ),
-          //),
         ],
       ),
     );

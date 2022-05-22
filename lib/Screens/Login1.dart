@@ -1,12 +1,29 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:sign_in_interface/Screens/Signup.dart';
 import 'package:sign_in_interface/Screens/chooice_screen.dart';
 import 'package:sign_in_interface/Screens/topics.dart';
+import 'package:snippet_coder_utils/ProgressHUD.dart';
 
 import '../Widgets/Clipper.dart';
 import '../Widgets/customAppBar.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  GlobalKey<FormState> _globalFormKey = GlobalKey<FormState>();
+  bool _hidepassword = true;
+  bool _isAPIcallProcess = false;
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+bool isLoading = false;
+  String? _username;
+  String? _password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,6 +79,16 @@ class Login extends StatelessWidget {
                           padding: EdgeInsets.symmetric(
                               vertical: 10, horizontal: 30),
                           child: TextFormField(
+                            controller: _emailController,
+                            validator: (onValidateVal) {
+                              if (onValidateVal!.isEmpty) {
+                                return ("Email Can't be empty");
+                              }
+                              return null;
+                            },
+                            // onSaved: (onSavedVal) {
+                            //   _username = onSavedVal;
+                            // },
                             textAlign: TextAlign.left,
                             decoration: InputDecoration(
                                 contentPadding:
@@ -77,7 +104,7 @@ class Login extends StatelessWidget {
                                     color: Colors.yellow.shade900,
                                   ), // icon is 48px widget.
                                 ),
-                                hintText: 'Enter Your Email here',
+                                hintText: 'Enter Your Username',
                                 hintStyle: TextStyle(
                                     fontFamily: "BubblegumSans",
                                     fontSize: 14.0,
@@ -88,6 +115,17 @@ class Login extends StatelessWidget {
                           padding: EdgeInsets.symmetric(
                               vertical: 10, horizontal: 30),
                           child: TextFormField(
+                            controller: _passwordController,
+                            validator: (onValidateVal) {
+                              if (onValidateVal!.isEmpty) {
+                                return ("Password Can't be empty");
+                              }
+                              return null;
+                            },
+                            // onSaved: (onSavedVal) {
+                            //   _password = onSavedVal;
+                            // },
+                            obscureText: _hidepassword,
                             textAlign: TextAlign.left,
                             decoration: InputDecoration(
                                 contentPadding:
@@ -96,6 +134,17 @@ class Login extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(30)),
                                 fillColor: Colors.white,
                                 filled: true,
+                                suffixIcon: IconButton(
+                                  color: Colors.yellow.shade900,
+                                  icon: Icon(
+                                    _hidepassword
+                                        ? Icons.visibility_off
+                                        : Icons.visibility,
+                                  ),
+                                  onPressed: () => setState(() {
+                                    _hidepassword = !_hidepassword;
+                                  }),
+                                ),
                                 prefixIcon: Padding(
                                   padding: EdgeInsets.all(0.0),
                                   child: Icon(
@@ -149,7 +198,13 @@ class Login extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 220),
                     child: TextButton(
-                      onPressed: () => {},
+                      onPressed: () => {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignUp())),
+
+                      },
                       style: TextButton.styleFrom(
                         primary: Color.fromARGB(255, 255, 255, 255),
                       ),
@@ -169,10 +224,15 @@ class Login extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: RaisedButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => DrawerAnimated()));
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (context) => DrawerAnimated()));
+                        setState(() {
+    isLoading = true;
+    });
+    login();
+
                       },
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(80.0)),
@@ -209,4 +269,30 @@ class Login extends StatelessWidget {
       ),
     );
   }
+  login()async{
+    try {
+      var response = await Dio()
+          .post("https://pakque2.herokuapp.com/api/auth/local", data: {
+      "identifier": _emailController.text,
+      "password": _passwordController.text,
+
+
+      });
+
+
+      if (response.statusCode == 200) {
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => DrawerAnimated()),
+                (route) => false);
+      }
+    }
+    on DioError catch (e) {
+      print(e.response);
+      setState(() {
+        isLoading = false;
+      });
+    }
+  }
+
 }

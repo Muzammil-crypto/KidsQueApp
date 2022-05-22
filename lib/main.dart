@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       onGenerateRoute: RouteGenerator.generateRoute,
       home: SplashScreen(),
-      // home: HeroCategory(),
+      // home: hhh(),
     );
   }
 }
