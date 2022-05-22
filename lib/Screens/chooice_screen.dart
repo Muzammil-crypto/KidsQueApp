@@ -94,7 +94,7 @@ class _DrawerAnimatedState extends State<DrawerAnimated> {
                   ),
                   onTap: () => {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Topics())),
+                        MaterialPageRoute(builder: (context) => DrawerAnimated())),
                   },
                 ),
                 InkWell(

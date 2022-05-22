@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:sign_in_interface/Screens/ProvincesScreen.dart';
 import 'package:sign_in_interface/Screens/hero_categories.dart';
 import 'package:sign_in_interface/Screens/performance_screen.dart';
 import 'package:sign_in_interface/Widgets/Clipper3.dart';
@@ -97,7 +98,7 @@ class _TopicsState extends State<Topics> {
                   "Explore\n Provinces",
                   Color.fromARGB(255, 216, 56, 163),
                   Color.fromARGB(255, 138, 55, 163),
-                  ContentScreen()),
+                  ProvincesListScreen()),
               getContainer(
                   "assets/citti.png",
                   "Explore\n Cities",

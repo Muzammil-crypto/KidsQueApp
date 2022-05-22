@@ -1,9 +1,24 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:sign_in_interface/Models/provinceModel.dart';
 
 import 'ProvinceMapScreen.dart';
 
-class ProvincesListScreen extends StatelessWidget {
+class ProvincesListScreen extends StatefulWidget {
   const ProvincesListScreen({Key? key}) : super(key: key);
+
+  @override
+  State<ProvincesListScreen> createState() => _ProvincesListScreenState();
+}
+
+class _ProvincesListScreenState extends State<ProvincesListScreen> {
+  List<ProvinceModel> provinceList=[];
+
+  @override
+  void initState() {
+    getdata();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,5 +109,22 @@ class ProvincesListScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void getdata()async {
+    try{
+      var response = await Dio().get("https://pakque2.herokuapp.com/api/cultures");
+      print(response.data["data"][0]);
+      response.data["data"].forEach((e){
+        provinceList.add(ProvinceModel(e['attributes']['name'], e['attributes']['description'], e["attributes"]['video']==null?"":e["attributes"]['video']));
+      });
+
+      provinceList.forEach((element) {print("${element.title}");});
+    }
+    on DioError catch(e){
+      print(e.response);
+    }
+
+
   }
 }
