@@ -112,8 +112,11 @@ class _TopicsState extends State<Topics> {
                   HeroCategory()),
               getContainer("assets/mpp.png", "Explore\n History", Colors.purple,
                   Colors.deepPurpleAccent, TimelineWidget()),
-              getContainer("assets/River.png", "Explore\n Rivers", Colors.green,
-                  Colors.teal, ContentScreen()),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 18.0),
+                child: getContainer("assets/River.png", "Explore\n Rivers",
+                    Colors.green, Colors.teal, ContentScreen()),
+              ),
 
               // getContainer("assets/cull.png", "Explore\n Provinces",
               //     Color.fromARGB(221, 90, 3, 64), ContentScreen()),

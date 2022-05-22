@@ -40,8 +40,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
       onGenerateRoute: RouteGenerator.generateRoute,
-      home: ProvincesListScreen(),
-      // home: HeroCategory(),
+      home: SplashScreen(),
+      // home: hhh(),
     );
   }
 }

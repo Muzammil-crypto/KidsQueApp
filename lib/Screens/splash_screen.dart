@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sign_in_interface/Screens/Login1.dart';
 
 import '../Widgets/Clipper.dart';
 import 'Signup.dart';
@@ -10,13 +11,13 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  // void initState() {
-  //   Future.delayed(Duration(seconds: 3), () {
-  //     Navigator.of(context)
-  //         .pushReplacement(MaterialPageRoute(builder: (ctx) => SignUp()));
-  //   });
-  //   super.initState();
-  // }
+  void initState() {
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (ctx) => Login()));
+    });
+    super.initState();
+  }
 
   Widget build(BuildContext context) {
     return Scaffold(
