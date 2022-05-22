@@ -12,11 +12,10 @@ class ProvincesListScreen extends StatefulWidget {
 }
 
 class _ProvincesListScreenState extends State<ProvincesListScreen> {
-  List<ProvinceModel> provinceList=[];
+  List<ProvinceModel> provinceList = [];
 
   @override
   void initState() {
-    getdata();
     super.initState();
   }
 
@@ -39,6 +38,7 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                           builder: (context) => ProvinceMapScreen(
                                 lat: 31.1704,
                                 long: 72.7097,
+                                id: 1,
                               )));
                 },
                 child: ListTile(
@@ -54,6 +54,7 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                           builder: (context) => ProvinceMapScreen(
                                 lat: 31.1704,
                                 long: 72.7097,
+                                id: 3,
                               )));
                 },
                 child: ListTile(
@@ -69,6 +70,7 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                           builder: (context) => ProvinceMapScreen(
                                 lat: 31.1704,
                                 long: 72.7097,
+                                id: 2,
                               )));
                 },
                 child: ListTile(
@@ -84,6 +86,7 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                           builder: (context) => ProvinceMapScreen(
                                 lat: 31.1704,
                                 long: 72.7097,
+                                id: 4,
                               )));
                 },
                 child: ListTile(
@@ -98,6 +101,7 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                           builder: (context) => ProvinceMapScreen(
                                 lat: 31.1704,
                                 long: 72.7097,
+                                id: 5,
                               )));
                 },
                 child: ListTile(
@@ -109,22 +113,5 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
         ),
       ),
     );
-  }
-
-  void getdata()async {
-    try{
-      var response = await Dio().get("https://pakque2.herokuapp.com/api/cultures");
-      print(response.data["data"][0]);
-      response.data["data"].forEach((e){
-        provinceList.add(ProvinceModel(e['attributes']['name'], e['attributes']['description'], e["attributes"]['video']==null?"":e["attributes"]['video']));
-      });
-
-      provinceList.forEach((element) {print("${element.title}");});
-    }
-    on DioError catch(e){
-      print(e.response);
-    }
-
-
   }
 }

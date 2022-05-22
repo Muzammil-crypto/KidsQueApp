@@ -2,20 +2,21 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:sign_in_interface/Screens/ProvinceDetailScreen.dart';
 
 class ProvinceMapScreen extends StatefulWidget {
   double lat;
   double long;
-
-  ProvinceMapScreen({Key? key, required this.lat, required this.long})
+  int id;
+  ProvinceMapScreen(
+      {Key? key, required this.lat, required this.long, required this.id})
       : super(key: key);
 
   @override
   State<ProvinceMapScreen> createState() => _ProvinceMapScreenState();
 }
 
-class _ProvinceMapScreenState extends State<ProvinceMapScreen>
-    with WidgetsBindingObserver {
+class _ProvinceMapScreenState extends State<ProvinceMapScreen> {
   // Set<Polygon> polygons = HashSet<Polygon>();
   Set<Marker> markers = <Marker>{};
   Marker? _marker;
@@ -31,7 +32,6 @@ class _ProvinceMapScreenState extends State<ProvinceMapScreen>
 
   @override
   void initState() {
-    WidgetsBinding.instance!.addObserver(this);
     cameraPos = CameraPosition(
         target: LatLng(double.parse(widget.lat.toString()),
             double.parse(widget.long.toString())),
@@ -84,8 +84,21 @@ class _ProvinceMapScreenState extends State<ProvinceMapScreen>
     _marker = Marker(
         markerId: MarkerId('_currentLocation'),
         infoWindow: InfoWindow(title: 'My location'),
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => ProvinceDetailScreen(
+                        id: widget.id,
+                      )));
+        },
         position: LatLng(widget.lat, widget.long));
     markers.add(_marker!);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   // void setPolygon() {
