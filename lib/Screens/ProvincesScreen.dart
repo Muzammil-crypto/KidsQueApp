@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Models/provinceModel.dart';
+import 'package:sign_in_interface/Screens/heroesDetail.dart';
 
 import 'ProvinceMapScreen.dart';
 
@@ -23,92 +24,191 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text("Provinces"),
-        ),
         body: Container(
-          child: Column(
-            children: [
-              GestureDetector(
-                onTap: () {
-                  print("Hello");
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ProvinceMapScreen(
-                                lat: 31.1704,
-                                long: 72.7097,
-                                id: 1,
-                              )));
-                },
-                child: ListTile(
-                  title: Text("Punjab"),
+          child: ListView(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              children: [
+                ProvinceDetails(
+                    "assets/punj1.png",
+                    "Punjab",
+                    Colors.red,
+                    Colors.deepOrange,
+                    "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                    ProvinceMapScreen(
+                      lat: 31.1704,
+                      long: 72.7097,
+                      id: 5,
+                    )),
+                ProvinceDetails(
+                    "assets/sindh.png",
+                    "Sindh",
+                    Colors.deepPurple,
+                    Colors.cyan,
+                    "Sindh is one of the four provinces of Pakistan. Located in the southeastern region of the country, Sindh is the third-largest province of Pakistan by total area and the second-largest province by population after Punjab.",
+                    ProvinceMapScreen(
+                      lat: 31.1704,
+                      long: 72.7097,
+                      id: 5,
+                    )),
+                ProvinceDetails(
+                    "assets/p4.png",
+                    "khyber pakhtunkhwa",
+                    // Colors.teal,
+                    // Colors.cyan,
+                    Color.fromARGB(255, 0, 78, 3),
+                    Colors.teal,
+                    "Khyber Pakhtunkhwa, often abbreviated as KPK or KP, is a province of Pakistan. It is located in the northwestern region of the country, along the Afghanistan–Pakistan border and close to Tajikistan border.",
+                    ProvinceMapScreen(
+                      lat: 31.1704,
+                      long: 72.7097,
+                      id: 5,
+                    )),
+                ProvinceDetails(
+                    "assets/baloch.png",
+                    "Balochistan",
+                    Colors.pinkAccent,
+                    Colors.deepOrangeAccent,
+                    "Balochistan is one of the four provinces of Pakistan. It is the largest province in terms of land area, forming the southwestern region of the country, but is the least populated. Its provincial capital and largest city is Quetta.",
+                    ProvinceMapScreen(
+                      lat: 31.1704,
+                      long: 72.7097,
+                      id: 5,
+                    )),
+                ProvinceDetails(
+                    "assets/p5.png",
+                    "Gilgit Baltistan",
+                    Colors.teal,
+                    Colors.cyan,
+                    // Colors.green,
+                    // Colors.tealAccent,
+                    "Gilgit-Baltistan, formerly known as the Northern Areas, is a region administered by Pakistan as an autonomous territory, and constituting the northern portion of the larger Kashmir region which has been the subject of a dispute between India and Pakistan since 1947, and between India and China from somewhat later.",
+                    ProvinceMapScreen(
+                      lat: 31.1704,
+                      long: 72.7097,
+                      id: 5,
+                    )),
+              ]),
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+        ),
+      ),
+    );
+  }
+}
+
+class ProvinceDetails extends StatelessWidget {
+  late String imgName;
+  late String heading;
+  late Color color1;
+  late Color color2;
+
+  late String description;
+  final Widget pageToShow;
+  ProvinceDetails(
+    String imgName,
+    String heading,
+    Color color1,
+    Color color2,
+    this.description,
+    this.pageToShow,
+  ) {
+    this.imgName = imgName;
+    this.heading = heading;
+    this.color1 = color1;
+    this.color2 = color2;
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      child: Center(
+        child: GestureDetector(
+          onTap: () => {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => pageToShow)),
+          },
+          child: Container(
+            height: 800,
+            width: 420,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(40),
+              //borderRadius: BorderRadius.circular(20),
+              gradient: LinearGradient(
+                  colors: [color1, color2],
+                  begin: Alignment.bottomLeft,
+                  end: Alignment.topRight),
+            ),
+            child: ListView(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(
+                    top: 80,
+                  ),
+                  //margin: EdgeInsets.all(20),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 2.5,
+                  child: Image.asset(
+                    imgName,
+                    fit: BoxFit.contain,
+                  ),
                 ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  print("Hello");
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ProvinceMapScreen(
-                                lat: 31.1704,
-                                long: 72.7097,
-                                id: 3,
-                              )));
-                },
-                child: ListTile(
-                  title: Text("Khyber Pakhtoonkhwa"),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  print("Hello");
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ProvinceMapScreen(
-                                lat: 31.1704,
-                                long: 72.7097,
-                                id: 2,
-                              )));
-                },
-                child: ListTile(
-                  title: Text("Sindh"),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  print("Hello");
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ProvinceMapScreen(
-                                lat: 31.1704,
-                                long: 72.7097,
-                                id: 4,
-                              )));
-                },
-                child: ListTile(
-                  title: Text("Balochistan"),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ProvinceMapScreen(
-                                lat: 31.1704,
-                                long: 72.7097,
-                                id: 5,
-                              )));
-                },
-                child: ListTile(
-                  title: Text("Gilgit Baltistan"),
-                ),
-              ),
-            ],
+                Column(children: [
+                  Container(
+                    child: Container(
+                      child: Container(
+                        margin: EdgeInsets.only(
+                            top: 50, left: 20, right: 20, bottom: 15),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              Text(
+                                heading,
+                                style: TextStyle(
+                                    fontFamily: "BubblegumSans",
+                                    fontSize: 45,
+                                    color: Colors.white),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                description,
+                                style: TextStyle(
+                                    fontFamily: "BubblegumSans",
+                                    fontSize: 20,
+                                    color: Colors.white),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      height: MediaQuery.of(context).size.height / 3,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.yellow.shade900,
+                        borderRadius: BorderRadius.circular(12)),
+                    height: 55,
+                    width: MediaQuery.of(context).size.width / 1.2,
+                    child: Center(
+                      child: Text(heading,
+                          style: TextStyle(
+                              fontSize: 25,
+                              fontFamily: "BubblegumSans",
+                              color: Colors.white)),
+                    ),
+                  ),
+                ]),
+              ],
+            ),
           ),
         ),
       ),

@@ -48,36 +48,64 @@ class _ProvinceMapScreenState extends State<ProvinceMapScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Builder(builder: (context) {
-          return Stack(
-            children: [
-              GoogleMap(
-                mapType: MapType.hybrid,
-                markers: markers,
-                initialCameraPosition: cameraPos!,
-                onMapCreated: (GoogleMapController controller) {
-                  setState(() {
-                    _mapLoading = false;
-                  });
-                  // _controller.complete(controller);
-                },
-              ),
-              (_mapLoading)
-                  ? Container(
-                      height: MediaQuery.of(context).size.height,
-                      width: MediaQuery.of(context).size.width,
-                      // color: Colors.grey[100],
-                      child: Center(
-                        child: CircularProgressIndicator(),
+      backgroundColor: Colors.lightBlue,
+      body: Builder(builder: (context) {
+        return Stack(
+          children: [
+            Container(
+              color: Colors.yellow.shade900,
+              height: MediaQuery.of(context).size.height / 4.5,
+              child: Center(
+                  child: Text("Tap on Place to see the Details",
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontFamily: "BubblegumSans",
+                          color: Colors.white))),
+            ),
+            Positioned(
+              bottom: 0,
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  top: 35.0,
+                ),
+                child: Container(
+                  height: MediaQuery.of(context).size.height / 1.2,
+                  width: MediaQuery.of(context).size.width,
+                  child: Center(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(40),
+                          topRight: Radius.circular(40)),
+                      child: GoogleMap(
+                        mapType: MapType.hybrid,
+                        markers: markers,
+                        initialCameraPosition: cameraPos!,
+                        onMapCreated: (GoogleMapController controller) {
+                          setState(() {
+                            _mapLoading = false;
+                          });
+                          // _controller.complete(controller);
+                        },
                       ),
-                    )
-                  : Container(),
-            ],
-          );
-        }),
-        appBar: AppBar(
-          title: Text("Service Location"),
-        ));
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            (_mapLoading)
+                ? Container(
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width,
+                    // color: Colors.grey[100],
+                    child: Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                  )
+                : Container(),
+          ],
+        );
+      }),
+    );
   }
 
   setMarker() async {
