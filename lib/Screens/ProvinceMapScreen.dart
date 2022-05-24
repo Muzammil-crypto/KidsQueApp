@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sign_in_interface/Screens/ProvinceDetailScreen.dart';
+import 'package:sign_in_interface/Screens/ProvincesScreen.dart';
 
 class ProvinceMapScreen extends StatefulWidget {
   double lat;
@@ -55,12 +56,33 @@ class _ProvinceMapScreenState extends State<ProvinceMapScreen> {
             Container(
               color: Colors.yellow.shade900,
               height: MediaQuery.of(context).size.height / 4.5,
-              child: Center(
-                  child: Text("Tap on Place to see the Details",
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontFamily: "BubblegumSans",
-                          color: Colors.white))),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18.0),
+                    child: GestureDetector(
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                      ),
+                      onTap: () => {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProvincesListScreen())),
+                      },
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 30),
+                    child: Text("Tap on Place to see the Details",
+                        style: TextStyle(
+                            fontSize: 30,
+                            fontFamily: "BubblegumSans",
+                            color: Colors.white)),
+                  )
+                ],
+              ),
             ),
             Positioned(
               bottom: 0,
