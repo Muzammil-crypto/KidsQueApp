@@ -7,7 +7,7 @@ import 'package:sign_in_interface/Quiz/lib/stores/quiz_store.dart';
 import 'package:sign_in_interface/Screens/About_us.dart';
 import 'package:sign_in_interface/Screens/Login1.dart';
 import 'package:sign_in_interface/Screens/Profile.dart';
-import 'package:sign_in_interface/Screens/ProvincesScreen.dart';
+import 'package:sign_in_interface/Screens/ProvincesListScreen.dart';
 import 'package:sign_in_interface/Screens/Signup.dart';
 import 'package:sign_in_interface/Screens/chooice_screen.dart';
 import 'package:sign_in_interface/Screens/contact_us.dart';
