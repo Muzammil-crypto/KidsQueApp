@@ -93,8 +93,10 @@ class _DrawerAnimatedState extends State<DrawerAnimated> {
                     ),
                   ),
                   onTap: () => {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => DrawerAnimated())),
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DrawerAnimated())),
                   },
                 ),
                 InkWell(
@@ -185,10 +187,10 @@ class _DrawerAnimatedState extends State<DrawerAnimated> {
                     ),
                   ),
                   onTap: () => {
-                  Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => Login()),
-                  (route) => false),
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => Login()),
+                        (route) => false),
                   },
                 ),
               ],

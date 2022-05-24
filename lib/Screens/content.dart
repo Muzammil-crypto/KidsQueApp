@@ -67,15 +67,6 @@ class _ContentScreenState extends State<ContentScreen> {
                               child: SliderBanner(),
                               height: MediaQuery.of(context).size.height / 2,
                               width: MediaQuery.of(context).size.width,
-                              // decoration: BoxDecoration(
-                              //     image: DecorationImage(
-                              //         fit: BoxFit.fill,
-                              //         image: NetworkImage(
-                              //             "https://media.istockphoto.com/photos/lahore-fort-shahi-fort-lahore-picture-id833093782?b=1&k=20&m=833093782&s=170667a&w=0&h=UuqEfc9B22K0Z8XN3fNRVliGPa9k4Fowm8Ensq_5CjA=")),
-                              //     color: Colors.white,
-                              //     borderRadius: BorderRadius.only(
-                              //         bottomLeft: Radius.circular(40),
-                              //         bottomRight: Radius.circular(40))),
                             ),
                           ),
                         ),
