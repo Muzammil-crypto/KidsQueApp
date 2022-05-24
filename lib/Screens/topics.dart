@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:sign_in_interface/Screens/ProvincesScreen.dart';
+import 'package:sign_in_interface/Screens/ProvincesListScreen.dart';
 import 'package:sign_in_interface/Screens/hero_categories.dart';
 import 'package:sign_in_interface/Screens/performance_screen.dart';
 import 'package:sign_in_interface/Widgets/Clipper3.dart';

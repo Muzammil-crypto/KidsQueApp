@@ -2,22 +2,29 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:sign_in_interface/Screens/CitydetialScreen.dart';
 import 'package:sign_in_interface/Screens/ProvinceDetailScreen.dart';
-import 'package:sign_in_interface/Screens/ProvincesScreen.dart';
 
-class ProvinceMapScreen extends StatefulWidget {
+import 'ProvincesListScreen.dart';
+
+class MapScreen extends StatefulWidget {
+  String label;
   double lat;
   double long;
   int id;
-  ProvinceMapScreen(
-      {Key? key, required this.lat, required this.long, required this.id})
+  MapScreen(
+      {Key? key,
+      required this.lat,
+      required this.long,
+      required this.id,
+      required this.label})
       : super(key: key);
 
   @override
-  State<ProvinceMapScreen> createState() => _ProvinceMapScreenState();
+  State<MapScreen> createState() => _MapScreenState();
 }
 
-class _ProvinceMapScreenState extends State<ProvinceMapScreen> {
+class _MapScreenState extends State<MapScreen> {
   // Set<Polygon> polygons = HashSet<Polygon>();
   Set<Marker> markers = <Marker>{};
   Marker? _marker;
@@ -136,11 +143,17 @@ class _ProvinceMapScreenState extends State<ProvinceMapScreen> {
         infoWindow: InfoWindow(title: 'My location'),
         onTap: () {
           Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => ProvinceDetailScreen(
-                        id: widget.id,
-                      )));
+            context,
+            MaterialPageRoute(
+              builder: (context) => widget.label == "Province"
+                  ? ProvinceDetailScreen(
+                      id: widget.id,
+                    )
+                  : CityDetails(
+                      id: widget.id.toString(),
+                    ),
+            ),
+          );
         },
         position: LatLng(widget.lat, widget.long));
     markers.add(_marker!);
@@ -150,15 +163,4 @@ class _ProvinceMapScreenState extends State<ProvinceMapScreen> {
   void dispose() {
     super.dispose();
   }
-
-  // void setPolygon() {
-  //   final String polygonIdVal = "polygon_id_$polygonIDCounter";
-  //   polygons.add(Polygon(
-  //     polygonId: PolygonId(polygonIdVal),
-  //     points: polygonLatLngs,
-  //     strokeWidth: 2,
-  //     strokeColor: Colors.yellow,
-  //     fillColor: Colors.yellow.withOpacity(0.15),
-  //   ));
-  // }
 }

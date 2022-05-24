@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Models/provinceModel.dart';
 import 'package:sign_in_interface/Screens/heroesDetail.dart';
 
-import 'ProvinceMapScreen.dart';
+import 'MapScreen.dart';
 
 class ProvincesListScreen extends StatefulWidget {
   const ProvincesListScreen({Key? key}) : super(key: key);
@@ -35,7 +35,8 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                     Colors.red,
                     Colors.deepOrange,
                     "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
-                    ProvinceMapScreen(
+                    MapScreen(
+                      label: "Province",
                       lat: 31.1704,
                       long: 72.7097,
                       id: 5,
@@ -46,7 +47,8 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                     Colors.deepPurple,
                     Colors.cyan,
                     "Sindh is one of the four provinces of Pakistan. Located in the southeastern region of the country, Sindh is the third-largest province of Pakistan by total area and the second-largest province by population after Punjab.",
-                    ProvinceMapScreen(
+                    MapScreen(
+                      label: "Province",
                       lat: 31.1704,
                       long: 72.7097,
                       id: 5,
@@ -59,7 +61,8 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                     Color.fromARGB(255, 0, 78, 3),
                     Colors.teal,
                     "Khyber Pakhtunkhwa, often abbreviated as KPK or KP, is a province of Pakistan. It is located in the northwestern region of the country, along the Afghanistan–Pakistan border and close to Tajikistan border.",
-                    ProvinceMapScreen(
+                    MapScreen(
+                      label: "Province",
                       lat: 31.1704,
                       long: 72.7097,
                       id: 5,
@@ -70,7 +73,8 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                     Colors.pinkAccent,
                     Colors.deepOrangeAccent,
                     "Balochistan is one of the four provinces of Pakistan. It is the largest province in terms of land area, forming the southwestern region of the country, but is the least populated. Its provincial capital and largest city is Quetta.",
-                    ProvinceMapScreen(
+                    MapScreen(
+                      label: "Province",
                       lat: 31.1704,
                       long: 72.7097,
                       id: 5,
@@ -83,7 +87,8 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                     // Colors.green,
                     // Colors.tealAccent,
                     "Gilgit-Baltistan, formerly known as the Northern Areas, is a region administered by Pakistan as an autonomous territory, and constituting the northern portion of the larger Kashmir region which has been the subject of a dispute between India and Pakistan since 1947, and between India and China from somewhat later.",
-                    ProvinceMapScreen(
+                    MapScreen(
+                      label: "Province",
                       lat: 31.1704,
                       long: 72.7097,
                       id: 5,

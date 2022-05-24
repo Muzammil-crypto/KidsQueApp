@@ -72,7 +72,6 @@ class TimelineWidget extends StatelessWidget {
                         width: MediaQuery.of(context).size.width,
                         child: Timeline(
                           children: <TimelineModel>[
-//********************************************************************************************************************** */
                             TimelineModel(
                               getTimeline(
                                   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt3dABDzZ3cyuuz-pl-GmGJWebKbcx3rqw6Q&usqp=CAU",
