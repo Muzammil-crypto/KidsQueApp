@@ -12,7 +12,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 4), () {
       Navigator.of(context)
           .pushReplacement(MaterialPageRoute(builder: (ctx) => Login()));
     });
@@ -95,56 +95,67 @@ class _SplashScreenState extends State<SplashScreen> {
                         ]),
                       ),
                     )),
+
                 Positioned(
-                    top: MediaQuery.of(context).size.height / 1.8,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20.0),
-                      child: Container(
-                        height: MediaQuery.of(context).size.height / 3.5,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('assets/svg.png'))),
+                    bottom: 60,
+                    child: Container(
+                      height: MediaQuery.of(context).size.height / 4.2,
+                      width: 500,
+                      child: Image(
+                        image: AssetImage("assets/ani11.gif"),
                       ),
                     )),
-                Positioned(
-                  bottom: 50,
-                  child: SingleChildScrollView(
-                    child: RaisedButton(
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => SignUp()));
-                      },
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0)),
-                      padding: const EdgeInsets.all(0.0),
-                      child: Ink(
-                        decoration: const BoxDecoration(
-                          color: Color(0xFFF57F17),
-                          //  color: Color.fromARGB(255, 1, 68, 3),
+                // Positioned(
+                //     top: MediaQuery.of(context).size.height / 1.8,
+                //     child: Padding(
+                //       padding: const EdgeInsets.only(top: 60.0, right: 100),
+                //       child: Container(
+                //         height: MediaQuery.of(context).size.height / 5,
+                //         width: MediaQuery.of(context).size.width,
+                //         decoration: BoxDecoration(
+                //             image: DecorationImage(
+                //                 image: AssetImage('assets/svg.png'))),
+                //       ),
+                //     )),
 
-                          borderRadius: BorderRadius.all(Radius.circular(80.0)),
-                        ),
-                        child: Container(
-                          constraints: const BoxConstraints(
-                              minWidth: 320.0,
-                              minHeight:
-                                  50.0), // min sizes for Material buttons
-                          alignment: Alignment.center,
-                          child: const Text(
-                            'Start Learning Today',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: "BubblegumSans",
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 30),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                // Positioned(
+                //   bottom: 50,
+                //   child: SingleChildScrollView(
+                //     child: RaisedButton(
+                //       onPressed: () {
+                //         Navigator.push(context,
+                //             MaterialPageRoute(builder: (context) => SignUp()));
+                //       },
+                //       shape: RoundedRectangleBorder(
+                //           borderRadius: BorderRadius.circular(80.0)),
+                //       padding: const EdgeInsets.all(0.0),
+                //       child: Ink(
+                //         decoration: const BoxDecoration(
+                //           color: Color(0xFFF57F17),
+                //           //  color: Color.fromARGB(255, 1, 68, 3),
+
+                //           borderRadius: BorderRadius.all(Radius.circular(80.0)),
+                //         ),
+                //         child: Container(
+                //           constraints: const BoxConstraints(
+                //               minWidth: 320.0,
+                //               minHeight:
+                //                   50.0), // min sizes for Material buttons
+                //           alignment: Alignment.center,
+                //           child: const Text(
+                //             'Start Learning Today',
+                //             textAlign: TextAlign.center,
+                //             style: TextStyle(
+                //                 fontFamily: "BubblegumSans",
+                //                 color: Colors.white,
+                //                 fontWeight: FontWeight.w400,
+                //                 fontSize: 30),
+                //           ),
+                //         ),
+                //       ),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),

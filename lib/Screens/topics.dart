@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Screens/ProvincesListScreen.dart';
+import 'package:sign_in_interface/Screens/citiesListScreen.dart';
 import 'package:sign_in_interface/Screens/hero_categories.dart';
 import 'package:sign_in_interface/Screens/performance_screen.dart';
 import 'package:sign_in_interface/Widgets/Clipper3.dart';
@@ -104,19 +105,20 @@ class _TopicsState extends State<Topics> {
                   "Explore\n Cities",
                   Color.fromARGB(255, 79, 100, 218),
                   Color.fromARGB(202, 13, 50, 51),
-                  ContentScreen()),
+                  CitiesListScreen()),
+              getContainer("assets/River.png", "Explore\n Rivers", Colors.green,
+                  Colors.teal, ProvincesListScreen()),
               getContainer(
                   "assets/majj.png",
                   "Explore\n Heroes",
                   Color.fromARGB(255, 167, 5, 5),
                   Colors.deepOrangeAccent,
                   HeroCategory()),
-              getContainer("assets/mpp.png", "Explore\n History", Colors.purple,
-                  Colors.deepPurpleAccent, TimelineWidget()),
+
               Padding(
                 padding: const EdgeInsets.only(bottom: 18.0),
-                child: getContainer("assets/River.png", "Explore\n Rivers",
-                    Colors.green, Colors.teal, ContentScreen()),
+                child: getContainer("assets/mpp.png", "Explore\n History",
+                    Colors.purple, Colors.deepPurpleAccent, TimelineWidget()),
               ),
 
               // getContainer("assets/cull.png", "Explore\n Provinces",
@@ -220,36 +222,42 @@ class getContainer extends StatelessWidget {
                             width: MediaQuery.of(context).size.width / 1.35,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
-                              //  color: Colors.white,
+                              //   color: Colors.white,
                             ),
                             child: Row(
                               children: [
                                 Container(
-                                  height: 30,
-                                  width: 80,
-                                  margin: EdgeInsets.only(left: 20),
-                                  child: Center(
-                                    child: Text(
-                                      "View Chapter",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          color: Colors.black,
-                                          fontFamily: "BubblegumSans"),
+                                  margin: EdgeInsets.only(left: 30),
+                                  height: 35,
+                                  width: 90,
+                                  child: Card(
+                                    color: Colors.yellow.shade900,
+                                    elevation: 5,
+                                    shadowColor: Colors.white,
+                                    child: Center(
+                                      child: Text(
+                                        "View Chapter",
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            color: Colors.white,
+                                            fontFamily: "BubblegumSans"),
+                                      ),
                                     ),
                                   ),
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(8)),
                                 ),
                                 Container(
+                                  width: 60,
                                   margin: EdgeInsets.only(left: 105),
-                                  child: IconButton(
-                                      onPressed: () {},
-                                      icon: Icon(
-                                        Icons.menu_book_sharp,
-                                        color: Colors.white,
-                                        size: 30,
-                                      )),
+                                  child: Card(
+                                    color: Colors.yellow.shade900,
+                                    elevation: 5,
+                                    shadowColor: Colors.white,
+                                    child: Center(
+                                        child: Icon(
+                                      Icons.menu_book_sharp,
+                                      color: Colors.white,
+                                    )),
+                                  ),
                                 )
                               ],
                             ),

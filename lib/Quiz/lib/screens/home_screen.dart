@@ -44,12 +44,13 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Stack(
             children: [
               Positioned(
-                bottom: MediaQuery.of(context).size.height / 1.6,
-                left: MediaQuery.of(context).size.width / 2,
+                bottom: MediaQuery.of(context).size.height / 1.8,
+
+                // left: MediaQuery.of(context).size.width,
                 child: Container(
                   height: MediaQuery.of(context).size.height / 3,
                   width: MediaQuery.of(context).size.width / 2,
-                  child: Image.asset("assets/svg.png"),
+                  child: Image.asset("assets/ani31.gif"),
                 ),
               ),
               drawerToggleButton(),
@@ -59,23 +60,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(right: 150),
+                        margin: EdgeInsets.only(left: 50),
                         child: Text(
                           "Quiz",
                           style: TextStyle(
                               fontSize: 80,
-                              color: Color.fromARGB(255, 255, 92, 146),
-                              fontFamily: "BubblegumSans"),
+                              color: Colors.deepPurple,
+                              fontFamily: "ShinyBalloonDemo"),
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(left: 0),
+                        margin: EdgeInsets.only(left: 100),
                         child: Text(
                           "Villa",
                           style: TextStyle(
                               fontSize: 50,
                               color: Colors.white,
-                              fontFamily: "Flavors"),
+                              fontFamily: "BubblegumSans"),
                         ),
                       ),
                       SizedBox(height: 30),
