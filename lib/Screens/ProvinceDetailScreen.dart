@@ -57,6 +57,15 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
           response.data['data']['attributes']['video'] == null
               ? ""
               : response.data['data']['attributes']['video'];
+
+      response.data["data"]["attributes"]["Image"]["data"] != null
+          ? response.data["data"]["attributes"]["Image"]["data"].forEach((e) {
+              e["attributes"]["url"] != null
+                  ? provinceModel.images.add(e["attributes"]["url"])
+                  : null;
+            })
+          : null;
+      print("Images: ${provinceModel.images}");
       setState(() {
         isLoading = false;
       });
