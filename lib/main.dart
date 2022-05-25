@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Quiz/lib/common/route_generator.dart';
+import 'package:sign_in_interface/Quiz/lib/screens/home_screen.dart';
+import 'package:sign_in_interface/Quiz/lib/screens/quiz_screen.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/quiz_splash_screen.dart';
 import 'package:sign_in_interface/Quiz/lib/stores/quiz_store.dart';
 import 'package:sign_in_interface/Screens/About_us.dart';
@@ -40,7 +42,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
       onGenerateRoute: RouteGenerator.generateRoute,
-      //home: SplashScreen(),
+      //home: HomeScreen(),
       home: DrawerAnimated(),
     );
   }

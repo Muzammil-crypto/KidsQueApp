@@ -66,11 +66,11 @@ class _QuizSplashScreenState extends State<QuizSplashScreen> {
                       children: <Widget>[
                         Container(
                           margin: EdgeInsets.only(
-                            top: MediaQuery.of(context).size.height / 5.5,
+                            top: MediaQuery.of(context).size.height / 25,
                           ),
                           height: MediaQuery.of(context).size.height / 2,
                           width: MediaQuery.of(context).size.width / 1.19,
-                          child: Image(image: AssetImage("assets/balloon.png")),
+                          child: Image(image: AssetImage("assets/ani27.gif")),
                         ),
                       ],
                     ),
@@ -104,19 +104,14 @@ class _QuizSplashScreenState extends State<QuizSplashScreen> {
                       )
                     ])),
                 Positioned(
-                  bottom: MediaQuery.of(context).size.height / 7,
-                  child: DiscoButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Proceeding ",
-                      style: TextStyle(
-                          fontSize: 35,
-                          color: Colors.white,
-                          fontFamily: "BubblegumSans"),
-                    ),
-                    isActive: true,
-                  ),
-                ),
+                    bottom: 60,
+                    child: Container(
+                      height: MediaQuery.of(context).size.height / 5,
+                      width: 500,
+                      child: Image(
+                        image: AssetImage("assets/ani26.gif"),
+                      ),
+                    )),
                 // Positioned(
                 //   bottom: MediaQuery.of(context).size.height / 4.7,
                 //   child: SingleChildScrollView(
