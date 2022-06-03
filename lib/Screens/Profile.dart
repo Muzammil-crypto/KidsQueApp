@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Widgets/Clipper.dart';
-import 'chooice_screen.dart';
+import 'AnimateChoices.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
@@ -33,7 +33,7 @@ class ProfileScreen extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DrawerAnimated())),
+                                  builder: (context) => HomepageScreen())),
                         },
                       )
                     ],
@@ -190,7 +190,7 @@ class ProfileScreen extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => DrawerAnimated()));
+                                builder: (context) => HomepageScreen()));
                       },
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(80.0)),

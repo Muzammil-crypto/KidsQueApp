@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Screens/ProvincesListScreen.dart';
-import 'package:sign_in_interface/Screens/chooice_screen.dart';
+import 'package:sign_in_interface/Screens/choicesScreen.dart';
+import 'package:sign_in_interface/Screens/AnimateChoices.dart';
 
 import 'MapScreen.dart';
 
@@ -9,120 +10,6 @@ class CitiesListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return SafeArea(
-    //   child: Scaffold(
-    //     appBar: AppBar(
-    //       title: Text("Provinces"),
-    //     ),
-    //     body: Container(
-    //       child: Column(
-    //         children: [
-    //           GestureDetector(
-    //             onTap: () {
-    //               print("Hello");
-    //               Navigator.push(
-    //                   context,
-    //                   MaterialPageRoute(
-    //                       builder: (context) => MapScreen(
-    //                             label: "city",
-    //                             lat: 31.1704,
-    //                             long: 72.7097,
-    //                             id: 1,
-    //                           )));
-    //             },
-    //             child: ListTile(
-    //               title: Text("Lahore"),
-    //             ),
-    //           ),
-    //           GestureDetector(
-    //             onTap: () {
-    //               print("Hello");
-    //               Navigator.push(
-    //                   context,
-    //                   MaterialPageRoute(
-    //                       builder: (context) => MapScreen(
-    //                             label: "city",
-    //                             lat: 31.1704,
-    //                             long: 72.7097,
-    //                             id: 2,
-    //                           )));
-    //             },
-    //             child: ListTile(
-    //               title: Text("Islamabad"),
-    //             ),
-    //           ),
-    //           GestureDetector(
-    //             onTap: () {
-    //               print("Hello");
-    //               Navigator.push(
-    //                   context,
-    //                   MaterialPageRoute(
-    //                       builder: (context) => MapScreen(
-    //                             label: "city",
-    //                             lat: 31.1704,
-    //                             long: 72.7097,
-    //                             id: 3,
-    //                           )));
-    //             },
-    //             child: ListTile(
-    //               title: Text("Multan"),
-    //             ),
-    //           ),
-    //           GestureDetector(
-    //             onTap: () {
-    //               print("Hello");
-    //               Navigator.push(
-    //                   context,
-    //                   MaterialPageRoute(
-    //                       builder: (context) => MapScreen(
-    //                             label: "city",
-    //                             lat: 31.1704,
-    //                             long: 72.7097,
-    //                             id: 4,
-    //                           )));
-    //             },
-    //             child: ListTile(
-    //               title: Text("Peshawar"),
-    //             ),
-    //           ),
-    //           GestureDetector(
-    //             onTap: () {
-    //               Navigator.push(
-    //                   context,
-    //                   MaterialPageRoute(
-    //                       builder: (context) => MapScreen(
-    //                             label: "city",
-    //                             lat: 31.1704,
-    //                             long: 72.7097,
-    //                             id: 5,
-    //                           )));
-    //             },
-    //             child: ListTile(
-    //               title: Text("Quetta"),
-    //             ),
-    //           ),
-    //           GestureDetector(
-    //             onTap: () {
-    //               Navigator.push(
-    //                   context,
-    //                   MaterialPageRoute(
-    //                       builder: (context) => MapScreen(
-    //                             label: "city",
-    //                             lat: 31.1704,
-    //                             long: 72.7097,
-    //                             id: 6,
-    //                           )));
-    //             },
-    //             child: ListTile(
-    //               title: Text("Rawalpindi"),
-    //             ),
-    //           ),
-    //         ],
-    //       ),
-    //     ),
-    //   ),
-    // );
-
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -140,9 +27,9 @@ class CitiesListScreen extends StatelessWidget {
                         "Karachi is the largest city in Pakistan and the twelfth-largest city in the world. It is the capital of the Pakistani province of Sindh. Ranked as a beta-global city, it is Pakistan's premier industrial and financial centre.",
                         MapScreen(
                           label: "city",
-                          lat: 31.1704,
-                          long: 72.7097,
-                          id: 5,
+                          lat: 25.31664378584215,
+                          long: 67.02999062754044,
+                          id: 4,
                         )),
                     ProvinceDetails(
                         "assets/c3.gif",
@@ -153,9 +40,9 @@ class CitiesListScreen extends StatelessWidget {
                         "Lahore is the capital of the Pakistani province of Punjab, is Pakistan's 2nd largest city, and is the 26th largest city in the world. Lahore is one of Pakistan's wealthiest cities.",
                         MapScreen(
                           label: "city",
-                          lat: 31.1704,
-                          long: 72.7097,
-                          id: 5,
+                          lat: 31.859583967375077,
+                          long: 74.23925683546577,
+                          id: 1,
                         )),
                     ProvinceDetails(
                         "assets/c4.png",
@@ -165,9 +52,9 @@ class CitiesListScreen extends StatelessWidget {
                         "Islamabad is the capital city of Pakistan, and is administered by the Pakistani federal government as part of the Islamabad Capital Territory. It is the ninth-largest city in Pakistan, while the larger Islamabad–Rawalpindi metropolitan area is the country's third-largest with a population of about 4.1 million people.",
                         MapScreen(
                           label: "city",
-                          lat: 31.1704,
-                          long: 72.7097,
-                          id: 5,
+                          lat: 34.11137541059898,
+                          long: 73.0708585190089,
+                          id: 2,
                         )),
                     ProvinceDetails(
                         "assets/c6.png",
@@ -179,9 +66,9 @@ class CitiesListScreen extends StatelessWidget {
                         "Multan is a city and capital of Multan Division located in Punjab, Pakistan. Situated on the bank of the Chenab River, Multan is Pakistan's 7th largest city and is the major cultural and economic centre of Southern Punjab. Multan's history stretches deep into antiquity.",
                         MapScreen(
                           label: "city",
-                          lat: 31.1704,
-                          long: 72.7097,
-                          id: 5,
+                          lat: 30.60548538432997,
+                          long: 71.52956712283178,
+                          id: 3,
                         )),
                     ProvinceDetails(
                         "assets/c5.png",
@@ -193,9 +80,9 @@ class CitiesListScreen extends StatelessWidget {
                         "Peshawar is the capital of the Pakistani province of Khyber Pakhtunkhwa and its largest city. It is the sixth-largest city in Pakistan, and the largest Pashtun-majority city in the country.",
                         MapScreen(
                           label: "city",
-                          lat: 31.1704,
-                          long: 72.7097,
-                          id: 5,
+                          lat: 34.46055187756329,
+                          long: 71.47984804553573,
+                          id: 4,
                         )),
                   ]),
             ),
@@ -216,7 +103,7 @@ class CitiesListScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DrawerAnimated())),
+                            builder: (context) => HomepageScreen())),
                   },
                 )),
           ]),

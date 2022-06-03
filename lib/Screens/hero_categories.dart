@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/home_screen.dart';
 import 'package:sign_in_interface/Screens/Login1.dart';
-import 'package:sign_in_interface/Screens/hero_screen.dart';
+import 'package:sign_in_interface/Screens/AnimateChoices.dart';
+import 'package:sign_in_interface/Screens/heroList_screen.dart';
 import 'package:sign_in_interface/Screens/heroesDetail.dart';
-import 'package:sign_in_interface/Screens/topics.dart';
+import 'package:sign_in_interface/Screens/choicesScreen.dart';
 import 'package:sign_in_interface/Widgets/Clipper.dart';
 
 import '../Widgets/Clipper3.dart';
@@ -40,7 +41,7 @@ class HeroCategory extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Topics())),
+                                      builder: (context) => HomepageScreen())),
                             },
                           ),
                         ),
@@ -76,18 +77,38 @@ class HeroCategory extends StatelessWidget {
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
                           children: [
-                            HeroContainer("assets/sports.jpeg",
-                                "National Sports Heroes", HeroesScreen(2)),
-                            HeroContainer("assets/army.jpeg", "Defence Heroes",
-                                HeroesScreen(2)),
-                            HeroContainer("assets/nusrat.jpg", "Entertainment",
-                                HeroesScreen(2)),
-                            HeroContainer("assets/iqbal3.jpeg",
-                                "Poets and Writers", HeroesScreen(2)),
-                            HeroContainer("assets/jinnah.jpeg",
-                                "Independance Heroes", HeroesScreen(2)),
-                            HeroContainer("assets/aqkhan1.jpeg",
-                                "Science & Technology", HeroesScreen(2)),
+                            HeroContainer(
+                                imgName: "assets/sports.jpeg",
+                                heading: "National Sports Heroes",
+                                pageToShow: HeroesScreen(
+                                  id: 4,
+                                  label: "heroes",
+                                )),
+                            HeroContainer(
+                                imgName: "assets/army.jpeg",
+                                heading: "Defence Heroes",
+                                pageToShow:
+                                    HeroesScreen(id: 2, label: "heroes")),
+                            HeroContainer(
+                                imgName: "assets/nusrat.jpg",
+                                heading: "Entertainment",
+                                pageToShow:
+                                    HeroesScreen(id: 6, label: "heroes")),
+                            HeroContainer(
+                                imgName: "assets/iqbal3.jpeg",
+                                heading: "Poets and Writers",
+                                pageToShow:
+                                    HeroesScreen(id: 5, label: "heroes")),
+                            HeroContainer(
+                                imgName: "assets/jinnah.jpeg",
+                                heading: "Independance Heroes",
+                                pageToShow:
+                                    HeroesScreen(id: 1, label: "heroes")),
+                            HeroContainer(
+                                imgName: "assets/aqkhan1.jpeg",
+                                heading: "Science & Technology",
+                                pageToShow:
+                                    HeroesScreen(id: 3, label: "heroes")),
                           ],
                         ),
                       ),
@@ -137,10 +158,8 @@ class HeroContainer extends StatelessWidget {
 
   final Widget pageToShow;
 
-  HeroContainer(String imgName, String heading, this.pageToShow) {
-    this.imgName = imgName;
-    this.heading = heading;
-  }
+  HeroContainer(
+      {required this.imgName, required this.heading, required this.pageToShow});
 
   @override
   Widget build(BuildContext context) {

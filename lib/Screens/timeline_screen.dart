@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sign_in_interface/Screens/content.dart';
-import 'package:sign_in_interface/Screens/topics.dart';
+import 'package:sign_in_interface/Screens/AnimateChoices.dart';
+import 'package:sign_in_interface/Screens/content_Screen.dart';
+import 'package:sign_in_interface/Screens/choicesScreen.dart';
 import 'package:sign_in_interface/Widgets/Clipper.dart';
 import 'package:timeline_list/timeline.dart';
 import 'package:timeline_list/timeline_model.dart';

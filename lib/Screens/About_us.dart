@@ -20,18 +20,18 @@ class AboutUs extends StatelessWidget {
               alignment: Alignment.center,
               children: <Widget>[
                 Positioned(
-                    top: MediaQuery.of(context).size.height / 7,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 15.0),
-                      child: Container(
-                        height: MediaQuery.of(context).size.height / 2.4,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('assets/svg.png'))),
+                    top: 0,
+                    child: Container(
+                      height: MediaQuery.of(context).size.height / 3,
+                      width: MediaQuery.of(context).size.width,
+                      color: Color.fromARGB(0, 3, 168, 244),
+                      child: Image(
+                        image: AssetImage("assets/ani30.gif"),
+                        fit: BoxFit.cover,
                       ),
                     )),
                 Positioned(
+                  bottom: 130,
                   child: Container(
                     margin: EdgeInsets.only(bottom: 15),
                     child: Container(
@@ -58,10 +58,10 @@ class AboutUs extends StatelessWidget {
                         ),
                       ),
                     ),
-                    height: MediaQuery.of(context).size.height / 1.5,
+                    height: MediaQuery.of(context).size.height / 1.8,
                     width: MediaQuery.of(context).size.width / 1.2,
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(181, 255, 142, 142),
+                        color: Color.fromARGB(197, 255, 142, 142),
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                   ),
                 ),

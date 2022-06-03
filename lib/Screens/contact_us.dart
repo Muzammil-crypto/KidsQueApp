@@ -19,18 +19,18 @@ class ContactUs extends StatelessWidget {
               alignment: Alignment.center,
               children: <Widget>[
                 Positioned(
-                    top: MediaQuery.of(context).size.height / 7,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 15.0),
-                      child: Container(
-                        height: MediaQuery.of(context).size.height / 2.4,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('assets/svg.png'))),
+                    top: 0,
+                    child: Container(
+                      height: MediaQuery.of(context).size.height / 3,
+                      width: MediaQuery.of(context).size.width,
+                      color: Color.fromARGB(0, 3, 168, 244),
+                      child: Image(
+                        image: AssetImage("assets/ani30.gif"),
+                        fit: BoxFit.cover,
                       ),
                     )),
                 Positioned(
+                  bottom: 150,
                   child: Container(
                     margin: EdgeInsets.only(bottom: 15),
                     child: Container(
@@ -42,29 +42,29 @@ class ContactUs extends StatelessWidget {
                               "Contact Us",
                               style: TextStyle(
                                   fontFamily: "BubblegumSans",
-                                  fontSize: 50,
+                                  fontSize: 40,
                                   color: Colors.white),
                             ),
                             Text(
                               "The mosque was commissioned by the chief physician to the Mughal Court, Hakeem Ilam-ud-din Ansari, who was widely known as Wazir KhanThe mosque was commissioned by the chief physician to the Mughal Court, Hakeem Ilam-ud-din Ansari, who was widely known as Wazir Khan, The mosque was commissioned by the chief physician to the Mughal Court, Hakeem Ilam-ud-din Ansari, who was widely known as Wazir KhanThe mosque was commissioned by the chief physician to the Mughal Court, Hakeem Ilam-ud-din Ansari, who was widely known as Wazir Khan",
                               style: TextStyle(
                                   fontFamily: "BubblegumSans",
-                                  fontSize: 24,
+                                  fontSize: 20,
                                   color: Colors.white),
                             ),
                           ],
                         ),
                       ),
                     ),
-                    height: MediaQuery.of(context).size.height / 1.5,
+                    height: MediaQuery.of(context).size.height / 1.8,
                     width: MediaQuery.of(context).size.width / 1.2,
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(171, 255, 142, 142),
-                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                        color: Color.fromARGB(197, 255, 142, 142),
+                        borderRadius: BorderRadius.all(Radius.circular(12))),
                   ),
                 ),
                 Positioned(
-                  bottom: 50,
+                  bottom: 70,
                   child: SingleChildScrollView(
                     child: RaisedButton(
                       shape: RoundedRectangleBorder(
@@ -83,7 +83,7 @@ class ContactUs extends StatelessWidget {
                                   50.0), // min sizes for Material buttons
                           alignment: Alignment.center,
                           child: const Text(
-                            'Contact Us',
+                            'Get in touch with Us',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontFamily: "BubblegumSans",

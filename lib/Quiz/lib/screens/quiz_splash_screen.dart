@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/home_screen.dart';
 import 'package:sign_in_interface/Quiz/lib/widgets/disco_button.dart';
-import 'package:sign_in_interface/Screens/content.dart';
+import 'package:sign_in_interface/Screens/content_Screen.dart';
 import 'package:sign_in_interface/Widgets/Clipper.dart';
 
 class QuizSplashScreen extends StatefulWidget {

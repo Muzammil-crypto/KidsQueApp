@@ -84,7 +84,7 @@ class _MapScreenState extends State<MapScreen> {
                     margin: EdgeInsets.only(left: 30),
                     child: Text("Tap on Place to see the Details",
                         style: TextStyle(
-                            fontSize: 30,
+                            fontSize: 25,
                             fontFamily: "BubblegumSans",
                             color: Colors.white)),
                   )
@@ -127,7 +127,13 @@ class _MapScreenState extends State<MapScreen> {
                     width: MediaQuery.of(context).size.width,
                     // color: Colors.grey[100],
                     child: Center(
-                      child: CircularProgressIndicator(),
+                      child: Container(
+                        height: MediaQuery.of(context).size.height / 3.2,
+                        width: MediaQuery.of(context).size.width / 0.5,
+                        child: Image(
+                          image: AssetImage("assets/ani34.gif"),
+                        ),
+                      ),
                     ),
                   )
                 : Container(),

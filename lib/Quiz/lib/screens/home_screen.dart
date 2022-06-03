@@ -8,7 +8,7 @@ import 'package:sign_in_interface/Quiz/lib/stores/quiz_store.dart';
 import 'package:sign_in_interface/Quiz/lib/widgets/disco_button.dart';
 import 'package:sign_in_interface/Screens/About_us.dart';
 import 'package:sign_in_interface/Screens/Profile.dart';
-import 'package:sign_in_interface/Screens/content.dart';
+import 'package:sign_in_interface/Screens/content_Screen.dart';
 import 'package:sign_in_interface/Screens/performance_screen.dart';
 
 import 'quiz_category.dart';

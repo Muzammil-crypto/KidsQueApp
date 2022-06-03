@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Screens/Login1.dart';
-import 'package:sign_in_interface/Screens/topics.dart';
+import 'package:sign_in_interface/Screens/choicesScreen.dart';
 import 'package:snippet_coder_utils/ProgressHUD.dart';
 
 import '../Widgets/Clipper.dart';
@@ -33,7 +33,13 @@ class _SignUpState extends State<SignUp> {
       backgroundColor: Colors.yellow.shade900,
       body: isLoading
           ? Center(
-              child: CircularProgressIndicator(),
+              child: Container(
+                height: MediaQuery.of(context).size.height / 3.2,
+                width: MediaQuery.of(context).size.width / 0.5,
+                child: Image(
+                  image: AssetImage("assets/ani34.gif"),
+                ),
+              ),
             )
           : SingleChildScrollView(
               child: ClipPath(
@@ -48,6 +54,27 @@ class _SignUpState extends State<SignUp> {
                   child: Stack(
                     alignment: Alignment.center,
                     children: <Widget>[
+                      Positioned(
+                          top: 40,
+                          left: 20,
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 10,
+                            child: IconButton(
+                              icon: Icon(
+                                Icons.arrow_back_ios,
+                                size: 20,
+                                color: Colors.white,
+                              ),
+                              onPressed: () => {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Login(),
+                                  ),
+                                ),
+                              },
+                            ),
+                          )),
                       Positioned(
                         child: Container(
                           margin: EdgeInsets.only(
@@ -254,36 +281,32 @@ class _SignUpState extends State<SignUp> {
                         bottom: 150,
                         //   child: Padding(
                         // padding: const EdgeInsets.only(top: 250),
-                        child: InkWell(
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(158, 255, 255, 255),
-                                borderRadius: BorderRadius.circular(12)),
-                            height: 50,
-                            child: TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom(
-                                primary: Color.fromARGB(255, 255, 255, 255),
-                              ),
-                              child: Text(
-                                'Already Have an account? Sign In',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    decoration: TextDecoration.underline,
-                                    fontStyle: FontStyle.italic,
-                                    fontFamily: "BubblegumSans"),
-                              ),
+
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(158, 255, 255, 255),
+                              borderRadius: BorderRadius.circular(12)),
+                          height: 50,
+                          child: TextButton(
+                            onPressed: () => {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Login())),
+                            },
+                            style: TextButton.styleFrom(
+                              primary: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                            child: Text(
+                              'Already Have an account? Sign In',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  decoration: TextDecoration.underline,
+                                  fontStyle: FontStyle.italic,
+                                  fontFamily: "BubblegumSans"),
                             ),
                           ),
-                          onTap: () => {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Login())),
-
-
-                          },
                         ),
                       ),
                     ],
@@ -304,10 +327,8 @@ class _SignUpState extends State<SignUp> {
       });
       print(response.data);
       if (response.statusCode == 200) {
-        Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(builder: (context) => Login()),
-            (route) => false);
+        Navigator.pushAndRemoveUntil(context,
+            MaterialPageRoute(builder: (context) => Login()), (route) => false);
       }
     } on DioError catch (e) {
       print(e.response);

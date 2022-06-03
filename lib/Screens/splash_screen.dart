@@ -97,10 +97,10 @@ class _SplashScreenState extends State<SplashScreen> {
                     )),
 
                 Positioned(
-                    bottom: 60,
+                    bottom: 120,
                     child: Container(
                       height: MediaQuery.of(context).size.height / 4.2,
-                      width: 500,
+                      width: MediaQuery.of(context).size.width / 0.5,
                       child: Image(
                         image: AssetImage("assets/ani11.gif"),
                       ),
@@ -118,44 +118,44 @@ class _SplashScreenState extends State<SplashScreen> {
                 //       ),
                 //     )),
 
-                // Positioned(
-                //   bottom: 50,
-                //   child: SingleChildScrollView(
-                //     child: RaisedButton(
-                //       onPressed: () {
-                //         Navigator.push(context,
-                //             MaterialPageRoute(builder: (context) => SignUp()));
-                //       },
-                //       shape: RoundedRectangleBorder(
-                //           borderRadius: BorderRadius.circular(80.0)),
-                //       padding: const EdgeInsets.all(0.0),
-                //       child: Ink(
-                //         decoration: const BoxDecoration(
-                //           color: Color(0xFFF57F17),
-                //           //  color: Color.fromARGB(255, 1, 68, 3),
+                Positioned(
+                  bottom: 30,
+                  child: SingleChildScrollView(
+                    child: RaisedButton(
+                      onPressed: () {
+                        // Navigator.push(context,
+                        //     MaterialPageRoute(builder: (context) => Login()));
+                      },
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(80.0)),
+                      padding: const EdgeInsets.all(0.0),
+                      child: Ink(
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFF57F17),
+                          //  color: Color.fromARGB(255, 1, 68, 3),
 
-                //           borderRadius: BorderRadius.all(Radius.circular(80.0)),
-                //         ),
-                //         child: Container(
-                //           constraints: const BoxConstraints(
-                //               minWidth: 320.0,
-                //               minHeight:
-                //                   50.0), // min sizes for Material buttons
-                //           alignment: Alignment.center,
-                //           child: const Text(
-                //             'Start Learning Today',
-                //             textAlign: TextAlign.center,
-                //             style: TextStyle(
-                //                 fontFamily: "BubblegumSans",
-                //                 color: Colors.white,
-                //                 fontWeight: FontWeight.w400,
-                //                 fontSize: 30),
-                //           ),
-                //         ),
-                //       ),
-                //     ),
-                //   ),
-                // ),
+                          borderRadius: BorderRadius.all(Radius.circular(80.0)),
+                        ),
+                        child: Container(
+                          constraints: const BoxConstraints(
+                              minWidth: 320.0,
+                              minHeight:
+                                  50.0), // min sizes for Material buttons
+                          alignment: Alignment.center,
+                          child: const Text(
+                            'Start Learning Today',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: "BubblegumSans",
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 30),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Models/provinceModel.dart';
-import 'package:sign_in_interface/Screens/chooice_screen.dart';
+import 'package:sign_in_interface/Screens/choicesScreen.dart';
+import 'package:sign_in_interface/Screens/AnimateChoices.dart';
 import 'package:sign_in_interface/Screens/heroesDetail.dart';
 
 import 'MapScreen.dart';
@@ -40,9 +41,9 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                         "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
                         MapScreen(
                           label: "Province",
-                          lat: 31.1704,
-                          long: 72.7097,
-                          id: 5,
+                          lat: 31.335379848825273,
+                          long: 72.7280952624079,
+                          id: 1,
                         )),
                     ProvinceDetails(
                         "assets/sindh.png",
@@ -52,9 +53,9 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                         "Sindh is one of the four provinces of Pakistan. Located in the southeastern region of the country, Sindh is the third-largest province of Pakistan by total area and the second-largest province by population after Punjab.",
                         MapScreen(
                           label: "Province",
-                          lat: 31.1704,
-                          long: 72.7097,
-                          id: 5,
+                          lat: 26.36127443787428,
+                          long: 68.48155098358325,
+                          id: 2,
                         )),
                     ProvinceDetails(
                         "assets/p4.png",
@@ -66,9 +67,9 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                         "Khyber Pakhtunkhwa, often abbreviated as KPK or KP, is a province of Pakistan. It is located in the northwestern region of the country, along the Afghanistan–Pakistan border and close to Tajikistan border.",
                         MapScreen(
                           label: "Province",
-                          lat: 31.1704,
-                          long: 72.7097,
-                          id: 5,
+                          lat: 35.328121934776334,
+                          long: 72.32469792112319,
+                          id: 3,
                         )),
                     ProvinceDetails(
                         "assets/baloch.png",
@@ -78,9 +79,9 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                         "Balochistan is one of the four provinces of Pakistan. It is the largest province in terms of land area, forming the southwestern region of the country, but is the least populated. Its provincial capital and largest city is Quetta.",
                         MapScreen(
                           label: "Province",
-                          lat: 31.1704,
-                          long: 72.7097,
-                          id: 5,
+                          lat: 29.00934280813528,
+                          long: 65.09094661299501,
+                          id: 4,
                         )),
                     ProvinceDetails(
                         "assets/p5.png",
@@ -92,9 +93,9 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                         "Gilgit-Baltistan, formerly known as the Northern Areas, is a region administered by Pakistan as an autonomous territory, and constituting the northern portion of the larger Kashmir region which has been the subject of a dispute between India and Pakistan since 1947, and between India and China from somewhat later.",
                         MapScreen(
                           label: "Province",
-                          lat: 31.1704,
-                          long: 72.7097,
-                          id: 5,
+                          lat: 36.14435020478446,
+                          long: 75.05962161085037,
+                          id: 1,
                         )),
                   ]),
             ),
@@ -115,7 +116,7 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DrawerAnimated())),
+                            builder: (context) => HomepageScreen())),
                   },
                 )),
           ]),

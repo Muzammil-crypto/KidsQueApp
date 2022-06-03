@@ -2,8 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:sign_in_interface/Screens/Signup.dart';
-import 'package:sign_in_interface/Screens/chooice_screen.dart';
-import 'package:sign_in_interface/Screens/topics.dart';
+import 'package:sign_in_interface/Screens/AnimateChoices.dart';
+import 'package:sign_in_interface/Screens/choicesScreen.dart';
 import 'package:snippet_coder_utils/ProgressHUD.dart';
 
 import '../Widgets/Clipper.dart';
@@ -20,7 +20,7 @@ class _LoginState extends State<Login> {
   bool _isAPIcallProcess = false;
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
-bool isLoading = false;
+  bool isLoading = false;
   String? _username;
   String? _password;
 
@@ -40,23 +40,23 @@ bool isLoading = false;
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
-                Positioned(
-                    top: 40,
-                    left: 20,
-                    child: Container(
-                      height: MediaQuery.of(context).size.height / 10,
-                      child: IconButton(
-                        icon: Icon(
-                          Icons.arrow_back_ios,
-                          size: 20,
-                          color: Colors.white,
-                        ),
-                        onPressed: () => {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => SignUp()))
-                        },
-                      ),
-                    )),
+                // Positioned(
+                //     top: 40,
+                //     left: 20,
+                //     child: Container(
+                //       height: MediaQuery.of(context).size.height / 10,
+                //       child: IconButton(
+                //         icon: Icon(
+                //           Icons.arrow_back_ios,
+                //           size: 20,
+                //           color: Colors.white,
+                //         ),
+                //         onPressed: () => {
+                //           Navigator.push(context,
+                //               MaterialPageRoute(builder: (context) => SignUp()))
+                //         },
+                //       ),
+                //     )),
                 Positioned(
                   child: Container(
                     margin: EdgeInsets.only(
@@ -199,11 +199,8 @@ bool isLoading = false;
                     padding: const EdgeInsets.only(top: 220),
                     child: TextButton(
                       onPressed: () => {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SignUp())),
-
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => SignUp())),
                       },
                       style: TextButton.styleFrom(
                         primary: Color.fromARGB(255, 255, 255, 255),
@@ -229,10 +226,9 @@ bool isLoading = false;
                         //     MaterialPageRoute(
                         //         builder: (context) => DrawerAnimated()));
                         setState(() {
-    isLoading = true;
-    });
-    login();
-
+                          isLoading = true;
+                        });
+                        login();
                       },
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(80.0)),
@@ -269,30 +265,26 @@ bool isLoading = false;
       ),
     );
   }
-  login()async{
+
+  login() async {
     try {
       var response = await Dio()
           .post("https://pakque2.herokuapp.com/api/auth/local", data: {
-      "identifier": _emailController.text,
-      "password": _passwordController.text,
-
-
+        "identifier": _emailController.text,
+        "password": _passwordController.text,
       });
-
 
       if (response.statusCode == 200) {
         Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => DrawerAnimated()),
-                (route) => false);
+            MaterialPageRoute(builder: (context) => HomepageScreen()),
+            (route) => false);
       }
-    }
-    on DioError catch (e) {
+    } on DioError catch (e) {
       print(e.response);
       setState(() {
         isLoading = false;
       });
     }
   }
-
 }
