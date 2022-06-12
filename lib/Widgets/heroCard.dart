@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Screens/heroesDetail.dart';
-import 'package:sign_in_interface/Widgets/Clipper3.dart';
+import 'package:sign_in_interface/Widgets/heroCard_Clipper.dart';
 
 class HeroCard extends StatelessWidget {
   // late String tag;

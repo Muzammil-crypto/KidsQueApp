@@ -35,6 +35,7 @@ dependencies:
   snippet_coder_utils: ^1.0.12
   flutter_progress_hud: ^2.0.0
   dio: ^4.0.6
+  custom_info_window: ^1.0.1
 
 dev_dependencies:
   flutter_test:

@@ -4,8 +4,8 @@ import 'package:sign_in_interface/Models/cityModel.dart';
 import 'package:sign_in_interface/Screens/citiesListScreen.dart';
 import 'package:sign_in_interface/Screens/slider.dart';
 import 'package:sign_in_interface/Screens/choicesScreen.dart';
-import 'package:sign_in_interface/Widgets/Clipper.dart';
-import 'package:sign_in_interface/Widgets/Clipper.dart';
+import 'package:sign_in_interface/Widgets/background_Clipper.dart';
+import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
 import '../Quiz/lib/screens/quiz_splash_screen.dart';
 import '../Widgets/youtube_player_screen.dart';
@@ -31,22 +31,22 @@ class _CityDetailsState extends State<CityDetails> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        toolbarHeight: 30,
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
-            size: 20,
-          ),
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CitiesListScreen()));
-          },
-        ),
-        automaticallyImplyLeading: true,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.transparent,
+      //   toolbarHeight: 30,
+      //   leading: IconButton(
+      //     icon: Icon(
+      //       Icons.arrow_back_ios,
+      //       color: Colors.white,
+      //       size: 20,
+      //     ),
+      //     onPressed: () {
+      //       Navigator.push(context,
+      //           MaterialPageRoute(builder: (context) => CitiesListScreen()));
+      //     },
+      //   ),
+      //   automaticallyImplyLeading: true,
+      // ),
       backgroundColor: Colors.yellow.shade900,
       body: isLoading
           ? Center(
@@ -70,7 +70,7 @@ class _CityDetailsState extends State<CityDetails> {
                       alignment: Alignment.center,
                       children: <Widget>[
                         Positioned(
-                          bottom: MediaQuery.of(context).size.height / 0.662,
+                          bottom: MediaQuery.of(context).size.height * 1.5,
                           child: Center(
                             child: Container(
                               child: SliderBanner(
@@ -227,6 +227,38 @@ class _CityDetailsState extends State<CityDetails> {
                                 ],
                               ),
                             ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 20,
+                          left: 10,
+                          child: Row(
+                            children: [
+                              Container(
+                                  height: 35,
+                                  width: 35,
+                                  decoration: BoxDecoration(
+                                      color: Color.fromARGB(144, 255, 255, 255),
+                                      borderRadius: BorderRadius.circular(7)),
+                                  child: Center(
+                                    child: IconButton(
+                                      icon: Icon(
+                                        Icons.arrow_back_ios,
+                                        color: Colors.white,
+                                        size: 20,
+                                      ),
+                                      onPressed: () => {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                CitiesListScreen(),
+                                          ),
+                                        ),
+                                      },
+                                    ),
+                                  )),
+                            ],
                           ),
                         ),
                       ],

@@ -26,6 +26,7 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        //appBar: AppBar(),
         body: Container(
           child: Stack(children: [
             Positioned(
@@ -36,14 +37,18 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                     ProvinceDetails(
                         "assets/punj1.png",
                         "Punjab",
-                        Colors.red,
-                        Colors.deepOrangeAccent,
+                        Color.fromARGB(255, 253, 61, 47),
+                        Colors.pinkAccent,
                         "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
                         MapScreen(
                           label: "Province",
                           lat: 31.335379848825273,
                           long: 72.7280952624079,
                           id: 1,
+                          infoWindowTitle: "Punjab",
+                          infoWindowDes:
+                              "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                          infoWindowImage: "assets/lahore.png",
                         )),
                     ProvinceDetails(
                         "assets/sindh.png",
@@ -56,6 +61,10 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                           lat: 26.36127443787428,
                           long: 68.48155098358325,
                           id: 2,
+                          infoWindowTitle: "Sindh",
+                          infoWindowDes:
+                              "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                          infoWindowImage: "assets/lahore.png",
                         )),
                     ProvinceDetails(
                         "assets/p4.png",
@@ -70,6 +79,10 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                           lat: 35.328121934776334,
                           long: 72.32469792112319,
                           id: 3,
+                          infoWindowTitle: "khyber pakhtunkhwa",
+                          infoWindowDes:
+                              "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                          infoWindowImage: "assets/lahore.png",
                         )),
                     ProvinceDetails(
                         "assets/baloch.png",
@@ -82,12 +95,16 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                           lat: 29.00934280813528,
                           long: 65.09094661299501,
                           id: 4,
+                          infoWindowTitle: "Balochistan",
+                          infoWindowDes:
+                              "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                          infoWindowImage: "assets/lahore.png",
                         )),
                     ProvinceDetails(
                         "assets/p5.png",
                         "Gilgit Baltistan",
-                        Colors.teal,
-                        Colors.cyan,
+                        Color.fromARGB(255, 0, 138, 156),
+                        Colors.indigo,
                         // Colors.green,
                         // Colors.tealAccent,
                         "Gilgit-Baltistan, formerly known as the Northern Areas, is a region administered by Pakistan as an autonomous territory, and constituting the northern portion of the larger Kashmir region which has been the subject of a dispute between India and Pakistan since 1947, and between India and China from somewhat later.",
@@ -96,12 +113,16 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                           lat: 36.14435020478446,
                           long: 75.05962161085037,
                           id: 1,
+                          infoWindowTitle: "Gilgit Baltistan",
+                          infoWindowDes:
+                              "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                          infoWindowImage: "assets/lahore.png",
                         )),
                   ]),
             ),
             Positioned(
-                top: 40,
-                left: 35,
+                top: 80,
+                left: 18,
                 child: GestureDetector(
                   child: Container(
                     height: 40,
@@ -162,8 +183,8 @@ class ProvinceDetails extends StatelessWidget {
                 context, MaterialPageRoute(builder: (context) => pageToShow)),
           },
           child: Container(
-            height: MediaQuery.of(context).size.height / 1.1 + 30,
-            width: MediaQuery.of(context).size.width / 1.1 + 25,
+            height: MediaQuery.of(context).size.height / 1.3 + 40,
+            width: MediaQuery.of(context).size.width / 1.2 + 50,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(40),
               gradient: LinearGradient(
@@ -175,11 +196,10 @@ class ProvinceDetails extends StatelessWidget {
               children: [
                 Container(
                   margin: EdgeInsets.only(
-                    top: 80,
+                    top: 40,
                   ),
-                  //margin: EdgeInsets.all(20),
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 2.5,
+                  height: MediaQuery.of(context).size.height / 2.9,
                   child: Image.asset(
                     imgName,
                     fit: BoxFit.contain,
@@ -190,7 +210,7 @@ class ProvinceDetails extends StatelessWidget {
                     child: Container(
                       child: Container(
                         margin: EdgeInsets.only(
-                            top: 50, left: 20, right: 20, bottom: 15),
+                            top: 30, left: 20, right: 20, bottom: 15),
                         child: SingleChildScrollView(
                           child: Column(
                             children: [
@@ -198,7 +218,7 @@ class ProvinceDetails extends StatelessWidget {
                                 heading,
                                 style: TextStyle(
                                     fontFamily: "BubblegumSans",
-                                    fontSize: 45,
+                                    fontSize: 38,
                                     color: Colors.white),
                               ),
                               SizedBox(
@@ -208,7 +228,7 @@ class ProvinceDetails extends StatelessWidget {
                                 description,
                                 style: TextStyle(
                                     fontFamily: "BubblegumSans",
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     color: Colors.white),
                                 textAlign: TextAlign.center,
                               ),
@@ -216,7 +236,7 @@ class ProvinceDetails extends StatelessWidget {
                           ),
                         ),
                       ),
-                      height: MediaQuery.of(context).size.height / 3,
+                      height: MediaQuery.of(context).size.height / 3.2,
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(20))),
@@ -231,7 +251,7 @@ class ProvinceDetails extends StatelessWidget {
                     child: Center(
                       child: Text("Visit " + heading + " On Map",
                           style: TextStyle(
-                              fontSize: 25,
+                              fontSize: 20,
                               fontFamily: "BubblegumSans",
                               color: Colors.white)),
                     ),

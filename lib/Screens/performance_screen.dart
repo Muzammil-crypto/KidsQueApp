@@ -3,7 +3,7 @@ import 'package:sign_in_interface/Screens/Profile.dart';
 import 'package:sign_in_interface/Widgets/chart.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-import '../Widgets/Clipper.dart';
+import '../Widgets/background_Clipper.dart';
 
 class PerformanceScreen extends StatefulWidget {
   @override

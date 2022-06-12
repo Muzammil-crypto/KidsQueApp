@@ -1,16 +1,21 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+
 import 'package:sign_in_interface/Models/provinceModel.dart';
-import 'package:sign_in_interface/Quiz/lib/screens/quiz_splash_screen.dart';
-import 'package:sign_in_interface/Screens/AnimateChoices.dart';
-import 'package:sign_in_interface/Screens/slider.dart';
+import 'package:sign_in_interface/Screens/ProvincesListScreen.dart';
+
 import 'package:sign_in_interface/Screens/choicesScreen.dart';
-import 'package:sign_in_interface/Widgets/Clipper.dart';
+import 'package:sign_in_interface/Screens/slider.dart';
+import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 import 'package:sign_in_interface/Widgets/youtube_player_screen.dart';
 
+// ignore: must_be_immutable
 class ProvinceDetailScreen extends StatefulWidget {
   int id;
-  ProvinceDetailScreen({Key? key, required this.id}) : super(key: key);
+  ProvinceDetailScreen({
+    Key? key,
+    required this.id,
+  }) : super(key: key);
 
   @override
   State<ProvinceDetailScreen> createState() => _ProvinceDetailScreenState();
@@ -29,22 +34,22 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        toolbarHeight: 30,
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
-            size: 20,
-          ),
-          onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Topics()));
-          },
-        ),
-        automaticallyImplyLeading: true,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.transparent,
+      //   toolbarHeight: 30,
+      //   leading: IconButton(
+      //     icon: Icon(
+      //       Icons.arrow_back_ios,
+      //       color: Colors.white,
+      //       size: 20,
+      //     ),
+      //     onPressed: () {
+      //       Navigator.push(
+      //           context, MaterialPageRoute(builder: (context) => Topics()));
+      //     },
+      //   ),
+      //   automaticallyImplyLeading: true,
+      // ),
       backgroundColor: Colors.yellow.shade900,
       body: isLoading
           ? Center(
@@ -68,7 +73,7 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
                       alignment: Alignment.center,
                       children: <Widget>[
                         Positioned(
-                          bottom: MediaQuery.of(context).size.height / 0.662,
+                          bottom: MediaQuery.of(context).size.height / 0,
                           child: Center(
                             child: Container(
                               child: SliderBanner(
@@ -225,6 +230,38 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
                                 ],
                               ),
                             ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 20,
+                          left: 10,
+                          child: Row(
+                            children: [
+                              Container(
+                                  height: 35,
+                                  width: 35,
+                                  decoration: BoxDecoration(
+                                      color: Color.fromARGB(136, 255, 255, 255),
+                                      borderRadius: BorderRadius.circular(7)),
+                                  child: Center(
+                                    child: IconButton(
+                                      icon: Icon(
+                                        Icons.arrow_back_ios,
+                                        color: Colors.white,
+                                        size: 20,
+                                      ),
+                                      onPressed: () => {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                ProvincesListScreen(),
+                                          ),
+                                        ),
+                                      },
+                                    ),
+                                  )),
+                            ],
                           ),
                         ),
                       ],

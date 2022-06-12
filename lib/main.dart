@@ -26,7 +26,7 @@ import 'package:timeline_list/timeline.dart';
 
 import 'Screens/Signup.dart';
 import 'Screens/heroList_screen.dart';
-import 'Widgets/Clipper.dart';
+import 'Widgets/background_Clipper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       onGenerateRoute: RouteGenerator.generateRoute,
       //home: SplashScreen(),
-      home: Topics(),
+      home: HomepageScreen(),
     );
   }
 }

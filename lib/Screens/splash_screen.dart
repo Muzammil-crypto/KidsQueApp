@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Screens/Login1.dart';
 
-import '../Widgets/Clipper.dart';
+import '../Widgets/background_Clipper.dart';
 import 'Signup.dart';
 
 class SplashScreen extends StatefulWidget {

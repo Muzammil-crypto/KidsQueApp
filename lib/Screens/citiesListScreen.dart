@@ -30,9 +30,13 @@ class CitiesListScreen extends StatelessWidget {
                           lat: 25.31664378584215,
                           long: 67.02999062754044,
                           id: 4,
+                          infoWindowTitle: "Karachi",
+                          infoWindowDes:
+                              "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                          infoWindowImage: "assets/lahore.png",
                         )),
                     ProvinceDetails(
-                        "assets/c3.gif",
+                        "assets/c2.png",
                         // "assets/c7.png",
                         "Lahore",
                         Colors.red,
@@ -43,6 +47,10 @@ class CitiesListScreen extends StatelessWidget {
                           lat: 31.859583967375077,
                           long: 74.23925683546577,
                           id: 1,
+                          infoWindowTitle: "Lahore",
+                          infoWindowDes:
+                              "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                          infoWindowImage: "assets/lahore.png",
                         )),
                     ProvinceDetails(
                         "assets/c4.png",
@@ -55,6 +63,10 @@ class CitiesListScreen extends StatelessWidget {
                           lat: 34.11137541059898,
                           long: 73.0708585190089,
                           id: 2,
+                          infoWindowTitle: "Islamabad",
+                          infoWindowDes:
+                              "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                          infoWindowImage: "assets/lahore.png",
                         )),
                     ProvinceDetails(
                         "assets/c6.png",
@@ -69,6 +81,10 @@ class CitiesListScreen extends StatelessWidget {
                           lat: 30.60548538432997,
                           long: 71.52956712283178,
                           id: 3,
+                          infoWindowTitle: "Multan",
+                          infoWindowDes:
+                              "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                          infoWindowImage: "assets/lahore.png",
                         )),
                     ProvinceDetails(
                         "assets/c5.png",
@@ -83,20 +99,27 @@ class CitiesListScreen extends StatelessWidget {
                           lat: 34.46055187756329,
                           long: 71.47984804553573,
                           id: 4,
+                          infoWindowTitle: "Peshawar",
+                          infoWindowDes:
+                              "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                          infoWindowImage: "assets/lahore.png",
                         )),
                   ]),
             ),
             Positioned(
-                top: 40,
-                left: 35,
+                top: 80,
+                left: 30,
                 child: GestureDetector(
                   child: Container(
-                    height: 40,
-                    width: 40,
+                    height: 35,
+                    width: 35,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(101, 255, 255, 255),
+                        borderRadius: BorderRadius.circular(7)),
                     child: Icon(
                       Icons.arrow_back_ios,
                       color: Colors.white,
-                      size: 25,
+                      size: 20,
                     ),
                   ),
                   onTap: () => {

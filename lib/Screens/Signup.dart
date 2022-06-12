@@ -6,7 +6,7 @@ import 'package:sign_in_interface/Screens/Login1.dart';
 import 'package:sign_in_interface/Screens/choicesScreen.dart';
 import 'package:snippet_coder_utils/ProgressHUD.dart';
 
-import '../Widgets/Clipper.dart';
+import '../Widgets/background_Clipper.dart';
 
 class SignUp extends StatefulWidget {
   @override

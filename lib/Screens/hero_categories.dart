@@ -5,9 +5,9 @@ import 'package:sign_in_interface/Screens/AnimateChoices.dart';
 import 'package:sign_in_interface/Screens/heroList_screen.dart';
 import 'package:sign_in_interface/Screens/heroesDetail.dart';
 import 'package:sign_in_interface/Screens/choicesScreen.dart';
-import 'package:sign_in_interface/Widgets/Clipper.dart';
+import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
-import '../Widgets/Clipper3.dart';
+import '../Widgets/heroCard_Clipper.dart';
 import '../Widgets/heroCard.dart';
 
 class HeroCategory extends StatelessWidget {
@@ -28,13 +28,18 @@ class HeroCategory extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          margin: EdgeInsets.only(
+                          height: 35,
+                          width: 35,
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(94, 65, 64, 64),
+                              borderRadius: BorderRadius.circular(7)),
+                          margin: EdgeInsets.only(left: 10, top: 5
                               // right: MediaQuery.of(context).size.width / 1.22,
                               ),
                           child: IconButton(
                             icon: Icon(
                               Icons.arrow_back_ios_new_outlined,
-                              color: Colors.black,
+                              color: Colors.white,
                               size: 20,
                             ),
                             onPressed: () => {

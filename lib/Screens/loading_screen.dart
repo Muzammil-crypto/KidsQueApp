@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Widgets/Clipper.dart';
+import '../Widgets/background_Clipper.dart';
 import 'AnimateChoices.dart';
 
 class Loading_Screen extends StatelessWidget {

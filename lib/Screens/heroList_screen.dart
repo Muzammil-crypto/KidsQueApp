@@ -5,9 +5,9 @@ import 'package:sign_in_interface/Models/heroModel.dart';
 import 'package:sign_in_interface/Screens/Login1.dart';
 import 'package:sign_in_interface/Screens/hero_categories.dart';
 import 'package:sign_in_interface/Screens/heroesDetail.dart';
-import 'package:sign_in_interface/Widgets/Clipper.dart';
+import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
-import '../Widgets/Clipper3.dart';
+import '../Widgets/heroCard_Clipper.dart';
 import '../Widgets/heroCard.dart';
 
 class HeroesScreen extends StatefulWidget {

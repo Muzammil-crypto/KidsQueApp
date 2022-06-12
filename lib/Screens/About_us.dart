@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Screens/contact_us.dart';
-import 'package:sign_in_interface/Widgets/Clipper.dart';
+import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
 class AboutUs extends StatelessWidget {
   @override

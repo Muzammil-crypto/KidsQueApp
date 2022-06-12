@@ -9,7 +9,7 @@ import 'package:sign_in_interface/Screens/splash_screen.dart';
 import 'package:sign_in_interface/Screens/choicesScreen.dart';
 import 'package:sign_in_interface/Widgets/youtube_player_screen.dart';
 
-import '../Widgets/Clipper.dart';
+import '../Widgets/background_Clipper.dart';
 
 class ContentScreen extends StatefulWidget {
   @override
