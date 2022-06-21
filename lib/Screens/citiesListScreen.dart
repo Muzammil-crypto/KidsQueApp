@@ -101,7 +101,7 @@ class CitiesListScreen extends StatelessWidget {
                           id: 4,
                           infoWindowTitle: "Peshawar",
                           infoWindowDes:
-                              "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                              "Peshawar is one of the four cities of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
                           infoWindowImage: "assets/lahore.png",
                         )),
                   ]),

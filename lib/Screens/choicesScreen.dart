@@ -40,7 +40,7 @@ class _TopicsState extends State<Topics> {
       key: _scaffoldKey,
       backgroundColor: Colors.yellow.shade900,
 
-      drawer: Side_Drawer(),
+      drawer: Container(width: 260, child: Side_Drawer()),
 
       // backgroundColor: Colors.yellow.shade900,
       // extendBodyBehindAppBar: true,

@@ -13,7 +13,7 @@ class Side_Drawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 260,
+      width: MediaQuery.of(context).size.width,
       child: Drawer(
           child: Container(
         decoration: BoxDecoration(

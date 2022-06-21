@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 import 'package:sign_in_interface/Models/provinceModel.dart';
 import 'package:sign_in_interface/Screens/ProvincesListScreen.dart';
@@ -22,6 +23,31 @@ class ProvinceDetailScreen extends StatefulWidget {
 }
 
 class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
+  FlutterTts flutterTts = FlutterTts();
+
+  bool isPlaying = false;
+  speak(String Text) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(1);
+    // await flutterTts.speak(Text);
+
+    if (Text != null && Text.isNotEmpty) {
+      var result = await flutterTts.speak(Text);
+      if (result == 1)
+        setState(() {
+          isPlaying = true;
+        });
+    }
+  }
+
+  Future _stop() async {
+    var result = await flutterTts.stop();
+    if (result == 1)
+      setState(() {
+        isPlaying = false;
+      });
+  }
+
   ProvinceModel provinceModel = ProvinceModel("", "", "");
   bool isLoading = true;
   bool isFound = true;
@@ -32,24 +58,13 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    flutterTts.stop();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.transparent,
-      //   toolbarHeight: 30,
-      //   leading: IconButton(
-      //     icon: Icon(
-      //       Icons.arrow_back_ios,
-      //       color: Colors.white,
-      //       size: 20,
-      //     ),
-      //     onPressed: () {
-      //       Navigator.push(
-      //           context, MaterialPageRoute(builder: (context) => Topics()));
-      //     },
-      //   ),
-      //   automaticallyImplyLeading: true,
-      // ),
       backgroundColor: Colors.yellow.shade900,
       body: isLoading
           ? Center(
@@ -84,62 +99,100 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
                             ),
                           ),
                         ),
-                        Positioned(
-                          top: MediaQuery.of(context).size.height / 2.4,
-                          child: Column(
-                            children: [
-                              Container(
-                                child: Container(
-                                  margin: EdgeInsets.only(bottom: 15),
+                        Container(
+                          child: Positioned(
+                            top: MediaQuery.of(context).size.height / 2.4,
+                            child: Column(
+                              children: [
+                                Container(
                                   child: Container(
-                                    margin: EdgeInsets.all(10),
-                                    child: SingleChildScrollView(
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            "${provinceModel.title}",
-                                            style: TextStyle(
-                                                fontFamily: "ShinyBalloonDemo",
-                                                fontSize: 45,
-                                                color: Colors.white),
-                                          ),
-                                          Text(
-                                            provinceModel.description,
-                                            style: TextStyle(
-                                                fontFamily: "BubblegumSans",
-                                                fontSize: 24,
-                                                color: Colors.white),
-                                          ),
-                                        ],
+                                    margin: EdgeInsets.only(bottom: 15),
+                                    child: Container(
+                                      margin: EdgeInsets.all(10),
+                                      child: SingleChildScrollView(
+                                        child: Column(
+                                          children: [
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Text(
+                                              "${provinceModel.title}",
+                                              style: TextStyle(
+                                                  fontFamily:
+                                                      "ShinyBalloonDemo",
+                                                  fontSize: 35,
+                                                  color: Colors.white),
+                                            ),
+                                            Text(
+                                              provinceModel.description,
+                                              style: TextStyle(
+                                                  fontFamily: "BubblegumSans",
+                                                  fontSize: 24,
+                                                  color: Colors.white),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
+                                    height: MediaQuery.of(context).size.height /
+                                        2.1,
+                                    width: MediaQuery.of(context).size.width /
+                                        1.15,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromARGB(212, 255, 142, 142),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(20))),
                                   ),
-                                  height:
-                                      MediaQuery.of(context).size.height / 2.1,
-                                  width:
-                                      MediaQuery.of(context).size.width / 1.15,
-                                  decoration: BoxDecoration(
-                                      color: Color.fromARGB(212, 255, 142, 142),
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(20))),
                                 ),
-                              ),
-                              Column(
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.only(top: 25),
-                                    child: Text(
-                                      "Related Video",
-                                      style: TextStyle(
-                                          fontFamily: "ShinyBalloonDemo",
-                                          fontSize: 40,
-                                          color: Colors.white),
+                                Column(
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.only(top: 25),
+                                      child: Text(
+                                        "Related Video",
+                                        style: TextStyle(
+                                            fontFamily: "ShinyBalloonDemo",
+                                            fontSize: 40,
+                                            color: Colors.white),
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
+                        ),
+                        Positioned(
+                          bottom: MediaQuery.of(context).size.height / 2 + 510,
+                          right: 40,
+                          child: Container(
+                              height: 60,
+                              width: 60,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40),
+                                color: Color.fromARGB(200, 255, 255, 255),
+                              ),
+                              child: FlatButton(
+                                  onPressed: () => {
+                                        setState(() {
+                                          isPlaying
+                                              ? _stop()
+                                              : speak(
+                                                  provinceModel.description);
+                                        })
+                                      },
+                                  child: isPlaying
+                                      ? Icon(
+                                          Icons.stop,
+                                          color: Colors.red,
+                                          size: 30,
+                                        )
+                                      : Icon(
+                                          Icons.play_arrow,
+                                          color: Colors.green,
+                                          size: 30,
+                                        ))),
                         ),
                         Positioned(
                           top: MediaQuery.of(context).size.height / 0.96,

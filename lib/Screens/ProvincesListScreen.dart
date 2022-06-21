@@ -122,15 +122,18 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
             ),
             Positioned(
                 top: 80,
-                left: 18,
+                left: 30,
                 child: GestureDetector(
                   child: Container(
-                    height: 40,
-                    width: 40,
+                    height: 35,
+                    width: 35,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(101, 255, 255, 255),
+                        borderRadius: BorderRadius.circular(7)),
                     child: Icon(
                       Icons.arrow_back_ios,
                       color: Colors.white,
-                      size: 25,
+                      size: 20,
                     ),
                   ),
                   onTap: () => {

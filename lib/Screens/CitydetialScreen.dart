@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:sign_in_interface/Models/cityModel.dart';
 import 'package:sign_in_interface/Screens/citiesListScreen.dart';
 import 'package:sign_in_interface/Screens/slider.dart';
@@ -19,6 +20,9 @@ class CityDetails extends StatefulWidget {
 }
 
 class _CityDetailsState extends State<CityDetails> {
+  FlutterTts flutterTts = FlutterTts();
+  bool isPlaying = false;
+
   CityModel cityModel = CityModel();
 
   @override
@@ -29,24 +33,36 @@ class _CityDetailsState extends State<CityDetails> {
 
   bool isLoading = true;
 
+  speak(String Text) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(1);
+    // await flutterTts.speak(Text);
+
+    if (Text != null && Text.isNotEmpty) {
+      var result = await flutterTts.speak(Text);
+      if (result == 1)
+        setState(() {
+          isPlaying = true;
+        });
+    }
+  }
+
+  Future _stop() async {
+    var result = await flutterTts.stop();
+    if (result == 1)
+      setState(() {
+        isPlaying = false;
+      });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    flutterTts.stop();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.transparent,
-      //   toolbarHeight: 30,
-      //   leading: IconButton(
-      //     icon: Icon(
-      //       Icons.arrow_back_ios,
-      //       color: Colors.white,
-      //       size: 20,
-      //     ),
-      //     onPressed: () {
-      //       Navigator.push(context,
-      //           MaterialPageRoute(builder: (context) => CitiesListScreen()));
-      //     },
-      //   ),
-      //   automaticallyImplyLeading: true,
-      // ),
       backgroundColor: Colors.yellow.shade900,
       body: isLoading
           ? Center(
@@ -137,6 +153,39 @@ class _CityDetailsState extends State<CityDetails> {
                               ),
                             ],
                           ),
+                        ),
+                        Positioned(
+                          bottom: MediaQuery.of(context).size.height / 2 + 510,
+                          right: 45,
+                          child: Container(
+                              height: 60,
+                              width: 60,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40),
+                                color: Color.fromARGB(200, 255, 255, 255),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 30.0),
+                                child: FlatButton(
+                                    onPressed: () => {
+                                          setState(() {
+                                            isPlaying
+                                                ? _stop()
+                                                : speak(cityModel.description!);
+                                          })
+                                        },
+                                    child: isPlaying
+                                        ? Icon(
+                                            Icons.stop,
+                                            color: Colors.red,
+                                            size: 30,
+                                          )
+                                        : Icon(
+                                            Icons.play_arrow,
+                                            color: Colors.green,
+                                            size: 30,
+                                          )),
+                              )),
                         ),
                         Positioned(
                           top: MediaQuery.of(context).size.height / 0.96,
