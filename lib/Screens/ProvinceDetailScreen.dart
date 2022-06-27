@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
 import 'package:sign_in_interface/Models/provinceModel.dart';
+import 'package:sign_in_interface/Quiz/lib/screens/quiz_category.dart';
 import 'package:sign_in_interface/Screens/ProvincesListScreen.dart';
 
 import 'package:sign_in_interface/Screens/choicesScreen.dart';
@@ -48,7 +49,7 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
       });
   }
 
-  ProvinceModel provinceModel = ProvinceModel("", "", "");
+  RiverModel provinceModel = RiverModel("", "", "");
   bool isLoading = true;
   bool isFound = true;
   @override
@@ -81,7 +82,7 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
               child: ListView(
                 children: [
                   Container(
-                    height: MediaQuery.of(context).size.height * 2,
+                    height: MediaQuery.of(context).size.height * 1.9,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(color: Colors.cyan),
                     child: Stack(
@@ -164,7 +165,7 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
                           ),
                         ),
                         Positioned(
-                          bottom: MediaQuery.of(context).size.height / 2 + 510,
+                          bottom: MediaQuery.of(context).size.height / 2 + 440,
                           right: 40,
                           child: Container(
                               height: 60,
@@ -315,6 +316,46 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
                                     ),
                                   )),
                             ],
+                          ),
+                        ),
+                        Positioned(
+                          bottom: MediaQuery.of(context).size.height / 8,
+                          child: SingleChildScrollView(
+                            child: RaisedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            QuizCategoryScreen()));
+                              },
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(80.0)),
+                              padding: const EdgeInsets.all(0.0),
+                              child: Ink(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFF57F17),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(80.0)),
+                                ),
+                                child: Container(
+                                  constraints: const BoxConstraints(
+                                      minWidth: 320.0,
+                                      minHeight:
+                                          40.0), // min sizes for Material buttons
+                                  alignment: Alignment.center,
+                                  child: const Text(
+                                    'Take Quiz',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontFamily: "BubblegumSans",
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 22),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ],

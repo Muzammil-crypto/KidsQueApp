@@ -95,36 +95,23 @@ class _SplashScreenState extends State<SplashScreen> {
                         ]),
                       ),
                     )),
-
                 Positioned(
-                    bottom: 120,
+                    bottom: 80,
                     child: Container(
-                      height: MediaQuery.of(context).size.height / 4.2,
-                      width: MediaQuery.of(context).size.width / 0.5,
+                      height: MediaQuery.of(context).size.height / 3.5,
+                      width: MediaQuery.of(context).size.width / 1.5,
                       child: Image(
-                        image: AssetImage("assets/ani11.gif"),
+                        image: AssetImage("assets/imp1.gif"),
+                        fit: BoxFit.cover,
                       ),
                     )),
-                // Positioned(
-                //     top: MediaQuery.of(context).size.height / 1.8,
-                //     child: Padding(
-                //       padding: const EdgeInsets.only(top: 60.0, right: 100),
-                //       child: Container(
-                //         height: MediaQuery.of(context).size.height / 5,
-                //         width: MediaQuery.of(context).size.width,
-                //         decoration: BoxDecoration(
-                //             image: DecorationImage(
-                //                 image: AssetImage('assets/svg.png'))),
-                //       ),
-                //     )),
-
                 Positioned(
                   bottom: 30,
                   child: SingleChildScrollView(
                     child: RaisedButton(
                       onPressed: () {
-                        // Navigator.push(context,
-                        //     MaterialPageRoute(builder: (context) => Login()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Login()));
                       },
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(80.0)),

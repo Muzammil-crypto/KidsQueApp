@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:sign_in_interface/Quiz/lib/screens/home_screen.dart';
+import 'package:sign_in_interface/Quiz/lib/screens/quiz_screen.dart';
+import 'package:sign_in_interface/Screens/HomepageScreen.dart';
 import 'package:sign_in_interface/Screens/Profile.dart';
 import 'package:sign_in_interface/Widgets/chart.dart';
+import 'package:sign_in_interface/Widgets/roundCardClipper.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../Widgets/background_Clipper.dart';
@@ -45,13 +49,13 @@ class _PerformanceScreenState extends State<PerformanceScreen> {
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                               colors: [
-                                Color.fromARGB(255, 185, 131, 15),
-                                Colors.red
+                                Colors.yellow.shade900,
+                                Colors.orange.shade900
                               ],
                               begin: Alignment.bottomCenter,
                               end: Alignment.topCenter),
                         ),
-                        height: MediaQuery.of(context).size.height / 2.5,
+                        height: MediaQuery.of(context).size.height / 2.65,
                         width: MediaQuery.of(context).size.width,
                         child: SfCircularChart(
                           tooltipBehavior: _tooltipBehavior,
@@ -191,7 +195,7 @@ class _PerformanceScreenState extends State<PerformanceScreen> {
                                   40.0), // min sizes for Material buttons
                           alignment: Alignment.center,
                           child: const Text(
-                            'Download Result',
+                            'This is your overall result stats.',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontFamily: "BubblegumSans",
@@ -204,6 +208,29 @@ class _PerformanceScreenState extends State<PerformanceScreen> {
                     ),
                   ),
                 ),
+                Positioned(
+                    top: 50,
+                    left: 15,
+                    child: GestureDetector(
+                      child: Container(
+                        height: 35,
+                        width: 35,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(101, 255, 255, 255),
+                            borderRadius: BorderRadius.circular(7)),
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                      ),
+                      onTap: () => {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeScreen())),
+                      },
+                    )),
               ],
             ),
           ),
@@ -214,54 +241,12 @@ class _PerformanceScreenState extends State<PerformanceScreen> {
 
   List<KidData> getChartData() {
     final List<KidData> chartData = [
-      KidData("Culture", 18),
+      KidData("Culture,", 18),
       KidData("Geagraphy", 19),
       KidData("History", 17),
       KidData("Economics", 12),
       KidData("Climates of Pakistan", 18),
     ];
     return chartData;
-  }
-}
-
-class BackgroundClipper_2 extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path_0 = Path();
-    path_0.moveTo(0, 0);
-    path_0.lineTo(size.width, 0);
-    path_0.lineTo(size.width, size.height * 0.8202987);
-    path_0.cubicTo(
-        size.width,
-        size.height * 0.8202987,
-        size.width * 0.9312402,
-        size.height * 0.9168623,
-        size.width * 0.8401667,
-        size.height * 0.9168623);
-    path_0.cubicTo(
-        size.width * 0.7054681,
-        size.height * 0.9168623,
-        size.width * 0.6648015,
-        size.height * 0.8579662,
-        size.width * 0.5434902,
-        size.height * 0.8718909);
-    path_0.cubicTo(
-        size.width * 0.4219069,
-        size.height * 0.8858468,
-        size.width * 0.3930000,
-        size.height * 0.9687766,
-        size.width * 0.2669167,
-        size.height * 0.9946727);
-    path_0.cubicTo(size.width * 0.1137703, size.height * 1.026127, 0,
-        size.height * 0.8718909, 0, size.height * 0.8718909);
-    path_0.lineTo(0, 0);
-    path_0.close();
-
-    return path_0;
-  }
-
-  @override
-  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    return true;
   }
 }

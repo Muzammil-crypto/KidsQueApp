@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:sign_in_interface/Screens/Signup.dart';
-import 'package:sign_in_interface/Screens/AnimateChoices.dart';
+import 'package:sign_in_interface/Screens/HomepageScreen.dart';
 import 'package:sign_in_interface/Screens/choicesScreen.dart';
 import 'package:snippet_coder_utils/ProgressHUD.dart';
 
@@ -36,7 +36,7 @@ class _LoginState extends State<Login> {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/bgb.png'), fit: BoxFit.fill)),
+                    image: AssetImage('assets/bgnew.jpg'), fit: BoxFit.fill)),
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
@@ -70,9 +70,10 @@ class _LoginState extends State<Login> {
                               child: Center(
                                 child: Text("Login",
                                     style: TextStyle(
-                                        fontFamily: "ShinyBalloonDemo",
-                                        fontSize: 60,
-                                        color: Colors.white)),
+                                      fontFamily: "ShinyBalloonDemo",
+                                      fontSize: 60,
+                                      color: Colors.green,
+                                    )),
                               )),
                         ),
                         Padding(
@@ -170,7 +171,7 @@ class _LoginState extends State<Login> {
                     width: 400,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage('assets/svg.png'))),
+                            image: AssetImage('assets/imp2.gif'))),
                   ),
                 ),
                 Positioned(
@@ -185,6 +186,7 @@ class _LoginState extends State<Login> {
                       child: Text(
                         'Forgot Password?',
                         style: TextStyle(
+                            color: Colors.black,
                             fontSize: 12,
                             decoration: TextDecoration.underline,
                             fontStyle: FontStyle.italic,
@@ -209,6 +211,7 @@ class _LoginState extends State<Login> {
                         'New User? Signup Here',
                         style: TextStyle(
                             fontSize: 12,
+                            color: Colors.black,
                             decoration: TextDecoration.underline,
                             fontStyle: FontStyle.italic,
                             fontFamily: "BubblegumSans"),
@@ -221,10 +224,6 @@ class _LoginState extends State<Login> {
                   child: SingleChildScrollView(
                     child: RaisedButton(
                       onPressed: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => DrawerAnimated()));
                         setState(() {
                           isLoading = true;
                         });

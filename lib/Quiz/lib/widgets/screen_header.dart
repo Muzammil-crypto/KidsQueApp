@@ -4,7 +4,8 @@ class ScreenHeader extends StatelessWidget {
   final String backBtnImagePath;
   final String headerText;
 
-  const ScreenHeader(this.headerText, {Key? key, this.backBtnImagePath = "assets/icons/back.png"})
+  const ScreenHeader(this.headerText,
+      {Key? key, this.backBtnImagePath = "assets/icons/back.png"})
       : super(key: key);
 
   @override
@@ -15,17 +16,32 @@ class ScreenHeader extends StatelessWidget {
       child: Row(
         children: [
           GestureDetector(
-            child: Image(
-              image: AssetImage(backBtnImagePath),
-              width: 40,
+            child: Container(
+              height: 30,
+              width: 30,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5), color: Colors.white),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 6.0),
+                child: Icon(
+                  Icons.arrow_back_ios,
+                  size: 25,
+                ),
+              ),
             ),
             onTap: () {
               Navigator.pop(context);
             },
           ),
-          Text(
-            headerText,
-            style: Theme.of(context).textTheme.headline4,
+          Padding(
+            padding: const EdgeInsets.only(left: 38.0, top: 10),
+            child: Text(
+              headerText,
+              style: TextStyle(
+                  color: Colors.yellow.shade900,
+                  fontSize: 30,
+                  fontFamily: "ShinyBalloonDemo"),
+            ),
           ),
         ],
       ),

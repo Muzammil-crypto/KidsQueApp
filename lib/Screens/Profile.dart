@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Widgets/background_Clipper.dart';
-import 'AnimateChoices.dart';
+import 'HomepageScreen.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override

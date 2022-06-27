@@ -5,7 +5,7 @@ typedef OnButtonPressed = void Function();
 class DiscoButton extends StatelessWidget {
   final OnButtonPressed onPressed;
   final Widget child;
-  final Color buttonColor;
+  Color buttonColor = Colors.yellow.shade900;
   late final PaintingStyle paintStyle;
   final bool isActive;
   double width;
@@ -17,7 +17,6 @@ class DiscoButton extends StatelessWidget {
       required this.child,
       this.width = 250.0,
       this.height = 100.0,
-      this.buttonColor = const Color(0xFFE65100),
       this.isActive = false})
       : super(key: key);
 

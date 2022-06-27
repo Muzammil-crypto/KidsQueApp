@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:sign_in_interface/Models/cityModel.dart';
+import 'package:sign_in_interface/Quiz/lib/screens/quiz_category.dart';
 import 'package:sign_in_interface/Screens/citiesListScreen.dart';
 import 'package:sign_in_interface/Screens/slider.dart';
 import 'package:sign_in_interface/Screens/choicesScreen.dart';
@@ -79,14 +80,14 @@ class _CityDetailsState extends State<CityDetails> {
               child: ListView(
                 children: [
                   Container(
-                    height: MediaQuery.of(context).size.height * 2,
+                    height: MediaQuery.of(context).size.height * 1.8,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(color: Colors.cyan),
                     child: Stack(
                       alignment: Alignment.center,
                       children: <Widget>[
                         Positioned(
-                          bottom: MediaQuery.of(context).size.height * 1.5,
+                          bottom: MediaQuery.of(context).size.height * 1.3,
                           child: Center(
                             child: Container(
                               child: SliderBanner(
@@ -308,6 +309,46 @@ class _CityDetailsState extends State<CityDetails> {
                                     ),
                                   )),
                             ],
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 50,
+                          child: SingleChildScrollView(
+                            child: RaisedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            QuizCategoryScreen()));
+                              },
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(80.0)),
+                              padding: const EdgeInsets.all(0.0),
+                              child: Ink(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFF57F17),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(80.0)),
+                                ),
+                                child: Container(
+                                  constraints: const BoxConstraints(
+                                      minWidth: 320.0,
+                                      minHeight:
+                                          40.0), // min sizes for Material buttons
+                                  alignment: Alignment.center,
+                                  child: const Text(
+                                    'Take Quiz',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontFamily: "BubblegumSans",
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 22),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sign_in_interface/Screens/AnimateChoices.dart';
-import 'package:sign_in_interface/Screens/content_Screen.dart';
+import 'package:sign_in_interface/Screens/HomepageScreen.dart';
+import 'package:sign_in_interface/Screens/historyDetailScreen.dart';
 import 'package:sign_in_interface/Screens/choicesScreen.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 import 'package:sign_in_interface/Widgets/timelineCard.dart';
@@ -14,37 +14,8 @@ class TimelineWidget extends StatelessWidget {
       backgroundColor: Colors.yellow.shade900,
       body: ClipPath(
         clipper: BackgroundClipper(),
-        // child: SingleChildScrollView(
         child: Stack(
           children: [
-            // Positioned(
-            //   top: 10,
-            //   child: Center(
-            //     child: Container(
-            //       height: MediaQuery.of(context).size.height / 6,
-            //       width: MediaQuery.of(context).size.width,
-            //       decoration: BoxDecoration(
-            //         color: Colors.yellow.shade900,
-            //       ),
-            //       child: Row(
-            //         children: [
-            //           Container(
-            //             width: MediaQuery.of(context).size.width,
-            //             child: Center(
-            //               child: Text(
-            //                 "Explore the History",
-            //                 style: TextStyle(
-            //                     fontSize: 28,
-            //                     fontFamily: "ShinyBalloonDemo",
-            //                     color: Colors.white),
-            //               ),
-            //             ),
-            //           ),
-            //         ],
-            //       ),
-            //     ),
-            //   ),
-            // ),
             Positioned(
               top: 0,
               child: Center(
@@ -95,16 +66,16 @@ class TimelineWidget extends StatelessWidget {
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
                   margin: EdgeInsets.only(top: 220, right: 5, left: 5),
-                  height: MediaQuery.of(context).size.height * 2,
+                  height: MediaQuery.of(context).size.height * 5 - 160,
                   width: MediaQuery.of(context).size.width,
                   child: Timeline(
                     children: <TimelineModel>[
                       TimelineModel(
                         getTimeline(
-                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt3dABDzZ3cyuuz-pl-GmGJWebKbcx3rqw6Q&usqp=CAU",
-                            "Allama Muhammad Iqbal",
-                            "1970-1975",
-                            ContentScreen(),
+                            "https://www.pakpedia.pk/files/Image/Muhammad-Bin-Qasim.jpg",
+                            "Muhmmad Bin Qasim",
+                            "18, 715 AD",
+                            HistoryDetailScreen(),
                             Colors.teal),
                         icon: Icon(Icons.history_edu_outlined),
                         iconBackground: Colors.pink,
@@ -112,87 +83,218 @@ class TimelineWidget extends StatelessWidget {
                       ),
                       TimelineModel(
                         getTimeline(
-                            "https://c8.alamy.com/comp/A7KR0G/pakistan-general-mohammed-zia-ul-haq-president-zia-A7KR0G.jpg",
-                            "General Zia-ul-haq",
-                            "1970-1975",
-                            ContentScreen(),
+                            "https://www.heritagetimes.in/wp-content/uploads/2019/10/SAKhan.jpg",
+                            "Sir Syed Ahmad Khan",
+                            "1817-1898",
+                            HistoryDetailScreen(),
                             Colors.cyan),
                         icon: Icon(Icons.history_edu_outlined),
-                        iconBackground: Colors.pink,
+                        iconBackground: Colors.teal,
                         position: TimelineItemPosition.left,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://upload.wikimedia.org/wikipedia/commons/5/54/A_O_Hume.jpg",
+                            "AO Hume",
+                            "1829-1912",
+                            HistoryDetailScreen(),
+                            Colors.pinkAccent),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.cyan,
+                        position: TimelineItemPosition.right,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://ismailimail.files.wordpress.com/2014/07/lon-his-highness-aga-sir-sultan-muhammad-shah-aga-khan-iii-president-of-the-assembly-league-of-nations-photo-league-of-nations-archieve.jpg?w=375&h=522",
+                            "Sir Agha Khan",
+                            "1877-1957",
+                            HistoryDetailScreen(),
+                            Colors.orange.shade900),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.pinkAccent,
+                        position: TimelineItemPosition.left,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn17ZPHjiRxgD2q7cH2Q9T6-4lCkp8MPhCm0j83VeYTkjjbJW_UphzNxxMFysCkHDkB8c&usqp=CAU",
+                            "Nawab Saleem-Ullah Khan",
+                            "1921-2017",
+                            HistoryDetailScreen(),
+                            Colors.indigo),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.orange.shade900,
+                        position: TimelineItemPosition.right,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://nationaltoday.com/wp-content/uploads/2021/11/Quaid-e-azam-day.jpg",
+                            "Quid e Azam Muhammad Ali Jinnah",
+                            "1876-1948",
+                            HistoryDetailScreen(),
+                            Color.fromARGB(255, 15, 155, 20)),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.indigo,
+                        position: TimelineItemPosition.left,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://rekhta.pc.cdn.bitgravity.com/Images/Shayar/allama-iqbal.png",
+                            "Dr. Allama Muhammad Iqbal ",
+                            "1877-1938",
+                            HistoryDetailScreen(),
+                            Colors.deepOrangeAccent),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.green,
+                        position: TimelineItemPosition.right,
                       ),
                       TimelineModel(
                         getTimeline(
                             "https://images.thequint.com/thequint%2F2019-10%2F29103f21-e4bc-44df-af1d-c690630b56c5%2FHero_Image__12_.jpg?rect=0%2C0%2C2000%2C1125",
                             "Liaqat Ali Khan",
-                            "1970-1975",
-                            ContentScreen(),
-                            Colors.purple),
-                        icon: Icon(Icons.history_edu_outlined),
-                        iconBackground: Colors.pink,
-                        position: TimelineItemPosition.right,
-                      ),
-                      TimelineModel(
-                        getTimeline(
-                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7a6Nw3m_M9kZSRxSKrMQXHCotvnnFilAr9w&usqp=CAU",
-                            "General Pervaiz Musharraf",
-                            "1970-1975",
-                            ContentScreen(),
-                            Colors.orange.shade900),
-                        icon: Icon(Icons.history_edu_outlined),
-                        iconBackground: Colors.pink,
-                        position: TimelineItemPosition.left,
-                      ),
-                      TimelineModel(
-                        getTimeline(
-                            "https://ournationalheroes.com/wp-content/uploads/2021/04/Untitled-1-1.png",
-                            "Quid e Azam Muhammad Ali Jinnah",
-                            "1970-1975",
-                            ContentScreen(),
-                            Colors.indigo),
-                        icon: Icon(Icons.history_edu_outlined),
-                        iconBackground: Colors.pink,
-                        position: TimelineItemPosition.right,
-                      ),
-                      TimelineModel(
-                        getTimeline(
-                            "https://www.seekpng.com/png/detail/127-1270162_benazir-bhutto-png-images-benazir-bhutto.png",
-                            "Benazir Bhutto",
-                            "1970-1975",
-                            ContentScreen(),
-                            Colors.green),
-                        icon: Icon(Icons.history_edu_outlined),
-                        iconBackground: Colors.pink,
-                        position: TimelineItemPosition.left,
-                      ),
-                      TimelineModel(
-                        getTimeline(
-                            "https://img.etimg.com/thumb/width-1200,height-900,imgsize-77615,resizemode-1,msid-44856323/news/international/world-news/pakistan-government-wants-peace-within-and-outside-borders-nawaz-sharif.jpg",
-                            "Mian Muhammad Nawaz Shareef",
-                            "1970-1975",
-                            ContentScreen(),
-                            Colors.purple),
-                        icon: Icon(Icons.history_edu_outlined),
-                        iconBackground: Colors.pink,
-                        position: TimelineItemPosition.right,
-                      ),
-                      TimelineModel(
-                        getTimeline(
-                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHQRVOoU49C_KypojIvmthXuO3EZ_e0fkcAOzScmWbGDk_SXpt4EgSHql7l4IBjvLlm7s&usqp=CAU",
-                            "Imran Khan",
-                            "1970-1975",
-                            ContentScreen(),
+                            "1895-1951",
+                            HistoryDetailScreen(),
                             Colors.teal),
                         icon: Icon(Icons.history_edu_outlined),
-                        iconBackground: Colors.pink,
+                        iconBackground: Colors.deepOrangeAccent,
+                        position: TimelineItemPosition.left,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://pdfbooksfree.pk/wp-content/uploads/2012/05/Muhammad-Ayub-Khan-The-Prominent-Personality-of-the-World.jpg",
+                            "General Muhammad Ayub khan ",
+                            "1907-1974",
+                            HistoryDetailScreen(),
+                            Colors.cyan),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.teal,
+                        position: TimelineItemPosition.right,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://static.wikia.nocookie.net/totalwar-ar/images/7/78/Yahya_Khan.jpg/revision/latest/scale-to-width-down/469?cb=20160425194846",
+                            "General Muhammad Yahya Khan",
+                            "1917-1980",
+                            HistoryDetailScreen(),
+                            Colors.purple),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.cyan,
+                        position: TimelineItemPosition.left,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://static.theprint.in/wp-content/uploads/2018/06/Zulfikar-bhutto.jpg?compress=true&quality=80&w=376&dpr=2.6",
+                            "Zulfikar Ali Bhutto",
+                            "1928-1979",
+                            HistoryDetailScreen(),
+                            Colors.orange.shade900),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.purple,
+                        position: TimelineItemPosition.right,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://static.wikia.nocookie.net/totalwar-ar/images/7/78/Yahya_Khan.jpg/revision/latest/scale-to-width-down/469?cb=20160425194846",
+                            "General Muhammad Yahya Khan",
+                            "1917-1980",
+                            HistoryDetailScreen(),
+                            Colors.tealAccent.shade700),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.orange.shade900,
+                        position: TimelineItemPosition.left,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://www.thefamouspeople.com/profiles/images/muhammad-zia-ul-haq-1.jpg",
+                            "General Muhammad Zia",
+                            "1924-1988",
+                            HistoryDetailScreen(),
+                            Colors.indigoAccent),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.tealAccent.shade700,
+                        position: TimelineItemPosition.right,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://urdubiography.com/wp-content/uploads/2020/09/Benazir-Bhutto.jpg",
+                            "Benazir Bhutto",
+                            "1953-2008",
+                            HistoryDetailScreen(),
+                            Colors.pinkAccent),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.indigoAccent,
+                        position: TimelineItemPosition.left,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://feeds.abplive.com/onecms/images/uploaded-images/2022/04/11/5c06d2c360bb828c768d62473e825bbf_original.jpg",
+                            "Main Muhammad Nawaz Shareef",
+                            "1949-Alive",
+                            HistoryDetailScreen(),
+                            Colors.redAccent),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.pinkAccent,
+                        position: TimelineItemPosition.right,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://i.guim.co.uk/img/media/bb1cae2dbdf6b4bcb4925f4064a4140f823cee63/0_218_2535_1522/master/2535.jpg?width=465&quality=45&auto=format&fit=max&dpr=2&s=ef957a6e895d07b9955992a5e6069359",
+                            "General Pervaiz Musharraf",
+                            "1943-Alive",
+                            HistoryDetailScreen(),
+                            Colors.green),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.redAccent,
+                        position: TimelineItemPosition.left,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://i.tribune.com.pk/media/images/2221656-ZardariPhotoAFP-1589484389/2221656-ZardariPhotoAFP-1589484389.jpg",
+                            "Asif Ali Zardari",
+                            "1955-Alive",
+                            HistoryDetailScreen(),
+                            Colors.teal),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.green,
+                        position: TimelineItemPosition.right,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://feeds.abplive.com/onecms/images/uploaded-images/2022/04/11/5c06d2c360bb828c768d62473e825bbf_original.jpg",
+                            "Main Muhammad Nawaz Shareef",
+                            "1949-Alive",
+                            HistoryDetailScreen(),
+                            Colors.indigo),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.teal,
+                        position: TimelineItemPosition.left,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://images.indianexpress.com/2022/04/Imran-Khan-5.jpg",
+                            "Imran Khan",
+                            "1952-Alive",
+                            HistoryDetailScreen(),
+                            Colors.deepOrangeAccent),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.indigo,
+                        position: TimelineItemPosition.right,
+                      ),
+                      TimelineModel(
+                        getTimeline(
+                            "https://channelfivepakistan.tv/wp-content/uploads/2022/05/shahbaz-9-672x372.jpg",
+                            "Main Muhammad Shahbaz Shareef",
+                            "1951-Alive",
+                            HistoryDetailScreen(),
+                            Colors.purple),
+                        icon: Icon(Icons.history_edu_outlined),
+                        iconBackground: Colors.deepOrangeAccent,
                         position: TimelineItemPosition.left,
                       ),
                     ],
                     position: TimelinePosition.Center,
                     iconSize: 40,
-                    lineColor: Colors.blue,
-                  ) //TimelinePage(title: 'Muslim Civilisation Doodles'),
-                  ,
+                    lineColor: Colors.yellow.shade900,
+                  ),
                 ),
               ),
             ),

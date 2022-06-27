@@ -15,6 +15,8 @@ import 'package:sign_in_interface/Quiz/lib/stores/quiz_store.dart';
 import 'package:sign_in_interface/Quiz/lib/widgets/disco_button.dart';
 import 'package:sign_in_interface/Quiz/lib/widgets/question_option.dart';
 import 'package:sign_in_interface/Quiz/lib/widgets/time_indicator.dart';
+import 'package:sign_in_interface/Widgets/background_Clipper.dart';
+import 'package:sign_in_interface/Widgets/roundCardClipper.dart';
 
 class QuizScreen extends StatefulWidget {
   static const routeName = '/quiz';
@@ -68,18 +70,68 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Container(
-          alignment: Alignment.center,
-          padding: EdgeInsets.all(10),
-          decoration: ThemeHelper.fullScreenBgBoxDecoration(),
-          child: SingleChildScrollView(
-            child: Column(
+        body: SingleChildScrollView(
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            //  alignment: Alignment.center,
+            //padding: EdgeInsets.all(10),
+            decoration: ThemeHelper.fullScreenBgBoxDecoration(),
+
+            child: Stack(
               children: [
-                screenHeader(),
-                quizQuestion(),
-                questionOptions(),
-                quizProgress(),
-                footerButton(),
+                Positioned(
+                  top: 150,
+                  child: Container(child: quizQuestion()),
+                ),
+
+                Positioned(
+                  bottom: 0,
+                  child: Container(
+                    child: questionOptions(),
+                  ),
+                ),
+                Positioned(
+                  top: 150,
+                  child: Container(child: quizQuestion()),
+                ),
+                Positioned(
+                  child: Container(child: screenHeader()),
+                ),
+                Positioned(
+                  bottom: 120,
+                  child: Container(
+                    child: quizProgress(),
+                  ),
+                ),
+                Positioned(
+                  bottom: 50,
+                  child: Container(
+                    child: footerButton(),
+                  ),
+                ),
+                Positioned(
+                  top: 20,
+                  left: 2,
+                  child: Container(
+                      margin: EdgeInsets.only(left: 15),
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: Color.fromARGB(162, 255, 255, 255)),
+                      child: GestureDetector(
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                      )),
+                ),
+                // footerButton(),
               ],
             ),
           ),
@@ -89,32 +141,55 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
   }
 
   Widget screenHeader() {
-    return Container(
-      alignment: Alignment.center,
-      child: Text(
-        quiz.title,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 45,
-          fontFamily: "NiceChalkDemo",
+    return ClipPath(
+      clipper: BackgroundClipper_2(),
+      child: Container(
+        height: MediaQuery.of(context).size.height / 4,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+            color: Colors.yellow.shade900,
+            borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(25),
+                bottomLeft: Radius.circular(25))),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 30.0),
+            child: Text(
+              quiz.title,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 45,
+                fontFamily: "ShinyBalloonDemo",
+              ),
+            ),
+          ),
         ),
       ),
-      margin: EdgeInsets.only(bottom: 20),
+      // margin: EdgeInsets.only(bottom: 20),
     );
   }
 
   Widget quizQuestion() {
-    return Container(
-      alignment: Alignment.centerLeft,
-      padding: EdgeInsets.all(20),
-      margin: EdgeInsets.only(bottom: 10),
-      decoration: ThemeHelper.roundBoxDeco(),
-      child: Text(
-        question?.text ?? "",
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 30,
-          fontFamily: "Langar-Regular",
+    return ClipPath(
+      clipper: BackgroundClipper_2(),
+      child: Container(
+        height: MediaQuery.of(context).size.height / 4,
+        width: MediaQuery.of(context).size.width,
+
+        alignment: Alignment.centerLeft,
+        padding: EdgeInsets.all(10),
+        // margin: EdgeInsets.only(bottom: 10),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(35), topRight: Radius.circular(26))),
+        child: Text(
+          question?.text ?? "",
+          style: TextStyle(
+            color: Colors.teal,
+            fontSize: 25,
+            fontFamily: "BubblegumSans",
+          ),
         ),
       ),
     );
@@ -122,37 +197,46 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
 
   Widget questionOptions() {
     return Container(
+      height: MediaQuery.of(context).size.height / 1.6,
+      width: MediaQuery.of(context).size.width,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 255, 255),
+        // color: Colors.tealAccent.shade700,
+        gradient: LinearGradient(colors: [
+          Color.fromARGB(120, 255, 64, 128),
+          Color.fromARGB(120, 255, 64, 128)
+        ]),
         borderRadius: BorderRadius.circular(18),
       ),
-      child: Column(
-        children: List<Option>.from(question?.options ?? []).map((e) {
-          int optionIndex = question!.options.indexOf(e);
-          var optWidget = GestureDetector(
-            onTap: () {
-              setState(() {
-                engine.updateAnswer(
-                    quiz.questions.indexOf(question!), optionIndex);
-                for (int i = 0; i < _optionSerial.length; i++) {
-                  _optionSerial[i]!.isSelected = false;
-                }
-                _optionSerial.update(optionIndex, (value) {
-                  value.isSelected = true;
-                  return value;
+      child: Padding(
+        padding: const EdgeInsets.only(top: 55),
+        child: Column(
+          children: List<Option>.from(question?.options ?? []).map((e) {
+            int optionIndex = question!.options.indexOf(e);
+            var optWidget = GestureDetector(
+              onTap: () {
+                setState(() {
+                  engine.updateAnswer(
+                      quiz.questions.indexOf(question!), optionIndex);
+                  for (int i = 0; i < _optionSerial.length; i++) {
+                    _optionSerial[i]!.isSelected = false;
+                  }
+                  _optionSerial.update(optionIndex, (value) {
+                    value.isSelected = true;
+                    return value;
+                  });
                 });
-              });
-            },
-            child: QuestionOption(
-              optionIndex,
-              _optionSerial[optionIndex]!.optionText,
-              e.text,
-              isSelected: _optionSerial[optionIndex]!.isSelected,
-            ),
-          );
-          return optWidget;
-        }).toList(),
+              },
+              child: QuestionOption(
+                optionIndex,
+                _optionSerial[optionIndex]!.optionText,
+                e.text,
+                isSelected: _optionSerial[optionIndex]!.isSelected,
+              ),
+            );
+            return optWidget;
+          }).toList(),
+        ),
       ),
     );
   }
@@ -163,16 +247,22 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
       child: Column(
         children: [
           Container(
-            margin: EdgeInsets.only(top: 20),
+            margin: EdgeInsets.only(top: 20, left: 30),
             child: TimeIndicator(
               question?.duration ?? 1,
               _remainingTime,
               () {},
             ),
           ),
-          Text(
-            "$_remainingTime Seconds",
-            style: TextStyle(fontSize: 16),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text(
+              "$_remainingTime Seconds",
+              style: TextStyle(
+                  fontSize: 16,
+                  fontFamily: "BubblegumSans",
+                  color: Colors.white),
+            ),
           ),
         ],
       ),
@@ -180,40 +270,45 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
   }
 
   Widget footerButton() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        DiscoButton(
-          onPressed: () {
-            setState(() {
-              engine.stop();
-              if (progressTimer != null && progressTimer!.isActive) {
-                progressTimer!.cancel();
-              }
-            });
-            Navigator.pop(context);
-          },
-          child: Text(
-            "Cancel",
-            style: TextStyle(fontSize: 20, fontFamily: "BubblegumSans"),
+    return Padding(
+      padding: const EdgeInsets.only(left: 25.0),
+      child: Row(
+        //  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          DiscoButton(
+            onPressed: () {
+              setState(() {
+                engine.stop();
+                if (progressTimer != null && progressTimer!.isActive) {
+                  progressTimer!.cancel();
+                }
+              });
+              Navigator.pop(context);
+            },
+            child: Text(
+              "Cancel",
+              style: TextStyle(fontSize: 20, fontFamily: "BubblegumSans"),
+            ),
+            width: 130,
+            height: 50,
           ),
-          width: 130,
-          height: 50,
-        ),
-        DiscoButton(
-          onPressed: () {
-            engine.next();
-          },
-          child: Text(
-            "Next",
-            style: TextStyle(
-                color: Colors.white, fontSize: 20, fontFamily: "BubblegumSans"),
+          DiscoButton(
+            onPressed: () {
+              engine.next();
+            },
+            child: Text(
+              "Next",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontFamily: "BubblegumSans"),
+            ),
+            isActive: true,
+            width: 130,
+            height: 50,
           ),
-          isActive: true,
-          width: 130,
-          height: 50,
-        ),
-      ],
+        ],
+      ),
     );
   }
 

@@ -49,31 +49,33 @@ class _SignUpState extends State<SignUp> {
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage('assets/bgb.png'),
+                          image: AssetImage('assets/bgnew.jpg'),
                           fit: BoxFit.cover)),
                   child: Stack(
                     alignment: Alignment.center,
                     children: <Widget>[
                       Positioned(
-                          top: 40,
-                          left: 20,
-                          child: Container(
-                            height: MediaQuery.of(context).size.height / 10,
-                            child: IconButton(
-                              icon: Icon(
+                          top: 60,
+                          left: 15,
+                          child: GestureDetector(
+                            child: Container(
+                              height: 35,
+                              width: 35,
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(99, 128, 124, 124),
+                                  borderRadius: BorderRadius.circular(7)),
+                              child: Icon(
                                 Icons.arrow_back_ios,
-                                size: 20,
                                 color: Colors.white,
+                                size: 20,
                               ),
-                              onPressed: () => {
-                                Navigator.push(
+                            ),
+                            onTap: () => {
+                              Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => Login(),
-                                  ),
-                                ),
-                              },
-                            ),
+                                      builder: (context) => Login())),
+                            },
                           )),
                       Positioned(
                         child: Container(
@@ -91,9 +93,10 @@ class _SignUpState extends State<SignUp> {
                                   child: Center(
                                     child: Text("Register",
                                         style: TextStyle(
-                                            fontFamily: "ShinyBalloonDemo",
-                                            fontSize: 60,
-                                            color: Colors.white)),
+                                          fontFamily: "ShinyBalloonDemo",
+                                          fontSize: 60,
+                                          color: Colors.green,
+                                        )),
                                   ),
                                 ),
                               ),
@@ -232,7 +235,7 @@ class _SignUpState extends State<SignUp> {
                           width: 400,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: AssetImage('assets/svg.png'))),
+                                  image: AssetImage('assets/imp2.gif'))),
                         ),
                       ),
                       Positioned(
@@ -278,14 +281,11 @@ class _SignUpState extends State<SignUp> {
                       ),
                       Positioned(
                         //right: 30,
-                        bottom: 150,
+                        bottom: MediaQuery.of(context).size.height / 3,
                         //   child: Padding(
                         // padding: const EdgeInsets.only(top: 250),
 
                         child: Container(
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(158, 255, 255, 255),
-                              borderRadius: BorderRadius.circular(12)),
                           height: 50,
                           child: TextButton(
                             onPressed: () => {

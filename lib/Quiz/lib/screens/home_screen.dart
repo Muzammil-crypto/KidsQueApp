@@ -7,9 +7,11 @@ import 'package:sign_in_interface/Quiz/lib/common/theme_helper.dart';
 import 'package:sign_in_interface/Quiz/lib/stores/quiz_store.dart';
 import 'package:sign_in_interface/Quiz/lib/widgets/disco_button.dart';
 import 'package:sign_in_interface/Screens/About_us.dart';
+import 'package:sign_in_interface/Screens/HomepageScreen.dart';
 import 'package:sign_in_interface/Screens/Profile.dart';
-import 'package:sign_in_interface/Screens/content_Screen.dart';
+import 'package:sign_in_interface/Screens/historyDetailScreen.dart';
 import 'package:sign_in_interface/Screens/performance_screen.dart';
+import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
 import 'quiz_category.dart';
 import 'quiz_history_screen.dart';
@@ -30,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: Colors.cyan,
+        backgroundColor: Colors.yellow.shade900,
         key: _key,
         drawer: SafeArea(
           child: Container(
@@ -38,54 +40,72 @@ class _HomeScreenState extends State<HomeScreen> {
             width: 250,
           ),
         ),
-        body: Container(
-          alignment: Alignment.center,
-          decoration: ThemeHelper.fullScreenBgBoxDecoration(),
-          child: Stack(
-            children: [
-              Positioned(
-                bottom: MediaQuery.of(context).size.height / 1.8,
+        body: ClipPath(
+          clipper: BackgroundClipper(),
+          child: Container(
+            //color: Colors.yellow,
+            alignment: Alignment.center,
+            decoration: ThemeHelper.fullScreenBgBoxDecoration(),
+            child: Stack(
+              children: [
+                Positioned(
+                  bottom: MediaQuery.of(context).size.height / 2,
 
-                // left: MediaQuery.of(context).size.width,
-                child: Container(
-                  height: MediaQuery.of(context).size.height / 3,
-                  width: MediaQuery.of(context).size.width / 2,
-                  child: Image.asset("assets/ani31.gif"),
-                ),
-              ),
-              drawerToggleButton(),
-              Center(
-                child: Container(
-                  margin: EdgeInsets.only(top: 100),
-                  child: Column(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(left: 50),
-                        child: Text(
-                          "Quiz",
-                          style: TextStyle(
-                              fontSize: 80,
-                              color: Colors.deepPurple,
-                              fontFamily: "ShinyBalloonDemo"),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 100),
-                        child: Text(
-                          "Villa",
-                          style: TextStyle(
-                              fontSize: 50,
-                              color: Colors.white,
-                              fontFamily: "BubblegumSans"),
-                        ),
-                      ),
-                      SizedBox(height: 30),
-                      ...homeScreenButtons(context),
-                    ],
+                  // left: MediaQuery.of(context).size.width,
+                  child: Container(
+                    height: MediaQuery.of(context).size.height / 3,
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: Image.asset("assets/ani31.gif"),
                   ),
                 ),
-              ),
-            ],
+                Positioned(right: 25, child: drawerToggleButton()),
+                Positioned(
+                  top: 15,
+                  left: 20,
+                  child: InkWell(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(232, 255, 255, 255),
+                          borderRadius: BorderRadius.circular(44)),
+                      height: 50,
+                      width: 50,
+                      child: Icon(
+                        Icons.home,
+                        color: Colors.yellow.shade900,
+                        size: 40,
+                      ),
+                    ),
+                    onTap: () => {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomepageScreen())),
+                    },
+                  ),
+                ),
+                Center(
+                  child: Container(
+                    margin: EdgeInsets.only(top: 70),
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 180,
+                          width: 200,
+                          margin: EdgeInsets.only(left: 90),
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage("assets/QB.png"),
+                                fit: BoxFit.contain),
+                          ),
+                        ),
+                        SizedBox(height: 30),
+                        ...homeScreenButtons(context),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -264,7 +284,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ContentScreen(),
+                    builder: (context) => HomepageScreen(),
                   ),
                 );
               },
@@ -285,7 +305,7 @@ class _HomeScreenState extends State<HomeScreen> {
           width: 50,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(200),
-            color: Colors.orange.shade900,
+            color: Colors.yellow.shade900,
           ),
           child: Padding(
             padding: const EdgeInsets.all(1.50),

@@ -40,7 +40,9 @@ class QuestionOption extends StatelessWidget {
                   child: Text(
                     optionText,
                     style: TextStyle(
-                        color: isSelected ? Colors.white : Colors.black,
+                        color: isSelected
+                            ? Colors.white
+                            : Colors.tealAccent.shade700,
                         fontFamily: "BubblegumSans",
                         fontSize: 30),
                   ),
@@ -57,7 +59,7 @@ class QuestionOption extends StatelessWidget {
                 text,
                 style: TextStyle(
                     fontSize: 25,
-                    color: Colors.black,
+                    color: Colors.white,
                     fontFamily: "BubblegumSans"),
                 textAlign: TextAlign.left,
               ),

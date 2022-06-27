@@ -55,15 +55,28 @@ class _QuizCategoryDetailsScreenState extends State<QuizCategoryDetailsScreen> {
 
   screenHeader(Category category) {
     return Container(
-      margin: EdgeInsets.only(top: 10, bottom: 10),
+      margin: EdgeInsets.only(bottom: 5, left: 5),
       alignment: Alignment.centerLeft,
       child: Row(
         children: [
-          GestureDetector(
-            child: Icon(Icons.arrow_back_ios),
-            onTap: () {
-              Navigator.pop(context);
-            },
+          Container(
+            height: 30,
+            width: 30,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: Color.fromARGB(144, 145, 143, 143)),
+            child: GestureDetector(
+              child: Center(
+                child: Icon(
+                  Icons.arrow_back_ios,
+                  size: 18,
+                  color: Colors.white,
+                ),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
           ),
           // Text(
           //   "${category.name} Quiz",
@@ -71,7 +84,8 @@ class _QuizCategoryDetailsScreenState extends State<QuizCategoryDetailsScreen> {
           // ),
           Container(
             margin: EdgeInsets.only(
-              left: MediaQuery.of(context).size.width / 13,
+              top: 5,
+              left: 10,
               right: MediaQuery.of(context).size.width / 12,
             ),
             decoration: BoxDecoration(
@@ -81,10 +95,10 @@ class _QuizCategoryDetailsScreenState extends State<QuizCategoryDetailsScreen> {
               child: Text(
                 "${category.name} Quiz",
                 style: TextStyle(
-                    fontFamily: "Flavors",
-                    fontSize: 35.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: "ShinyBalloonDemo",
+                    fontSize: 30.0,
+                    color: Colors.yellow.shade900,
+                    //  fontWeight: FontWeight.bold,
                     letterSpacing: 4,
                     fontStyle: FontStyle.italic),
               ),
@@ -166,14 +180,14 @@ class _QuizCategoryDetailsScreenState extends State<QuizCategoryDetailsScreen> {
                         Text(
                           quiz.title,
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 22,
                               fontFamily: "BubblegumSans"),
                         ),
                         Text(
                           quiz.description,
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 15,
                               fontFamily: "BubblegumSans"),
                         ),

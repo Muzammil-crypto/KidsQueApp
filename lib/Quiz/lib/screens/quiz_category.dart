@@ -61,18 +61,23 @@ class _QuizCategoryScreenState extends State<QuizCategoryScreen> {
       //alignment: Alignment.centerLeft,
       child: Row(
         children: [
-          GestureDetector(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 15.0),
-              child: Icon(
-                Icons.arrow_back_ios,
-                color: Colors.white,
-              ),
-            ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
+          Container(
+              margin: EdgeInsets.only(left: 15),
+              height: 30,
+              width: 30,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Color.fromARGB(144, 145, 143, 143)),
+              child: GestureDetector(
+                child: Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.white,
+                  size: 20,
+                ),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              )),
           // Container(
           //   margin: EdgeInsets.only(left: 30),
           //   child: Text(
@@ -98,7 +103,7 @@ class _QuizCategoryScreenState extends State<QuizCategoryScreen> {
                   style: TextStyle(
                       fontFamily: "ShinyBalloonDemo",
                       fontSize: 32.0,
-                      color: Colors.white,
+                      color: Colors.yellow.shade900,
                       // fontWeight: FontWeight.bold,
                       letterSpacing: 2,
                       fontStyle: FontStyle.italic),

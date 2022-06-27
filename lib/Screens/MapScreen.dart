@@ -8,11 +8,12 @@ import 'package:custom_info_window/custom_info_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:sign_in_interface/Screens/AnimateChoices.dart';
+import 'package:sign_in_interface/Screens/HomepageScreen.dart';
 
 import 'package:sign_in_interface/Screens/CitydetialScreen.dart';
 import 'package:sign_in_interface/Screens/Login1.dart';
 import 'package:sign_in_interface/Screens/ProvinceDetailScreen.dart';
+import 'package:sign_in_interface/Screens/riversDetailScreen.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
 import 'ProvincesListScreen.dart';
@@ -56,6 +57,12 @@ class _MapScreenState extends State<MapScreen> {
     "Islamabad": "assets/c4.png",
 
     "Multan": "assets/c6.png",
+
+    "Ravi River": "assets/ravi.jpg",
+    "Indus River": "assets/indus.jpg",
+    "Jhelum River": "assets/jhel.jpg",
+    "Chenab River": "assets/chen.jpg",
+    "Sutlej River": "assets/sat.jpg",
   };
 
   // Set<Polygon> polygons = HashSet<Polygon>();
@@ -72,6 +79,11 @@ class _MapScreenState extends State<MapScreen> {
     "assets/c4.png",
     "assets/c6.png",
     "assets/c5.png",
+    "assets/Ravi.png",
+    "assets/indus.png",
+    "assets/jhelum.png",
+    "assets/chenab.png",
+    "assets/satluj.png",
   ];
   final List<Marker> marker = <Marker>[
     Marker(
@@ -113,10 +125,18 @@ class _MapScreenState extends State<MapScreen> {
       30.60548538432997,
       71.52956712283178,
     ),
+
     LatLng(
       34.46055187756329,
       71.47984804553573,
-    )
+    ),
+    //RiversLocation
+
+    LatLng(31.561828622481798, 74.2541445347617),
+    LatLng(30.122230214962187, 70.85348085722664),
+    LatLng(32.96068996986589, 73.65663893923265),
+    LatLng(31.857865657899577, 73.12388585506004),
+    LatLng(31.017936623664752, 74.59434726907297),
   ];
   Set<Marker> markers = <Marker>{};
   //Marker? _marker;
@@ -168,14 +188,17 @@ class _MapScreenState extends State<MapScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => widget.label == "Province"
-                          ? ProvinceDetailScreen(
-                              id: widget.id,
-                            )
-                          : CityDetails(
-                              id: widget.id.toString(),
-                            ),
-                    ),
+                        builder: (context) => widget.label == "Province"
+                            ? ProvinceDetailScreen(
+                                id: widget.id,
+                              )
+                            : widget.label == "city"
+                                ? CityDetails(
+                                    id: widget.id.toString(),
+                                  )
+                                : RiverDetailScreen(
+                                    id: widget.id,
+                                  )),
                   ),
                 },
               ),
@@ -347,33 +370,6 @@ class _MapScreenState extends State<MapScreen> {
       }),
     );
   }
-
-  // setMarker() async {
-  //   marker = Marker(
-  //       markerId: MarkerId('_currentLocation'),
-  //       infoWindow: InfoWindow(title: 'My location'),
-  //       onTap: () {
-  //         Navigator.push(
-  //           context,
-  //           MaterialPageRoute(
-  //             builder: (context) => widget.label == "Province"
-  //                 ? ProvinceDetailScreen(
-  //                     id: widget.id,
-  //                   )
-  //                 : CityDetails(
-  //                     id: widget.id.toString(),
-  //                   ),
-  //           ),
-  //         );
-  //       },
-  //       position: LatLng(widget.lat, widget.long));
-  //   markers.add(marker!);
-  // }
-
-  // @override
-  // void dispose() {
-  //   super.dispose();
-  // }
 
   Widget InfowindoCard(BuildContext context) {
     return ClipPath(
