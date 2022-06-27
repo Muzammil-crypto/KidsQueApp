@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/home_screen.dart';
 import 'package:sign_in_interface/Quiz/lib/widgets/disco_button.dart';
+import 'package:sign_in_interface/Screens/HomepageScreen.dart';
 import 'package:sign_in_interface/Screens/historyDetailScreen.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
@@ -54,7 +55,7 @@ class _QuizSplashScreenState extends State<QuizSplashScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HistoryDetailScreen())),
+                                  builder: (context) => HomepageScreen())),
                         },
                       )
                     ],

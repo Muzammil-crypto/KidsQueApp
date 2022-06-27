@@ -2,7 +2,6 @@ class HistoryModel {
   String? title;
   String? description;
   String? videoLink;
-  List<String> images = [];
-
-  HistoryModel();
+  String images = "";
+  HistoryModel(this.title, this.description, this.videoLink);
 }
