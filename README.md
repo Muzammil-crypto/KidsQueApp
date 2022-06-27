@@ -1,6 +1,6 @@
-# sign_in_interface
+# PakQue Kids
 
-A new Flutter project.
+PakQue Kids App.
 
 ## Getting Started
 
