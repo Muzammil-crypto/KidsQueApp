@@ -177,6 +177,9 @@ class _QuizCategoryDetailsScreenState extends State<QuizCategoryDetailsScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        SizedBox(
+                          height: 14,
+                        ),
                         Text(
                           quiz.title,
                           style: TextStyle(
@@ -195,6 +198,7 @@ class _QuizCategoryDetailsScreenState extends State<QuizCategoryDetailsScreen> {
                 ),
               ],
             ),
+            height: 150,
           ),
         ],
       ),

@@ -2,270 +2,271 @@
   {
     "id": 1,
     "title": "Culture Quiz",
-    "description": "This is a science quiz description. This is multiline text",
+    "description": "Every question has four options. tap the best answer you know.",
     "shuffleQuestions": true,
     "imagePath": "",
     "categoryId": 1,
     "questions": [
       {
-        "text": "Science question 01",
+        "text": "In which city camel skin lamps are made?",
         "duration": 30,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "Karachi",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "Lahore",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
+            "text": "Peshawar",
             "isCorrect": false
           },
           {
-            "text": "Option D Text",
+            "text": "Multan",
             "isCorrect": false
           }
         ]
       },
       {
-        "text": "Science question 02",
+        "text": "Inwhich city the skilled wood work is done? ",
         "duration": 30,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "Chiniot",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "Hydrabad",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
+            "text": "Sakhar",
             "isCorrect": false
           },
           {
-            "text": "Option D Text",
+            "text": "Islamabad",
             "isCorrect": false
           }
         ]
       },
       {
-        "text": "Science question 03",
+        "text": "Which game is famous in Gilgit? ",
         "duration": 30,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "Polo",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "Hockey",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
+            "text": "Cricket",
             "isCorrect": false
           },
           {
-            "text": "Option D Text",
+            "text": "Football",
             "isCorrect": false
           }
         ]
       },
       {
-        "text": "Science question 04",
+        "text": "When do the Christians celebrate the birth of Jesus Christ? ",
         "duration": 30,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "25th December",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "25th November",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
+            "text": "3rd July",
             "isCorrect": false
           },
           {
-            "text": "Option D Text",
+            "text": "04 October",
             "isCorrect": false
           }
         ]
       },
       {
-        "text": "Science question 05",
+        "text": "To which province famous Sufi poet Baba Bulleh Shah (R.A) belongs? ",
         "duration": 30,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "Punjab",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "Sindh",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
+            "text": "Baluchistan",
             "isCorrect": false
           },
           {
-            "text": "Option D Text",
+            "text": "Kasur",
             "isCorrect": false
           }
         ]
       }
+      
     ]
   },
   {
     "id": 2,
-    "title": "Science Quiz 02",
-    "description": "This is a science quiz 2 description. This is multiline text",
+    "title": "Climates of Pakistan",
+    "description": "Every question has four options. tap the best answer you know.",
     "shuffleQuestions": true,
     "imagePath": "",
-    "categoryId": 1,
+    "categoryId": 4,
     "questions": [
       {
-        "text": "Science question 01",
+        "text": "Whenis the festival of Eid-Milad-un-Nabi (#)celebrated?",
         "duration": 10,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "12thRabi-ul-Awal ",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "17thRabi-ul-Awal ",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
+            "text": "15thRabi-ul-Awal ",
             "isCorrect": false
           },
           {
-            "text": "Option D Text",
+            "text": "20thRabi-ul-Awal ",
             "isCorrect": false
           }
         ]
       },
       {
-        "text": "Science question 02",
+        "text": "To which city Hazrat Bahaudin Zakriya (R.A) belongs? ",
         "duration": 15,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "Lahore",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "Kasur",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
+            "text": "Gujrat",
             "isCorrect": false
           },
           {
-            "text": "Option D Text",
+            "text": "Multan",
             "isCorrect": false
           }
         ]
       },
       {
-        "text": "Science question 03",
+        "text": "To which province famous Sufi poet Baba Bulleh Shah (R.A) belongs? ",
         "duration": 20,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "Punjab",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "Gilgit",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
+            "text": "Khyber PakhtunKhwa",
             "isCorrect": false
           },
           {
-            "text": "Option D Text",
+            "text": "Baluchistan",
             "isCorrect": false
           }
         ]
       },
       {
-        "text": "Science question 04",
+        "text": "What is meant by Culture?",
         "duration": 25,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "Traditions of the people of a specific area or race",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "Religion",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
+            "text": "Cast",
             "isCorrect": false
           },
           {
-            "text": "Option D Text",
+            "text": "None of the above",
             "isCorrect": false
           }
         ]
       },
       {
-        "text": "Science question 05",
+        "text": "Which game is famous in Gilgit? ",
         "duration": 30,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "Polo",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "Hokey",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
+            "text": "Olymmpic",
             "isCorrect": false
           },
           {
-            "text": "Option D Text",
+            "text": "Cricket",
             "isCorrect": false
           }
         ]
       },
       {
-        "text": "Science question 06",
+        "text": "National FLower of Pakistan is?",
         "duration": 35,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "Rose",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "Jesmine",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
+            "text": "Sun FLower",
             "isCorrect": false
           },
           {
-            "text": "Option D Text",
+            "text": "None of the above",
             "isCorrect": false
           }
         ]
@@ -274,127 +275,256 @@
   },
   {
     "id": 3,
-    "title": "Music Quiz 01",
-    "description": "This is a science quiz description. This is multiline text",
+    "title": "History",
+    "description": "Every question has four options. tap the best answer you know.",
     "shuffleQuestions": true,
     "imagePath": "",
     "categoryId": 2,
     "questions": [
       {
-        "text": "Music question 01",
+        "text": "A Leap Year contains___days of February.",
         "duration": 30,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "29 days",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "20 days",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
+            "text": "10 days",
             "isCorrect": false
           },
           {
-            "text": "Option D Text",
+            "text": "15 days",
             "isCorrect": false
           }
         ]
       },
       {
-        "text": "Music question 02",
+        "text": " A decade contains how many years?",
         "duration": 30,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "10 years",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "100 years",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
+            "text": "1000 years",
             "isCorrect": false
           },
           {
-            "text": "Option D Text",
+            "text": "5 years",
             "isCorrect": false
           }
         ]
       },
       {
-        "text": "Music question 03",
+        "text": "There are __ years in a century",
         "duration": 30,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "10 Years",
+            "isCorrect": false
+          },
+          {
+            "text": "100 years",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "24 years",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
-            "isCorrect": false
-          },
-          {
-            "text": "Option D Text",
+            "text": "50 years",
             "isCorrect": false
           }
         ]
       },
       {
-        "text": "Music question 04",
+        "text": " The Muslim League was founded in _____?",
         "duration": 30,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "1976",
+            "isCorrect": false
+          },
+          {
+            "text": "1916",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "1965",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
-            "isCorrect": false
-          },
-          {
-            "text": "Option D Text",
+            "text": "1940",
             "isCorrect": false
           }
         ]
       },
       {
-        "text": "Music question 05",
+        "text": " ____was given the title of “Ambassador of Hindu- Muslim Unity”.",
         "duration": 30,
         "shuffleOptions": true,
         "options": [
           {
-            "text": "Option A Text",
+            "text": "Sir Syed Ahmad Khan",
+            "isCorrect": false
+          },
+          {
+            "text": "Molvi Fazal ul haq",
             "isCorrect": true
           },
           {
-            "text": "Option B Text",
+            "text": "Hafeez Jalndhari",
             "isCorrect": false
           },
           {
-            "text": "Option C Text",
-            "isCorrect": false
-          },
-          {
-            "text": "Option D Text",
+            "text": "Quid e azam",
             "isCorrect": false
           }
         ]
       }
     ]
+
+    
+  },
+  {
+    "id": 4,
+    "title": "Systems of Government",
+    "description": "Every question has four options. tap the best answer you know.",
+    "shuffleQuestions": true,
+    "imagePath": "",
+    "categoryId": 3,
+    "questions": [
+      {
+        "text": "ALeap Yearcontains___days of February.",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "29 days",
+            "isCorrect": true
+          },
+          {
+            "text": "20 days",
+            "isCorrect": false
+          },
+          {
+            "text": "10 days",
+            "isCorrect": false
+          },
+          {
+            "text": "15 days",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": " A decade contains how many years?",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "10 years",
+            "isCorrect": true
+          },
+          {
+            "text": "100 years",
+            "isCorrect": false
+          },
+          {
+            "text": "1000 years",
+            "isCorrect": false
+          },
+          {
+            "text": "5 years",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "There are __ years in a century",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "10 Years",
+            "isCorrect": false
+          },
+          {
+            "text": "100 years",
+            "isCorrect": true
+          },
+          {
+            "text": "24 years",
+            "isCorrect": false
+          },
+          {
+            "text": "50 years",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": " The Muslim League was founded in _____?",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "1976",
+            "isCorrect": false
+          },
+          {
+            "text": "1916",
+            "isCorrect": true
+          },
+          {
+            "text": "1965",
+            "isCorrect": false
+          },
+          {
+            "text": "1940",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": " ____was given the title of “Ambassador of Hindu- Muslim Unity”.",
+        "duration": 30,
+        "shuffleOptions": true,
+        "options": [
+          {
+            "text": "Sir Syed Ahmad Khan",
+            "isCorrect": false
+          },
+          {
+            "text": "Molvi Fazal ul haq",
+            "isCorrect": true
+          },
+          {
+            "text": "Hafeez Jalndhari",
+            "isCorrect": false
+          },
+          {
+            "text": "Quid e azam",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+
+    
   }
 ]

@@ -304,13 +304,7 @@ class _RiverDetailScreenState extends State<RiverDetailScreen> {
                                         size: 20,
                                       ),
                                       onPressed: () => {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                ProvincesListScreen(),
-                                          ),
-                                        ),
+                                        Navigator.pop(context),
                                       },
                                     ),
                                   )),

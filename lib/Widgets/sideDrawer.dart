@@ -38,7 +38,7 @@ class Side_Drawer extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.all(10.0),
                         child: Text(
-                          "Muzammil Rafiq",
+                          "Hi Champ! Welcom.",
                           style: TextStyle(
                               fontFamily: "BubblegumSans",
                               fontSize: 18,
@@ -48,10 +48,10 @@ class Side_Drawer extends StatelessWidget {
                     ],
                   ),
                 ),
-                onTap: () => {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ProfileScreen())),
-                },
+                // onTap: () => {
+                //   Navigator.push(context,
+                //       MaterialPageRoute(builder: (context) => ProfileScreen())),
+                // },
               ),
             ),
             InkWell(
@@ -76,28 +76,28 @@ class Side_Drawer extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => HomepageScreen())),
               },
             ),
-            InkWell(
-              child: Container(
-                child: const ListTile(
-                  title: Text(
-                    "Settings",
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.white,
-                      fontFamily: "BubblegumSans",
-                    ),
-                  ),
-                  leading: Icon(
-                    Icons.settings,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              onTap: () => {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ProfileScreen())),
-              },
-            ),
+            // InkWell(
+            //   child: Container(
+            //     child: const ListTile(
+            //       title: Text(
+            //         "Settings",
+            //         style: TextStyle(
+            //           fontSize: 15,
+            //           color: Colors.white,
+            //           fontFamily: "BubblegumSans",
+            //         ),
+            //       ),
+            //       leading: Icon(
+            //         Icons.settings,
+            //         color: Colors.white,
+            //       ),
+            //     ),
+            //   ),
+            //   onTap: () => {
+            //     Navigator.push(context,
+            //         MaterialPageRoute(builder: (context) => ProfileScreen())),
+            //   },
+            // ),
             InkWell(
               child: Container(
                 child: const ListTile(

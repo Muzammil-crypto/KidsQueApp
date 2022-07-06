@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:sign_in_interface/Screens/Signup.dart';
@@ -15,14 +16,11 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  GlobalKey<FormState> _globalFormKey = GlobalKey<FormState>();
+  final formkey = GlobalKey<FormState>();
   bool _hidepassword = true;
-  bool _isAPIcallProcess = false;
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   bool isLoading = false;
-  String? _username;
-  String? _password;
 
   @override
   Widget build(BuildContext context) {
@@ -40,127 +38,106 @@ class _LoginState extends State<Login> {
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
-                // Positioned(
-                //     top: 40,
-                //     left: 20,
-                //     child: Container(
-                //       height: MediaQuery.of(context).size.height / 10,
-                //       child: IconButton(
-                //         icon: Icon(
-                //           Icons.arrow_back_ios,
-                //           size: 20,
-                //           color: Colors.white,
-                //         ),
-                //         onPressed: () => {
-                //           Navigator.push(context,
-                //               MaterialPageRoute(builder: (context) => SignUp()))
-                //         },
-                //       ),
-                //     )),
                 Positioned(
                   child: Container(
                     margin: EdgeInsets.only(
                         top: MediaQuery.of(context).size.height / 9),
-                    child: Column(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(top: 65.0, bottom: 0),
-                          child: Container(
-                              height: MediaQuery.of(context).size.height / 5,
-                              child: Center(
-                                child: Text("Login",
-                                    style: TextStyle(
-                                      fontFamily: "ShinyBalloonDemo",
-                                      fontSize: 60,
-                                      color: Colors.green,
-                                    )),
-                              )),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 10, horizontal: 30),
-                          child: TextFormField(
-                            controller: _emailController,
-                            validator: (onValidateVal) {
-                              if (onValidateVal!.isEmpty) {
-                                return ("Email Can't be empty");
-                              }
-                              return null;
-                            },
-                            // onSaved: (onSavedVal) {
-                            //   _username = onSavedVal;
-                            // },
-                            textAlign: TextAlign.left,
-                            decoration: InputDecoration(
-                                contentPadding:
-                                    new EdgeInsets.symmetric(vertical: 0.0),
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30)),
-                                fillColor: Colors.white,
-                                filled: true,
-                                prefixIcon: Padding(
-                                  padding: EdgeInsets.all(0.0),
-                                  child: Icon(
-                                    Icons.email,
-                                    color: Colors.yellow.shade900,
-                                  ), // icon is 48px widget.
-                                ),
-                                hintText: 'Enter Your Username',
-                                hintStyle: TextStyle(
-                                    fontFamily: "BubblegumSans",
-                                    fontSize: 14.0,
-                                    color: Colors.black)),
+                    child: Form(
+                      key: formkey,
+                      child: Column(
+                        children: <Widget>[
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(top: 65.0, bottom: 0),
+                            child: Container(
+                                height: MediaQuery.of(context).size.height / 5,
+                                child: Center(
+                                  child: Text("Login",
+                                      style: TextStyle(
+                                        fontFamily: "ShinyBalloonDemo",
+                                        fontSize: 60,
+                                        color: Colors.green,
+                                      )),
+                                )),
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 10, horizontal: 30),
-                          child: TextFormField(
-                            controller: _passwordController,
-                            validator: (onValidateVal) {
-                              if (onValidateVal!.isEmpty) {
-                                return ("Password Can't be empty");
-                              }
-                              return null;
-                            },
-                            // onSaved: (onSavedVal) {
-                            //   _password = onSavedVal;
-                            // },
-                            obscureText: _hidepassword,
-                            textAlign: TextAlign.left,
-                            decoration: InputDecoration(
-                                contentPadding:
-                                    new EdgeInsets.symmetric(vertical: 0.0),
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30)),
-                                fillColor: Colors.white,
-                                filled: true,
-                                suffixIcon: IconButton(
-                                  color: Colors.yellow.shade900,
-                                  icon: Icon(
-                                    _hidepassword
-                                        ? Icons.visibility_off
-                                        : Icons.visibility,
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 30),
+                            child: TextFormField(
+                              controller: _emailController,
+                              validator: (email) => email != null &&
+                                      !EmailValidator.validate(email)
+                                  ? 'Enter a Valid Email Adress'
+                                  : null,
+                              textAlign: TextAlign.left,
+                              decoration: InputDecoration(
+                                  contentPadding:
+                                      new EdgeInsets.symmetric(vertical: 0.0),
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30)),
+                                  fillColor: Colors.white,
+                                  filled: true,
+                                  prefixIcon: Padding(
+                                    padding: EdgeInsets.all(0.0),
+                                    child: Icon(
+                                      Icons.email,
+                                      color: Colors.yellow.shade900,
+                                    ), // icon is 48px widget.
                                   ),
-                                  onPressed: () => setState(() {
-                                    _hidepassword = !_hidepassword;
-                                  }),
-                                ),
-                                prefixIcon: Padding(
-                                  padding: EdgeInsets.all(0.0),
-                                  child: Icon(
-                                    Icons.lock,
-                                    color: Colors.yellow.shade900,
-                                  ), // icon is 48px widget.
-                                ),
-                                hintText: 'Enter Your Password',
-                                hintStyle: TextStyle(
-                                    fontFamily: "BubblegumSans",
-                                    fontSize: 14.0,
-                                    color: Colors.black)),
+                                  hintText: 'Enter Your Username',
+                                  hintStyle: TextStyle(
+                                      fontFamily: "BubblegumSans",
+                                      fontSize: 14.0,
+                                      color: Colors.black)),
+                            ),
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 30),
+                            child: TextFormField(
+                              controller: _passwordController,
+                              validator: (onValidateVal) {
+                                if (onValidateVal!.isEmpty) {
+                                  return ("Password Can't be empty");
+                                }
+                                return null;
+                              },
+                              obscureText: _hidepassword,
+                              textAlign: TextAlign.left,
+                              decoration: InputDecoration(
+                                  contentPadding:
+                                      new EdgeInsets.symmetric(vertical: 0.0),
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30)),
+                                  fillColor: Colors.white,
+                                  filled: true,
+                                  suffixIcon: IconButton(
+                                    color: Colors.yellow.shade900,
+                                    icon: Icon(
+                                      _hidepassword
+                                          ? Icons.visibility_off
+                                          : Icons.visibility,
+                                    ),
+                                    onPressed: () => setState(() {
+                                      _hidepassword = !_hidepassword;
+                                    }),
+                                  ),
+                                  prefixIcon: Padding(
+                                    padding: EdgeInsets.all(0.0),
+                                    child: Icon(
+                                      Icons.lock,
+                                      color: Colors.yellow.shade900,
+                                    ), // icon is 48px widget.
+                                  ),
+                                  hintText: 'Enter Your Password',
+                                  hintStyle: TextStyle(
+                                      fontFamily: "BubblegumSans",
+                                      fontSize: 14.0,
+                                      color: Colors.black)),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -220,10 +197,12 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Positioned(
-                  bottom: MediaQuery.of(context).size.height / 3.5,
+                  bottom: MediaQuery.of(context).size.height / 3.7,
                   child: SingleChildScrollView(
                     child: RaisedButton(
                       onPressed: () {
+                        final form = formkey.currentState!;
+                        if (form.validate()) {}
                         setState(() {
                           isLoading = true;
                         });

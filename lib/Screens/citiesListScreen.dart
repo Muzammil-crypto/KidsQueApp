@@ -24,7 +24,6 @@ class CitiesListScreen extends StatelessWidget {
                   children: [
                     SizedBox(height: 60),
                     Container(
-                      // height: MediaQuery.of(context).size.height / 5,
                       child: Text(
                         "Major Cities of",
                         style: TextStyle(
@@ -54,27 +53,30 @@ class CitiesListScreen extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     children: [
                       ProvinceDetails(
-                          "assets/c1.png",
-                          "Karachi",
-                          Colors.pinkAccent,
-                          Colors.deepOrangeAccent,
-                          "Karachi is the largest city in Pakistan and the twelfth-largest city in the world. It is the capital of the Pakistani province of Sindh. Ranked as a beta-global city, it is Pakistan's premier industrial and financial centre.",
+                          "assets/c5.png",
+                          "Peshawar",
+                          Colors.teal,
+                          Colors.cyan,
+
+                          // Colors.green,
+                          // Colors.tealAccent,
+                          "Peshawar is the capital of the Pakistani province of Khyber Pakhtunkhwa and its largest city. It is the sixth-largest city in Pakistan, and the largest Pashtun-majority city in the country.",
                           MapScreen(
                             label: "city",
-                            lat: 25.31664378584215,
-                            long: 67.02999062754044,
+                            lat: 34.46055187756329,
+                            long: 71.47984804553573,
                             id: 4,
-                            infoWindowTitle: "Karachi",
+                            infoWindowTitle: "Peshawar",
                             infoWindowDes:
-                                "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                                "Peshawar is one of the four cities of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
                             infoWindowImage: "assets/lahore.png",
                           )),
                       ProvinceDetails(
                           "assets/c2.png",
                           // "assets/c7.png",
                           "Lahore",
-                          Colors.red,
-                          Colors.deepOrange,
+                          Colors.green,
+                          Colors.cyan,
                           "Lahore is the capital of the Pakistani province of Punjab, is Pakistan's 2nd largest city, and is the 26th largest city in the world. Lahore is one of Pakistan's wealthiest cities.",
                           MapScreen(
                             label: "city",
@@ -83,11 +85,11 @@ class CitiesListScreen extends StatelessWidget {
                             id: 1,
                             infoWindowTitle: "Lahore",
                             infoWindowDes:
-                                "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                                "Among the most popular sights are the Lahore Fort, adjacent to the Walled City, and home to the Sheesh Mahal, the Alamgiri Gate, the Naulakha pavilion, and the Moti Masjid.",
                             infoWindowImage: "assets/lahore.png",
                           )),
                       ProvinceDetails(
-                          "assets/c4.png",
+                          "assets/is.png",
                           "Islamabad",
                           Colors.deepPurple,
                           Colors.cyan,
@@ -99,7 +101,7 @@ class CitiesListScreen extends StatelessWidget {
                             id: 2,
                             infoWindowTitle: "Islamabad",
                             infoWindowDes:
-                                "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                                "Islamabad is known for the presence of several parks and forests, including the Margalla Hills National Park and the Shakarparian.",
                             infoWindowImage: "assets/lahore.png",
                           )),
                       ProvinceDetails(
@@ -117,25 +119,23 @@ class CitiesListScreen extends StatelessWidget {
                             id: 3,
                             infoWindowTitle: "Multan",
                             infoWindowDes:
-                                "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                                "Multan is known as the 'City of Pirs and Shrines', and is a prosperous city of bazaars, mosques and superbly designed tombs.",
                             infoWindowImage: "assets/lahore.png",
                           )),
                       ProvinceDetails(
-                          "assets/c5.png",
-                          "Peshawar",
-                          Colors.teal,
-                          Colors.cyan,
-                          // Colors.green,
-                          // Colors.tealAccent,
-                          "Peshawar is the capital of the Pakistani province of Khyber Pakhtunkhwa and its largest city. It is the sixth-largest city in Pakistan, and the largest Pashtun-majority city in the country.",
+                          "assets/c1.png",
+                          "Rawalpindi",
+                          Colors.pinkAccent,
+                          Colors.deepOrangeAccent,
+                          "Rawalpindi, is the capital city of Rawalpindi Division located in the Punjab province of Pakistan. Rawalpindi is the fourth-largest city proper in Pakistan after Karachi, Lahore and Faisalabad respectively while the larger Islamabad-Rawalpindi metropolitan area is the country's third largest metropolitan area.",
                           MapScreen(
                             label: "city",
-                            lat: 34.46055187756329,
-                            long: 71.47984804553573,
-                            id: 4,
-                            infoWindowTitle: "Peshawar",
+                            lat: 25.31664378584215,
+                            long: 67.02999062754044,
+                            id: 6,
+                            infoWindowTitle: "Rawalpindi",
                             infoWindowDes:
-                                "Peshawar is one of the four cities of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                                "Rawalpindi, is the capital city of Rawalpindi Division located in the Punjab province of Pakistan. Rawalpindi is the fourth-largest city proper in Pakistan while the larger Islamabad-Rawalpindi metropolitan area.",
                             infoWindowImage: "assets/lahore.png",
                           )),
                     ]),
@@ -157,10 +157,7 @@ class CitiesListScreen extends StatelessWidget {
                       ),
                     ),
                     onTap: () => {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => HomepageScreen())),
+                      Navigator.pop(context),
                     },
                   )),
               Positioned(
@@ -186,8 +183,6 @@ class CitiesListScreen extends StatelessWidget {
                       ),
                       Container(
                         width: MediaQuery.of(context).size.width,
-
-                        // height: MediaQuery.of(context).size.height / 5,
                         margin: EdgeInsets.only(top: 5),
                         child: Center(
                           child: Text(

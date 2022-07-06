@@ -15,7 +15,6 @@ import 'package:sign_in_interface/Quiz/lib/stores/quiz_store.dart';
 import 'package:sign_in_interface/Quiz/lib/widgets/disco_button.dart';
 import 'package:sign_in_interface/Quiz/lib/widgets/question_option.dart';
 import 'package:sign_in_interface/Quiz/lib/widgets/time_indicator.dart';
-import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 import 'package:sign_in_interface/Widgets/roundCardClipper.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -202,10 +201,9 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
       alignment: Alignment.center,
       decoration: BoxDecoration(
         // color: Colors.tealAccent.shade700,
-        gradient: LinearGradient(colors: [
-          Color.fromARGB(120, 255, 64, 128),
-          Color.fromARGB(120, 255, 64, 128)
-        ]),
+        gradient: LinearGradient(
+          colors: [Colors.cyan, Colors.green],
+        ),
         borderRadius: BorderRadius.circular(18),
       ),
       child: Padding(

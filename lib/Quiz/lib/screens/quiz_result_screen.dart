@@ -100,13 +100,13 @@ class _QuizResultScreenState extends State<QuizResultScreen> {
                 margin: EdgeInsets.only(
                   top: 130,
                 ),
-                height: MediaQuery.of(context).size.height / 1.8,
+                height: MediaQuery.of(context).size.height,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(25),
-                      bottomRight: Radius.circular(25)),
-                  color: Color.fromARGB(120, 255, 64, 128),
-                ),
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(25),
+                        bottomRight: Radius.circular(25)),
+                    gradient:
+                        LinearGradient(colors: [Colors.cyan, Colors.green])),
                 child: Center(
                   child: Column(
                     children: [
@@ -116,7 +116,7 @@ class _QuizResultScreenState extends State<QuizResultScreen> {
                       Image(
                         height: MediaQuery.of(context).size.height / 4,
                         width: MediaQuery.of(context).size.width / 1.1,
-                        image: AssetImage("assets/congrats.png"),
+                        image: AssetImage("assets/trophy.png"),
                         fit: BoxFit.cover,
                       ),
                       SizedBox(

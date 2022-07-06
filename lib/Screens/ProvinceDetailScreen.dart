@@ -241,45 +241,81 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
                                 shrinkWrap: true,
                                 scrollDirection: Axis.horizontal,
                                 children: <Widget>[
-                                  Container(
-                                    margin: EdgeInsets.only(right: 5),
-                                    height: 120,
-                                    width: 120.0,
-                                    child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHBVFSOJ6Ll438ccvbWTFPFBkDeITdUfoPOA&usqp=CAU")),
+                                  InkWell(
+                                    onTap: () => {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ProvinceDetailScreen(
+                                                    id: 1,
+                                                  ))),
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 5),
+                                      height: 120,
+                                      width: 120.0,
+                                      child: CircleAvatar(
+                                          backgroundImage: NetworkImage(
+                                              "https://i.pinimg.com/736x/1a/70/5b/1a705b5289275f9a7fa39b8a6614e30f.jpg")),
+                                    ),
                                   ),
-                                  Container(
-                                    margin: EdgeInsets.only(right: 5),
-                                    height: 120,
-                                    width: 120.0,
-                                    child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://www.explorerpakistan.com/wp-content/uploads/2019/09/1-lahore-fort-800x445.jpg")),
+                                  InkWell(
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 5),
+                                      height: 120,
+                                      width: 120.0,
+                                      child: CircleAvatar(
+                                          backgroundImage: NetworkImage(
+                                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCiJ3qQwFcgzMMe5KKm14qovLca8fN6LnQZ6uYutnRxDDoHLchCH45lJYdo7YPK5oNyEY&usqp=CAU")),
+                                    ),
+                                    onTap: () => {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ProvinceDetailScreen(
+                                                    id: 2,
+                                                  ))),
+                                    },
                                   ),
-                                  Container(
-                                    margin: EdgeInsets.only(right: 5),
-                                    height: 120,
-                                    width: 120.0,
-                                    child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://media.istockphoto.com/photos/wazir-khan-mosque-lahore-pakistan-picture-id1130761760?k=20&m=1130761760&s=612x612&w=0&h=OPX8vVKJnwaAASLUO23nVm0ysAp8k5mugGfbu0XuJyg=")),
+                                  InkWell(
+                                    onTap: () => {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ProvinceDetailScreen(
+                                                    id: 3,
+                                                  ))),
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 5),
+                                      height: 120,
+                                      width: 120.0,
+                                      child: CircleAvatar(
+                                          backgroundImage: NetworkImage(
+                                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBXdkl8lavK80Ov_4kbBJecdf-2T4mpCKju_FmcyhxB-ZPojGtP7oXUZLUgFU4RZNQfm4&usqp=CAU")),
+                                    ),
                                   ),
-                                  Container(
-                                    margin: EdgeInsets.only(right: 5),
-                                    height: 120,
-                                    width: 120.0,
-                                    child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://pbs.twimg.com/media/DN0CNlDWkAIbhBf.jpg")),
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.only(right: 5),
-                                    height: 120,
-                                    width: 120.0,
-                                    child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHBVFSOJ6Ll438ccvbWTFPFBkDeITdUfoPOA&usqp=CAU")),
+                                  InkWell(
+                                    onTap: () => {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ProvinceDetailScreen(
+                                                    id: 4,
+                                                  ))),
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 5),
+                                      height: 120,
+                                      width: 120.0,
+                                      child: CircleAvatar(
+                                          backgroundImage: NetworkImage(
+                                              "https://media.istockphoto.com/photos/boat-at-the-beautiful-gawadar-port-harbor-balochistan-picture-id1137143862?k=20&m=1137143862&s=612x612&w=0&h=brJOdhBmwdKK8_Ohv51l4ROiZh7ZyoLoE-qUlD2E_DQ=")),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -305,13 +341,7 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
                                         size: 20,
                                       ),
                                       onPressed: () => {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                ProvincesListScreen(),
-                                          ),
-                                        ),
+                                        Navigator.pop(context),
                                       },
                                     ),
                                   )),

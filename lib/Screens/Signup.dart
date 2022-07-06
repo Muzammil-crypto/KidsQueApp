@@ -1,7 +1,9 @@
 import 'dart:math';
 
 import 'package:dio/dio.dart';
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sign_in_interface/Screens/Login1.dart';
 import 'package:sign_in_interface/Screens/choicesScreen.dart';
 import 'package:snippet_coder_utils/ProgressHUD.dart';
@@ -14,7 +16,8 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  GlobalKey<FormState> _globalFormKey = GlobalKey<FormState>();
+  final formkey = GlobalKey<FormState>();
+
   bool _hidepassword = true;
   // bool _isAPIcallProcess = false;
   TextEditingController _usernameController = TextEditingController();
@@ -81,150 +84,152 @@ class _SignUpState extends State<SignUp> {
                         child: Container(
                           margin: EdgeInsets.only(
                               top: MediaQuery.of(context).size.height / 40),
-                          child: Column(
-                            children: <Widget>[
-                              Padding(
-                                padding: const EdgeInsets.only(top: 20.0),
-                                child: Container(
-                                  margin: EdgeInsets.only(
-                                      left: 20, right: 20, top: 20, bottom: 10),
-                                  height:
-                                      MediaQuery.of(context).size.height / 4,
-                                  child: Center(
-                                    child: Text("Register",
-                                        style: TextStyle(
-                                          fontFamily: "ShinyBalloonDemo",
-                                          fontSize: 60,
-                                          color: Colors.green,
-                                        )),
+                          child: Form(
+                            key: formkey,
+                            child: Column(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 20.0),
+                                  child: Container(
+                                    margin: EdgeInsets.only(
+                                        left: 20,
+                                        right: 20,
+                                        top: 20,
+                                        bottom: 10),
+                                    height:
+                                        MediaQuery.of(context).size.height / 4,
+                                    child: Center(
+                                      child: Text("Register",
+                                          style: TextStyle(
+                                            fontFamily: "ShinyBalloonDemo",
+                                            fontSize: 60,
+                                            color: Colors.green,
+                                          )),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 30),
-                                child: TextFormField(
-                                  controller: _usernameController,
-                                  validator: (onValidateVal) {
-                                    if (onValidateVal!.isEmpty) {
-                                      return ("Username Can't be empty");
-                                    }
-                                    return null;
-                                  },
-                                  // onSaved: (onSavedVal) {
-                                  //   _username = onSavedVal;
-                                  // },
-                                  textAlign: TextAlign.left,
-                                  decoration: InputDecoration(
-                                      contentPadding: new EdgeInsets.symmetric(
-                                          vertical: 0.0),
-                                      border: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(30)),
-                                      fillColor: Colors.white,
-                                      filled: true,
-                                      prefixIcon: Padding(
-                                        padding: EdgeInsets.all(0.0),
-                                        child: Icon(
-                                          Icons.person,
-                                          color: Colors.yellow.shade900,
-                                          size: 28,
-                                        ), // icon is 48px widget.
-                                      ),
-                                      hintText: 'Enter Your Username',
-                                      hintStyle: TextStyle(
-                                          fontFamily: "BubblegumSans",
-                                          fontSize: 14.0,
-                                          color: Colors.black)),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 30),
-                                child: TextFormField(
-                                  controller: _emailController,
-                                  validator: (onValidateVal) {
-                                    if (onValidateVal!.isEmpty) {
-                                      return ("Email Can't be empty");
-                                    }
-                                    return null;
-                                  },
-                                  // onSaved: (onSavedVal) {
-                                  //   _username = onSavedVal;
-                                  // },
-                                  textAlign: TextAlign.left,
-                                  decoration: InputDecoration(
-                                      contentPadding: new EdgeInsets.symmetric(
-                                          vertical: 0.0),
-                                      border: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(30)),
-                                      fillColor: Colors.white,
-                                      filled: true,
-                                      prefixIcon: Padding(
-                                        padding: EdgeInsets.all(0.0),
-                                        child: Icon(
-                                          Icons.email,
-                                          color: Colors.yellow.shade900,
-                                        ), // icon is 48px widget.
-                                      ),
-                                      hintText: 'Enter Your Email',
-                                      hintStyle: TextStyle(
-                                          fontFamily: "BubblegumSans",
-                                          fontSize: 14.0,
-                                          color: Colors.black)),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 30),
-                                child: TextFormField(
-                                  controller: _passwordController,
-                                  validator: (onValidateVal) {
-                                    if (onValidateVal!.isEmpty) {
-                                      return ("Password Can't be empty");
-                                    }
-                                    return null;
-                                  },
-                                  // onSaved: (onSavedVal) {
-                                  //   _password = onSavedVal;
-                                  // },
-                                  obscureText: _hidepassword,
-                                  textAlign: TextAlign.left,
-                                  decoration: InputDecoration(
-                                      contentPadding: new EdgeInsets.symmetric(
-                                          vertical: 0.0),
-                                      border: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(30)),
-                                      fillColor: Colors.white,
-                                      filled: true,
-                                      suffixIcon: IconButton(
-                                        color: Colors.yellow.shade900,
-                                        icon: Icon(
-                                          _hidepassword
-                                              ? Icons.visibility_off
-                                              : Icons.visibility,
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: 10, horizontal: 30),
+                                  child: TextFormField(
+                                    controller: _usernameController,
+                                    validator: (onValidateVal) {
+                                      if (onValidateVal!.isEmpty ||
+                                          onValidateVal == null) {
+                                        return ("Username Can't be empty");
+                                      }
+                                      return null;
+                                    },
+                                    // onSaved: (onSavedVal) {
+                                    //   _username = onSavedVal;
+                                    // },
+                                    textAlign: TextAlign.left,
+                                    decoration: InputDecoration(
+                                        contentPadding:
+                                            new EdgeInsets.symmetric(
+                                                vertical: 0.0),
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(30)),
+                                        fillColor: Colors.white,
+                                        filled: true,
+                                        prefixIcon: Padding(
+                                          padding: EdgeInsets.all(0.0),
+                                          child: Icon(
+                                            Icons.person,
+                                            color: Colors.yellow.shade900,
+                                            size: 28,
+                                          ), // icon is 48px widget.
                                         ),
-                                        onPressed: () => setState(() {
-                                          _hidepassword = !_hidepassword;
-                                        }),
-                                      ),
-                                      prefixIcon: Padding(
-                                        padding: EdgeInsets.all(0.0),
-                                        child: Icon(
-                                          Icons.lock,
-                                          color: Colors.yellow.shade900,
-                                        ), // icon is 48px widget.
-                                      ),
-                                      hintText: 'Enter Your Password',
-                                      hintStyle: TextStyle(
-                                          fontFamily: "BubblegumSans",
-                                          fontSize: 14.0,
-                                          color: Colors.black)),
+                                        hintText: 'Enter Your Username',
+                                        hintStyle: TextStyle(
+                                            fontFamily: "BubblegumSans",
+                                            fontSize: 14.0,
+                                            color: Colors.black)),
+                                  ),
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: 10, horizontal: 30),
+                                  child: TextFormField(
+                                    controller: _emailController,
+                                    validator: (email) => email != null &&
+                                            !EmailValidator.validate(email)
+                                        ? 'Enter a Valid Email Adress'
+                                        : null,
+                                    textAlign: TextAlign.left,
+                                    decoration: InputDecoration(
+                                        contentPadding:
+                                            new EdgeInsets.symmetric(
+                                                vertical: 0.0),
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(30)),
+                                        fillColor: Colors.white,
+                                        filled: true,
+                                        prefixIcon: Padding(
+                                          padding: EdgeInsets.all(0.0),
+                                          child: Icon(
+                                            Icons.email,
+                                            color: Colors.yellow.shade900,
+                                          ), // icon is 48px widget.
+                                        ),
+                                        hintText: 'Enter Your Email',
+                                        hintStyle: TextStyle(
+                                            fontFamily: "BubblegumSans",
+                                            fontSize: 14.0,
+                                            color: Colors.black)),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: 10, horizontal: 30),
+                                  child: TextFormField(
+                                    controller: _passwordController,
+                                    validator: (onValidateVal) {
+                                      if (onValidateVal!.isEmpty) {
+                                        return ("Password Can't be empty");
+                                      }
+                                      return null;
+                                    },
+                                    obscureText: _hidepassword,
+                                    textAlign: TextAlign.left,
+                                    decoration: InputDecoration(
+                                        contentPadding:
+                                            new EdgeInsets.symmetric(
+                                                vertical: 0.0),
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(30)),
+                                        fillColor: Colors.white,
+                                        filled: true,
+                                        suffixIcon: IconButton(
+                                          color: Colors.yellow.shade900,
+                                          icon: Icon(
+                                            _hidepassword
+                                                ? Icons.visibility_off
+                                                : Icons.visibility,
+                                          ),
+                                          onPressed: () => setState(() {
+                                            _hidepassword = !_hidepassword;
+                                          }),
+                                        ),
+                                        prefixIcon: Padding(
+                                          padding: EdgeInsets.all(0.0),
+                                          child: Icon(
+                                            Icons.lock,
+                                            color: Colors.yellow.shade900,
+                                          ), // icon is 48px widget.
+                                        ),
+                                        hintText: 'Enter Your Password',
+                                        hintStyle: TextStyle(
+                                            fontFamily: "BubblegumSans",
+                                            fontSize: 14.0,
+                                            color: Colors.black)),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -243,8 +248,9 @@ class _SignUpState extends State<SignUp> {
                         child: SingleChildScrollView(
                           child: RaisedButton(
                             onPressed: () {
-                              // Navigator.push(context,
-                              //     MaterialPageRoute(builder: (context) => Login()));
+                              final form = formkey.currentState!;
+                              if (form.validate()) {}
+
                               setState(() {
                                 isLoading = true;
                               });
@@ -280,11 +286,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                       ),
                       Positioned(
-                        //right: 30,
                         bottom: MediaQuery.of(context).size.height / 3,
-                        //   child: Padding(
-                        // padding: const EdgeInsets.only(top: 250),
-
                         child: Container(
                           height: 50,
                           child: TextButton(
@@ -336,5 +338,9 @@ class _SignUpState extends State<SignUp> {
         isLoading = false;
       });
     }
+    Fluttertoast.showToast(
+      msg: "Enter valid Credentials",
+      fontSize: 14,
+    );
   }
 }

@@ -102,7 +102,7 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                             id: 2,
                             infoWindowTitle: "Sindh",
                             infoWindowDes:
-                                "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                                "Though chiefly an agricultural and pastoral province, Sindh has a reputation for textiles, pottery, leatherwork, carpets etc.",
                             infoWindowImage: "assets/lahore.png",
                           )),
                       ProvinceDetails(
@@ -120,7 +120,7 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                             id: 3,
                             infoWindowTitle: "khyber pakhtunkhwa",
                             infoWindowDes:
-                                "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                                "Khyber Pakhtunkhwa, often abbreviated as KPK or KP, is a province of Pakistan. It is located in the northwestern region of the country,",
                             infoWindowImage: "assets/lahore.png",
                           )),
                       ProvinceDetails(
@@ -136,7 +136,7 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                             id: 4,
                             infoWindowTitle: "Balochistan",
                             infoWindowDes:
-                                "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                                "Balochistan is a strategically important province to Pakistan because of the high concentration of natural resources – including oil, coal, gold, copper and gas reserves,",
                             infoWindowImage: "assets/lahore.png",
                           )),
                       ProvinceDetails(
@@ -154,7 +154,7 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                             id: 1,
                             infoWindowTitle: "Gilgit Baltistan",
                             infoWindowDes:
-                                "Punjab is one of the four provinces of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
+                                "Gilgit-Baltistan is home to all five of Pakistan's eight-thousanders and to more than fifty peaks above 7,000 metres (23,000 ft). Gilgit and Skardu are the two main hubs for expeditions to those mountains. ",
                             infoWindowImage: "assets/lahore.png",
                           )),
                     ]),
@@ -176,14 +176,11 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                       ),
                     ),
                     onTap: () => {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => HomepageScreen())),
+                      Navigator.pop(context),
                     },
                   )),
               Positioned(
-                  bottom: 10,
+                  bottom: 5,
                   child: Column(
                     children: [
                       Container(
@@ -204,7 +201,7 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
                         width: MediaQuery.of(context).size.width,
 
                         // height: MediaQuery.of(context).size.height / 5,
-                        margin: EdgeInsets.only(top: 5),
+                        margin: EdgeInsets.only(top: 3),
                         child: Center(
                           child: Text(
                             "―Muhammad Ali Jinnah",
@@ -324,7 +321,7 @@ class ProvinceDetails extends StatelessWidget {
                   ),
                   Container(
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(199, 245, 127, 23),
+                        color: Colors.yellow.shade900,
                         borderRadius: BorderRadius.circular(12)),
                     height: 55,
                     width: MediaQuery.of(context).size.width / 1.3,

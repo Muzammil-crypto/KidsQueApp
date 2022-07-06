@@ -85,14 +85,14 @@ class HeroCategory extends StatelessWidget {
                                 imgName: "assets/sports.jpeg",
                                 heading: "National Sports Heroes",
                                 pageToShow: HeroesScreen(
-                                  id: 4,
+                                  id: 3,
                                   label: "heroes",
                                 )),
                             HeroContainer(
                                 imgName: "assets/army.jpeg",
                                 heading: "Defence Heroes",
                                 pageToShow:
-                                    HeroesScreen(id: 2, label: "heroes")),
+                                    HeroesScreen(id: 4, label: "heroes")),
                             HeroContainer(
                                 imgName: "assets/nusrat.jpg",
                                 heading: "Entertainment",
@@ -112,7 +112,7 @@ class HeroCategory extends StatelessWidget {
                                 imgName: "assets/aqkhan1.jpeg",
                                 heading: "Science & Technology",
                                 pageToShow:
-                                    HeroesScreen(id: 3, label: "heroes")),
+                                    HeroesScreen(id: 2, label: "heroes")),
                           ],
                         ),
                       ),

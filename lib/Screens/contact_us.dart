@@ -14,7 +14,7 @@ class ContactUs extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/bgb.png'), fit: BoxFit.cover)),
+                    image: AssetImage('assets/bgnew.jpg'), fit: BoxFit.cover)),
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
@@ -30,7 +30,7 @@ class ContactUs extends StatelessWidget {
                       ),
                     )),
                 Positioned(
-                  bottom: 150,
+                  bottom: 120,
                   child: Container(
                     margin: EdgeInsets.only(bottom: 15),
                     child: Container(
@@ -64,38 +64,15 @@ class ContactUs extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: 70,
-                  child: SingleChildScrollView(
-                    child: RaisedButton(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0)),
-                      padding: const EdgeInsets.all(0.0),
-                      onPressed: () {},
-                      child: Ink(
-                        decoration: const BoxDecoration(
-                          color: Color(0xFFF57F17),
-                          borderRadius: BorderRadius.all(Radius.circular(80.0)),
-                        ),
-                        child: Container(
-                          constraints: const BoxConstraints(
-                              minWidth: 320.0,
-                              minHeight:
-                                  50.0), // min sizes for Material buttons
-                          alignment: Alignment.center,
-                          child: const Text(
-                            'Get in touch with Us',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: "BubblegumSans",
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 30),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                )
+                  bottom: 0,
+                  child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height / 5,
+                      child: Image(
+                        fit: BoxFit.contain,
+                        image: AssetImage("assets/cityy.png"),
+                      )),
+                ),
               ],
             ),
           ),

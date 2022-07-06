@@ -37,7 +37,7 @@ class _PerformanceScreenState extends State<PerformanceScreen> {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/bgb.png'), fit: BoxFit.cover)),
+                    image: AssetImage('assets/bgnew.jpg'), fit: BoxFit.cover)),
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
@@ -79,7 +79,7 @@ class _PerformanceScreenState extends State<PerformanceScreen> {
                       ),
                     )),
                 Positioned(
-                  top: MediaQuery.of(context).size.height / 2.3,
+                  top: MediaQuery.of(context).size.height / 2.2,
                   child: Container(
                     width: MediaQuery.of(context).size.width / 1.2,
                     decoration: BoxDecoration(
@@ -176,37 +176,14 @@ class _PerformanceScreenState extends State<PerformanceScreen> {
                   ),
                 ),
                 Positioned(
-                  bottom: MediaQuery.of(context).size.height / 10,
-                  child: SingleChildScrollView(
-                    child: RaisedButton(
-                      onPressed: () {},
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0)),
-                      padding: const EdgeInsets.all(0.0),
-                      child: Ink(
-                        decoration: const BoxDecoration(
-                          color: Color(0xFFF57F17),
-                          borderRadius: BorderRadius.all(Radius.circular(80.0)),
-                        ),
-                        child: Container(
-                          constraints: const BoxConstraints(
-                              minWidth: 320.0,
-                              minHeight:
-                                  40.0), // min sizes for Material buttons
-                          alignment: Alignment.center,
-                          child: const Text(
-                            'This is your overall result stats.',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: "BubblegumSans",
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 22),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  bottom: 0,
+                  child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height / 5,
+                      child: Image(
+                        fit: BoxFit.contain,
+                        image: AssetImage("assets/cityy.png"),
+                      )),
                 ),
                 Positioned(
                     top: 50,

@@ -65,13 +65,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: InkWell(
                     child: Container(
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(232, 255, 255, 255),
+                          color: Colors.yellow.shade900,
                           borderRadius: BorderRadius.circular(44)),
                       height: 50,
                       width: 50,
                       child: Icon(
                         Icons.home,
-                        color: Colors.yellow.shade900,
+                        color: Colors.white,
                         size: 40,
                       ),
                     ),
@@ -150,10 +150,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-                onTap: () => {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ProfileScreen())),
-                },
+                // onTap: () => {
+                //   Navigator.push(context,
+                //       MaterialPageRoute(builder: (context) => ProfileScreen())),
+                // },
               ),
             ),
             ListTile(

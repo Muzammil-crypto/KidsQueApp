@@ -16,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/bgb.png'), fit: BoxFit.fill)),
+                    image: AssetImage('assets/bgnew.jpg'), fit: BoxFit.fill)),
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[

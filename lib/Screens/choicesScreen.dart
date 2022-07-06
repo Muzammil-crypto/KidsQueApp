@@ -18,7 +18,7 @@ import 'package:timeline_list/timeline.dart';
 import 'package:sign_in_interface/Screens/Login1.dart';
 import 'package:sign_in_interface/Screens/historyDetailScreen.dart';
 import 'package:sign_in_interface/Screens/heroList_screen.dart';
-import 'package:sign_in_interface/Screens/timeline_screen.dart';
+import 'package:sign_in_interface/Screens/historyTimelineScreen.dart';
 import 'package:sign_in_interface/main.dart';
 
 import '../Widgets/background_Clipper.dart';
@@ -94,7 +94,7 @@ class _TopicsState extends State<Topics> {
                 Positioned(
                   child: SingleChildScrollView(
                     child: Container(
-                      height: MediaQuery.of(context).size.height * 1.55,
+                      height: MediaQuery.of(context).size.height * 1.7,
                       decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
@@ -122,18 +122,18 @@ class _TopicsState extends State<Topics> {
                             ),
                           ),
                           getContainer(
-                              "assets/p11.png",
-                              "Explore\n Provinces",
+                              "assets/pc.gif",
+                              "Explore\n Cultures",
                               Colors.redAccent,
                               Colors.pinkAccent,
                               ProvincesListScreen()),
                           getContainer(
-                              "assets/citti.png",
+                              "assets/pci.gif",
                               "Explore\n Cities",
                               Color.fromARGB(255, 79, 100, 218),
                               Color.fromARGB(200, 24, 90, 92),
                               CitiesListScreen()),
-                          getContainer("assets/River.png", "Explore\n Rivers",
+                          getContainer("assets/pr.gif", "Explore\n Rivers",
                               Colors.green, Colors.teal, RiversListScreen()),
                           getContainer(
                               "assets/majj.png",
@@ -144,10 +144,10 @@ class _TopicsState extends State<Topics> {
                           Padding(
                             padding: const EdgeInsets.only(bottom: 18.0),
                             child: getContainer(
-                                "assets/mpp.png",
+                                "assets/pm.gif",
                                 "Explore\n History",
-                                Colors.teal,
-                                Colors.cyan,
+                                Colors.green,
+                                Colors.yellow.shade600,
                                 TimelineWidget()),
                           ),
                         ],

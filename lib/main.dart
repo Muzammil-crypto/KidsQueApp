@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Quiz/lib/common/route_generator.dart';
 import 'package:sign_in_interface/Quiz/lib/models/dto/quiz_result.dart';
@@ -29,9 +30,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
       onGenerateRoute: RouteGenerator.generateRoute,
-      // home: ProvinceDetailScreen(
-      //   id: 1,
-      // ),
       home: HomepageScreen(),
     );
   }

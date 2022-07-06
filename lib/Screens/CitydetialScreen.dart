@@ -156,7 +156,7 @@ class _CityDetailsState extends State<CityDetails> {
                           ),
                         ),
                         Positioned(
-                          bottom: MediaQuery.of(context).size.height / 2 + 510,
+                          bottom: MediaQuery.of(context).size.height / 2 + 360,
                           right: 45,
                           child: Container(
                               height: 60,
@@ -234,45 +234,131 @@ class _CityDetailsState extends State<CityDetails> {
                                 shrinkWrap: true,
                                 scrollDirection: Axis.horizontal,
                                 children: <Widget>[
-                                  Container(
-                                    margin: EdgeInsets.only(right: 5),
-                                    height: 120,
-                                    width: 120.0,
-                                    child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHBVFSOJ6Ll438ccvbWTFPFBkDeITdUfoPOA&usqp=CAU")),
+                                  InkWell(
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 5),
+                                      height: 120,
+                                      width: 120.0,
+                                      child: CircleAvatar(
+                                          backgroundImage: NetworkImage(
+                                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHBVFSOJ6Ll438ccvbWTFPFBkDeITdUfoPOA&usqp=CAU")),
+                                    ),
+                                    onTap: () => {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => CityDetails(
+                                                    id: 1.toString(),
+                                                  ))),
+                                    },
                                   ),
-                                  Container(
-                                    margin: EdgeInsets.only(right: 5),
-                                    height: 120,
-                                    width: 120.0,
-                                    child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://www.explorerpakistan.com/wp-content/uploads/2019/09/1-lahore-fort-800x445.jpg")),
+                                  InkWell(
+                                    onTap: () => {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => CityDetails(
+                                                    id: 2.toString(),
+                                                  ))),
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 5),
+                                      height: 120,
+                                      width: 120.0,
+                                      child: CircleAvatar(
+                                          backgroundImage: NetworkImage(
+                                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0PsjXKeZX9FM2UH8_f1zcH-Etn9wjCIkdgg&usqp=CAU")),
+                                    ),
                                   ),
-                                  Container(
-                                    margin: EdgeInsets.only(right: 5),
-                                    height: 120,
-                                    width: 120.0,
-                                    child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://media.istockphoto.com/photos/wazir-khan-mosque-lahore-pakistan-picture-id1130761760?k=20&m=1130761760&s=612x612&w=0&h=OPX8vVKJnwaAASLUO23nVm0ysAp8k5mugGfbu0XuJyg=")),
+                                  InkWell(
+                                    onTap: () => {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => CityDetails(
+                                                    id: 2.toString(),
+                                                  ))),
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 5),
+                                      height: 120,
+                                      width: 120.0,
+                                      child: CircleAvatar(
+                                          backgroundImage: NetworkImage(
+                                              "https://i.pinimg.com/736x/6e/91/c8/6e91c818a5b851dd1317d1324001f325.jpg")),
+                                    ),
                                   ),
-                                  Container(
-                                    margin: EdgeInsets.only(right: 5),
-                                    height: 120,
-                                    width: 120.0,
-                                    child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://pbs.twimg.com/media/DN0CNlDWkAIbhBf.jpg")),
+                                  InkWell(
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 5),
+                                      height: 120,
+                                      width: 120.0,
+                                      child: CircleAvatar(
+                                          backgroundImage: NetworkImage(
+                                              "https://i.pinimg.com/236x/f6/81/e4/f681e4f40aee373487fdf6e1fd55c103--peshawar-pakistan-colleges.jpg")),
+                                    ),
+                                    onTap: () => {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => CityDetails(
+                                                    id: 4.toString(),
+                                                  ))),
+                                    },
                                   ),
-                                  Container(
-                                    margin: EdgeInsets.only(right: 5),
-                                    height: 120,
-                                    width: 120.0,
-                                    child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHBVFSOJ6Ll438ccvbWTFPFBkDeITdUfoPOA&usqp=CAU")),
+                                  InkWell(
+                                    onTap: () => {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => CityDetails(
+                                                    id: 3.toString(),
+                                                  ))),
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 5),
+                                      height: 120,
+                                      width: 120.0,
+                                      child: CircleAvatar(
+                                          backgroundImage: NetworkImage(
+                                              "https://i.pinimg.com/550x/ae/08/ff/ae08ffb5718c0db63795c114e68b8242.jpg")),
+                                    ),
+                                  ),
+                                  InkWell(
+                                    onTap: () => {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => CityDetails(
+                                                    id: 5.toString(),
+                                                  ))),
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 5),
+                                      height: 120,
+                                      width: 120.0,
+                                      child: CircleAvatar(
+                                          backgroundImage: NetworkImage(
+                                              "https://wallpaperaccess.com/full/4005177.jpg")),
+                                    ),
+                                  ),
+                                  InkWell(
+                                    onTap: () => {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => CityDetails(
+                                                    id: 6.toString(),
+                                                  ))),
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 5),
+                                      height: 120,
+                                      width: 120.0,
+                                      child: CircleAvatar(
+                                          backgroundImage: NetworkImage(
+                                              "https://i.pinimg.com/736x/b0/b2/37/b0b2372222fc7ce36a4849f56dc32aa1.jpg")),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -298,13 +384,7 @@ class _CityDetailsState extends State<CityDetails> {
                                         size: 20,
                                       ),
                                       onPressed: () => {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                CitiesListScreen(),
-                                          ),
-                                        ),
+                                        Navigator.pop(context),
                                       },
                                     ),
                                   )),

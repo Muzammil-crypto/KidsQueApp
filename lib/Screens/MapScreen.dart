@@ -51,12 +51,13 @@ class _MapScreenState extends State<MapScreen> {
     "khyber pakhtunkhwa": "assets/p4.png",
     "Balochistan": "assets/baloch.png",
     "Gilgit Baltistan": "assets/p5.png",
-    "Karachi": "assets/c1.png",
+    "Rawalpindi": "assets/c1.png",
     // "assets/c7.png",
     "Lahore": "assets/c7.png",
     "Islamabad": "assets/c4.png",
 
     "Multan": "assets/c6.png",
+    "Peshawar": "assets/c5.png",
 
     "Ravi River": "assets/ravi.jpg",
     "Indus River": "assets/indus.jpg",
@@ -315,7 +316,7 @@ class _MapScreenState extends State<MapScreen> {
             ),
             CustomInfoWindow(
               controller: _customInfoWindowController,
-              height: MediaQuery.of(context).size.height / 2.4 + 10,
+              height: MediaQuery.of(context).size.height / 2.14,
               width: MediaQuery.of(context).size.width / 1.7,
               offset: 50,
             ),
@@ -353,12 +354,7 @@ class _MapScreenState extends State<MapScreen> {
                             size: 20,
                           ),
                           onPressed: () => {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HomepageScreen(),
-                              ),
-                            ),
+                            Navigator.pop(context),
                           },
                         ),
                       )),
@@ -375,7 +371,7 @@ class _MapScreenState extends State<MapScreen> {
     return ClipPath(
       clipper: BackgroundClipper(),
       child: Container(
-        height: MediaQuery.of(context).size.height / 4,
+        height: MediaQuery.of(context).size.height / 3,
         width: MediaQuery.of(context).size.width / 1.8,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -402,35 +398,53 @@ class _MapScreenState extends State<MapScreen> {
               margin: EdgeInsets.only(left: 10, right: 10, top: 5),
               height: 170,
               child: Center(
-                child: Column(
-                  children: [
-                    Center(
-                      child: Text(
-                        "${widget.infoWindowTitle}",
-                        style: TextStyle(
-                            fontFamily: "ShinyBalloonDemo", fontSize: 15),
-                      ),
-                    ),
-                    Container(
-                      width: 180,
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                          left: 10.0,
-                        ),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Center(
                         child: Text(
-                          "${widget.infoWindowDes}",
+                          "${widget.infoWindowTitle}",
                           style: TextStyle(
-                            fontFamily: "BubblegumSans",
-                            fontSize: 15,
-                          ),
-                          textAlign: TextAlign.center,
+                              fontFamily: "ShinyBalloonDemo", fontSize: 15),
                         ),
                       ),
-                    ),
-                  ],
+                      Container(
+                        width: 180,
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10.0,
+                          ),
+                          child: Text(
+                            "${widget.infoWindowDes}",
+                            style: TextStyle(
+                              fontFamily: "BubblegumSans",
+                              fontSize: 15,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
+            Center(
+              child: Container(
+                height: 30,
+                width: 120,
+                decoration: BoxDecoration(
+                    color: Colors.yellow.shade900,
+                    borderRadius: BorderRadius.circular(9)),
+                child: Center(
+                  child: Text(
+                    "Touch to continue",
+                    style: TextStyle(
+                        fontFamily: "BubblegumSans", color: Colors.white),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),

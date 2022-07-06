@@ -84,14 +84,22 @@ class _QuizHistoryScreenState extends State<QuizHistoryScreen> {
                   children: [
                     Text(
                       quiz.quizTitle.isEmpty ? "Question" : quiz.quizTitle,
-                      style: TextStyle(fontSize: 24),
+                      style:
+                          TextStyle(fontSize: 24, fontFamily: "BubblegumSans"),
                     ),
                     Text("Score: ${quiz.score}",
                         style: TextStyle(
-                            color: ThemeHelper.accentColor, fontSize: 18)),
-                    Text("Time Taken: ${quiz.timeTaken}"),
+                            color: ThemeHelper.accentColor,
+                            fontSize: 18,
+                            fontFamily: "BubblegumSans")),
                     Text(
-                        "Date: ${quiz.quizDate.year}-${quiz.quizDate.month}-${quiz.quizDate.day} ${quiz.quizDate.hour}:${quiz.quizDate.minute}"),
+                      "Time Taken: ${quiz.timeTaken}",
+                      style: TextStyle(fontFamily: "BubblegumSans"),
+                    ),
+                    Text(
+                      "Date: ${quiz.quizDate.year}-${quiz.quizDate.month}-${quiz.quizDate.day} ${quiz.quizDate.hour}:${quiz.quizDate.minute}",
+                      style: TextStyle(fontFamily: "BubblegumSans"),
+                    ),
                   ]),
             ),
             Column(
@@ -113,7 +121,10 @@ class _QuizHistoryScreenState extends State<QuizHistoryScreen> {
                         } else {}
                       });
                     },
-                    child: Text("Start Again")),
+                    child: Text(
+                      "Start Again",
+                      style: TextStyle(fontFamily: "BubblegumSans"),
+                    )),
               ],
             )
           ],

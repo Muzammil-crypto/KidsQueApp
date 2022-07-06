@@ -34,8 +34,8 @@ class getContainer extends StatelessWidget {
                     left: 30,
                     right: 30,
                     bottom: 5),
-                height: MediaQuery.of(context).size.height / 3.8,
-                width: MediaQuery.of(context).size.width / 1.3,
+                height: MediaQuery.of(context).size.height / 3.5,
+                width: MediaQuery.of(context).size.width / 1.25,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                   gradient: LinearGradient(colors: [color1, color2]),
@@ -44,7 +44,7 @@ class getContainer extends StatelessWidget {
                   children: [
                     Positioned(
                       top: 15,
-                      left: MediaQuery.of(context).size.height / 6.2,
+                      left: MediaQuery.of(context).size.width / 2.6,
                       child: Padding(
                         padding: const EdgeInsets.only(right: 0),
                         child: Container(
@@ -53,7 +53,7 @@ class getContainer extends StatelessWidget {
                           child: Image(
                             image: AssetImage(imgName),
                             height: MediaQuery.of(context).size.height / 5,
-                            fit: BoxFit.contain,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
