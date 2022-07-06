@@ -225,26 +225,26 @@ class _MapScreenState extends State<MapScreen> {
       body: Builder(builder: (context) {
         return Stack(
           children: [
-            Container(
-              color: Colors.yellow.shade900,
-              height: MediaQuery.of(context).size.height / 3.5,
-              child: Row(
-                children: [
-                  Positioned(
-                    top: 0,
-                    child: Center(
-                      child: Container(
-                        height: MediaQuery.of(context).size.height / 3,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          color: Colors.yellow.shade900,
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(top: 90),
-                              width: MediaQuery.of(context).size.width,
-                              child: Center(
+            Positioned(
+              child: Container(
+                color: Colors.yellow.shade900,
+                height: MediaQuery.of(context).size.height / 3.5,
+                child: Row(
+                  children: [
+                    Positioned(
+                      top: 0,
+                      child: Center(
+                        child: Container(
+                          height: MediaQuery.of(context).size.height / 3,
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                            color: Colors.yellow.shade900,
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(top: 90),
+                                width: MediaQuery.of(context).size.width,
                                 child: Column(
                                   children: [
                                     Text(
@@ -265,13 +265,13 @@ class _MapScreenState extends State<MapScreen> {
                                   ],
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Positioned(

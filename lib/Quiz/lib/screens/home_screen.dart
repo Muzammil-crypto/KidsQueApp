@@ -1,15 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:sign_in_interface/Quiz/lib/common/alert_util.dart';
+
 import 'package:sign_in_interface/Quiz/lib/common/theme_helper.dart';
 import 'package:sign_in_interface/Quiz/lib/stores/quiz_store.dart';
 import 'package:sign_in_interface/Quiz/lib/widgets/disco_button.dart';
 import 'package:sign_in_interface/Screens/About_us.dart';
 import 'package:sign_in_interface/Screens/HomepageScreen.dart';
-import 'package:sign_in_interface/Screens/Profile.dart';
-import 'package:sign_in_interface/Screens/historyDetailScreen.dart';
+
 import 'package:sign_in_interface/Screens/performance_screen.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
@@ -140,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Padding(
                         padding: EdgeInsets.all(10.0),
                         child: Text(
-                          "Muzammil Rafiq",
+                          "Hi Champ! Welcom",
                           style: TextStyle(
                               fontFamily: "Langar-Regular",
                               fontSize: 15,
