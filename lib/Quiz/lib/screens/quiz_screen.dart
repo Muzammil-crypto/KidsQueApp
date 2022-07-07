@@ -356,6 +356,8 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
               quiz.title,
               category.id,
               "$total/${quiz.questions.length}",
+              total,
+              quiz.questions.length,
               takenTime.format(),
               DateTime.now(),
               "Complete"))
