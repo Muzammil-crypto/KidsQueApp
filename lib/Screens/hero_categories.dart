@@ -76,7 +76,7 @@ class HeroCategory extends StatelessWidget {
                     ),
                     Container(
                       height: MediaQuery.of(context).size.height / 1.5 - 30,
-                      child: Expanded(
+                      child: Container(
                         child: ListView(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
