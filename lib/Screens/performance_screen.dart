@@ -260,7 +260,9 @@ class _PerformanceScreenState extends State<PerformanceScreen> {
     });
     for (int i = quizHistoryList.length - 1; i >= 0; i--) {
       marks[quizHistoryList[i].categoryId - 1] =
-          quizHistoryList[i].correct.toInt();
+          quizHistoryList[i].correct.toInt() != null
+              ? quizHistoryList[i].correct.toInt()
+              : 0;
       // int.parse(quizHistoryList[i].correct.toString());
     }
 

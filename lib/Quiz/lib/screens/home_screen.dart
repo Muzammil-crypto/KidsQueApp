@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 import 'package:sign_in_interface/Quiz/lib/common/theme_helper.dart';

@@ -1,29 +1,14 @@
-import 'dart:async';
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:sign_in_interface/Quiz/lib/screens/quiz_splash_screen.dart';
-import 'package:sign_in_interface/Screens/About_us.dart';
-import 'package:sign_in_interface/Screens/Profile.dart';
 import 'package:sign_in_interface/Screens/ProvincesListScreen.dart';
 import 'package:sign_in_interface/Screens/citiesListScreen.dart';
 import 'package:sign_in_interface/Screens/hero_categories.dart';
-import 'package:sign_in_interface/Screens/performance_screen.dart';
 import 'package:sign_in_interface/Screens/riverListScreen.dart';
 import 'package:sign_in_interface/Widgets/ChoiceCards.dart';
-import 'package:sign_in_interface/Widgets/heroCard_Clipper.dart';
 import 'package:sign_in_interface/Widgets/sideDrawer.dart';
-import 'package:timeline_list/timeline.dart';
 
-import 'package:sign_in_interface/Screens/Login1.dart';
-import 'package:sign_in_interface/Screens/historyDetailScreen.dart';
-import 'package:sign_in_interface/Screens/heroList_screen.dart';
 import 'package:sign_in_interface/Screens/historyTimelineScreen.dart';
-import 'package:sign_in_interface/main.dart';
 
 import '../Widgets/background_Clipper.dart';
-import '../Widgets/customAppBar.dart';
-import 'HomepageScreen.dart';
 
 class Topics extends StatefulWidget {
   @override
