@@ -2,9 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/home_screen.dart';
-import 'package:sign_in_interface/Quiz/lib/screens/quiz_screen.dart';
-import 'package:sign_in_interface/Screens/HomepageScreen.dart';
-import 'package:sign_in_interface/Screens/Profile.dart';
 import 'package:sign_in_interface/Widgets/chart.dart';
 import 'package:sign_in_interface/Widgets/roundCardClipper.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -260,6 +257,7 @@ class _PerformanceScreenState extends State<PerformanceScreen> {
     });
     for (int i = quizHistoryList.length - 1; i >= 0; i--) {
       marks[quizHistoryList[i].categoryId - 1] =
+          // ignore: unnecessary_null_comparison
           quizHistoryList[i].correct.toInt() != null
               ? quizHistoryList[i].correct.toInt()
               : 0;

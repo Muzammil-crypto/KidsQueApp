@@ -114,6 +114,7 @@ class _QuizHistoryScreenState extends State<QuizHistoryScreen> {
                       store
                           .getQuizByIdAsync(quiz.quizId, quiz.categoryId)
                           .then((value) {
+                        // ignore: unnecessary_null_comparison
                         if (value != null) {
                           Navigator.pushReplacementNamed(
                               context, QuizScreen.routeName,

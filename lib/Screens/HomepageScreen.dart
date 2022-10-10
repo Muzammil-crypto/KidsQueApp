@@ -1,14 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:sign_in_interface/Quiz/lib/screens/quiz_splash_screen.dart';
-import 'package:sign_in_interface/Screens/About_us.dart';
-import 'package:sign_in_interface/Screens/Profile.dart';
 import 'package:sign_in_interface/Screens/choicesScreen.dart';
-import 'package:sign_in_interface/Screens/splash_screen.dart';
 import 'package:sign_in_interface/Widgets/sideDrawer.dart';
-
-import 'Login1.dart';
 
 class HomepageScreen extends StatefulWidget {
   const HomepageScreen({Key? key}) : super(key: key);

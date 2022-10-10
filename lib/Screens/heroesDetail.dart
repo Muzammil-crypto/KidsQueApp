@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:sign_in_interface/Screens/choicesScreen.dart';
 
+// ignore: must_be_immutable
 class DetailsHeroScreen extends StatefulWidget {
-  //late String tag;
   late String imgName;
   late String heading;
   late Color color1;
@@ -36,6 +34,7 @@ class _DetailsHeroScreenState extends State<DetailsHeroScreen> {
     await flutterTts.setLanguage("en-US");
     await flutterTts.setPitch(1);
 
+    // ignore: unnecessary_null_comparison
     if (Text != null && Text.isNotEmpty) {
       var result = await flutterTts.speak(Text);
       if (result == 1)

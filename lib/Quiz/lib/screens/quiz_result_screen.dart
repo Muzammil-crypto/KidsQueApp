@@ -1,14 +1,11 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Quiz/lib/common/theme_helper.dart';
 import 'package:sign_in_interface/Quiz/lib/models/dto/quiz_result.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/quiz_history_screen.dart';
 import 'package:sign_in_interface/Quiz/lib/widgets/disco_button.dart';
-import 'package:sign_in_interface/Widgets/background_Clipper.dart';
-import 'package:sign_in_interface/Widgets/heroCard_Clipper.dart';
 import 'package:sign_in_interface/Widgets/roundCardClipper.dart';
 
+// ignore: must_be_immutable
 class QuizResultScreen extends StatefulWidget {
   static const routeName = '/quizResult';
   QuizResult result;

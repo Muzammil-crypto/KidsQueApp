@@ -3,15 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:sign_in_interface/Models/cityModel.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/quiz_category.dart';
-import 'package:sign_in_interface/Screens/citiesListScreen.dart';
 import 'package:sign_in_interface/Screens/slider.dart';
-import 'package:sign_in_interface/Screens/choicesScreen.dart';
-import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
-import '../Quiz/lib/screens/quiz_splash_screen.dart';
 import '../Widgets/youtube_player_screen.dart';
 
+// ignore: must_be_immutable
 class CityDetails extends StatefulWidget {
   String id;
   CityDetails({Key? key, required this.id}) : super(key: key);
@@ -39,6 +36,7 @@ class _CityDetailsState extends State<CityDetails> {
     await flutterTts.setPitch(1);
     // await flutterTts.speak(Text);
 
+    // ignore: unnecessary_null_comparison
     if (Text != null && Text.isNotEmpty) {
       var result = await flutterTts.speak(Text);
       if (result == 1)

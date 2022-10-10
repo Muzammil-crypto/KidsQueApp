@@ -1,12 +1,8 @@
-import 'dart:math';
-
 import 'package:dio/dio.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sign_in_interface/Screens/Login1.dart';
-import 'package:sign_in_interface/Screens/choicesScreen.dart';
-import 'package:snippet_coder_utils/ProgressHUD.dart';
 
 import '../Widgets/background_Clipper.dart';
 
@@ -24,9 +20,9 @@ class _SignUpState extends State<SignUp> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
-  String? _username;
-  String? _password;
-  String? _email;
+  // String? _username;
+  // String? _password;
+  // String? _email;
 
   bool isLoading = false;
 
@@ -115,6 +111,7 @@ class _SignUpState extends State<SignUp> {
                                     controller: _usernameController,
                                     validator: (onValidateVal) {
                                       if (onValidateVal!.isEmpty ||
+                                          // ignore: unnecessary_null_comparison
                                           onValidateVal == null) {
                                         return ("Username Can't be empty");
                                       }
@@ -296,9 +293,7 @@ class _SignUpState extends State<SignUp> {
                                   MaterialPageRoute(
                                       builder: (context) => Login())),
                             },
-                            style: TextButton.styleFrom(
-                              primary: Color.fromARGB(255, 255, 255, 255),
-                            ),
+                            style: TextButton.styleFrom(),
                             child: Text(
                               'Already Have an account? Sign In',
                               style: TextStyle(

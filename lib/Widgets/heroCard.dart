@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sign_in_interface/Screens/heroesDetail.dart';
 import 'package:sign_in_interface/Widgets/heroCard_Clipper.dart';
 
+// ignore: must_be_immutable
 class HeroCard extends StatelessWidget {
   // late String tag;
   late String imgName;

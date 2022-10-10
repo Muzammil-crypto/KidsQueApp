@@ -1,14 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:sign_in_interface/Screens/Signup.dart';
 import 'package:sign_in_interface/Screens/HomepageScreen.dart';
-import 'package:sign_in_interface/Screens/choicesScreen.dart';
-import 'package:snippet_coder_utils/ProgressHUD.dart';
 
 import '../Widgets/background_Clipper.dart';
-import '../Widgets/customAppBar.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -157,9 +153,7 @@ class _LoginState extends State<Login> {
                     padding: const EdgeInsets.only(top: 220),
                     child: TextButton(
                       onPressed: () {},
-                      style: TextButton.styleFrom(
-                        primary: Color.fromARGB(255, 255, 255, 255),
-                      ),
+                      style: TextButton.styleFrom(),
                       child: Text(
                         'Forgot Password?',
                         style: TextStyle(
@@ -181,9 +175,7 @@ class _LoginState extends State<Login> {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) => SignUp())),
                       },
-                      style: TextButton.styleFrom(
-                        primary: Color.fromARGB(255, 255, 255, 255),
-                      ),
+                      style: TextButton.styleFrom(),
                       child: Text(
                         'New User? Signup Here',
                         style: TextStyle(

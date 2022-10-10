@@ -4,9 +4,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 
 import 'package:sign_in_interface/Models/provinceModel.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/quiz_category.dart';
-import 'package:sign_in_interface/Screens/ProvincesListScreen.dart';
 
-import 'package:sign_in_interface/Screens/choicesScreen.dart';
 import 'package:sign_in_interface/Screens/slider.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 import 'package:sign_in_interface/Widgets/youtube_player_screen.dart';
@@ -32,7 +30,7 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
     await flutterTts.setPitch(1);
     // await flutterTts.speak(Text);
 
-    if (Text != null && Text.isNotEmpty) {
+    if (Text.isNotEmpty) {
       var result = await flutterTts.speak(Text);
       if (result == 1)
         setState(() {

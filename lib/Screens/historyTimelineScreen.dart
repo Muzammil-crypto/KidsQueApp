@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Screens/HomepageScreen.dart';
 import 'package:sign_in_interface/Screens/historyDetailScreen.dart';
-import 'package:sign_in_interface/Screens/choicesScreen.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 import 'package:sign_in_interface/Widgets/timelineCard.dart';
 import 'package:timeline_list/timeline.dart';

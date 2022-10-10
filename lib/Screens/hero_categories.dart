@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sign_in_interface/Quiz/lib/screens/home_screen.dart';
-import 'package:sign_in_interface/Screens/Login1.dart';
 import 'package:sign_in_interface/Screens/HomepageScreen.dart';
 import 'package:sign_in_interface/Screens/heroList_screen.dart';
-import 'package:sign_in_interface/Screens/heroesDetail.dart';
-import 'package:sign_in_interface/Screens/choicesScreen.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 import 'package:sign_in_interface/Widgets/heroListCard.dart';
-
-import '../Widgets/heroCard_Clipper.dart';
-import '../Widgets/heroCard.dart';
 
 class HeroCategory extends StatelessWidget {
   @override

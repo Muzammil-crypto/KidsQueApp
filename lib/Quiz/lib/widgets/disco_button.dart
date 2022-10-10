@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 typedef OnButtonPressed = void Function();
 
+// ignore: must_be_immutable
 class DiscoButton extends StatelessWidget {
   final OnButtonPressed onPressed;
   final Widget child;

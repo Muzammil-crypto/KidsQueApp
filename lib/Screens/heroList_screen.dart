@@ -2,14 +2,13 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Models/heroModel.dart';
 
-import 'package:sign_in_interface/Screens/Login1.dart';
 import 'package:sign_in_interface/Screens/hero_categories.dart';
 import 'package:sign_in_interface/Screens/heroesDetail.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
-import '../Widgets/heroCard_Clipper.dart';
 import '../Widgets/heroCard.dart';
 
+// ignore: must_be_immutable
 class HeroesScreen extends StatefulWidget {
   int id;
   String label;

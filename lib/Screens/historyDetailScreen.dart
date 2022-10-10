@@ -3,12 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:sign_in_interface/Models/historyModel.dart';
 
-import 'package:sign_in_interface/Models/provinceModel.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/quiz_category.dart';
-import 'package:sign_in_interface/Screens/ProvincesListScreen.dart';
 
-import 'package:sign_in_interface/Screens/choicesScreen.dart';
-import 'package:sign_in_interface/Screens/slider.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 import 'package:sign_in_interface/Widgets/youtube_player_screen.dart';
 
@@ -32,6 +28,7 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
     await flutterTts.setLanguage("en-US");
     await flutterTts.setPitch(1);
 
+    // ignore: unnecessary_null_comparison
     if (Text != null && Text.isNotEmpty) {
       var result = await flutterTts.speak(Text);
       if (result == 1)

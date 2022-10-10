@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Quiz/lib/common/theme_helper.dart';
 
+// ignore: must_be_immutable
 class TimeIndicator extends StatelessWidget {
   final int duration;
   final VoidCallback onComplete;

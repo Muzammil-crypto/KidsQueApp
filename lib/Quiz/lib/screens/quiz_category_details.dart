@@ -4,6 +4,7 @@ import 'package:sign_in_interface/Quiz/lib/models/category.dart';
 import 'package:sign_in_interface/Quiz/lib/models/quiz.dart';
 import 'package:sign_in_interface/Quiz/lib/stores/quiz_store.dart';
 
+// ignore: must_be_immutable
 class QuizCategoryDetailsScreen extends StatefulWidget {
   static const routeName = '/categoryDetails';
   late Category category;

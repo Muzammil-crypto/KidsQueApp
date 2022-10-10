@@ -5,7 +5,6 @@ import 'package:sign_in_interface/Quiz/lib/common/theme_helper.dart';
 import 'package:sign_in_interface/Quiz/lib/models/category.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/quiz_category_details.dart';
 import 'package:sign_in_interface/Quiz/lib/stores/quiz_store.dart';
-import 'package:sign_in_interface/Screens/performance_screen.dart';
 
 class QuizCategoryScreen extends StatefulWidget {
   static const routeName = '/quizCategory';

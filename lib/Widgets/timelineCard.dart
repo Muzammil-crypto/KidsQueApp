@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
+// ignore: must_be_immutable
 class getTimeline extends StatelessWidget {
   late String imgName;
   late String heading;

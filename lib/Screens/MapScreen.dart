@@ -1,22 +1,17 @@
 import 'dart:async';
-import 'dart:collection';
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:custom_info_window/custom_info_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:sign_in_interface/Screens/HomepageScreen.dart';
 
 import 'package:sign_in_interface/Screens/CitydetialScreen.dart';
-import 'package:sign_in_interface/Screens/Login1.dart';
 import 'package:sign_in_interface/Screens/ProvinceDetailScreen.dart';
 import 'package:sign_in_interface/Screens/riversDetailScreen.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
-import 'ProvincesListScreen.dart';
-
+// ignore: must_be_immutable
 class MapScreen extends StatefulWidget {
   late String label;
   late double lat;
@@ -170,6 +165,7 @@ class _MapScreenState extends State<MapScreen> {
 
     // setPolygon();
 
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     loadData();

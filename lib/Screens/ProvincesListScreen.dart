@@ -1,9 +1,5 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Models/provinceModel.dart';
-import 'package:sign_in_interface/Screens/choicesScreen.dart';
-import 'package:sign_in_interface/Screens/HomepageScreen.dart';
-import 'package:sign_in_interface/Screens/heroesDetail.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
 import 'MapScreen.dart';
@@ -223,6 +219,7 @@ class _ProvincesListScreenState extends State<ProvincesListScreen> {
   }
 }
 
+// ignore: must_be_immutable
 class ProvinceDetails extends StatelessWidget {
   late String imgName;
   late String heading;

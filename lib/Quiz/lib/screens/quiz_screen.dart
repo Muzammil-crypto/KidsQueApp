@@ -17,6 +17,7 @@ import 'package:sign_in_interface/Quiz/lib/widgets/question_option.dart';
 import 'package:sign_in_interface/Quiz/lib/widgets/time_indicator.dart';
 import 'package:sign_in_interface/Widgets/roundCardClipper.dart';
 
+// ignore: must_be_immutable
 class QuizScreen extends StatefulWidget {
   static const routeName = '/quiz';
   late Quiz quiz;
@@ -46,7 +47,7 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
   void initState() {
     engine.start();
     super.initState();
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
@@ -61,7 +62,7 @@ class _QuizScreenState extends State<QuizScreen> with WidgetsBindingObserver {
       progressTimer!.cancel();
     }
     engine.stop();
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
