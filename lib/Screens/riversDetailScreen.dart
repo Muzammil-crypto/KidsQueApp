@@ -174,7 +174,7 @@ class _RiverDetailScreenState extends State<RiverDetailScreen> {
                                 borderRadius: BorderRadius.circular(40),
                                 color: Color.fromARGB(200, 255, 255, 255),
                               ),
-                              child: FlatButton(
+                              child: ElevatedButton(
                                   onPressed: () => {
                                         setState(() {
                                           isPlaying
@@ -314,7 +314,7 @@ class _RiverDetailScreenState extends State<RiverDetailScreen> {
                         Positioned(
                           bottom: MediaQuery.of(context).size.height / 8,
                           child: SingleChildScrollView(
-                            child: RaisedButton(
+                            child: ElevatedButton(
                               onPressed: () {
                                 Navigator.push(
                                     context,
@@ -322,9 +322,9 @@ class _RiverDetailScreenState extends State<RiverDetailScreen> {
                                         builder: (context) =>
                                             QuizCategoryScreen()));
                               },
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(80.0)),
-                              padding: const EdgeInsets.all(0.0),
+                              // shape: RoundedRectangleBorder(
+                              //     borderRadius: BorderRadius.circular(80.0)),
+                              // padding: const EdgeInsets.all(0.0),
                               child: Ink(
                                 decoration: const BoxDecoration(
                                   color: Color(0xFFF57F17),

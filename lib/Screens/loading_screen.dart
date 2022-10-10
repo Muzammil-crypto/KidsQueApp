@@ -85,16 +85,16 @@ class Loading_Screen extends StatelessWidget {
                 Positioned(
                   bottom: MediaQuery.of(context).size.height / 4.7,
                   child: SingleChildScrollView(
-                    child: RaisedButton(
+                    child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => HomepageScreen()));
                       },
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0)),
-                      padding: const EdgeInsets.all(0.0),
+                      // shape: RoundedRectangleBorder(
+                      //     borderRadius: BorderRadius.circular(80.0)),
+                      // padding: const EdgeInsets.all(0.0),
                       child: Ink(
                         decoration: const BoxDecoration(
                           color: Color(0xFFF57F17),

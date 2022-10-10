@@ -246,7 +246,7 @@ class _SignUpState extends State<SignUp> {
                       Positioned(
                         bottom: MediaQuery.of(context).size.height / 3.7,
                         child: SingleChildScrollView(
-                          child: RaisedButton(
+                          child: ElevatedButton(
                             onPressed: () {
                               final form = formkey.currentState!;
                               if (form.validate()) {}
@@ -256,9 +256,9 @@ class _SignUpState extends State<SignUp> {
                               });
                               register();
                             },
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(80.0)),
-                            padding: const EdgeInsets.all(0.0),
+                            // shape: RoundedRectangleBorder(
+                            //     borderRadius: BorderRadius.circular(80.0)),
+                            // padding: const EdgeInsets.all(0.0),
                             child: Ink(
                               decoration: const BoxDecoration(
                                 color: Color(0xFFF57F17),

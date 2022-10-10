@@ -126,7 +126,7 @@ class _DetailsHeroScreenState extends State<DetailsHeroScreen> {
                             borderRadius: BorderRadius.circular(40),
                             color: Color.fromARGB(200, 255, 255, 255),
                           ),
-                          child: FlatButton(
+                          child: ElevatedButton(
                               onPressed: () => {
                                     setState(() {
                                       isPlaying

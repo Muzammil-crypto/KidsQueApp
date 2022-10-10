@@ -175,7 +175,7 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
                                 borderRadius: BorderRadius.circular(40),
                                 color: Color.fromARGB(200, 255, 255, 255),
                               ),
-                              child: FlatButton(
+                              child: ElevatedButton(
                                   onPressed: () => {
                                         setState(() {
                                           isPlaying
@@ -248,7 +248,7 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
                         Positioned(
                           bottom: MediaQuery.of(context).size.height / 15,
                           child: SingleChildScrollView(
-                            child: RaisedButton(
+                            child: ElevatedButton(
                               onPressed: () {
                                 Navigator.push(
                                     context,
@@ -256,9 +256,9 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
                                         builder: (context) =>
                                             QuizCategoryScreen()));
                               },
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(80.0)),
-                              padding: const EdgeInsets.all(0.0),
+                              // shape: RoundedRectangleBorder(
+                              //     borderRadius: BorderRadius.circular(80.0)),
+                              // padding: const EdgeInsets.all(0.0),
                               child: Ink(
                                 decoration: const BoxDecoration(
                                   color: Color(0xFFF57F17),

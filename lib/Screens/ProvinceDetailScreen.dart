@@ -174,7 +174,7 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
                                 borderRadius: BorderRadius.circular(40),
                                 color: Color.fromARGB(200, 255, 255, 255),
                               ),
-                              child: FlatButton(
+                              child: ElevatedButton(
                                   onPressed: () => {
                                         setState(() {
                                           isPlaying
@@ -351,7 +351,7 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
                         Positioned(
                           bottom: MediaQuery.of(context).size.height / 8,
                           child: SingleChildScrollView(
-                            child: RaisedButton(
+                            child: ElevatedButton(
                               onPressed: () {
                                 Navigator.push(
                                     context,
@@ -359,29 +359,31 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
                                         builder: (context) =>
                                             QuizCategoryScreen()));
                               },
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(80.0)),
-                              padding: const EdgeInsets.all(0.0),
-                              child: Ink(
-                                decoration: const BoxDecoration(
-                                  color: Color(0xFFF57F17),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(80.0)),
-                                ),
-                                child: Container(
-                                  constraints: const BoxConstraints(
-                                      minWidth: 320.0,
-                                      minHeight:
-                                          40.0), // min sizes for Material buttons
-                                  alignment: Alignment.center,
-                                  child: const Text(
-                                    'Take Quiz',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontFamily: "BubblegumSans",
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 22),
+                              // shape: RoundedRectangleBorder(
+                              //     borderRadius: BorderRadius.circular(80.0)),
+                              child: Container(
+                                child: Ink(
+                                  //padding: const EdgeInsets.all(0.0),
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xFFF57F17),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(80.0)),
+                                  ),
+                                  child: Container(
+                                    constraints: const BoxConstraints(
+                                        minWidth: 320.0,
+                                        minHeight:
+                                            40.0), // min sizes for Material buttons
+                                    alignment: Alignment.center,
+                                    child: const Text(
+                                      'Take Quiz',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontFamily: "BubblegumSans",
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 22),
+                                    ),
                                   ),
                                 ),
                               ),

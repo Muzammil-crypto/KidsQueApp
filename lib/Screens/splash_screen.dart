@@ -108,14 +108,14 @@ class _SplashScreenState extends State<SplashScreen> {
                 Positioned(
                   bottom: 30,
                   child: SingleChildScrollView(
-                    child: RaisedButton(
+                    child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) => Login()));
                       },
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0)),
-                      padding: const EdgeInsets.all(0.0),
+                      // shape: RoundedRectangleBorder(
+                      //     borderRadius: BorderRadius.circular(80.0)),
+                      // padding: const EdgeInsets.all(0.0),
                       child: Ink(
                         decoration: const BoxDecoration(
                           color: Color(0xFFF57F17),

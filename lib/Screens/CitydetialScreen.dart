@@ -167,7 +167,7 @@ class _CityDetailsState extends State<CityDetails> {
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.only(right: 30.0),
-                                child: FlatButton(
+                                child: ElevatedButton(
                                     onPressed: () => {
                                           setState(() {
                                             isPlaying
@@ -394,7 +394,7 @@ class _CityDetailsState extends State<CityDetails> {
                         Positioned(
                           bottom: 50,
                           child: SingleChildScrollView(
-                            child: RaisedButton(
+                            child: ElevatedButton(
                               onPressed: () {
                                 Navigator.push(
                                     context,
@@ -402,9 +402,9 @@ class _CityDetailsState extends State<CityDetails> {
                                         builder: (context) =>
                                             QuizCategoryScreen()));
                               },
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(80.0)),
-                              padding: const EdgeInsets.all(0.0),
+                              // shape: RoundedRectangleBorder(
+                              //     borderRadius: BorderRadius.circular(80.0)),
+                              // padding: const EdgeInsets.all(0.0),
                               child: Ink(
                                 decoration: const BoxDecoration(
                                   color: Color(0xFFF57F17),
