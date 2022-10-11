@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sign_in_interface/Screens/ProvincesListScreen.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
 import '../Quiz/lib/widgets/provinceSmallDetailsCard.dart';
