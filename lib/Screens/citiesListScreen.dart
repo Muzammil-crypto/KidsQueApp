@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Screens/ProvincesListScreen.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
+import '../Quiz/lib/widgets/provinceSmallDetailsCard.dart';
 import 'MapScreen.dart';
 
 class CitiesListScreen extends StatelessWidget {
@@ -50,7 +51,7 @@ class CitiesListScreen extends StatelessWidget {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     children: [
-                      ProvinceDetails(
+                      ProvinceSmallDetailsCard(
                           "assets/c5.png",
                           "Peshawar",
                           Colors.teal,
@@ -69,7 +70,7 @@ class CitiesListScreen extends StatelessWidget {
                                 "Peshawar is one of the four cities of Pakistan. It has a population of about 110,000,000, according to the 2017 Pakistan Census. It has more people than the rest of Pakistan combined.",
                             infoWindowImage: "assets/lahore.png",
                           )),
-                      ProvinceDetails(
+                      ProvinceSmallDetailsCard(
                           "assets/c2.png",
                           // "assets/c7.png",
                           "Lahore",
@@ -86,7 +87,7 @@ class CitiesListScreen extends StatelessWidget {
                                 "Among the most popular sights are the Lahore Fort, adjacent to the Walled City, and home to the Sheesh Mahal, the Alamgiri Gate, the Naulakha pavilion, and the Moti Masjid.",
                             infoWindowImage: "assets/lahore.png",
                           )),
-                      ProvinceDetails(
+                      ProvinceSmallDetailsCard(
                           "assets/is.png",
                           "Islamabad",
                           Colors.deepPurple,
@@ -102,7 +103,7 @@ class CitiesListScreen extends StatelessWidget {
                                 "Islamabad is known for the presence of several parks and forests, including the Margalla Hills National Park and the Shakarparian.",
                             infoWindowImage: "assets/lahore.png",
                           )),
-                      ProvinceDetails(
+                      ProvinceSmallDetailsCard(
                           "assets/c6.png",
                           "Multan",
                           // Colors.teal,
@@ -120,7 +121,7 @@ class CitiesListScreen extends StatelessWidget {
                                 "Multan is known as the 'City of Pirs and Shrines', and is a prosperous city of bazaars, mosques and superbly designed tombs.",
                             infoWindowImage: "assets/lahore.png",
                           )),
-                      ProvinceDetails(
+                      ProvinceSmallDetailsCard(
                           "assets/c1.png",
                           "Rawalpindi",
                           Colors.pinkAccent,

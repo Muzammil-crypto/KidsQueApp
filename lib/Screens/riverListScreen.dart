@@ -3,6 +3,7 @@ import 'package:sign_in_interface/Screens/ProvincesListScreen.dart';
 import 'package:sign_in_interface/Screens/HomepageScreen.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
+import '../Quiz/lib/widgets/provinceSmallDetailsCard.dart';
 import 'MapScreen.dart';
 
 class RiversListScreen extends StatelessWidget {
@@ -51,7 +52,7 @@ class RiversListScreen extends StatelessWidget {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     children: [
-                      ProvinceDetails(
+                      ProvinceSmallDetailsCard(
                           "assets/Ravi.png",
                           "Ravi River",
                           Colors.pinkAccent,
@@ -67,7 +68,7 @@ class RiversListScreen extends StatelessWidget {
                                 "The Ravi River is a transboundary river crossing northwestern India and eastern Pakistan. It is one of five rivers associated with the Punjab region. Under the Indus Waters Treaty of 1960.",
                             infoWindowImage: "assets/lahore.png",
                           )),
-                      ProvinceDetails(
+                      ProvinceSmallDetailsCard(
                           "assets/indus.png",
                           "Indus River",
                           Colors.red,
@@ -83,7 +84,7 @@ class RiversListScreen extends StatelessWidget {
                                 "The Indus is a transboundary river of Asia and a trans-Himalayan river of South and Central Asia. The 3,180 km river rises in Western Tibet, flows northwest through the disputed region of Kashmir,",
                             infoWindowImage: "assets/lahore.png",
                           )),
-                      ProvinceDetails(
+                      ProvinceSmallDetailsCard(
                           "assets/jhelum.png",
                           "Jhelum River",
                           Colors.deepPurple,
@@ -99,7 +100,7 @@ class RiversListScreen extends StatelessWidget {
                                 "The Jhelum River is a river in the northern Indian subcontinent. It originates at Verinag and flows through the Indian administered territory of Jammu and Kashmir, to the Pakistani-administered territory of Azad Kashmir,",
                             infoWindowImage: "assets/lahore.png",
                           )),
-                      ProvinceDetails(
+                      ProvinceSmallDetailsCard(
                           "assets/chenab.png",
                           "Chenab River",
                           Color.fromARGB(255, 0, 78, 3),
@@ -115,7 +116,7 @@ class RiversListScreen extends StatelessWidget {
                                 "The Chenab River is a major river that flows in India and Pakistan, and is one of the 5 major rivers of the Punjab region. It is formed by the union of two headwaters, Chandra and Bhaga,",
                             infoWindowImage: "assets/lahore.png",
                           )),
-                      ProvinceDetails(
+                      ProvinceSmallDetailsCard(
                           "assets/satluj.png",
                           "Sutlej River",
                           Colors.teal,
