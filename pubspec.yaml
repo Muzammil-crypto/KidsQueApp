@@ -19,8 +19,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  google_fonts: ^3.0.1
-  flutter_zoom_drawer: ^3.0.3
   google_maps_flutter: ^2.2.1
   path_provider: ^2.0.11
   shared_preferences: ^2.0.15
@@ -29,7 +27,6 @@ dependencies:
   syncfusion_flutter_charts: ^20.3.48
   youtube_player_flutter: ^8.1.0
   timeline_list: ^0.0.6
-  animated_background: ^2.0.0
   carousel_slider: ^4.1.1
   flutter_cache_manager: ^3.3.0
   snippet_coder_utils: ^1.0.12
@@ -91,15 +88,6 @@ flutter:
     - family: ShinyBalloonDemo
       fonts:
         - asset: fonts/ShinyBalloonDemo.ttf
-    - family: CoolComicsForPersonal
-      fonts:
-        - asset: fonts/CoolComicsForPersonal.ttf
-    - family: Journey
-      fonts:
-        - asset: fonts/Journey.ttf
-    - family: NiceChalkDemo
-      fonts:
-        - asset: fonts/NiceChalkDemo.otf
     - family: Langar-Regular
       fonts:
         - asset: fonts/Langar-Regular.ttf
