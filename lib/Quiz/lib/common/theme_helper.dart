@@ -12,11 +12,11 @@ class ThemeHelper {
       colorScheme: ColorScheme.light(
           primary: Color.fromARGB(255, 231, 112, 112), secondary: Colors.black),
       textTheme: TextTheme(
-          headline3: TextStyle(
+          displaySmall: TextStyle(
             color: accentColor,
             fontFamily: 'Langar-Regular',
           ),
-          headline4: TextStyle(
+          headlineMedium: TextStyle(
             color: accentColor,
             fontFamily: 'Langar-Regular',
           )),

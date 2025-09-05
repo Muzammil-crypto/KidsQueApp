@@ -6,9 +6,9 @@ import 'package:sign_in_interface/Screens/riverListScreen.dart';
 import 'package:sign_in_interface/Widgets/ChoiceCards.dart';
 import 'package:sign_in_interface/Widgets/sideDrawer.dart';
 
-import 'package:sign_in_interface/Screens/historyTimelineScreen.dart';
-
 import '../Widgets/background_Clipper.dart';
+import 'package:sign_in_interface/Screens/historyTimelineScreen.dart'
+    show TimelineWidget;
 
 class Topics extends StatefulWidget {
   @override

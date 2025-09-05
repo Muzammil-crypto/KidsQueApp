@@ -1,4 +1,3 @@
-// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Quiz/lib/common/route_generator.dart';
 
