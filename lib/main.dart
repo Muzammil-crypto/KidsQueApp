@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sign_in_interface/views/Screens/splash_screen.dart';
 
 import 'core/stores/quiz_store.dart';
-import 'core/utils/common/route_generator.dart';
+import 'core/routing/route_generator.dart';
 
 
 void main() async {

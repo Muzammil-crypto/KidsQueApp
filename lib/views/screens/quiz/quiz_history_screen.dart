@@ -5,7 +5,7 @@ import 'package:sign_in_interface/views/Widgets/disco_button.dart';
 import 'package:sign_in_interface/views/Widgets/screen_header.dart';
 
 import '../../../core/stores/quiz_store.dart';
-import '../../../core/utils/common/theme_helper.dart';
+import '../../../core/theme/theme_helper.dart';
 
 class QuizHistoryScreen extends StatefulWidget {
   static const routeName = '/quizHistory';

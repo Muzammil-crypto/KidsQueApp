@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:sign_in_interface/core/utils/common/extensions.dart';
+import 'package:sign_in_interface/core/extensions/extensions.dart';
 import 'package:sign_in_interface/models/option.dart';
 import 'package:sign_in_interface/models/question.dart';
 import 'package:sign_in_interface/models/quiz.dart';
@@ -11,7 +11,7 @@ import 'package:sign_in_interface/views/Widgets/question_option.dart';
 
 import '../../../core/services/quiz_engine.dart';
 import '../../../core/stores/quiz_store.dart';
-import '../../../core/utils/common/theme_helper.dart';
+import '../../../core/theme/theme_helper.dart';
 import '../../../models/dto/option_selection.dart';
 import '../../../models/dto/quiz_result.dart';
 import '../../Screens/quiz/quiz_result_screen.dart';

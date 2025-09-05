@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../core/utils/common/theme_helper.dart';
+import '../../core/theme/theme_helper.dart';
 
 // ignore: must_be_immutable
 class TimeIndicator extends StatelessWidget {

@@ -5,12 +5,12 @@ import 'package:sign_in_interface/views/Screens/quiz/home_screen.dart';
 import 'package:sign_in_interface/views/Screens/quiz/quiz_screen.dart';
 import 'package:sign_in_interface/views/Screens/quiz/quiz_splash_screen.dart';
 
-import '../../../models/dto/quiz_result.dart';
-import '../../../models/quiz.dart';
-import '../../../views/Screens/quiz/quiz_category.dart';
-import '../../../views/Screens/quiz/quiz_category_details.dart';
-import '../../../views/Screens/quiz/quiz_history_screen.dart';
-import '../../../views/Screens/quiz/quiz_result_screen.dart';
+import '../../models/dto/quiz_result.dart';
+import '../../models/quiz.dart';
+import '../../views/Screens/quiz/quiz_category.dart';
+import '../../views/Screens/quiz/quiz_category_details.dart';
+import '../../views/Screens/quiz/quiz_history_screen.dart';
+import '../../views/Screens/quiz/quiz_result_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {

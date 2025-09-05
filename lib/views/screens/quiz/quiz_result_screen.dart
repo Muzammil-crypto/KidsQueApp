@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sign_in_interface/views/Screens/quiz/quiz_history_screen.dart';
 import 'package:sign_in_interface/views/Widgets/disco_button.dart';
 
-import '../../../core/utils/common/theme_helper.dart';
+import '../../../core/theme/theme_helper.dart';
 import '../../../models/dto/quiz_result.dart';
 import '../../Widgets/roundCardClipper.dart';
 

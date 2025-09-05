@@ -3,7 +3,7 @@ import 'package:sign_in_interface/views/Widgets/disco_button.dart';
 
 
 import '../../../core/stores/quiz_store.dart';
-import '../../../core/utils/common/theme_helper.dart';
+import '../../../core/theme/theme_helper.dart';
 import '../../Screens/About_us.dart';
 import '../../Screens/HomepageScreen.dart';
 import '../../Screens/performance_screen.dart';

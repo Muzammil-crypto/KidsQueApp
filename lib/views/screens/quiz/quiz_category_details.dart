@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/models/category.dart';
 import '../../../core/stores/quiz_store.dart';
-import '../../../core/utils/common/theme_helper.dart';
+import '../../../core/theme/theme_helper.dart';
 import '../../../models/quiz.dart';
 
 // ignore: must_be_immutable
