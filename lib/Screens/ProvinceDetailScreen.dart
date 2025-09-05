@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+// Dio import removed for offline static app
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
@@ -52,7 +52,6 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
   bool isFound = true;
   @override
   void initState() {
-    getData();
     super.initState();
   }
 
@@ -254,8 +253,8 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
                                       height: 120,
                                       width: 120.0,
                                       child: CircleAvatar(
-                                          backgroundImage: NetworkImage(
-                                              "https://i.pinimg.com/736x/1a/70/5b/1a705b5289275f9a7fa39b8a6614e30f.jpg")),
+                                          backgroundImage:
+                                              AssetImage("assets/punj1.png")),
                                     ),
                                   ),
                                   InkWell(
@@ -264,8 +263,8 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
                                       height: 120,
                                       width: 120.0,
                                       child: CircleAvatar(
-                                          backgroundImage: NetworkImage(
-                                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCiJ3qQwFcgzMMe5KKm14qovLca8fN6LnQZ6uYutnRxDDoHLchCH45lJYdo7YPK5oNyEY&usqp=CAU")),
+                                          backgroundImage:
+                                              AssetImage("assets/baloch.png")),
                                     ),
                                     onTap: () => {
                                       Navigator.push(
@@ -292,8 +291,8 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
                                       height: 120,
                                       width: 120.0,
                                       child: CircleAvatar(
-                                          backgroundImage: NetworkImage(
-                                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBXdkl8lavK80Ov_4kbBJecdf-2T4mpCKju_FmcyhxB-ZPojGtP7oXUZLUgFU4RZNQfm4&usqp=CAU")),
+                                          backgroundImage:
+                                              AssetImage("assets/cityy.png")),
                                     ),
                                   ),
                                   InkWell(
@@ -311,8 +310,8 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
                                       height: 120,
                                       width: 120.0,
                                       child: CircleAvatar(
-                                          backgroundImage: NetworkImage(
-                                              "https://media.istockphoto.com/photos/boat-at-the-beautiful-gawadar-port-harbor-balochistan-picture-id1137143862?k=20&m=1137143862&s=612x612&w=0&h=brJOdhBmwdKK8_Ohv51l4ROiZh7ZyoLoE-qUlD2E_DQ=")),
+                                          backgroundImage:
+                                              AssetImage("assets/chenab.png")),
                                     ),
                                   ),
                                 ],
@@ -397,35 +396,5 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
     );
   }
 
-  void getData() async {
-    try {
-      var response = await Dio().get(
-          "https://pakque2.herokuapp.com/api/cultures/${widget.id}?populate=*");
-      print(response.data);
-      provinceModel.title = response.data['data']['attributes']['name'];
-      provinceModel.description =
-          response.data['data']['attributes']["description"];
-      provinceModel.videoLink =
-          response.data['data']['attributes']['video'] == null
-              ? ""
-              : response.data['data']['attributes']['video'];
-      response.data["data"]["attributes"]["Images"]["data"] != null
-          ? response.data["data"]["attributes"]["Images"]["data"].forEach((e) {
-              e["attributes"]["url"] != null
-                  ? provinceModel.images.add(e["attributes"]["url"])
-                  : null;
-            })
-          : null;
-      print(provinceModel.images);
-      setState(() {
-        isLoading = false;
-      });
-    } catch (e) {
-      print(e);
-      setState(() {
-        isLoading = false;
-        isFound = false;
-      });
-    }
-  }
+  // Removed getData() and network logic. Use local mock data in initState.
 }

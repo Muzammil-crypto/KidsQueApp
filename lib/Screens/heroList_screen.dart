@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+// Dio import removed for offline static app
 import 'package:flutter/material.dart';
 import 'package:sign_in_interface/Models/heroModel.dart';
 
@@ -7,6 +7,7 @@ import 'package:sign_in_interface/Screens/heroesDetail.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
 import '../Widgets/heroCard.dart';
+// Removed Dio import for offline static app
 
 // ignore: must_be_immutable
 class HeroesScreen extends StatefulWidget {
@@ -23,11 +24,36 @@ class HeroesScreen extends StatefulWidget {
 }
 
 class _HeroesScreenState extends State<HeroesScreen> {
-  List<HeroModel> heroModelList = [];
+  List<HeroModel> heroModelList = [
+    HeroModel()
+      ..title = "Quaid-e-Azam Muhammad Ali Jinnah"
+      ..duration = "1876-1948"
+      ..description =
+          "Founder of Pakistan, known for his leadership and vision."
+      ..image = "assets/jinnah.jpeg",
+    HeroModel()
+      ..title = "Allama Iqbal"
+      ..duration = "1877-1938"
+      ..description =
+          "Poet of the East, philosopher, and inspiration for Pakistan."
+      ..image = "assets/iqbal2.jpeg",
+    HeroModel()
+      ..title = "Fatima Jinnah"
+      ..duration = "1893-1967"
+      ..description =
+          "Mother of the Nation, played a vital role in Pakistan's independence."
+      ..image = "assets/jinnah.jpeg",
+    HeroModel()
+      ..title = "Sir Syed Ahmad Khan"
+      ..duration = "1817-1898"
+      ..description =
+          "Educator and reformer, founder of Aligarh Muslim University."
+      ..image = "assets/nusrat.jpg",
+    // Add more kid-friendly Pak Studies heroes as needed
+  ];
 
   @override
   void initState() {
-    getData();
     super.initState();
   }
 
@@ -133,31 +159,5 @@ class _HeroesScreenState extends State<HeroesScreen> {
     );
   }
 
-  void getData() async {
-    try {
-      var response = await Dio().get(
-          "https://pakque2.herokuapp.com/api/heroes-categories/${widget.id}?populate=national_heroes.Image");
-      // print(
-      //     "Data: ${response.data['data']['attributes']["national_heroes"]["data"]}");
-      response.data['data']['attributes']["national_heroes"]["data"]
-          .forEach((element) {
-        HeroModel heroModel = HeroModel();
-        heroModel.title = element["attributes"]["Name"];
-        heroModel.duration = element["attributes"]["Duration"];
-        heroModel.description = element["attributes"]["Description"];
-        heroModel.image =
-            element["attributes"]["Image"]["data"]["attributes"]['url'] == null
-                ? ""
-                : element["attributes"]["Image"]["data"]["attributes"]['url'];
-        print(heroModel.title);
-        heroModelList.add(heroModel);
-      });
-
-      setState(() {
-        isLoading = false;
-      });
-    } on DioError catch (e) {
-      print(e.response);
-    }
-  }
+  // Removed getData() and network logic. Using local mock data above.
 }

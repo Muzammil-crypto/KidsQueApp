@@ -43,7 +43,7 @@ class _SliderBannerState extends State<SliderBanner> {
                         child: Stack(
                           fit: StackFit.expand,
                           children: [
-                            Image.network(
+                            Image.asset(
                               e,
                               width: 1050,
                               height: 400,

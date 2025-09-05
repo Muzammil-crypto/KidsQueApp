@@ -29,7 +29,7 @@ class TimelineWidget extends StatelessWidget {
                     children: [
                       Marker(
                         child: getTimeline(
-                          "https://www.pakpedia.pk/files/Image/Muhammad-Bin-Qasim.jpg",
+                          "assets/iqbal2.jpeg",
                           "Muhmmad Bin Qasim",
                           "18, 715 AD",
                           HistoryDetailScreen(id: 1),
@@ -41,7 +41,7 @@ class TimelineWidget extends StatelessWidget {
                       ),
                       Marker(
                         child: getTimeline(
-                          "https://www.heritagetimes.in/wp-content/uploads/2019/10/SAKhan.jpg",
+                          "assets/nusrat.jpg",
                           "Sir Syed Ahmad Khan",
                           "1817-1898",
                           HistoryDetailScreen(id: 3),

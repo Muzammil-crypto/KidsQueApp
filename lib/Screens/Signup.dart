@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+// Dio import removed for offline static app
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -315,27 +315,12 @@ class _SignUpState extends State<SignUp> {
   }
 
   register() async {
-    try {
-      var response = await Dio()
-          .post("https://pakque2.herokuapp.com/api/auth/local/register", data: {
-        "username": _usernameController.text,
-        "email": _emailController.text,
-        'password': _passwordController.text,
-      });
-      print(response.data);
-      if (response.statusCode == 200) {
-        Navigator.pushAndRemoveUntil(context,
-            MaterialPageRoute(builder: (context) => Login()), (route) => false);
-      }
-    } on DioError catch (e) {
-      print(e.response);
-      setState(() {
-        isLoading = false;
-      });
-    }
+    // Mock signup: always successful
     Fluttertoast.showToast(
-      msg: "Enter valid Credentials",
+      msg: "Signup Successful! (Offline Mode)",
       fontSize: 14,
     );
+    Navigator.pushAndRemoveUntil(context,
+        MaterialPageRoute(builder: (context) => Login()), (route) => false);
   }
 }

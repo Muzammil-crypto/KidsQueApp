@@ -64,7 +64,7 @@ class HeroCard extends StatelessWidget {
                 top: MediaQuery.of(context).size.height / 7,
                 left: MediaQuery.of(context).size.width / 20),
             height: MediaQuery.of(context).size.height / 3,
-            child: Image.network(
+            child: Image.asset(
               imgName,
             ),
           ),

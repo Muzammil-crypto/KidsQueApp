@@ -55,7 +55,7 @@ class getTimeline extends StatelessWidget {
                     height: MediaQuery.of(context).size.height / 11,
                     width: 100,
                     child: CircleAvatar(
-                      backgroundImage: NetworkImage(imgName),
+                      backgroundImage: AssetImage(imgName),
                       radius: 10,
                     ),
                   ),

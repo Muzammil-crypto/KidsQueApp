@@ -23,7 +23,7 @@ dependencies:
   path_provider: ^2.0.11
   shared_preferences: ^2.0.15
   cupertino_icons: ^1.0.5
-  http: ^0.13.5
+    # http: ^0.13.5 (removed for offline static app)
   syncfusion_flutter_charts: ^31.1.17
   youtube_player_flutter: ^9.1.2
   timeline_list: ^0.1.1
@@ -31,7 +31,7 @@ dependencies:
   flutter_cache_manager: ^3.3.0
   snippet_coder_utils: ^1.0.12
   flutter_progress_hud: ^2.0.2
-  dio: ^4.0.6
+    # dio: ^4.0.6 (removed for offline static app)
   custom_info_window: ^1.0.1
   flutter_tts: ^3.5.3
   email_validator: ^2.1.17

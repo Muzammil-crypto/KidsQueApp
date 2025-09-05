@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+// Dio import removed for offline static app
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
@@ -51,7 +51,6 @@ class _RiverDetailScreenState extends State<RiverDetailScreen> {
   bool isFound = true;
   @override
   void initState() {
-    getData();
     super.initState();
   }
 
@@ -242,40 +241,40 @@ class _RiverDetailScreenState extends State<RiverDetailScreen> {
                                     height: 120,
                                     width: 120.0,
                                     child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHBVFSOJ6Ll438ccvbWTFPFBkDeITdUfoPOA&usqp=CAU")),
+                                        backgroundImage:
+                                            AssetImage("assets/indus.png")),
                                   ),
                                   Container(
                                     margin: EdgeInsets.only(right: 5),
                                     height: 120,
                                     width: 120.0,
                                     child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://www.explorerpakistan.com/wp-content/uploads/2019/09/1-lahore-fort-800x445.jpg")),
+                                        backgroundImage:
+                                            AssetImage("assets/lahore.png")),
                                   ),
                                   Container(
                                     margin: EdgeInsets.only(right: 5),
                                     height: 120,
                                     width: 120.0,
                                     child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://media.istockphoto.com/photos/wazir-khan-mosque-lahore-pakistan-picture-id1130761760?k=20&m=1130761760&s=612x612&w=0&h=OPX8vVKJnwaAASLUO23nVm0ysAp8k5mugGfbu0XuJyg=")),
+                                        backgroundImage:
+                                            AssetImage("assets/jhelum.png")),
                                   ),
                                   Container(
                                     margin: EdgeInsets.only(right: 5),
                                     height: 120,
                                     width: 120.0,
                                     child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://pbs.twimg.com/media/DN0CNlDWkAIbhBf.jpg")),
+                                        backgroundImage:
+                                            AssetImage("assets/ravi.jpg")),
                                   ),
                                   Container(
                                     margin: EdgeInsets.only(right: 5),
                                     height: 120,
                                     width: 120.0,
                                     child: CircleAvatar(
-                                        backgroundImage: NetworkImage(
-                                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHBVFSOJ6Ll438ccvbWTFPFBkDeITdUfoPOA&usqp=CAU")),
+                                        backgroundImage:
+                                            AssetImage("assets/sindh.png")),
                                   ),
                                 ],
                               ),
@@ -358,35 +357,5 @@ class _RiverDetailScreenState extends State<RiverDetailScreen> {
   }
   //${widget.id}    https://pakque2.herokuapp.com/api/cultures/${widget.id}?populate=*
 
-  void getData() async {
-    try {
-      var response = await Dio().get(
-          "https://pakque2.herokuapp.com/api/rivers/${widget.id}?populate=*");
-      print(response.data);
-      riverModel.title = response.data['data']['attributes']['Name'];
-      riverModel.description =
-          response.data['data']['attributes']["Description"];
-      riverModel.videoLink =
-          response.data['data']['attributes']['Video'] == null
-              ? ""
-              : response.data['data']['attributes']['Video'];
-      response.data["data"]["attributes"]["Images"]["data"] != null
-          ? response.data["data"]["attributes"]["Images"]["data"].forEach((e) {
-              e["attributes"]["url"] != null
-                  ? riverModel.images.add(e["attributes"]["url"])
-                  : null;
-            })
-          : null;
-      print(riverModel.images);
-      setState(() {
-        isLoading = false;
-      });
-    } catch (e) {
-      print(e);
-      setState(() {
-        isLoading = false;
-        isFound = false;
-      });
-    }
-  }
+  // Removed getData() and network logic. Use local mock data in initState.
 }

@@ -77,7 +77,7 @@ class _DetailsHeroScreenState extends State<DetailsHeroScreen> {
                   Container(
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height / 1.8,
-                    child: Image.network(widget.imgName),
+                    child: Image.asset(widget.imgName),
                   ),
                   Stack(children: [
                     Positioned(

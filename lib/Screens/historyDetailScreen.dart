@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+// Dio import removed for offline static app
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:sign_in_interface/Models/historyModel.dart';
@@ -7,6 +7,7 @@ import 'package:sign_in_interface/Quiz/lib/screens/quiz_category.dart';
 
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 import 'package:sign_in_interface/Widgets/youtube_player_screen.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 // ignore: must_be_immutable
 class HistoryDetailScreen extends StatefulWidget {
@@ -51,16 +52,16 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
   bool isFound = true;
   @override
   void initState() {
-    getData();
+    historyModel.title = "Pakistan Independence";
+    historyModel.description =
+        "Pakistan became independent on 14th August 1947. It is a country rich in history and culture.";
+    historyModel.videoLink = "https://www.youtube.com/watch?v=example";
+    historyModel.images = "assets/jinnah.jpeg";
+    isLoading = false;
     super.initState();
   }
 
   @override
-  void dispose() {
-    super.dispose();
-    flutterTts.stop();
-  }
-
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.yellow.shade900,
@@ -79,7 +80,7 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
               child: ListView(
                 children: [
                   Container(
-                    height: MediaQuery.of(context).size.height * 1.5,
+                    height: MediaQuery.of(context).size.height * 1.8,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(color: Colors.cyan),
                     child: Stack(
@@ -89,8 +90,8 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
                           top: 0,
                           child: Center(
                             child: Container(
-                              child: Image(
-                                image: NetworkImage(historyModel.images),
+                              child: Image.asset(
+                                historyModel.images,
                                 fit: BoxFit.contain,
                               ),
                               height: MediaQuery.of(context).size.height / 2.3,
@@ -98,68 +99,59 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
                             ),
                           ),
                         ),
-                        Container(
-                          child: Positioned(
-                            top: MediaQuery.of(context).size.height / 2.4,
-                            child: Column(
-                              children: [
-                                Container(
-                                  child: Container(
-                                    margin: EdgeInsets.only(bottom: 15),
-                                    child: Container(
-                                      margin: EdgeInsets.all(10),
-                                      child: SingleChildScrollView(
-                                        child: Column(
-                                          children: [
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Text(
-                                              "${historyModel.title}",
-                                              style: TextStyle(
-                                                  fontFamily:
-                                                      "ShinyBalloonDemo",
-                                                  fontSize: 35,
-                                                  color: Colors.white),
-                                            ),
-                                            Text(
-                                              historyModel.description!,
-                                              style: TextStyle(
-                                                  fontFamily: "BubblegumSans",
-                                                  fontSize: 24,
-                                                  color: Colors.white),
-                                            ),
-                                          ],
+                        Positioned(
+                          top: MediaQuery.of(context).size.height / 2.4,
+                          child: Column(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(bottom: 15),
+                                child: Container(
+                                  margin: EdgeInsets.all(10),
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      children: [
+                                        SizedBox(height: 10),
+                                        Text(
+                                          historyModel.title ?? '',
+                                          style: TextStyle(
+                                              fontFamily: "ShinyBalloonDemo",
+                                              fontSize: 35,
+                                              color: Colors.white),
                                         ),
-                                      ),
+                                        Text(
+                                          historyModel.description ?? '',
+                                          style: TextStyle(
+                                              fontFamily: "BubblegumSans",
+                                              fontSize: 24,
+                                              color: Colors.white),
+                                        ),
+                                      ],
                                     ),
-                                    height: MediaQuery.of(context).size.height /
-                                        2.1,
-                                    width: MediaQuery.of(context).size.width /
-                                        1.15,
-                                    decoration: BoxDecoration(
-                                        color:
-                                            Color.fromARGB(212, 255, 142, 142),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(20))),
                                   ),
                                 ),
-                                Column(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.only(top: 25),
-                                      child: Text(
-                                        "Related Video",
-                                        style: TextStyle(
-                                            fontFamily: "ShinyBalloonDemo",
-                                            fontSize: 40,
-                                            color: Colors.white),
-                                      ),
+                                height:
+                                    MediaQuery.of(context).size.height / 2.1,
+                                width: MediaQuery.of(context).size.width / 1.15,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(212, 255, 142, 142),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(20))),
+                              ),
+                              Column(
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.only(top: 25),
+                                    child: Text(
+                                      "Related Video",
+                                      style: TextStyle(
+                                          fontFamily: "ShinyBalloonDemo",
+                                          fontSize: 40,
+                                          color: Colors.white),
                                     ),
-                                  ],
-                                ),
-                              ],
-                            ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
                         Positioned(
@@ -207,10 +199,22 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
                                         BorderRadius.all(Radius.circular(20))),
                                 child: Container(
                                   margin: EdgeInsets.all(10),
-                                  child: YoutubeScreen(
-                                    title: "Video",
-                                    url: historyModel.videoLink.toString(),
-                                  ),
+                                  child: (historyModel.videoLink != null &&
+                                          historyModel.videoLink!.isNotEmpty &&
+                                          YoutubePlayer.convertUrlToId(historyModel.videoLink!) != null)
+                                      ? YoutubeScreen(
+                                          title: "Video",
+                                          url: historyModel.videoLink!,
+                                        )
+                                      : Center(
+                                          child: Text(
+                                            "No video available",
+                                            style: TextStyle(
+                                                fontFamily: "BubblegumSans",
+                                                fontSize: 18,
+                                                color: Colors.red),
+                                          ),
+                                        ),
                                 ),
                               ),
                             ],
@@ -253,9 +257,6 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
                                         builder: (context) =>
                                             QuizCategoryScreen()));
                               },
-                              // shape: RoundedRectangleBorder(
-                              //     borderRadius: BorderRadius.circular(80.0)),
-                              // padding: const EdgeInsets.all(0.0),
                               child: Ink(
                                 decoration: const BoxDecoration(
                                   color: Color(0xFFF57F17),
@@ -264,9 +265,7 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
                                 ),
                                 child: Container(
                                   constraints: const BoxConstraints(
-                                      minWidth: 320.0,
-                                      minHeight:
-                                          40.0), // min sizes for Material buttons
+                                      minWidth: 320.0, minHeight: 40.0),
                                   alignment: Alignment.center,
                                   child: const Text(
                                     'Take Quiz',
@@ -291,33 +290,5 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
     );
   }
 
-  void getData() async {
-    try {
-      var response = await Dio().get(
-          "https://pakque2.herokuapp.com/api/histories/${widget.id}?populate=*");
-      print(response.data);
-      historyModel.title = response.data['data']['attributes']['Title'];
-      historyModel.description =
-          response.data['data']['attributes']["Description"];
-      historyModel.videoLink =
-          response.data['data']['attributes']['Video'] == null
-              ? ""
-              : response.data['data']['attributes']['Video'];
-      historyModel.images =
-          response.data["data"]["attributes"]["Image"]["data"] != null
-              ? response.data["data"]["attributes"]["Image"]["data"]
-                  ["attributes"]["url"]
-              : null;
-      print("this is URL" + historyModel.images);
-      setState(() {
-        isLoading = false;
-      });
-    } catch (e) {
-      print(e);
-      setState(() {
-        isLoading = false;
-        isFound = false;
-      });
-    }
-  }
+  // ...existing code...
 }

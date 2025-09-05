@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+// Dio import removed for offline static app
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:sign_in_interface/Models/cityModel.dart';
@@ -25,7 +25,6 @@ class _CityDetailsState extends State<CityDetails> {
 
   @override
   void initState() {
-    getData();
     super.initState();
   }
 
@@ -238,8 +237,8 @@ class _CityDetailsState extends State<CityDetails> {
                                       height: 120,
                                       width: 120.0,
                                       child: CircleAvatar(
-                                          backgroundImage: NetworkImage(
-                                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHBVFSOJ6Ll438ccvbWTFPFBkDeITdUfoPOA&usqp=CAU")),
+                                          backgroundImage: AssetImage(
+                                              "assets/peshawar.png")),
                                     ),
                                     onTap: () => {
                                       Navigator.push(
@@ -264,8 +263,8 @@ class _CityDetailsState extends State<CityDetails> {
                                       height: 120,
                                       width: 120.0,
                                       child: CircleAvatar(
-                                          backgroundImage: NetworkImage(
-                                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0PsjXKeZX9FM2UH8_f1zcH-Etn9wjCIkdgg&usqp=CAU")),
+                                          backgroundImage:
+                                              AssetImage("assets/lahore.png")),
                                     ),
                                   ),
                                   InkWell(
@@ -282,8 +281,8 @@ class _CityDetailsState extends State<CityDetails> {
                                       height: 120,
                                       width: 120.0,
                                       child: CircleAvatar(
-                                          backgroundImage: NetworkImage(
-                                              "https://i.pinimg.com/736x/6e/91/c8/6e91c818a5b851dd1317d1324001f325.jpg")),
+                                          backgroundImage:
+                                              AssetImage("assets/is.png")),
                                     ),
                                   ),
                                   InkWell(
@@ -292,8 +291,8 @@ class _CityDetailsState extends State<CityDetails> {
                                       height: 120,
                                       width: 120.0,
                                       child: CircleAvatar(
-                                          backgroundImage: NetworkImage(
-                                              "https://i.pinimg.com/236x/f6/81/e4/f681e4f40aee373487fdf6e1fd55c103--peshawar-pakistan-colleges.jpg")),
+                                          backgroundImage: AssetImage(
+                                              "assets/rawalpindi.png")),
                                     ),
                                     onTap: () => {
                                       Navigator.push(
@@ -318,8 +317,8 @@ class _CityDetailsState extends State<CityDetails> {
                                       height: 120,
                                       width: 120.0,
                                       child: CircleAvatar(
-                                          backgroundImage: NetworkImage(
-                                              "https://i.pinimg.com/550x/ae/08/ff/ae08ffb5718c0db63795c114e68b8242.jpg")),
+                                          backgroundImage:
+                                              AssetImage("assets/multan.png")),
                                     ),
                                   ),
                                   InkWell(
@@ -336,8 +335,8 @@ class _CityDetailsState extends State<CityDetails> {
                                       height: 120,
                                       width: 120.0,
                                       child: CircleAvatar(
-                                          backgroundImage: NetworkImage(
-                                              "https://wallpaperaccess.com/full/4005177.jpg")),
+                                          backgroundImage:
+                                              AssetImage("assets/karachi.png")),
                                     ),
                                   ),
                                   InkWell(
@@ -354,8 +353,8 @@ class _CityDetailsState extends State<CityDetails> {
                                       height: 120,
                                       width: 120.0,
                                       child: CircleAvatar(
-                                          backgroundImage: NetworkImage(
-                                              "https://i.pinimg.com/736x/b0/b2/37/b0b2372222fc7ce36a4849f56dc32aa1.jpg")),
+                                          backgroundImage: AssetImage(
+                                              "assets/faisalabad.png")),
                                     ),
                                   ),
                                 ],
@@ -438,30 +437,5 @@ class _CityDetailsState extends State<CityDetails> {
     );
   }
 
-  void getData() async {
-    try {
-      var response = await Dio().get(
-          "https://pakque2.herokuapp.com/api/cities/${widget.id}?populate=*");
-      print(response.data);
-      cityModel.title = response.data['data']['attributes']["name"];
-      cityModel.description =
-          response.data['data']['attributes']['description'];
-      cityModel.videoLink = response.data['data']['attributes']['Video'] == null
-          ? ""
-          : response.data['data']['attributes']["Video"];
-      response.data["data"]["attributes"]["Image"]["data"] != null
-          ? response.data["data"]["attributes"]["Image"]["data"].forEach((e) {
-              e["attributes"]["url"] != null
-                  ? cityModel.images.add(e["attributes"]["url"])
-                  : null;
-            })
-          : null;
-
-      setState(() {
-        isLoading = false;
-      });
-    } on DioError catch (e) {
-      print(e.response);
-    }
-  }
+  // Removed getData() and network logic. Use local mock data in initState.
 }
