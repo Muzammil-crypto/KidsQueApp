@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sign_in_interface/Quiz/lib/common/route_generator.dart';
+import 'package:sign_in_interface/views/Screens/splash_screen.dart';
 
-import 'package:sign_in_interface/Quiz/lib/stores/quiz_store.dart';
+import 'core/stores/quiz_store.dart';
+import 'core/utils/common/route_generator.dart';
 
-import 'package:sign_in_interface/Screens/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

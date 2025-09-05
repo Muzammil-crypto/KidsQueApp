@@ -1,1 +1,6 @@
-// ...existing code from lib/Widgets/chart.dart...// ...existing code from lib/Widgets/chart.dart...
+class KidData {
+  final String topic;
+  final int Marks;
+
+  KidData(this.topic, this.Marks);
+}
