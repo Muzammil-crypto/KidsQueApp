@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sign_in_interface/Models/provinceModel.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
 import '../Quiz/lib/widgets/provinceSmallDetailsCard.dart';
+import '../models/provinceModel.dart';
 import 'MapScreen.dart';
 
 class ProvincesListScreen extends StatefulWidget {

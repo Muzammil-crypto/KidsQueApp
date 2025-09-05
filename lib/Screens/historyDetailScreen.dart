@@ -1,13 +1,13 @@
 // Dio import removed for offline static app
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:sign_in_interface/Models/historyModel.dart';
-
 import 'package:sign_in_interface/Quiz/lib/screens/quiz_category.dart';
 
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 import 'package:sign_in_interface/Widgets/youtube_player_screen.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
+import '../models/historyModel.dart';
 
 // ignore: must_be_immutable
 class HistoryDetailScreen extends StatefulWidget {

@@ -1,12 +1,12 @@
 // Dio import removed for offline static app
 import 'package:flutter/material.dart';
-import 'package:sign_in_interface/Models/heroModel.dart';
 
 import 'package:sign_in_interface/Screens/hero_categories.dart';
 import 'package:sign_in_interface/Screens/heroesDetail.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
 import '../Widgets/heroCard.dart';
+import '../models/heroModel.dart';
 // Removed Dio import for offline static app
 
 // ignore: must_be_immutable

@@ -1,12 +1,12 @@
 // Dio import removed for offline static app
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:sign_in_interface/Models/cityModel.dart';
 import 'package:sign_in_interface/Quiz/lib/screens/quiz_category.dart';
 import 'package:sign_in_interface/Screens/slider.dart';
 import 'package:sign_in_interface/Widgets/background_Clipper.dart';
 
 import '../Widgets/youtube_player_screen.dart';
+import '../models/cityModel.dart';
 
 // ignore: must_be_immutable
 class CityDetails extends StatefulWidget {
