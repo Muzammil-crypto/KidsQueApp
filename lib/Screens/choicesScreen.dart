@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:sign_in_interface/Screens/ProvincesListScreen.dart';
-import 'package:sign_in_interface/Screens/citiesListScreen.dart';
-import 'package:sign_in_interface/Screens/hero_categories.dart';
 import 'package:sign_in_interface/Screens/riverListScreen.dart';
-import 'package:sign_in_interface/Widgets/ChoiceCards.dart';
-import 'package:sign_in_interface/Widgets/sideDrawer.dart';
-
+import '../Widgets/ChoiceCards.dart';
 import '../Widgets/background_Clipper.dart';
-import 'package:sign_in_interface/Screens/historyTimelineScreen.dart'
-    show TimelineWidget;
+import '../Widgets/sideDrawer.dart';
+import 'ProvincesListScreen.dart';
+import 'citiesListScreen.dart';
+import 'hero_categories.dart';
+import 'historyTimelineScreen.dart';
 
 class Topics extends StatefulWidget {
   @override
@@ -106,21 +104,21 @@ class _TopicsState extends State<Topics> {
                               color: Color.fromARGB(255, 70, 69, 69),
                             ),
                           ),
-                          getContainer(
+                          GetContainer(
                               "assets/pc.gif",
                               "Explore\n Cultures",
                               Colors.redAccent,
                               Colors.pinkAccent,
                               ProvincesListScreen()),
-                          getContainer(
+                          GetContainer(
                               "assets/pci.gif",
                               "Explore\n Cities",
                               Color.fromARGB(255, 79, 100, 218),
                               Color.fromARGB(200, 24, 90, 92),
                               CitiesListScreen()),
-                          getContainer("assets/pr.gif", "Explore\n Rivers",
+                          GetContainer("assets/pr.gif", "Explore\n Rivers",
                               Colors.green, Colors.teal, RiversListScreen()),
-                          getContainer(
+                          GetContainer(
                               "assets/majj.png",
                               "Explore\n Heroes",
                               Color.fromARGB(223, 167, 5, 5),
@@ -128,7 +126,7 @@ class _TopicsState extends State<Topics> {
                               HeroCategory()),
                           Padding(
                             padding: const EdgeInsets.only(bottom: 18.0),
-                            child: getContainer(
+                            child: GetContainer(
                                 "assets/pm.gif",
                                 "Explore\n History",
                                 Colors.green,

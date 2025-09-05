@@ -63,337 +63,339 @@ class _ProvinceDetailScreenState extends State<ProvinceDetailScreen> {
   }
 
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.yellow.shade900,
-      body: isLoading
-          ? Center(
-              child: Container(
-                height: MediaQuery.of(context).size.height / 3.2,
-                width: MediaQuery.of(context).size.width / 0.5,
-                child: Image(
-                  image: AssetImage("assets/ani34.gif"),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.yellow.shade900,
+        body: isLoading
+            ? Center(
+                child: Container(
+                  height: MediaQuery.of(context).size.height / 3.2,
+                  width: MediaQuery.of(context).size.width / 0.5,
+                  child: Image(
+                    image: AssetImage("assets/ani34.gif"),
+                  ),
                 ),
-              ),
-            )
-          : ClipPath(
-              clipper: BackgroundClipper(),
-              child: ListView(
-                children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height * 1.9,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(color: Colors.cyan),
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: <Widget>[
-                        Positioned(
-                          bottom: MediaQuery.of(context).size.height / 0,
-                          child: Center(
-                            child: Container(
-                              child: SliderBanner(
-                                imageList: provinceModel.images,
+              )
+            : ClipPath(
+                clipper: BackgroundClipper(),
+                child: ListView(
+                  children: [
+                    Container(
+                      height: MediaQuery.of(context).size.height * 1.9,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(color: Colors.cyan),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: <Widget>[
+                          Positioned(
+                            bottom: MediaQuery.of(context).size.height / 0,
+                            child: Center(
+                              child: Container(
+                                child: SliderBanner(
+                                  imageList: provinceModel.images,
+                                ),
+                                height: MediaQuery.of(context).size.height / 2,
+                                width: MediaQuery.of(context).size.width,
                               ),
-                              height: MediaQuery.of(context).size.height / 2,
-                              width: MediaQuery.of(context).size.width,
                             ),
                           ),
-                        ),
-                        Container(
-                          child: Positioned(
-                            top: MediaQuery.of(context).size.height / 2.4,
-                            child: Column(
-                              children: [
-                                Container(
-                                  child: Container(
-                                    margin: EdgeInsets.only(bottom: 15),
+                          Container(
+                            child: Positioned(
+                              top: MediaQuery.of(context).size.height / 2.4,
+                              child: Column(
+                                children: [
+                                  Container(
                                     child: Container(
-                                      margin: EdgeInsets.all(10),
-                                      child: SingleChildScrollView(
-                                        child: Column(
-                                          children: [
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Text(
-                                              "${provinceModel.title}",
-                                              style: TextStyle(
-                                                  fontFamily:
-                                                      "ShinyBalloonDemo",
-                                                  fontSize: 35,
-                                                  color: Colors.white),
-                                            ),
-                                            Text(
-                                              provinceModel.description,
-                                              style: TextStyle(
-                                                  fontFamily: "BubblegumSans",
-                                                  fontSize: 24,
-                                                  color: Colors.white),
-                                            ),
-                                          ],
+                                      margin: EdgeInsets.only(bottom: 15),
+                                      child: Container(
+                                        margin: EdgeInsets.all(10),
+                                        child: SingleChildScrollView(
+                                          child: Column(
+                                            children: [
+                                              SizedBox(
+                                                height: 10,
+                                              ),
+                                              Text(
+                                                "${provinceModel.title}",
+                                                style: TextStyle(
+                                                    fontFamily:
+                                                        "ShinyBalloonDemo",
+                                                    fontSize: 35,
+                                                    color: Colors.white),
+                                              ),
+                                              Text(
+                                                provinceModel.description,
+                                                style: TextStyle(
+                                                    fontFamily: "BubblegumSans",
+                                                    fontSize: 24,
+                                                    color: Colors.white),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
+                                      height: MediaQuery.of(context).size.height /
+                                          2.1,
+                                      width: MediaQuery.of(context).size.width /
+                                          1.15,
+                                      decoration: BoxDecoration(
+                                          color:
+                                              Color.fromARGB(212, 255, 142, 142),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(20))),
                                     ),
-                                    height: MediaQuery.of(context).size.height /
-                                        2.1,
-                                    width: MediaQuery.of(context).size.width /
-                                        1.15,
-                                    decoration: BoxDecoration(
-                                        color:
-                                            Color.fromARGB(212, 255, 142, 142),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(20))),
                                   ),
-                                ),
-                                Column(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.only(top: 25),
-                                      child: Text(
-                                        "Related Video",
-                                        style: TextStyle(
-                                            fontFamily: "ShinyBalloonDemo",
-                                            fontSize: 40,
-                                            color: Colors.white),
+                                  Column(
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.only(top: 25),
+                                        child: Text(
+                                          "Related Video",
+                                          style: TextStyle(
+                                              fontFamily: "ShinyBalloonDemo",
+                                              fontSize: 40,
+                                              color: Colors.white),
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          bottom: MediaQuery.of(context).size.height / 2 + 440,
-                          right: 40,
-                          child: Container(
-                              height: 60,
-                              width: 60,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(40),
-                                color: Color.fromARGB(200, 255, 255, 255),
-                              ),
-                              child: ElevatedButton(
-                                  onPressed: () => {
-                                        setState(() {
-                                          isPlaying
-                                              ? _stop()
-                                              : speak(
-                                                  provinceModel.description);
-                                        })
-                                      },
-                                  child: isPlaying
-                                      ? Icon(
-                                          Icons.stop,
-                                          color: Colors.red,
-                                          size: 30,
-                                        )
-                                      : Icon(
-                                          Icons.play_arrow,
-                                          color: Colors.green,
-                                          size: 30,
-                                        ))),
-                        ),
-                        Positioned(
-                          top: MediaQuery.of(context).size.height / 0.96,
-                          child: Column(
-                            children: [
-                              Container(
-                                height:
-                                    MediaQuery.of(context).size.height / 3.4,
-                                width: MediaQuery.of(context).size.width / 1.1,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(20))),
-                                child: Container(
-                                  margin: EdgeInsets.all(10),
-                                  child: YoutubeScreen(
-                                    title: "Video",
-                                    url: provinceModel.videoLink.toString(),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Positioned(
-                            top: MediaQuery.of(context).size.height / 0.72,
-                            child: Container(
-                                child: Text(
-                              "Related Places",
-                              style: TextStyle(
-                                  fontFamily: "ShinyBalloonDemo",
-                                  fontSize: 40,
-                                  color: Colors.white),
-                            ))),
-                        Positioned(
-                          top: MediaQuery.of(context).size.height / 0.67,
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                              left: 20.0,
-                            ),
-                            child: SizedBox(
-                              height: 120,
-                              width: MediaQuery.of(context).size.width,
-                              child: ListView(
-                                shrinkWrap: true,
-                                scrollDirection: Axis.horizontal,
-                                children: <Widget>[
-                                  InkWell(
-                                    onTap: () => {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  ProvinceDetailScreen(
-                                                    id: 1,
-                                                  ))),
-                                    },
-                                    child: Container(
-                                      margin: EdgeInsets.only(right: 5),
-                                      height: 120,
-                                      width: 120.0,
-                                      child: CircleAvatar(
-                                          backgroundImage:
-                                              AssetImage("assets/punj1.png")),
-                                    ),
-                                  ),
-                                  InkWell(
-                                    child: Container(
-                                      margin: EdgeInsets.only(right: 5),
-                                      height: 120,
-                                      width: 120.0,
-                                      child: CircleAvatar(
-                                          backgroundImage:
-                                              AssetImage("assets/baloch.png")),
-                                    ),
-                                    onTap: () => {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  ProvinceDetailScreen(
-                                                    id: 2,
-                                                  ))),
-                                    },
-                                  ),
-                                  InkWell(
-                                    onTap: () => {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  ProvinceDetailScreen(
-                                                    id: 3,
-                                                  ))),
-                                    },
-                                    child: Container(
-                                      margin: EdgeInsets.only(right: 5),
-                                      height: 120,
-                                      width: 120.0,
-                                      child: CircleAvatar(
-                                          backgroundImage:
-                                              AssetImage("assets/cityy.png")),
-                                    ),
-                                  ),
-                                  InkWell(
-                                    onTap: () => {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  ProvinceDetailScreen(
-                                                    id: 4,
-                                                  ))),
-                                    },
-                                    child: Container(
-                                      margin: EdgeInsets.only(right: 5),
-                                      height: 120,
-                                      width: 120.0,
-                                      child: CircleAvatar(
-                                          backgroundImage:
-                                              AssetImage("assets/chenab.png")),
-                                    ),
+                                    ],
                                   ),
                                 ],
                               ),
                             ),
                           ),
-                        ),
-                        Positioned(
-                          top: 20,
-                          left: 10,
-                          child: Row(
-                            children: [
-                              Container(
-                                  height: 35,
-                                  width: 35,
+                          Positioned(
+                            bottom: MediaQuery.of(context).size.height / 2 + 440,
+                            right: 40,
+                            child: Container(
+                                height: 60,
+                                width: 60,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40),
+                                  color: Color.fromARGB(200, 255, 255, 255),
+                                ),
+                                child: ElevatedButton(
+                                    onPressed: () => {
+                                          setState(() {
+                                            isPlaying
+                                                ? _stop()
+                                                : speak(
+                                                    provinceModel.description);
+                                          })
+                                        },
+                                    child: isPlaying
+                                        ? Icon(
+                                            Icons.stop,
+                                            color: Colors.red,
+                                            size: 30,
+                                          )
+                                        : Icon(
+                                            Icons.play_arrow,
+                                            color: Colors.green,
+                                            size: 30,
+                                          ))),
+                          ),
+                          Positioned(
+                            top: MediaQuery.of(context).size.height / 0.96,
+                            child: Column(
+                              children: [
+                                Container(
+                                  height:
+                                      MediaQuery.of(context).size.height / 3.4,
+                                  width: MediaQuery.of(context).size.width / 1.1,
                                   decoration: BoxDecoration(
-                                      color: Color.fromARGB(136, 255, 255, 255),
-                                      borderRadius: BorderRadius.circular(7)),
-                                  child: Center(
-                                    child: IconButton(
-                                      icon: Icon(
-                                        Icons.arrow_back_ios,
-                                        color: Colors.white,
-                                        size: 20,
+                                      color: Colors.white,
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(20))),
+                                  child: Container(
+                                    margin: EdgeInsets.all(10),
+                                    child: YoutubeScreen(
+                                      title: "Video",
+                                      url: provinceModel.videoLink.toString(),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                              top: MediaQuery.of(context).size.height / 0.72,
+                              child: Container(
+                                  child: Text(
+                                "Related Places",
+                                style: TextStyle(
+                                    fontFamily: "ShinyBalloonDemo",
+                                    fontSize: 40,
+                                    color: Colors.white),
+                              ))),
+                          Positioned(
+                            top: MediaQuery.of(context).size.height / 0.67,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                left: 20.0,
+                              ),
+                              child: SizedBox(
+                                height: 120,
+                                width: MediaQuery.of(context).size.width,
+                                child: ListView(
+                                  shrinkWrap: true,
+                                  scrollDirection: Axis.horizontal,
+                                  children: <Widget>[
+                                    InkWell(
+                                      onTap: () => {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ProvinceDetailScreen(
+                                                      id: 1,
+                                                    ))),
+                                      },
+                                      child: Container(
+                                        margin: EdgeInsets.only(right: 5),
+                                        height: 120,
+                                        width: 120.0,
+                                        child: CircleAvatar(
+                                            backgroundImage:
+                                                AssetImage("assets/punj1.png")),
                                       ),
-                                      onPressed: () => {
-                                        Navigator.pop(context),
+                                    ),
+                                    InkWell(
+                                      child: Container(
+                                        margin: EdgeInsets.only(right: 5),
+                                        height: 120,
+                                        width: 120.0,
+                                        child: CircleAvatar(
+                                            backgroundImage:
+                                                AssetImage("assets/baloch.png")),
+                                      ),
+                                      onTap: () => {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ProvinceDetailScreen(
+                                                      id: 2,
+                                                    ))),
                                       },
                                     ),
-                                  )),
-                            ],
+                                    InkWell(
+                                      onTap: () => {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ProvinceDetailScreen(
+                                                      id: 3,
+                                                    ))),
+                                      },
+                                      child: Container(
+                                        margin: EdgeInsets.only(right: 5),
+                                        height: 120,
+                                        width: 120.0,
+                                        child: CircleAvatar(
+                                            backgroundImage:
+                                                AssetImage("assets/cityy.png")),
+                                      ),
+                                    ),
+                                    InkWell(
+                                      onTap: () => {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ProvinceDetailScreen(
+                                                      id: 4,
+                                                    ))),
+                                      },
+                                      child: Container(
+                                        margin: EdgeInsets.only(right: 5),
+                                        height: 120,
+                                        width: 120.0,
+                                        child: CircleAvatar(
+                                            backgroundImage:
+                                                AssetImage("assets/chenab.png")),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                        Positioned(
-                          bottom: MediaQuery.of(context).size.height / 8,
-                          child: SingleChildScrollView(
-                            child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            QuizCategoryScreen()));
-                              },
-                              // shape: RoundedRectangleBorder(
-                              //     borderRadius: BorderRadius.circular(80.0)),
-                              child: Container(
-                                child: Ink(
-                                  //padding: const EdgeInsets.all(0.0),
-                                  decoration: const BoxDecoration(
-                                    color: Color(0xFFF57F17),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(80.0)),
-                                  ),
-                                  child: Container(
-                                    constraints: const BoxConstraints(
-                                        minWidth: 320.0,
-                                        minHeight:
-                                            40.0), // min sizes for Material buttons
-                                    alignment: Alignment.center,
-                                    child: const Text(
-                                      'Take Quiz',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontFamily: "BubblegumSans",
+                          Positioned(
+                            top: 20,
+                            left: 10,
+                            child: Row(
+                              children: [
+                                Container(
+                                    height: 35,
+                                    width: 35,
+                                    decoration: BoxDecoration(
+                                        color: Color.fromARGB(136, 255, 255, 255),
+                                        borderRadius: BorderRadius.circular(7)),
+                                    child: Center(
+                                      child: IconButton(
+                                        icon: Icon(
+                                          Icons.arrow_back_ios,
                                           color: Colors.white,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 22),
+                                          size: 20,
+                                        ),
+                                        onPressed: () => {
+                                          Navigator.pop(context),
+                                        },
+                                      ),
+                                    )),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            bottom: MediaQuery.of(context).size.height / 8,
+                            child: SingleChildScrollView(
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              QuizCategoryScreen()));
+                                },
+                                // shape: RoundedRectangleBorder(
+                                //     borderRadius: BorderRadius.circular(80.0)),
+                                child: Container(
+                                  child: Ink(
+                                    //padding: const EdgeInsets.all(0.0),
+                                    decoration: const BoxDecoration(
+                                      color: Color(0xFFF57F17),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(80.0)),
+                                    ),
+                                    child: Container(
+                                      constraints: const BoxConstraints(
+                                          minWidth: 320.0,
+                                          minHeight:
+                                              40.0), // min sizes for Material buttons
+                                      alignment: Alignment.center,
+                                      child: const Text(
+                                        'Take Quiz',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontFamily: "BubblegumSans",
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 22),
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
+      ),
     );
   }
 

@@ -62,96 +62,82 @@ class _HeroesScreenState extends State<HeroesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.yellow.shade900,
-      body: isLoading
-          ? Center(
-              child: Container(
-                height: MediaQuery.of(context).size.height / 3.2,
-                width: MediaQuery.of(context).size.width / 0.5,
-                child: Image(
-                  image: AssetImage("assets/ani34.gif"),
-                ),
-              ),
-            )
-          : ClipPath(
-              clipper: BackgroundClipper(),
-              child: Scaffold(
-                body: Container(
-                  child: Center(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(
-                                  // right: MediaQuery.of(context).size.width / 1.22,
-                                  ),
-                              child: IconButton(
-                                icon: Icon(
-                                  Icons.arrow_back_ios_new_outlined,
-                                  color: Colors.black,
-                                  size: 20,
-                                ),
-                                onPressed: () => {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              HeroCategory())),
-                                },
-                              ),
-                            ),
-                            Container(
-                              // height: MediaQuery.of(context).size.height / 5,
-                              margin: EdgeInsets.only(top: 80),
-                              child: Text(
-                                "National Heroes of the",
-                                style: TextStyle(
-                                    fontSize: 30,
-                                    fontFamily: "BubblegumSans",
-                                    letterSpacing: 2,
-                                    color: Colors.green),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(top: 5),
-                          child: Text(
-                            "History",
-                            style: TextStyle(
-                                fontSize: 43,
-                                fontFamily: "Flavors",
-                                letterSpacing: 2,
-                                color: Colors.cyan),
+      body: Scaffold(
+        body: Container(
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(
+                          // right: MediaQuery.of(context).size.width / 1.22,
                           ),
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.arrow_back_ios_new_outlined,
+                          color: Colors.black,
+                          size: 20,
                         ),
-                        Expanded(
-                            child: ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                itemCount: heroModelList.length,
-                                itemBuilder: (BuildContext ctxt, int index) {
-                                  return HeroCard(
-                                    heroModelList[index].image!,
-                                    heroModelList[index].title!,
-                                    Colors.orange,
-                                    Colors.deepOrangeAccent,
-                                    DetailsHeroScreen(
-                                      heroModelList[index].image!,
-                                      heroModelList[index].title!,
-                                      Colors.orange,
-                                      Colors.deepOrangeAccent,
-                                      heroModelList[index].description!,
-                                    ),
-                                    heroModelList[index].duration!,
-                                  );
-                                })),
-                      ],
+                        onPressed: () => {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HeroCategory())),
+                        },
+                      ),
                     ),
+                    Container(
+                      // height: MediaQuery.of(context).size.height / 5,
+                      margin: EdgeInsets.only(top: 80),
+                      child: Text(
+                        "National Heroes of the",
+                        style: TextStyle(
+                            fontSize: 30,
+                            fontFamily: "BubblegumSans",
+                            letterSpacing: 2,
+                            color: Colors.green),
+                      ),
+                    ),
+                  ],
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 5),
+                  child: Text(
+                    "History",
+                    style: TextStyle(
+                        fontSize: 43,
+                        fontFamily: "Flavors",
+                        letterSpacing: 2,
+                        color: Colors.cyan),
                   ),
                 ),
-              ),
+                Expanded(
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: heroModelList.length,
+                        itemBuilder: (BuildContext ctxt, int index) {
+                          return HeroCard(
+                            heroModelList[index].image!,
+                            heroModelList[index].title!,
+                            Colors.orange,
+                            Colors.deepOrangeAccent,
+                            DetailsHeroScreen(
+                              heroModelList[index].image!,
+                              heroModelList[index].title!,
+                              Colors.orange,
+                              Colors.deepOrangeAccent,
+                              heroModelList[index].description!,
+                            ),
+                            heroModelList[index].duration!,
+                          );
+                        })),
+              ],
             ),
+          ),
+        ),
+      ),
     );
   }
 

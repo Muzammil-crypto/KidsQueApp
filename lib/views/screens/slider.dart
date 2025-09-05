@@ -1,0 +1,3 @@
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+// ...existing code from lib/Screens/slider.dart...// ...existing code from lib/Screens/slider.dart...// ...existing code from lib/Screens/slider.dart...

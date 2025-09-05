@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class getContainer extends StatelessWidget {
-  late String imgName;
-  late String heading;
-  late Color color1;
-  late Color color2;
-
+class GetContainer extends StatelessWidget {
+  final String imgName;
+  final String heading;
+  final Color color1;
+  final Color color2;
   final Widget pageToShow;
 
-  getContainer(String imgName, String heading, Color color1, Color color2,
-      this.pageToShow) {
-    this.imgName = imgName;
-    this.heading = heading;
-    this.color1 = color1;
-    this.color2 = color2;
-  }
+  const GetContainer(
+      this.imgName, this.heading, this.color1, this.color2, this.pageToShow,
+      {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
