@@ -201,7 +201,9 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
                                   margin: EdgeInsets.all(10),
                                   child: (historyModel.videoLink != null &&
                                           historyModel.videoLink!.isNotEmpty &&
-                                          YoutubePlayer.convertUrlToId(historyModel.videoLink!) != null)
+                                          YoutubePlayer.convertUrlToId(
+                                                  historyModel.videoLink!) !=
+                                              null)
                                       ? YoutubeScreen(
                                           title: "Video",
                                           url: historyModel.videoLink!,

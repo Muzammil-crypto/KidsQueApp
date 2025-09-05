@@ -131,23 +131,19 @@ class _HeroesScreenState extends State<HeroesScreen> {
                                 scrollDirection: Axis.horizontal,
                                 itemCount: heroModelList.length,
                                 itemBuilder: (BuildContext ctxt, int index) {
-                                  return Container(
-                                    height: MediaQuery.of(context).size.height,
-                                    width: MediaQuery.of(context).size.width,
-                                    child: HeroCard(
+                                  return HeroCard(
+                                    heroModelList[index].image!,
+                                    heroModelList[index].title!,
+                                    Colors.orange,
+                                    Colors.deepOrangeAccent,
+                                    DetailsHeroScreen(
                                       heroModelList[index].image!,
                                       heroModelList[index].title!,
                                       Colors.orange,
                                       Colors.deepOrangeAccent,
-                                      DetailsHeroScreen(
-                                        heroModelList[index].image!,
-                                        heroModelList[index].title!,
-                                        Colors.orange,
-                                        Colors.deepOrangeAccent,
-                                        heroModelList[index].description!,
-                                      ),
-                                      heroModelList[index].duration!,
+                                      heroModelList[index].description!,
                                     ),
+                                    heroModelList[index].duration!,
                                   );
                                 })),
                       ],

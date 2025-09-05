@@ -79,73 +79,62 @@ class _DetailsHeroScreenState extends State<DetailsHeroScreen> {
                     height: MediaQuery.of(context).size.height / 1.8,
                     child: Image.asset(widget.imgName),
                   ),
-                  Stack(children: [
-                    Positioned(
-                      child: Center(
-                        child: Container(
-                          child: Container(
-                            margin: EdgeInsets.all(10),
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  Text(
-                                    widget.heading,
-                                    style: TextStyle(
-                                        fontFamily: "ShinyballoonDemo",
-                                        fontSize: 25,
-                                        color: Colors.white),
-                                  ),
-                                  Text(
-                                    widget.description,
-                                    style: TextStyle(
-                                        fontFamily: "BubblegumSans",
-                                        fontSize: 16,
-                                        color: Colors.white),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
-                              ),
-                            ),
+                  Container(
+                    margin: EdgeInsets.all(10),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Text(
+                            widget.heading,
+                            style: TextStyle(
+                                fontFamily: "ShinyballoonDemo",
+                                fontSize: 25,
+                                color: Colors.white),
                           ),
-                          height: MediaQuery.of(context).size.height / 2.2,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
-                        ),
+                          Text(
+                            widget.description,
+                            style: TextStyle(
+                                fontFamily: "BubblegumSans",
+                                fontSize: 16,
+                                color: Colors.white),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: 20),
+                          Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(40),
+                              color: Color.fromARGB(200, 255, 255, 255),
+                            ),
+                            child: ElevatedButton(
+                                onPressed: () => {
+                                      setState(() {
+                                        isPlaying
+                                            ? _stop()
+                                            : speak(widget.description);
+                                      })
+                                    },
+                                child: isPlaying
+                                    ? Icon(
+                                        Icons.stop,
+                                        color: Colors.red,
+                                        size: 30,
+                                      )
+                                    : Icon(
+                                        Icons.play_arrow,
+                                        color: Colors.green,
+                                        size: 30,
+                                      )),
+                          ),
+                        ],
                       ),
                     ),
-                    Positioned(
-                      top: 180,
-                      right: 50,
-                      child: Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            color: Color.fromARGB(200, 255, 255, 255),
-                          ),
-                          child: ElevatedButton(
-                              onPressed: () => {
-                                    setState(() {
-                                      isPlaying
-                                          ? _stop()
-                                          : speak(widget.description);
-                                    })
-                                  },
-                              child: isPlaying
-                                  ? Icon(
-                                      Icons.stop,
-                                      color: Colors.red,
-                                      size: 30,
-                                    )
-                                  : Icon(
-                                      Icons.play_arrow,
-                                      color: Colors.green,
-                                      size: 30,
-                                    ))),
-                    ),
-                  ]),
+                    height: MediaQuery.of(context).size.height / 2.2,
+                    width: MediaQuery.of(context).size.width / 1.2,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                  ),
                 ],
               ),
               Positioned(
